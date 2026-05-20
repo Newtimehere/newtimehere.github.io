@@ -10,15 +10,26 @@
             max-width: 800px; 
             margin: 30px auto; 
             padding: 20px; 
-            background: #f5f5f5; 
+            background: #000000; 
+            min-height: 100vh;
         }
-        h1 { color: #1565c0; text-align: center; }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 180px;
+            height: auto;
+        }
+        h1 { 
+            color: #ffffff; 
+            text-align: center; 
+            margin-bottom: 30px;
+        }
         .box { 
             background: white; 
             padding: 20px; 
             margin: 15px 0; 
             border-radius: 8px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            box-shadow: 0 2px 8px rgba(255,255,255,0.1); 
         }
         .button { 
             display: inline-block; 
@@ -29,19 +40,28 @@
             text-decoration: none; 
             margin-top: 10px; 
         }
+        .button:hover {
+            background: #1565c0;
+        }
     </style>
 </head>
 <body>
+    <!-- LOGO: Cuando tengas tu imagen, reemplaza "logo.png" por el nombre del archivo -->
+    <!-- <img src="logo.png" alt="New Time Here Logo" class="logo"> -->
+    
     <h1>📚 New Time Here</h1>
+    
     <div class="box">
         <h2>Welcome to my Educational Project</h2>
         <p>Free study material for students of all ages. My mission is to make learning easy and accessible for everyone.</p>
     </div>
+    
     <div class="box">
         <h2>PDF Classes</h2>
         <p>Here you will find all my classes organized by topic. Material coming soon.</p>
         <a href="#" class="button">Download Class 1</a>
     </div>
+    
     <div class="box">
         <h2>Contact</h2>
         <p>Questions or suggestions? Email me at <a href="mailto:Harvardidharvardid@gmail.com">Harvardidharvardid@gmail.com</a></p>
