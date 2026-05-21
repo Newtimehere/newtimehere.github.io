@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIMES</title>
+<title>TU NOMBRE AQUÍ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,9 +22,6 @@
         --border-gray: #2a2a2a;
         --header-height: 100px;
         --header-height-mobile: 90px;
-        --cookie-bg: #1a1a1a;
-        --btn-primary: #ffffff;
-        --btn-secondary: transparent;
     }
 
     html {
@@ -32,21 +29,14 @@
     }
 
     body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Inter', sans-serif;
         background-color: var(--bg-black);
         color: var(--text-white);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        padding-bottom: 0;
-        transition: padding-bottom 0.3s ease;
     }
 
-    body.cookie-visible {
-        padding-bottom: 120px;
-    }
-
-    /* Header */
+    /* Header blanco */
     .header {
         position: fixed;
         top: 0;
@@ -70,9 +60,9 @@
     .logo-wrapper {
         display: flex;
         align-items: center;
+        gap: 16px;
         cursor: pointer;
         transition: opacity 0.2s ease;
-        height: 100%;
     }
 
     .logo-wrapper:hover {
@@ -82,9 +72,16 @@
     .logo-icon {
         height: 60px;
         width: auto;
-        flex-shrink: 0;
         object-fit: contain;
-        display: block;
+    }
+
+    .logo-text {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        color: #000000;
+        text-transform: uppercase;
     }
 
     .menu-btn {
@@ -95,12 +92,6 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        transition: opacity 0.2s ease;
-        align-self: center;
-    }
-
-    .menu-btn:hover {
-        opacity: 0.6;
     }
 
     .menu-line {
@@ -110,7 +101,7 @@
         transition: all 0.3s ease;
     }
 
-    /* Main Content */
+    /* Main negro */
     .main {
         padding-top: var(--header-height);
         min-height: 100vh;
@@ -124,4 +115,41 @@
     }
 
     .hero-logo {
-       
+        margin: 0 auto 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hero-shield {
+        height: 60px;
+        width: auto;
+    }
+
+    .hero-main-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        color: var(--text-white);
+        text-transform: uppercase;
+    }
+
+    .hero-text {
+        font-size: 16px;
+        line-height: 1.85;
+        color: var(--text-light-gray);
+        max-width: 720px;
+        margin: 0 auto 32px;
+        font-weight: 300;
+    }
+
+    .hero-signature {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-white);
+        margin-top
