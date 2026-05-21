@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Time</title>
   
-  <!-- FAVICON: Logo que sale en Google -->
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="logo.png">
   
-  <!-- META TAGS PARA GOOGLE -->
+  <!-- META TAGS -->
   <meta name="description" content="New Time - Founded this year. Full transparency and direct answers.">
   <meta property="og:title" content="New Time">
   <meta property="og:site_name" content="New Time">
   <meta property="og:image" content="https://newtimehere.github.io/logo.png">
   
-  <!-- STRUCTURED DATA PARA EL LOGO -->
+  <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,193 +32,28 @@
       background: #000; 
       color: #fff; 
       font-family: Georgia, 'Times New Roman', serif;
-      line-height: 1.6;
+      display: flex;
+      min-height: 100vh;
     }
     
-    .header {
+    /* SIDEBAR IZQUIERDO BLANCO */
+    .sidebar {
+      width: 280px;
       background: #fff;
       color: #000;
-      padding: 15px 5%;
+      padding: 40px 30px;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .logo-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 20px;
-      letter-spacing: 5px;
-      font-weight: 300;
-    }
-    
-    .logo-header img {
-      height: 40px;
-      width: auto;
-    }
-    
-    .menu-btn { 
-      font-size: 28px; 
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .content {
-      padding: 40px 5% 120px 5%;
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .main-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin: 30px 0 40px 0;
-      flex-wrap: wrap;
-    }
-    
-    .main-logo img {
-      height: 50px;
-      width: auto;
-    }
-    
-    .main-logo span {
-      font-size: 32px;
-      letter-spacing: 8px;
-      font-weight: 300;
-    }
-    
-    .intro {
-      line-height: 1.8;
-      margin: 20px auto;
-      font-size: 17px;
-      max-width: 650px;
-      font-weight: 300;
-    }
-    
-    .divider {
-      margin: 40px 0;
-      font-size: 16px;
-      letter-spacing: 4px;
-    }
-    
-    .directory {
-      text-align: left;
-      margin: 50px auto 0 auto;
-      max-width: 650px;
-    }
-    
-    .directory h2 {
-      font-size: 36px;
-      margin-bottom: 25px;
-      font-weight: 300;
-    }
-    
-    .directory ul { list-style: none; }
-    
-    .directory li {
-      margin: 20px 0;
-      font-size: 19px;
-      font-weight: 300;
-    }
-    
-    .directory li:before {
-      content: "› ";
-      margin-right: 10px;
-    }
-    
-    .directory a { 
-      color: #fff; 
-      text-decoration: none;
-      word-break: break-word;
-    }
-    
-    .directory a:hover { text-decoration: underline; }
-    
-    .cookie-banner {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #1a1a1a;
-      padding: 20px 5%;
-      border-top: 1px solid #333;
+      height: 100vh;
+      overflow-y: auto;
     }
     
-    .cookie-text {
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 15px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+    .sidebar-top {
+      text-align: center;
     }
     
-    .cookie-buttons {
-      display: flex;
-      gap: 10px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .cookie-buttons button {
-      flex: 1;
-      padding: 14px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    
-    .accept-necessary { background: #fff; color: #000; }
-    .accept-all { background: #0066ff; color: #fff; }
-    
-    /* AJUSTES PARA CELULAR - Se ve igual de bien */
-    @media (max-width: 768px) {
-      .logo-header {
-        font-size: 16px;
-        letter-spacing: 3px;
-        gap: 8px;
-      }
-      
-      .logo-header img {
-        height: 30px;
-      }
-      
-      .main-logo span {
-        font-size: 24px;
-        letter-spacing: 5px;
-      }
-      
-      .main-logo img {
-        height: 40px;
-      }
-      
-      .intro {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-      
-      .directory h2 {
-        font-size: 28px;
-      }
-      
-      .directory li {
-        font-size: 17px;
-      }
-      
-      .cookie-buttons {
-        flex-direction: column;
-      }
-    }
-    
-    /* AJUSTES PARA PANTALLAS MUY PEQUEÑAS */
-    @media (max-width: 380px) {
-      .main-logo {
-        flex-direction: column;
-        gap:
+    .sidebar-logo img {
+      width: 80px;
+      height: auto
