@@ -13,11 +13,13 @@
       background: #000; 
       color: #fff; 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 300;
     }
     
+    /* BARRA BLANCA - SOLO ESCUDO ESQUINADO */
     .header {
       background: #ffffff;
-      padding: 8px 20px 8px 10px;
+      padding: 8px 20px 8px 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -26,27 +28,13 @@
       top: 0;
       z-index: 9999;
       height: 58px;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .logo-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      border-bottom: 1px solid #e5e5e5;
     }
     
     .logo-header img {
-      height: 42px;
+      height: 44px;
       width: auto;
       display: block;
-    }
-    
-    .logo-header span {
-      font-size: 18px;
-      letter-spacing: 2.5px;
-      font-weight: 400;
-      color: #000;
-      font-family: Georgia, serif;
     }
     
     .menu-btn { 
@@ -55,8 +43,11 @@
       border: none;
       cursor: pointer;
       color: #000;
+      padding: 0;
+      line-height: 1;
     }
     
+    /* CONTENIDO NEGRO */
     .content {
       padding: 88px 20px 140px 20px;
       background: #000;
@@ -69,12 +60,14 @@
       letter-spacing: 3px;
       font-weight: 300;
       margin: 25px 0 35px 0;
+      font-family: 'Helvetica Neue', sans-serif;
     }
     
     .intro {
       line-height: 1.7;
       margin: 0 auto 25px auto;
       font-size: 16px;
+      font-weight: 300;
       text-align: center;
       max-width: 600px;
       padding: 0 10px;
@@ -85,6 +78,7 @@
       font-size: 16px;
       letter-spacing: 2px;
       text-align: center;
+      font-weight: 300;
     }
     
     .directory {
@@ -104,6 +98,7 @@
     .directory li {
       margin: 20px 0;
       font-size: 17px;
+      font-weight: 300;
       display: flex;
     }
     
@@ -123,12 +118,15 @@
       text-decoration: none;
       margin: 24px 0;
       font-size: 16px;
+      font-weight: 300;
     }
     
     .downloads a:before {
       content: "↓ ";
       margin-right: 8px;
     }
+    
+    .downloads a:hover { color: #f88; }
     
     .cookie-banner {
       position: fixed;
@@ -144,6 +142,7 @@
       font-size: 15px;
       line-height: 1.5;
       margin-bottom: 16px;
+      font-weight: 300;
     }
     
     .cookie-buttons {
@@ -158,22 +157,32 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 8px;
+      font-weight: 400;
     }
     
     .accept-necessary { background: #fff; color: #000; }
     .accept-all { background: #007aff; color: #fff; }
+    
+    @media (min-width: 768px) {
+      .content { padding: 98px 40px 140px 40px; }
+      .intro { font-size: 17px; }
+      .directory h2 { font-size: 40px; }
+      .logo-header img { height: 48px; }
+      .header { padding: 8px 20px 8px 12px; }
+    }
   </style>
 </head>
 <body>
   
+  <!-- BARRA BLANCA - SOLO EL ESCUDO -->
   <div class="header">
     <div class="logo-header">
       <img src="logo.webp" alt="New Time">
-      <span>NEW TIMES</span>
     </div>
     <button class="menu-btn">≡</button>
   </div>
 
+  <!-- CONTENIDO -->
   <div class="content">
     <div class="main-title">NEW TIME</div>
     
