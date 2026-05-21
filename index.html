@@ -204,4 +204,37 @@
         </div>
     </main>
 </body>
-</html>         
+</html>  
+<body>
+    <img id="logo-source" src="attachment://0" hidden alt="">
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img id="header-logo" class="logo-img" alt="NEW TIMES">
+            </div>
+            
+            <button class="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Logo grande debajo de la barra blanca -->
+    <section class="hero-logo">
+        <img class="hero-logo-img" src="attachment://0" alt="NEW TIMES Logo">
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoSource = document.getElementById('logo-source');
+            const headerLogo = document.getElementById('header-logo');
+            
+            if (logoSource && headerLogo) {
+                headerLogo.src = logoSource.src;
+            }
+        });
+    </script>
+</body>
