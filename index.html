@@ -4,26 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Time</title>
-  
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="logo.png">
-  
-  <!-- META TAGS -->
-  <meta name="description" content="New Time - Founded this year. Full transparency and direct answers.">
-  <meta property="og:title" content="New Time">
-  <meta property="og:site_name" content="New Time">
-  <meta property="og:image" content="https://newtimehere.github.io/logo.png">
-  
-  <!-- STRUCTURED DATA -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "New Time",
-    "url": "https://newtimehere.github.io",
-    "logo": "https://newtimehere.github.io/logo.png"
-  }
-  </script>
   
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,11 +13,9 @@
       background: #000; 
       color: #fff; 
       font-family: Georgia, 'Times New Roman', serif;
-      display: flex;
-      min-height: 100vh;
     }
     
-    /* SIDEBAR IZQUIERDO BLANCO */
+    /* SIDEBAR DESKTOP */
     .sidebar {
       width: 280px;
       background: #fff;
@@ -47,13 +26,209 @@
       justify-content: space-between;
       position: fixed;
       height: 100vh;
-      overflow-y: auto;
+      left: 0;
+      top: 0;
     }
     
-    .sidebar-top {
+    .sidebar-logo { text-align: center; }
+    .sidebar-logo img { width: 70px; margin-bottom: 15px; }
+    .sidebar-logo span { 
+      display: block;
+      font-size: 18px; 
+      letter-spacing: 4px; 
+      font-weight: 300; 
+    }
+    
+    .sidebar-menu { margin-top: 60px; }
+    .sidebar-menu a {
+      display: block;
+      color: #000;
+      text-decoration: none;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .sidebar-menu a.active { color: #a33; }
+    
+    .sidebar-footer { 
+      font-size: 11px; 
+      color: #666; 
+      text-align: center; 
+    }
+    
+    /* CONTENIDO PRINCIPAL */
+    .main-content {
+      margin-left: 280px;
+      min-height: 100vh;
+      padding: 50px 6%;
+      background: #111;
+    }
+    
+    .intro {
+      max-width: 700px;
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    
+    .new-times-title {
       text-align: center;
+      font-size: 16px;
+      letter-spacing: 3px;
+      margin: 30px 0 50px 0;
     }
     
-    .sidebar-logo img {
-      width: 80px;
-      height: auto
+    .directory h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    
+    .directory-list {
+      list-style: none;
+      margin-bottom: 50px;
+    }
+    
+    .directory-list li {
+      margin: 18px 0;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    
+    .directory-list li:before {
+      content: "› ";
+      margin-right: 12px;
+    }
+    
+    .downloads a {
+      display: block;
+      color: #c66;
+      text-decoration: none;
+      margin: 25px 0;
+      font-size: 17px;
+    }
+    
+    .downloads a:before {
+      content: "↓ ";
+      margin-right: 10px;
+    }
+    
+    .downloads a:hover { color: #e88; }
+    
+    /* HEADER MOBILE */
+    .mobile-header {
+      display: none;
+      background: #fff;
+      color: #000;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .mobile-header img { height: 30px; }
+    .menu-toggle { 
+      font-size: 28px; 
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+        z-index: 999;
+      }
+      .sidebar.active { transform: translateX(0); }
+      .mobile-header { display: flex; }
+      .main-content { 
+        margin-left: 0; 
+        padding: 90px 5% 40px 5%;
+      }
+      .intro { font-size: 15px; }
+      .directory h2 { font-size: 26px; }
+      .directory-list li { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- HEADER MOBILE -->
+  <div class="mobile-header">
+    <img src="logo.png" alt="New Time">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+  
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div>
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="New Time Logo">
+        <span>NEW TIMES</span>
+      </div>
+      
+      <div class="sidebar-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Services</a>
+      </div>
+    </div>
+    
+    <div class="sidebar-footer">
+      All rights reserved NEW TIME
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="main-content">
+    <div class="intro">
+      Founded this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
+    </div>
+
+    <div class="new-times-title">NEW TIMES</div>
+
+    <div class="directory">
+      <h2>Directory:</h2>
+      <ul class="directory-list">
+        <li>Origins of disabled People</li>
+        <li>Origins of cancer</li>
+        <li>Fraud, retarded, impediment same-sex</li>
+        <li>Physical evidence of same-sex sexual fraud</li>
+        <li>Same-sex direct and summarized</li>
+        <li>Origins of infidelity</li>
+        <li>Money and the effect</li>
+        <li>Origins of suicides</li>
+        <li>Origins of being a man and a woman</li>
+        <li>Origins of assassins</li>
+        <li>Human love</li>
+      </ul>
+      
+      <div class="downloads">
+        <a href="pdfs/origins-disabled.pdf" download>Origins of disabled people</a>
+        <a href="pdfs/origins-cancer.pdf" download>Origins of cancer</a>
+        <a href="pdfs/same-sex-impediment.pdf" download>Same-sex sexual impediment</a>
+        <a href="pdfs/physical-evidence.pdf" download>Physical evidence of same-sex, over 21 to see</a>
+        <a href="pdfs/same-sex-summary.pdf" download>Same-sex direct and summarized</a>
+        <a href="pdfs/origins-infidelity.pdf" download>Origins of infidelity</a>
+        <a href="pdfs/money-effect.pdf" download>The Money and the effect</a>
+        <a href="pdfs/origins-suicides.pdf" download>Origins of suicides</a>
+        <a href="pdfs/origins-man-woman.pdf" download>Origins of being woman and men</a>
+        <a href="pdfs/origins-assassins.pdf" download>Origins of assassins</a>
+        <a href="pdfs/human-love.pdf" download>Human love</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
