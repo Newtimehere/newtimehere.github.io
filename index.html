@@ -16,7 +16,7 @@
       font-weight: 300;
     }
     
-    /* BARRA BLANCA - SOLO ESCUDO ESQUINADO */
+    /* BARRA BLANCA - SOLO ESCUDO */
     .header {
       background: #ffffff;
       padding: 8px 20px 8px 8px;
@@ -54,13 +54,18 @@
       min-height: 100vh;
     }
     
-    .main-title {
+    /* LOGO GRANDE EN EL FONDO NEGRO */
+    .main-logo {
       text-align: center;
-      font-size: 28px;
-      letter-spacing: 3px;
-      font-weight: 300;
       margin: 25px 0 35px 0;
-      font-family: 'Helvetica Neue', sans-serif;
+    }
+    
+    .main-logo img {
+      max-width: 280px;
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
     
     .intro {
@@ -163,74 +168,4 @@
     .accept-necessary { background: #fff; color: #000; }
     .accept-all { background: #007aff; color: #fff; }
     
-    @media (min-width: 768px) {
-      .content { padding: 98px 40px 140px 40px; }
-      .intro { font-size: 17px; }
-      .directory h2 { font-size: 40px; }
-      .logo-header img { height: 48px; }
-      .header { padding: 8px 20px 8px 12px; }
-    }
-  </style>
-</head>
-<body>
-  
-  <!-- BARRA BLANCA - SOLO EL ESCUDO -->
-  <div class="header">
-    <div class="logo-header">
-      <img src="logo.webp" alt="New Time">
-    </div>
-    <button class="menu-btn">≡</button>
-  </div>
-
-  <!-- CONTENIDO -->
-  <div class="content">
-    <div class="main-title">NEW TIME</div>
-    
-    <div class="intro">
-      Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
-    </div>
-
-    <div class="divider">NEW TIMES</div>
-
-    <div class="directory">
-      <h2>Directory:</h2>
-      <ul>
-        <li>Origins of disabled People</li>
-        <li>Origins of cancer</li>
-        <li>Fraud, retarded, impediment same-sex</li>
-        <li>Physical evidence of same-sex sexual fraud</li>
-        <li>Same-sex direct and summarized</li>
-        <li>Origins of infidelity</li>
-        <li>Money and the effect</li>
-        <li>Origins of suicides</li>
-        <li>Origins of being a man and a woman</li>
-        <li>Origins of assassins</li>
-        <li>Human love</li>
-      </ul>
-      
-      <div class="downloads">
-        <a href="pdfs/origins-disabled.pdf" download>Origins of disabled people</a>
-        <a href="pdfs/origins-cancer.pdf" download>Origins of cancer</a>
-        <a href="pdfs/same-sex-impediment.pdf" download>Same-sex sexual impediment</a>
-        <a href="pdfs/physical-evidence.pdf" download>Physical evidence of same-sex, over 21 to see</a>
-        <a href="pdfs/same-sex-summary.pdf" download>Same-sex direct and summarized</a>
-        <a href="pdfs/origins-infidelity.pdf" download>Origins of infidelity</a>
-        <a href="pdfs/money-effect.pdf" download>The Money and the effect</a>
-        <a href="pdfs/origins-suicides.pdf" download>Origins of suicides</a>
-        <a href="pdfs/origins-man-woman.pdf" download>Origins of being woman and men</a>
-        <a href="pdfs/origins-assassins.pdf" download>Origins of assassins</a>
-        <a href="pdfs/human-love.pdf" download>Human love</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="cookie-banner">
-    <p class="cookie-text">We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.</p>
-    <div class="cookie-buttons">
-      <button class="accept-necessary">Accept only necessary</button>
-      <button class="accept-all">Accept all</button>
-    </div>
-  </div>
-
-</body>
-</html>
+    @media (
