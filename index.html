@@ -152,4 +152,75 @@
       border-top: 1px solid #333;
     }
     
-    .
+    .cookie-text {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .cookie-buttons button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .accept-necessary { background: #fff; color: #000; }
+    .accept-all { background: #0066ff; color: #fff; }
+    
+    /* AJUSTES PARA CELULAR - Se ve igual de bien */
+    @media (max-width: 768px) {
+      .logo-header {
+        font-size: 16px;
+        letter-spacing: 3px;
+        gap: 8px;
+      }
+      
+      .logo-header img {
+        height: 30px;
+      }
+      
+      .main-logo span {
+        font-size: 24px;
+        letter-spacing: 5px;
+      }
+      
+      .main-logo img {
+        height: 40px;
+      }
+      
+      .intro {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      
+      .directory h2 {
+        font-size: 28px;
+      }
+      
+      .directory li {
+        font-size: 17px;
+      }
+      
+      .cookie-buttons {
+        flex-direction: column;
+      }
+    }
+    
+    /* AJUSTES PARA PANTALLAS MUY PEQUEÑAS */
+    @media (max-width: 380px) {
+      .main-logo {
+        flex-direction: column;
+        gap:
