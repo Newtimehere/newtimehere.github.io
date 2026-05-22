@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -63,13 +63,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px 0 12px;
+        padding: 0 20px 0 16px;
     }
 
 .logo-wrapper {
         display: flex;
         align-items: center;
-        gap: 12px;
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
@@ -77,14 +76,6 @@
 
 .logo-wrapper:hover {
         opacity: 0.7;
-    }
-
-.logo-icon {
-        height: 38px;
-        width: auto;
-        flex-shrink: 0;
-        object-fit: contain;
-        display: block;
     }
 
 .logo-text {
@@ -139,12 +130,14 @@
         align-items: center;
     }
 
-.hero-main-logo {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
+.hero-title {
+        font-family: 'EB Garamond', serif;
+        font-size: 64px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: var(--text-white);
+        text-transform: uppercase;
+        margin-bottom: 48px;
     }
 
 .hero-text {
@@ -171,243 +164,4 @@
 .directory {
         max-width: 900px;
         margin: 0 auto;
-        padding: 40px 24px 140px;
-        animation: fadeInUp 0.8s ease 0.4s both;
-    }
-
-.directory-header {
-        padding: 32px 0 24px;
-        border-bottom: 1px solid var(--border-gray);
-        margin-bottom: 0;
-    }
-
-.directory-title {
-        font-size: 15px;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        color: var(--text-white);
-    }
-
-.directory-list {
-        list-style: none;
-    }
-
-.directory-item {
-        border-bottom: 1px solid var(--border-gray);
-    }
-
-.directory-item:last-child {
-        border-bottom: 1px solid var(--border-gray);
-    }
-
-.directory-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 26px 0;
-        color: var(--text-white);
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        gap: 20px;
-    }
-
-.directory-link:hover {
-        padding-left: 12px;
-        color: var(--text-gray);
-    }
-
-.directory-number {
-        color: var(--text-gray);
-        font-weight: 400;
-        margin-right: 4px;
-        min-width: 26px;
-    }
-
-.directory-link-text {
-        font-size: 17px;
-        font-weight: 400;
-        letter-spacing: 0.01em;
-        flex: 1;
-    }
-
-.directory-arrow {
-        width: 20px;
-        height: 20px;
-        opacity: 0.5;
-        transition: all 0.3s ease;
-        flex-shrink: 0;
-    }
-
-.directory-link:hover.directory-arrow {
-        opacity: 1;
-        transform: translateX(4px);
-    }
-
-.mobile-menu {
-        position: fixed;
-        top: var(--header-height);
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s ease;
-        overflow-y: auto;
-    }
-
-.mobile-menu.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-.mobile-menu-inner {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 24px;
-    }
-
-.mobile-nav-list {
-        list-style: none;
-    }
-
-.mobile-nav-item {
-        border-bottom: 1px solid var(--border-gray);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-    }
-
-.mobile-menu.active.mobile-nav-item {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-.mobile-menu.active.mobile-nav-item:nth-child(1) { transition-delay: 0.1s; }
-.mobile-menu.active.mobile-nav-item:nth-child(2) { transition-delay: 0.15s; }
-.mobile-menu.active.mobile-nav-item:nth-child(3) { transition-delay: 0.2s; }
-.mobile-menu.active.mobile-nav-item:nth-child(4) { transition-delay: 0.25s; }
-.mobile-menu.active.mobile-nav-item:nth-child(5) { transition-delay: 0.3s; }
-
-.mobile-nav-link {
-        display: block;
-        padding: 24px 0;
-        font-size: 24px;
-        font-weight: 300;
-        color: var(--text-white);
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-.mobile-nav-link:hover {
-        color: var(--text-gray);
-        padding-left: 12px;
-    }
-
-.cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: var(--cookie-bg);
-        border-top: 1px solid var(--border-gray);
-        z-index: 998;
-        transform: translateY(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        padding: 24px;
-    }
-
-.cookie-banner.visible {
-        transform: translateY(0);
-    }
-
-.cookie-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 32px;
-    }
-
-.cookie-text {
-        font-size: 14px;
-        line-height: 1.6;
-        color: var(--text-light-gray);
-        flex: 1;
-        font-weight: 300;
-    }
-
-.cookie-buttons {
-        display: flex;
-        gap: 12px;
-        flex-shrink: 0;
-    }
-
-.cookie-btn {
-        padding: 12px 24px;
-        font-size: 14px;
-        font-weight: 500;
-        border: 1px solid var(--text-white);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: 'Inter', sans-serif;
-        white-space: nowrap;
-    }
-
-.cookie-btn-primary {
-        background-color: var(--btn-primary);
-        color: #000000;
-    }
-
-.cookie-btn-primary:hover {
-        background-color: transparent;
-        color: var(--text-white);
-    }
-
-.cookie-btn-secondary {
-        background-color: var(--btn-secondary);
-        color: var(--text-white);
-    }
-
-.cookie-btn-secondary:hover {
-        background-color: var(--text-white);
-        color: #000000;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @media (max-width: 768px) {
-        :root {
-            --header-height: var(--header-height-mobile);
-        }
-
-        body.cookie-visible {
-            padding-bottom: 180px;
-        }
-
- .header-inner {
-            padding: 0 12px 0 8px;
-            height: var(--header-height-mobile);
-        }
-
- .logo-icon {
-            height: 34px;
-        }
-        
- .logo-text {
-            font-size: 16px;
-            letter-spacing: 2px
+        padding:    
