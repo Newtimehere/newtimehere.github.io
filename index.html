@@ -6,7 +6,7 @@
 <title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -138,13 +138,15 @@
     }
 
 .hero-text {
-        font-size: 16px;
-        line-height: 1.85;
-        color: var(--text-light-gray);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        line-height: 1.9;
+        color: var(--text-white);
         max-width: 720px;
         margin: 0 auto 32px;
         animation: fadeInUp 0.8s ease 0.2s both;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.3px;
     }
 
 .hero-signature {
@@ -251,12 +253,14 @@
     }
 
 .footer-text {
-        font-size: 16px;
-        line-height: 1.85;
-        color: var(--text-light-gray);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        line-height: 1.9;
+        color: var(--text-white);
         max-width: 720px;
         margin: 0 auto;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.3px;
     }
 
 .mobile-menu {
@@ -265,7 +269,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(10, 10, 0.98);
+        background-color: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index: 999;
@@ -444,8 +448,8 @@
         }
 
 .hero-text {
-            font-size: 16px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.9;
         }
 
 .hero-signature {
@@ -471,8 +475,8 @@
         }
 
 .footer-text {
-            font-size: 16px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.9;
         }
 
 .directory-title {
@@ -511,295 +515,4 @@
 
     @media (max-width: 480px) {
 .header-inner {
-            padding: 0 12px 0 4px;
-        }
-
-.logo-icon {
-            height: 36px;
-        }
-
-.hero {
-            padding: 60px 16px 40px;
-        }
-
-.hero-main-logo {
-            max-width: 320px;
-        }
-
-.hero-text {
-            font-size: 15px;
-        }
-
-.directory {
-            padding: 16px 16px 30px;
-        }
-
-.footer-section {
-            padding: 20px 16px 80px;
-        }
-
-.footer-logo {
-            margin-bottom: 32px;
-        }
-
-.footer-logo img {
-            max-width: 320px;
-        }
-
-.footer-text {
-            font-size: 15px;
-            line-height: 1.75;
-        }
-
-.directory-title {
-            font-size: 15px;
-        }
-
-.directory-link-text {
-            font-size: 16px;
-        }
-
-.directory-link {
-            padding: 22px 0;
-        }
-
-.cookie-text {
-            font-size: 13px;
-        }
-
-.cookie-btn {
-            padding: 11px 20px;
-            font-size: 13px;
-        }
-    }
-</style>
-</head>
-<body>
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="new.webp" alt="NEW TIME" />
-            </div>
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">About</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Services</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Works</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Insights</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <main class="main">
-        <section class="hero">
-            <div class="hero-logo">
-                <img class="hero-main-logo" src="new.webp" alt="NEW TIME" />
-            </div>
-            <p class="hero-text">
-                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
-            </p>
-            <div class="hero-signature">NEW TIMES</div>
-        </section>
-
-        <section class="directory">
-            <div class="directory-header">
-                <h2 class="directory-title">Directory:</h2>
-            </div>
-            <ul class="directory-list">
-                <li class="directory-item">
-                    <a href="origins-of-people-with-disabilities.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Origins of disabled people</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="#" class="directory-link">
-                        <span class="directory-link-text">Origins of cancer</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Same-sex sexual impediment</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="physical-evidence-of-same-sex.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Physical evidence of same-sex, over 21 to see</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="same-sex-direct-and-summarized.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Same-sex direct and summarized</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="origins-of-infidelity.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Origins of infidelity</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="the-money.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">The Money and the effect</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="origins-of-suicide.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="origins-of-being-woman-and-men.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Origins of being woman and men</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="origins-of-assassins.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Origins of assassins</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="directory-item">
-                    <a href="human-love.pdf" class="directory-link" target="_blank">
-                        <span class="directory-link-text">Human love</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <div class="footer-section">
-            <div class="footer-logo">
-                <img src="new.webp" alt="NEW TIME" />
-            </div>
-            <p class="footer-text">
-                We do not believe in social class differences or the differences between people with and without money. Rich and poor are human, being rich does not transform a human body into something unknown because it is all a mental fraud of feeling different with money over others who do not have. Don't live in times past where your life didn't exist, your life is today, you will discover the new times and the hidden fraud of the new times.
-            </p>
-        </div>
-    </main>
-
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-inner">
-            <p class="cookie-text">
-                We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
-            </p>
-            <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
-                <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuLines = menuBtn.querySelectorAll('.menu-line');
-        let isMenuOpen = false;
-
-        menuBtn.addEventListener('click', () => {
-            isMenuOpen =!isMenuOpen;
-            mobileMenu.classList.toggle('active');
-
-            if (isMenuOpen) {
-                menuLines[0].style.transform = 'rotate(45deg) translateY(7px)';
-                menuLines[1].style.opacity = '0';
-                menuLines[2].style.transform = 'rotate(-45deg) translateY(-7px)';
-                document.body.style.overflow = 'hidden';
-            } else {
-                menuLines[0].style.transform = 'none';
-                menuLines[1].style.opacity = '1';
-                menuLines[2].style.transform = 'none';
-                document.body.style.overflow = '';
-            }
-        });
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                mobileMenu.classList.remove('active');
-                menuLines[0].style.transform = 'none';
-                menuLines[1].style.opacity = '1';
-                menuLines[2].style.transform = 'none';
-                document.body.style.overflow = '';
-            });
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                menuBtn.click();
-            }
-        });
-
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptNecessary = document.getElementById('acceptNecessary');
-        const acceptAll = document.getElementById('acceptAll');
-
-        setTimeout(() => {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
-
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
-
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
-
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
-
-        document.querySelectorAll('.directory-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        });
-    </script>
-</body>
-</html>
+            padding: 0 12px
