@@ -6,7 +6,7 @@
 <title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -17,7 +17,7 @@
     :root {
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8a8;
+        --text-gray: #a8a8;
         --text-light-gray: #d1d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
@@ -727,7 +727,7 @@
         menuBtn.addEventListener('click', () => {
             isMenuOpen =!isMenuOpen;
             mobileMenu.classList.toggle('active');
-
+            
             if (isMenuOpen) {
                 menuLines[0].style.transform = 'rotate(45deg) translateY(7px)';
                 menuLines[1].style.opacity = '0';
