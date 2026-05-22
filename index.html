@@ -162,7 +162,7 @@
 .directory {
         max-width: 900px;
         margin: 0 auto;
-        padding: 40px 24px 140px;
+        padding: 40px 24px 60px;
         animation: fadeInUp 0.8s ease 0.4s both;
     }
 
@@ -226,6 +226,21 @@
 .directory-link:hover.directory-arrow {
         opacity: 1;
         transform: translateX(4px);
+    }
+
+.footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 24px 100px;
+        animation: fadeInUp 0.8s ease 0.5s both;
+    }
+
+.footer-logo img {
+        max-width: 280px;
+        width: 100%;
+        height: auto;
+        opacity: 0.9;
     }
 
 .mobile-menu {
@@ -424,7 +439,15 @@
         }
 
 .directory {
-            padding: 20px 20px 120px;
+            padding: 20px 20px 40px;
+        }
+
+.footer-logo {
+            padding: 40px 24px 80px;
+        }
+
+.footer-logo img {
+            max-width: 220px;
         }
 
 .directory-link-text {
@@ -479,7 +502,15 @@
         }
 
 .directory {
-            padding: 16px 16px 100px;
+            padding: 16px 16px 30px;
+        }
+
+.footer-logo {
+            padding: 30px 16px 60px;
+        }
+
+.footer-logo img {
+            max-width: 180px;
         }
 
 .directory-title {
@@ -606,7 +637,7 @@
                 <li class="directory-item">
                     <a href="#" class="directory-link">
                         <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -637,6 +668,10 @@
                 </li>
             </ul>
         </section>
+
+        <div class="footer-logo">
+            <img src="new.webp" alt="NEW TIME" />
+        </div>
     </main>
 
     <div class="cookie-banner" id="cookieBanner">
