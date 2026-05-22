@@ -19,7 +19,7 @@
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
         --text-light-gray: #d1d1d1;
-        --border-gray: #2a2a2a;
+        --border-gray: #2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
@@ -157,8 +157,21 @@
         text-transform: uppercase;
         color: #ffffff;
         margin-top: 32px;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
         animation: fadeInUp 0.8s ease 0.3s both;
+    }
+
+.video-wrapper {
+        max-width: 680px;
+        margin: 0 auto 60px;
+        animation: fadeInUp 0.8s ease 0.35s both;
+    }
+
+.video-wrapper video {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #000;
     }
 
 .directory {
@@ -271,7 +284,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(10, 10, 10, 0.98);
+        background-color: rgba(10, 10, 0.98);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index: 999;
@@ -457,7 +470,11 @@
 .hero-signature {
             font-size: 14px;
             margin-top: 24px;
-            margin-bottom: 24px;
+            margin-bottom: 40px;
+        }
+
+.video-wrapper {
+            margin-bottom: 50px;
         }
 
 .directory {
@@ -534,6 +551,10 @@
 
 .hero-text {
             font-size: 14px;
+        }
+
+.video-wrapper {
+            margin-bottom: 40px;
         }
 
 .directory {
@@ -615,6 +636,14 @@
                 Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
             </p>
             <div class="hero-signature">NEW TIMES</div>
+            
+            <!-- VIDEO CENTRADO DESPUÉS DEL PÁRRAFO -->
+            <div class="video-wrapper">
+                <video controls playsinline preload="metadata" poster="new.webp">
+                    <source src="New Time Here......mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
         </section>
 
         <section class="directory">
