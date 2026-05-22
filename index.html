@@ -34,7 +34,7 @@
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         background-color: var(--bg-black);
-        color: var(--text-white);
+        color: #ffffff;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -147,6 +147,7 @@
         animation: fadeInUp 0.8s ease 0.2s both;
         font-weight: 400;
         letter-spacing: 0px;
+        opacity: 1;
     }
 
 .hero-signature {
@@ -159,6 +160,7 @@
         margin-top: 32px;
         margin-bottom: 32px;
         animation: fadeInUp 0.8s ease 0.3s both;
+        opacity: 1;
     }
 
 .directory {
@@ -180,6 +182,7 @@
         font-weight: 400;
         letter-spacing: 0px;
         color: #ffffff;
+        opacity: 1;
     }
 
 .directory-list {
@@ -204,11 +207,12 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         gap: 20px;
+        opacity: 1;
     }
 
 .directory-link:hover {
         padding-left: 12px;
-        color: var(--text-gray);
+        color: #d1d1d1;
     }
 
 .directory-link-text {
@@ -218,12 +222,13 @@
         letter-spacing: 0px;
         line-height: 1.6;
         flex: 1;
+        color: #ffffff;
     }
 
 .directory-arrow {
         width: 18px;
         height: 18px;
-        opacity: 0.5;
+        opacity: 0.8;
         transition: all 0.3s ease;
         flex-shrink: 0;
     }
@@ -252,7 +257,7 @@
         max-width: 500px;
         width: 100%;
         height: auto;
-        opacity: 0.95;
+        opacity: 1;
     }
 
 .footer-text {
@@ -264,6 +269,7 @@
         margin: 0 auto 48px;
         font-weight: 400;
         letter-spacing: 0px;
+        opacity: 1;
     }
 
 .video-wrapper {
@@ -288,6 +294,7 @@
         text-align: center;
         letter-spacing: 0px;
         line-height: 1.6;
+        opacity: 1;
     }
 
 .mobile-menu {
@@ -296,7 +303,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(10, 10, 0.98);
+        background-color: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index: 999;
