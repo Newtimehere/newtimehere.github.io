@@ -6,7 +6,7 @@
 <title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -17,12 +17,12 @@
     :root {
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8;
-        --text-light-gray: #d1d1;
+        --text-gray: #a8a8a8;
+        --text-light-gray: #d1d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
-        --cookie-bg: #1a1a1a;
+        --cookie-bg: #1a1a;
         --btn-primary: #ffffff;
         --btn-secondary: transparent;
     }
@@ -69,6 +69,7 @@
 .logo-wrapper {
         display: flex;
         align-items: center;
+        gap: 14px;
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
@@ -84,6 +85,15 @@
         flex-shrink: 0;
         object-fit: contain;
         display: block;
+    }
+
+.logo-text {
+        font-family: 'EB Garamond', serif;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 2.5px;
+        color: #1a1a1a;
+        text-transform: uppercase;
     }
 
 .menu-btn {
@@ -127,14 +137,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 20px;
     }
 
-.hero-main-logo {
-        max-width: 500px;
-        width: 100%;
-        height: auto;
+.hero-shield {
+        height: 60px;
+        width: auto;
         display: block;
-        margin: 0 auto;
+    }
+
+.hero-title {
+        font-family: 'EB Garamond', serif;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: var(--text-white);
+        text-transform: uppercase;
     }
 
 .hero-text {
@@ -145,17 +163,6 @@
         margin: 0 auto 32px;
         animation: fadeInUp 0.8s ease 0.2s both;
         font-weight: 300;
-    }
-
-.hero-signature {
-        font-family: 'Playfair Display', serif;
-        font-size: 18px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: var(--text-white);
-        margin-top: 32px;
-        animation: fadeInUp 0.8s ease 0.3s both;
     }
 
 .directory {
@@ -240,7 +247,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(10, 10, 10, 0.98);
+        background-color: rgba(10, 10, 0.98);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index: 999;
@@ -397,6 +404,11 @@
 .logo-icon {
             height: 38px;
         }
+        
+.logo-text {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
 
 .main {
             padding-top: var(--header-height-mobile);
@@ -412,20 +424,21 @@
 
 .hero-logo {
             margin-bottom: 40px;
+            gap: 16px;
         }
 
-.hero-main-logo {
-            max-width: 400px;
+.hero-shield {
+            height: 50px;
+        }
+
+.hero-title {
+            font-size: 36px;
+            letter-spacing: 2px;
         }
 
 .hero-text {
             font-size: 15px;
             line-height: 1.8;
-        }
-
-.hero-signature {
-            font-size: 16px;
-            margin-top: 24px;
         }
 
 .directory {
@@ -474,13 +487,27 @@
 .logo-icon {
             height: 34px;
         }
+        
+.logo-text {
+            font-size: 14px;
+            letter-spacing: 1.5px;
+        }
 
 .hero {
             padding: 60px 16px 40px;
         }
 
-.hero-main-logo {
-            max-width: 320px;
+.hero-logo {
+            gap: 12px;
+        }
+
+.hero-shield {
+            height: 42px;
+        }
+
+.hero-title {
+            font-size: 28px;
+            letter-spacing: 1.5px;
         }
 
 .hero-text {
@@ -518,7 +545,8 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="new.webp" alt="NEW TIMES" />
+                <img class="logo-icon" src="new.webp" alt="NEW TIME" />
+                <span class="logo-text">NEW TIME</span>
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
@@ -543,12 +571,12 @@
     <main class="main">
         <section class="hero">
             <div class="hero-logo">
-                <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Logo" />
+                <img class="hero-shield" src="new.webp" alt="NEW TIME" />
+                <h1 class="hero-title">NEW TIME</h1>
             </div>
             <p class="hero-text">
                 Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
             </p>
-            <div class="hero-signature">NEW TIMES</div>
         </section>
 
         <section class="directory">
