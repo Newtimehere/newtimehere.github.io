@@ -6,7 +6,7 @@
 <title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -20,8 +20,8 @@
         --text-gray: #a8a8a8;
         --text-light-gray: #d1d1d1;
         --border-gray: #2a2a2a;
-        --header-height: 70px;
-        --header-height-mobile: 65px;
+        --header-height: 80px;
+        --header-height-mobile: 70px;
         --cookie-bg: #1a1a1a;
         --btn-primary: #ffffff;
         --btn-secondary: transparent;
@@ -63,13 +63,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px 0 12px;
+        padding: 0 16px 0 8px;
     }
 
 .logo-wrapper {
         display: flex;
         align-items: center;
-        gap: 12px;
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
@@ -80,20 +79,11 @@
     }
 
 .logo-icon {
-        height: 38px;
+        height: 50px;
         width: auto;
         flex-shrink: 0;
         object-fit: contain;
         display: block;
-    }
-
-.logo-text {
-        font-family: 'EB Garamond', serif;
-        font-size: 18px;
-        font-weight: 400;
-        letter-spacing: 2.5px;
-        color: #1a1a1a;
-        text-transform: uppercase;
     }
 
 .menu-btn {
@@ -113,7 +103,7 @@
     }
 
 .menu-line {
-        width: 22px;
+        width: 24px;
         height: 2px;
         background-color: #000000;
         transition: all 0.3s ease;
@@ -399,135 +389,125 @@
             padding-bottom: 180px;
         }
 
- .header-inner {
-            padding: 0 12px 0 8px;
+    .header-inner {
+            padding: 0 12px 0 4px;
             height: var(--header-height-mobile);
         }
 
- .logo-icon {
-            height: 34px;
-        }
-        
- .logo-text {
-            font-size: 16px;
-            letter-spacing: 2px;
+    .logo-icon {
+            height: 45px;
         }
 
- .main {
+    .main {
             padding-top: var(--header-height-mobile);
         }
 
- .mobile-menu {
+    .mobile-menu {
             top: var(--header-height-mobile);
         }
 
- .hero {
+    .hero {
             padding: 80px 20px 50px;
         }
 
- .hero-logo {
+    .hero-logo {
             margin-bottom: 40px;
         }
 
- .hero-main-logo {
+    .hero-main-logo {
             max-width: 400px;
         }
 
- .hero-text {
+    .hero-text {
             font-size: 15px;
             line-height: 1.8;
         }
 
- .hero-signature {
+    .hero-signature {
             font-size: 16px;
             margin-top: 24px;
         }
 
- .directory {
+    .directory {
             padding: 20px 20px 120px;
         }
 
- .directory-link-text {
+    .directory-link-text {
             font-size: 16px;
         }
 
- .directory-link {
+    .directory-link {
             padding: 22px 0;
             gap: 16px;
         }
 
- .directory-number {
+    .directory-number {
             min-width: 22px;
         }
 
- .mobile-nav-link {
+    .mobile-nav-link {
             font-size: 20px;
         }
 
- .cookie-inner {
+    .cookie-inner {
             flex-direction: column;
             align-items: flex-start;
             gap: 20px;
         }
 
- .cookie-buttons {
+    .cookie-buttons {
             width: 100%;
             flex-direction: column;
         }
 
- .cookie-btn {
+    .cookie-btn {
             width: 100%;
             text-align: center;
         }
     }
 
     @media (max-width: 480px) {
- .header-inner {
-            padding: 0 12px 0 4px;
+    .header-inner {
+            padding: 0 12px 0 2px;
         }
 
- .logo-icon {
-            height: 32px;
-        }
-        
- .logo-text {
-            font-size: 14px;
-            letter-spacing: 1.5px;
+    .logo-icon {
+            height: 40px;
         }
 
- .hero {
+    .hero {
             padding: 60px 16px 40px;
         }
 
- .hero-main-logo {
+    .hero-main-logo {
             max-width: 320px;
         }
 
- .hero-text {
+    .hero-text {
             font-size: 14px;
         }
 
- .directory {
+    .directory {
             padding: 16px 16px 100px;
         }
 
- .directory-title {
+    .directory-title {
             font-size: 14px;
         }
 
- .directory-link-text {
+    .directory-link-text {
             font-size: 15px;
         }
 
- .directory-link {
+    .directory-link {
             padding: 20px 0;
         }
 
- .cookie-text {
+    .cookie-text {
             font-size: 13px;
         }
 
- .cookie-btn {
+    .cookie-btn {
             padding: 11px 20px;
             font-size: 13px;
         }
@@ -538,8 +518,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="new.webp" alt="NEW TIMES" />
-                <span class="logo-text">NEW TIMES</span>
+                <img class="logo-icon" src="icon.webp" alt="NEW TIMES" />
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
