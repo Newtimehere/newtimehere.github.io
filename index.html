@@ -1,166 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Playables SDK -->
-<script>// Playables SDK v1.0.0
-// Game lifecycle bridge: rAF-based game-ready detection + event communication
-(function() {
-  'use strict';
-  if (window.playablesSDK) return;
-  var HANDLER_NAME = 'playablesGameEventHandler';
-  var ANDROID_BRIDGE_NAME = '_MetaPlayablesBridge';
-  var RAF_FRAME_THRESHOLD = 3;
-  var gameReadySent = false;
-  var firstInteractionSent = false;
-  var errorSent = false;
-  var frameCount = 0;
-  var originalRAF = window.requestAnimationFrame;
-  function hasIOSBridge() {
-    return!!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers[HANDLER_NAME]);
-  }
-  function hasAndroidBridge() {
-    return!!(window[ANDROID_BRIDGE_NAME] && typeof window[ANDROID_BRIDGE_NAME].postEvent === 'function');
-  }
-  function isInIframe() {
-    return!!(window.parent && window.parent!== window);
-  }
-  function sendEvent(eventName, payload) {
-    var message = { type: eventName, payload: payload || {}, timestamp: Date.now() };
-    if (hasIOSBridge()) {
-      try { window.webkit.messageHandlers[HANDLER_NAME].postMessage(message); } catch (e) { }
-      return;
-    }
-    if (hasAndroidBridge()) {
-      try {
-        var p = payload || {};
-        p.__secureToken = window.__fbAndroidBridgeAuthToken || '';
-        p.timestamp = message.timestamp;
-        window[ANDROID_BRIDGE_NAME].postEvent(eventName, JSON.stringify(p));
-      } catch (e) { }
-      return;
-    }
-    if (isInIframe()) {
-      try { window.parent.postMessage(message, '*'); } catch (e) { }
-      return;
-    }
-  }
-  function onFrame() {
-    if (gameReadySent) return;
-    frameCount++;
-    if (frameCount >= RAF_FRAME_THRESHOLD) {
-      gameReadySent = true;
-      sendEvent('game_ready', { frame_count: frameCount, detected_at: Date.now() });
-      return;
-    }
-    originalRAF.call(window, onFrame);
-  }
-  if (originalRAF) {
-    window.requestAnimationFrame = function(callback) {
-      if (!gameReadySent) {
-        return originalRAF.call(window, function(timestamp) {
-          frameCount++;
-          if (frameCount >= RAF_FRAME_THRESHOLD &&!gameReadySent) {
-            gameReadySent = true;
-            sendEvent('game_ready', { frame_count: frameCount, detected_at: Date.now() });
-          }
-          callback(timestamp);
-        });
-      }
-      return originalRAF.call(window, callback);
-    };
-  }
-  function setupFirstInteractionDetection() {
-    var events = ['touchstart', 'mousedown', 'keydown'];
-    function onFirstInteraction() {
-      if (firstInteractionSent) return;
-      firstInteractionSent = true;
-      sendEvent('user_interaction_start', null);
-      for (var i = 0; i < events.length; i++) {
-        document.removeEventListener(events[i], onFirstInteraction, true);
-      }
-    }
-    for (var i = 0; i < events.length; i++) {
-      document.addEventListener(events[i], onFirstInteraction, true);
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupFirstInteractionDetection);
-  } else {
-    setupFirstInteractionDetection();
-  }
-  window.addEventListener('error', function(event) {
-    if (errorSent) return;
-    errorSent = true;
-    sendEvent('error', { message: event.message || 'Unknown error', source: event.filename || '', lineno: event.lineno || 0, colno: event.colno || 0, auto_captured: true });
-  });
-  window.addEventListener('unhandledrejection', function(event) {
-    if (errorSent) return;
-    errorSent = true;
-    var reason = event.reason;
-    sendEvent('error', { message: (reason instanceof Error)? reason.message : String(reason), type: 'unhandled_promise_rejection', auto_captured: true });
-  });
-  window.playablesSDK = {
-    complete: function(score) { sendEvent('game_ended', { score: score, completed: true }); },
-    error: function(message) {
-      if (errorSent) return;
-      errorSent = true;
-      sendEvent('error', { message: message || 'Unknown error', auto_captured: false });
-    },
-    sendEvent: function(eventName, payload) {
-      if (!eventName || typeof eventName!== 'string') return;
-      sendEvent(eventName, payload);
-    }
-  };
-  if (originalRAF) { originalRAF.call(window, onFrame); }
-})();</script>
-<!-- PLAYABLE_TOUCH_PATCH_V1 --><script>
-(function() {
-  if (window.__playableTouchPatchInstalled) return;
-  window.__playableTouchPatchInstalled = true;
-  var origAdd = EventTarget.prototype.addEventListener;
-  var blockedTypes = { touchstart: 1, touchmove: 1, wheel: 1 };
-  EventTarget.prototype.addEventListener = function(type, listener, options) {
-    if (blockedTypes[type]) {
-      if (options === undefined || options === null) {
-        options = { passive: true };
-      } else if (typeof options === 'boolean') {
-        options = { capture: options, passive: true };
-      } else {
-        options = Object.assign({}, options, { passive: true });
-      }
-    }
-    return origAdd.call(this, type, listener, options);
-  };
-})();
-</script><script>window.Intl=window.Intl||{};Intl.t=function(s){return(Intl._locale&&Intl._locale[s])||s;};</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIMES</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Text:wght@400;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Time</title>
+  <link rel="icon" type="image/webp" href="logo.webp">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    body { 
+      background: #000; 
+      color: #fff; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 300;
     }
     
-    body {
-        background: #000000;
-        font-family: 'Inter', sans-serif;
-        min-height: 100vh;
-        overflow-x: hidden;
-        padding-top: 100px;
-        color: #ffffff;
+    /* BARRA BLANCA - SOLO ESCUDO ESQUINADO */
+    .header {
+      background: #ffffff;
+      padding: 8px 20px 8px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+      height: 58px;
+      border-bottom: 1px solid #e5e5e5;
     }
     
-  .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: #ffffff;
-        height: 100px;
-        z-index: 1000;
-        box-shadow
+    .logo-header img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    
+    .menu-btn { 
+      font-size: 28px; 
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #000;
+      padding: 0;
+      line-height: 1;
+    }
+    
+    /* CONTENIDO NEGRO */
+    .content {
+      padding: 88px 20px 140px 20px;
+      background: #000;
+      min-height: 100vh;
+    }
+    
+    .main-title {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 3px;
+      font-weight: 300;
+      margin: 25px 0 35px 0;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    
+    .intro {
+      line-height: 1.7;
+      margin: 0 auto 25px auto;
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      max-width: 600px;
+      padding: 0 10px;
+    }
+    
+    .divider {
+      margin: 35px 0;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-align: center;
+      font-weight: 300;
+    }
+    
+    .directory {
+      margin: 40px auto 0 auto;
+      max-width: 600px;
+      padding: 0 10px;
+    }
+    
+    .directory h2 {
+      font-size: 36px;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    
+    .directory ul { list-style: none; }
+    
+    .directory li {
+      margin: 20px 0;
+      font-size: 17px;
+      font-weight: 300;
+      display: flex;
+    }
+    
+    .directory li:before {
+      content: "›";
+      margin-right: 15px;
+      font-size: 20px;
+    }
+    
+    .downloads {
+      margin-top: 45px;
+    }
+    
+    .downloads a {
+      display: block;
+      color: #d66;
+      text-decoration: none;
+      margin: 24px 0;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    
+    .downloads a:before {
+      content: "↓ ";
+      margin-right: 8px;
+    }
+    
+    .downloads a:hover { color: #f88; }
+    
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1c1c1e;
+      padding: 20px;
+      z-index: 9998;
+    }
+    
+    .cookie-text {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .cookie-buttons button {
+      flex: 1;
+      padding: 13px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 400;
+    }
+    
+    .accept-necessary { background: #fff; color: #000; }
+    .accept-all { background: #007aff; color: #fff; }
+    
+    @media (min-width: 768px) {
+      .content { padding: 98px 40px 140px 40px; }
+      .intro { font-size: 17px; }
+      .directory h2 { font-size: 40px; }
+      .logo-header img { height: 48px; }
+      .header { padding: 8px 20px 8px 12px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- BARRA BLANCA - SOLO EL ESCUDO -->
+  <div class="header">
+    <div class="logo-header">
+      <img src="logo.webp" alt="New Time">
+    </div>
+    <button class="menu-btn">≡</button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+    <div class="main-title">NEW TIME</div>
+    
+    <div class="intro">
+      Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
+    </div>
+
+    <div class="divider">NEW TIMES</div>
+
+    <div class="directory">
+      <h2>Directory:</h2>
+      <ul>
+        <li>Origins of disabled People</li>
+        <li>Origins of cancer</li>
+        <li>Fraud, retarded, impediment same-sex</li>
+        <li>Physical evidence of same-sex sexual fraud</li>
+        <li>Same-sex direct and summarized</li>
+        <li>Origins of infidelity</li>
+        <li>Money and the effect</li>
+        <li>Origins of suicides</li>
+        <li>Origins of being a man and a woman</li>
+        <li>Origins of assassins</li>
+        <li>Human love</li>
+      </ul>
+      
+      <div class="downloads">
+        <a href="pdfs/origins-disabled.pdf" download>Origins of disabled people</a>
+        <a href="pdfs/origins-cancer.pdf" download>Origins of cancer</a>
+        <a href="pdfs/same-sex-impediment.pdf" download>Same-sex sexual impediment</a>
+        <a href="pdfs/physical-evidence.pdf" download>Physical evidence of same-sex, over 21 to see</a>
+        <a href="pdfs/same-sex-summary.pdf" download>Same-sex direct and summarized</a>
+        <a href="pdfs/origins-infidelity.pdf" download>Origins of infidelity</a>
+        <a href="pdfs/money-effect.pdf" download>The Money and the effect</a>
+        <a href="pdfs/origins-suicides.pdf" download>Origins of suicides</a>
+        <a href="pdfs/origins-man-woman.pdf" download>Origins of being woman and men</a>
+        <a href="pdfs/origins-assassins.pdf" download>Origins of assassins</a>
+        <a href="pdfs/human-love.pdf" download>Human love</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cookie-banner">
+    <p class="cookie-text">We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.</p>
+    <div class="cookie-buttons">
+      <button class="accept-necessary">Accept only necessary</button>
+      <button class="accept-all">Accept all</button>
+    </div>
+  </div>
+
+</body>
+</html>
