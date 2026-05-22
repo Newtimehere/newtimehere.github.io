@@ -46,7 +46,7 @@
         padding-bottom: 120px;
     }
 
-  .header {
+   .header {
         position: fixed;
         top: 0;
         left: 0;
@@ -56,7 +56,7 @@
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
 
-  .header-inner {
+   .header-inner {
         max-width: 1440px;
         margin: 0 auto;
         height: var(--header-height);
@@ -66,7 +66,7 @@
         padding: 20px 24px;
     }
 
-  .logo-wrapper {
+   .logo-wrapper {
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -74,11 +74,11 @@
         height: 100%;
     }
 
-  .logo-wrapper:hover {
+   .logo-wrapper:hover {
         opacity: 0.7;
     }
 
-  .logo-icon {
+   .logo-icon {
         height: 60px;
         width: auto;
         flex-shrink: 0;
@@ -86,7 +86,7 @@
         display: block;
     }
 
-  .menu-btn {
+   .menu-btn {
         background: none;
         border: none;
         cursor: pointer;
@@ -98,30 +98,30 @@
         align-self: center;
     }
 
-  .menu-btn:hover {
+   .menu-btn:hover {
         opacity: 0.6;
     }
 
-  .menu-line {
+   .menu-line {
         width: 24px;
         height: 2px;
         background-color: #000000;
         transition: all 0.3s ease;
     }
 
-  .main {
+   .main {
         padding-top: var(--header-height);
         min-height: 100vh;
     }
 
-  .hero {
+   .hero {
         max-width: 900px;
         margin: 0 auto;
         padding: 100px 24px 60px;
         text-align: center;
     }
 
-  .hero-logo {
+   .hero-logo {
         margin: 0 auto 48px;
         animation: fadeInUp 0.8s ease;
         display: flex;
@@ -129,7 +129,7 @@
         align-items: center;
     }
 
-  .hero-main-logo {
+   .hero-main-logo {
         width: 100%;
         max-width: 500px;
         height: auto;
@@ -137,7 +137,7 @@
         margin: 0 auto;
     }
 
-  .hero-text {
+   .hero-text {
         font-size: 16px;
         line-height: 1.85;
         color: var(--text-light-gray);
@@ -147,7 +147,7 @@
         font-weight: 300;
     }
 
-  .hero-signature {
+   .hero-signature {
         font-family: 'Playfair Display', serif;
         font-size: 18px;
         font-weight: 600;
@@ -158,39 +158,39 @@
         animation: fadeInUp 0.8s ease 0.3s both;
     }
 
-  .directory {
+   .directory {
         max-width: 900px;
         margin: 0 auto;
         padding: 40px 24px 140px;
         animation: fadeInUp 0.8s ease 0.4s both;
     }
 
-  .directory-header {
+   .directory-header {
         padding: 32px 0 24px;
         border-bottom: 1px solid var(--border-gray);
         margin-bottom: 0;
     }
 
-  .directory-title {
+   .directory-title {
         font-size: 15px;
         font-weight: 400;
         letter-spacing: 0.05em;
         color: var(--text-white);
     }
 
-  .directory-list {
+   .directory-list {
         list-style: none;
     }
 
-  .directory-item {
+   .directory-item {
         border-bottom: 1px solid var(--border-gray);
     }
 
-  .directory-item:last-child {
+   .directory-item:last-child {
         border-bottom: 1px solid var(--border-gray);
     }
 
-  .directory-link {
+   .directory-link {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -202,26 +202,26 @@
         gap: 20px;
     }
 
-  .directory-link:hover {
+   .directory-link:hover {
         padding-left: 12px;
         color: var(--text-gray);
     }
 
-  .directory-number {
+   .directory-number {
         color: var(--text-gray);
         font-weight: 400;
         margin-right: 4px;
         min-width: 26px;
     }
 
-  .directory-link-text {
+   .directory-link-text {
         font-size: 17px;
         font-weight: 400;
         letter-spacing: 0.01em;
         flex: 1;
     }
 
-  .directory-arrow {
+   .directory-arrow {
         width: 20px;
         height: 20px;
         opacity: 0.5;
@@ -229,12 +229,12 @@
         flex-shrink: 0;
     }
 
-  .directory-link:hover.directory-arrow {
+   .directory-link:hover.directory-arrow {
         opacity: 1;
         transform: translateX(4px);
     }
 
-  .mobile-menu {
+   .mobile-menu {
         position: fixed;
         top: var(--header-height);
         left: 0;
@@ -250,40 +250,40 @@
         overflow-y: auto;
     }
 
-  .mobile-menu.active {
+   .mobile-menu.active {
         opacity: 1;
         visibility: visible;
     }
 
-  .mobile-menu-inner {
+   .mobile-menu-inner {
         max-width: 900px;
         margin: 0 auto;
         padding: 60px 24px;
     }
 
-  .mobile-nav-list {
+   .mobile-nav-list {
         list-style: none;
     }
 
-  .mobile-nav-item {
+   .mobile-nav-item {
         border-bottom: 1px solid var(--border-gray);
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.4s ease;
     }
 
-  .mobile-menu.active.mobile-nav-item {
+   .mobile-menu.active.mobile-nav-item {
         opacity: 1;
         transform: translateY(0);
     }
 
-  .mobile-menu.active.mobile-nav-item:nth-child(1) { transition-delay: 0.1s; }
-  .mobile-menu.active.mobile-nav-item:nth-child(2) { transition-delay: 0.15s; }
-  .mobile-menu.active.mobile-nav-item:nth-child(3) { transition-delay: 0.2s; }
-  .mobile-menu.active.mobile-nav-item:nth-child(4) { transition-delay: 0.25s; }
-  .mobile-menu.active.mobile-nav-item:nth-child(5) { transition-delay: 0.3s; }
+   .mobile-menu.active.mobile-nav-item:nth-child(1) { transition-delay: 0.1s; }
+   .mobile-menu.active.mobile-nav-item:nth-child(2) { transition-delay: 0.15s; }
+   .mobile-menu.active.mobile-nav-item:nth-child(3) { transition-delay: 0.2s; }
+   .mobile-menu.active.mobile-nav-item:nth-child(4) { transition-delay: 0.25s; }
+   .mobile-menu.active.mobile-nav-item:nth-child(5) { transition-delay: 0.3s; }
 
-  .mobile-nav-link {
+   .mobile-nav-link {
         display: block;
         padding: 24px 0;
         font-size: 24px;
@@ -293,12 +293,12 @@
         transition: all 0.3s ease;
     }
 
-  .mobile-nav-link:hover {
+   .mobile-nav-link:hover {
         color: var(--text-gray);
         padding-left: 12px;
     }
 
-  .cookie-banner {
+   .cookie-banner {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -311,11 +311,11 @@
         padding: 24px;
     }
 
-  .cookie-banner.visible {
+   .cookie-banner.visible {
         transform: translateY(0);
     }
 
-  .cookie-inner {
+   .cookie-inner {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
@@ -324,7 +324,7 @@
         gap: 32px;
     }
 
-  .cookie-text {
+   .cookie-text {
         font-size: 14px;
         line-height: 1.6;
         color: var(--text-light-gray);
@@ -332,13 +332,13 @@
         font-weight: 300;
     }
 
-  .cookie-buttons {
+   .cookie-buttons {
         display: flex;
         gap: 12px;
         flex-shrink: 0;
     }
 
-  .cookie-btn {
+   .cookie-btn {
         padding: 12px 24px;
         font-size: 14px;
         font-weight: 500;
@@ -349,22 +349,22 @@
         white-space: nowrap;
     }
 
-  .cookie-btn-primary {
+   .cookie-btn-primary {
         background-color: var(--btn-primary);
         color: #000000;
     }
 
-  .cookie-btn-primary:hover {
+   .cookie-btn-primary:hover {
         background-color: transparent;
         color: var(--text-white);
     }
 
-  .cookie-btn-secondary {
+   .cookie-btn-secondary {
         background-color: var(--btn-secondary);
         color: var(--text-white);
     }
 
-  .cookie-btn-secondary:hover {
+   .cookie-btn-secondary:hover {
         background-color: var(--text-white);
         color: #000000;
     }
@@ -389,125 +389,125 @@
             padding-bottom: 180px;
         }
 
-      .header-inner {
+       .header-inner {
             padding: 20px 20px;
             height: var(--header-height-mobile);
         }
 
-      .logo-icon {
+       .logo-icon {
             height: 50px;
         }
 
-      .main {
+       .main {
             padding-top: var(--header-height-mobile);
         }
 
-      .mobile-menu {
+       .mobile-menu {
             top: var(--header-height-mobile);
         }
 
-      .hero {
+       .hero {
             padding: 80px 20px 50px;
         }
 
-      .hero-logo {
+       .hero-logo {
             margin-bottom: 40px;
         }
 
-      .hero-main-logo {
+       .hero-main-logo {
             max-width: 400px;
         }
 
-      .hero-text {
+       .hero-text {
             font-size: 15px;
             line-height: 1.8;
         }
 
-      .hero-signature {
+       .hero-signature {
             font-size: 16px;
             margin-top: 24px;
         }
 
-      .directory {
+       .directory {
             padding: 20px 20px 120px;
         }
 
-      .directory-link-text {
+       .directory-link-text {
             font-size: 16px;
         }
 
-      .directory-link {
+       .directory-link {
             padding: 22px 0;
             gap: 16px;
         }
 
-      .directory-number {
+       .directory-number {
             min-width: 22px;
         }
 
-      .mobile-nav-link {
+       .mobile-nav-link {
             font-size: 20px;
         }
 
-      .cookie-inner {
+       .cookie-inner {
             flex-direction: column;
             align-items: flex-start;
             gap: 20px;
         }
 
-      .cookie-buttons {
+       .cookie-buttons {
             width: 100%;
             flex-direction: column;
         }
 
-      .cookie-btn {
+       .cookie-btn {
             width: 100%;
             text-align: center;
         }
     }
 
     @media (max-width: 480px) {
-      .header-inner {
+       .header-inner {
             padding: 16px 16px;
         }
 
-      .logo-icon {
+       .logo-icon {
             height: 44px;
         }
 
-      .hero {
+       .hero {
             padding: 60px 16px 40px;
         }
 
-      .hero-main-logo {
+       .hero-main-logo {
             max-width: 320px;
         }
 
-      .hero-text {
+       .hero-text {
             font-size: 14px;
         }
 
-      .directory {
+       .directory {
             padding: 16px 16px 100px;
         }
 
-      .directory-title {
+       .directory-title {
             font-size: 14px;
         }
 
-      .directory-link-text {
+       .directory-link-text {
             font-size: 15px;
         }
 
-      .directory-link {
+       .directory-link {
             padding: 20px 0;
         }
 
-      .cookie-text {
+       .cookie-text {
             font-size: 13px;
         }
 
-      .cookie-btn {
+       .cookie-btn {
             padding: 11px 20px;
             font-size: 13px;
         }
