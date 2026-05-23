@@ -62,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 12px 0 0;
+        padding: 0 12px 0 0; /* CERO PADDING IZQUIERDO */
     }
 
     .logo-wrapper {
@@ -71,7 +71,7 @@
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
-        padding-left: 0;
+        padding-left: 6px; /* SOLO 6PX DEL BORDE */
         margin-left: 0;
     }
 
@@ -81,13 +81,11 @@
 
     .logo-icon {
         height: 45px;
-        width: 45px; /* SOLO MUESTRA EL ESCUDO */
-        object-fit: cover;
-        object-position: left; /* RECORTA EL TEXTO AMARILLO */
+        width: auto;
         flex-shrink: 0;
+        object-fit: contain;
         display: block;
-        filter: invert(11%) sepia(89%) saturate(6058%) hue-rotate(345deg) brightness(95%) contrast(115%);
-        margin-left: 0;
+        /* YA NO USAMOS FILTER PORQUE EL ESCUDO YA ES ROJO */
     }
 
     .menu-btn {
@@ -218,7 +216,7 @@
 
     .directory-link:hover {
         padding-left: 12px;
-        color: #d1d1d1;
+        color: #d1d1;
     }
 
     .directory-link-text {
@@ -491,7 +489,6 @@
 
         .logo-icon {
             height: 40px;
-            width: 40px;
             margin-left: 0;
         }
 
@@ -589,7 +586,6 @@
 
         .logo-icon {
             height: 36px;
-            width: 36px;
             margin-left: 0;
         }
 
@@ -654,7 +650,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="new.webp" alt="NEW TIME" />
+                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
@@ -710,7 +706,7 @@
                     </a>
                 </li>
                 <li class="directory-item">
-                    <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank">
+                    <a href="same-sexual-impediment.pdf" class="directory-link" target="_blank">
                         <span class="directory-link-text">Same-sex sexual impediment</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -752,7 +748,7 @@
                 <li class="directory-item">
                     <a href="origins-of-suicide.pdf" class="directory-link" target="_blank">
                         <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
