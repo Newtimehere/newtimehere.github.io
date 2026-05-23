@@ -6,7 +6,7 @@
 <title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -62,12 +62,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 12px 0 18px; /* 18PX SEPARADO DEL BORDE IZQ */
+        padding: 0 12px 0 18px; /* 18PX DEL BORDE IZQUIERDO */
     }
 
     .logo-wrapper {
         display: flex;
         align-items: center;
+        gap: 12px; /* ESPACIO ENTRE ESCUDO Y TEXTO */
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
@@ -86,6 +87,16 @@
         object-fit: contain;
         display: block;
         margin-left: 0;
+    }
+
+    .logo-text {
+        font-family: 'Cormorant Garamond', serif; /* FUENTE FINA COMO TU EJEMPLO */
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: 4px; /* ESPACIADO ENTRE LETRAS */
+        color: #2c2c2c;
+        text-transform: uppercase;
+        line-height: 1;
     }
 
     .menu-btn {
@@ -121,7 +132,7 @@
     .hero {
         max-width: 900px;
         margin: 0 auto;
-        padding: 24px 24px 60px; /* CAMBIADO: ANTES 100PX, AHORA 24PX - PEGADO A LA BARRA */
+        padding: 24px 24px 60px; /* PEGADO A LA BARRA BLANCA */
         text-align: center;
     }
 
@@ -479,12 +490,12 @@
         }
 
         .header-inner {
-            padding: 0 8px 0 12px;
+            padding: 0 8px 0 12px; /* 12PX EN MOBILE */
             height: var(--header-height-mobile);
         }
 
         .logo-wrapper {
-            padding-left: 0;
+            gap: 10px; /* MENOS ESPACIO EN MOBILE */
         }
 
         .logo-icon {
@@ -492,12 +503,17 @@
             margin-left: 0;
         }
 
+        .logo-text {
+            font-size: 22px;
+            letter-spacing: 3px;
+        }
+
         .main {
             padding-top: var(--header-height-mobile);
         }
 
         .hero {
-            padding: 20px 20px 50px; /* CAMBIADO: 20PX EN LUGAR DE 80PX */
+            padding: 20px 20px 50px; /* PEGADO A LA BARRA */
         }
 
         .hero-logo {
@@ -577,11 +593,11 @@
 
     @media (max-width: 480px) {
         .header-inner {
-            padding: 0 8px 0 10px;
+            padding: 0 8px 0 10px; /* 10PX EN CELULAR CHICO */
         }
 
         .logo-wrapper {
-            padding-left: 0;
+            gap: 8px;
         }
 
         .logo-icon {
@@ -589,8 +605,13 @@
             margin-left: 0;
         }
 
+        .logo-text {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
         .hero {
-            padding: 16px 16px 40px; /* CAMBIADO: 16PX EN LUGAR DE 60PX */
+            padding: 16px 16px 40px; /* AÚN MÁS PEGADO */
         }
 
         .hero-main-logo {
@@ -651,6 +672,7 @@
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
+                <span class="logo-text">NEW TIME</span>
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
@@ -706,7 +728,7 @@
                     </a>
                 </li>
                 <li class="directory-item">
-                    <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank">
+                    <a href="same-sexual-impediment.pdf" class="directory-link" target="_blank">
                         <span class="directory-link-text">Same-sex sexual impediment</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
