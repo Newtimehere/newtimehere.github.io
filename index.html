@@ -57,13 +57,12 @@
     }
 
     .header-inner {
-        max-width: 1440px;
-        margin: 0 auto;
+        width: 100%;
         height: var(--header-height);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px 0 16px;
+        padding: 0 12px 0 18px; /* 18PX DE ESPACIO DEL BORDE IZQUIERDO */
     }
 
     .logo-wrapper {
@@ -72,6 +71,8 @@
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
+        padding-left: 0;
+        margin-left: 0;
     }
 
     .logo-wrapper:hover {
@@ -84,6 +85,7 @@
         flex-shrink: 0;
         object-fit: contain;
         display: block;
+        margin-left: 0;
     }
 
     .menu-btn {
@@ -97,6 +99,7 @@
         transition: opacity 0.2s ease;
         align-self: center;
         z-index: 1001;
+        margin-right: 4px;
     }
 
     .menu-btn:hover {
@@ -298,7 +301,6 @@
         opacity: 1;
     }
 
-    /* MENU MODIFICADO - ESTILO WEBNODE */
     .mobile-menu {
         position: fixed;
         top: 0;
@@ -382,7 +384,7 @@
 
     .mobile-nav-link:hover {
         background-color: #f5f5f5;
-        color: #8B1538;
+        color: #C41E3A;
     }
 
     .cookie-banner {
@@ -477,12 +479,17 @@
         }
 
         .header-inner {
-            padding: 0 12px 0 8px;
+            padding: 0 8px 0 12px; /* 12PX DE ESPACIO EN MOBILE */
             height: var(--header-height-mobile);
+        }
+
+        .logo-wrapper {
+            padding-left: 0;
         }
 
         .logo-icon {
             height: 40px;
+            margin-left: 0;
         }
 
         .main {
@@ -570,11 +577,16 @@
 
     @media (max-width: 480px) {
         .header-inner {
-            padding: 0 12px 0 4px;
+            padding: 0 8px 0 10px; /* 10PX EN CELULAR CHICO */
+        }
+
+        .logo-wrapper {
+            padding-left: 0;
         }
 
         .logo-icon {
             height: 36px;
+            margin-left: 0;
         }
 
         .hero {
@@ -638,7 +650,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="new.webp" alt="NEW TIME" />
+                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
