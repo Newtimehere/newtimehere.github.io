@@ -265,76 +265,12 @@
         filter: drop-shadow(0 1px 3px rgba(155, 45, 45, 0.4));
     }
 
-    .services-section {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 24px 60px;
-        animation: fadeInUp 0.8s ease 0.5s both;
-    }
-
-    .services-wrapper {
-        max-width: 680px;
-        margin: 0 auto;
-    }
-
-    .services-text {
-        font-family: 'Inter', sans-serif;
-        font-size: 15px;
-        line-height: 1.6;
-        color: #ffffff;
-        margin-bottom: 40px;
-        font-weight: 400;
-    }
-
-    .services-subtitle {
-        font-family: 'Inter', sans-serif;
-        font-size: 32px;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 24px;
-    }
-
-    .services-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .services-list li {
-        margin-bottom: 16px;
-        padding-left: 20px;
-        position: relative;
-    }
-
-    .services-list li:before {
-        content: '›';
-        position: absolute;
-        left: 0;
-        color: var(--link-red);
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
-    .services-list a {
-        font-family: 'Inter', sans-serif;
-        font-size: 15px;
-        color: var(--link-red);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        text-shadow: 0 1px 3px rgba(122, 31, 31, 0.4);
-    }
-
-    .services-list a:hover {
-        color: var(--link-red-hover);
-        padding-left: 8px;
-        text-shadow: 0 1px 4px rgba(155, 45, 45, 0.5);
-    }
-
     .footer-section {
         max-width: 900px;
         margin: 0 auto;
         padding: 40px 24px 120px;
         text-align: center;
-        animation: fadeInUp 0.8s ease 0.6s both;
+        animation: fadeInUp 0.8s ease 0.5s both;
     }
 
     .footer-logo {
@@ -366,7 +302,7 @@
     .video-wrapper {
         max-width: 680px;
         margin: 0 auto;
-        animation: fadeInUp 0.8s ease 0.7s both;
+        animation: fadeInUp 0.8s ease 0.6s both;
     }
 
     .video-wrapper video {
@@ -620,13 +556,6 @@
             padding: 12px 0 24px;
         }
 
-        .services-section {
-            padding: 40px 20px 40px;
-        }
-        .services-subtitle {
-            font-size: 28px;
-        }
-
         .footer-section {
             padding: 30px 20px 100px;
         }
@@ -724,13 +653,6 @@
             padding: 8px 0 24px;
         }
 
-        .services-section {
-            padding: 30px 16px 30px;
-        }
-        .services-subtitle {
-            font-size: 24px;
-        }
-
         .footer-section {
             padding: 20px 16px 80px;
         }
@@ -775,7 +697,7 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <div class="logo-wrapper" onclick="window.location.href='index.html'">
                 <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
                 <span class="logo-text">NEW TIME</span>
             </div>
@@ -793,9 +715,9 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About us</a></li>
-                <li class="mobile-nav-item"><a href="#services" class="mobile-nav-link">Service</a></li>
+                <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
+                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
             </ul>
         </div>
     </div>
@@ -907,28 +829,6 @@
             </ul>
         </section>
 
-        <section class="services-section" id="services">
-            <div class="services-wrapper">
-                <p class="services-text">
-                    New Time, we offer a wide range of educational services to visitors from around the world. We strive to provide a comprehensive and unique academic experience for all our visitors. Our modern online facilities and prestigious academic achievements make New Time an excellent alternative for those interested in achieving truly unique intelligence at a high, personal, profound level.
-                </p>
-                
-                <h3 class="services-subtitle">The hidden effects:</h3>
-                
-                <ul class="services-list">
-                    <li><a href="origins-of-people-with-disabilities.pdf" target="_blank">Origins of disabled People</a></li>
-                    <li><a href="origins-of-cancerv2.pdf" target="_blank">Origins of cancer</a></li>
-                    <li><a href="same-sexual-impediment.pdf" target="_blank">Same-sex sexual fraud, LGBTTQ+</a></li>
-                    <li><a href="origins-of-infidelity.pdf" target="_blank">Origins of infidelity</a></li>
-                    <li><a href="the-money.pdf" target="_blank">Money and the effect</a></li>
-                    <li><a href="origins-of-suicide.pdf" target="_blank">Origins of suicides</a></li>
-                    <li><a href="origins-of-being-woman-and-men.pdf" target="_blank">Origins of being a man and a woman</a></li>
-                    <li><a href="origins-of-assassins.pdf" target="_blank">Origins of assassins</a></li>
-                    <li><a href="human-love.pdf" target="_blank">Human love</a></li>
-                </ul>
-            </div>
-        </section>
-
         <div class="footer-section">
             <div class="footer-logo">
                 <img src="new.webp" alt="NEW TIME" />
@@ -959,4 +859,77 @@
         </div>
     </div>
 
-    <
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            isMenuOpen = true;
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen ? closeMenu() : openMenu();
+        });
+
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
+
+        document.querySelectorAll('.directory-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
