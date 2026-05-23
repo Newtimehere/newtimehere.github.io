@@ -17,10 +17,10 @@
     }
 
     :root {
-        --bg-black: #0a0a0a;
+        --bg-black: #0a0a;
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
-        --text-light-gray: #d1d1d1;
+        --text-light-gray: #d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
@@ -62,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 12px 0 0; /* CERO PADDING IZQUIERDO */
+        padding: 0 12px 0 16px; /* SEPARADO 16PX DEL BORDE COMO TU FOTO */
     }
 
     .logo-wrapper {
@@ -71,7 +71,7 @@
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
-        padding-left: 6px; /* SOLO 6PX DEL BORDE */
+        padding-left: 0;
         margin-left: 0;
     }
 
@@ -85,7 +85,7 @@
         flex-shrink: 0;
         object-fit: contain;
         display: block;
-        /* YA NO USAMOS FILTER PORQUE EL ESCUDO YA ES ROJO */
+        margin-left: 0;
     }
 
     .menu-btn {
@@ -216,7 +216,7 @@
 
     .directory-link:hover {
         padding-left: 12px;
-        color: #d1d1;
+        color: #d1d1d1;
     }
 
     .directory-link-text {
@@ -383,7 +383,7 @@
     }
 
     .mobile-nav-link:hover {
-        background-color: #f5f5f5;
+        background-color: #f5f5;
         color: #C41E3A;
     }
 
@@ -479,7 +479,7 @@
         }
 
         .header-inner {
-            padding: 0 8px 0 0;
+            padding: 0 8px 0 12px; /* 12PX EN MOBILE */
             height: var(--header-height-mobile);
         }
 
@@ -577,7 +577,7 @@
 
     @media (max-width: 480px) {
         .header-inner {
-            padding: 0 8px 0 0;
+            padding: 0 8px 0 10px; /* 10PX EN PANTALLAS CHICAS */
         }
 
         .logo-wrapper {
@@ -650,7 +650,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
+                <img class="logo-icon" src="escudo.png" alt="NEW TIME" />
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
@@ -706,7 +706,7 @@
                     </a>
                 </li>
                 <li class="directory-item">
-                    <a href="same-sexual-impediment.pdf" class="directory-link" target="_blank">
+                    <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank">
                         <span class="directory-link-text">Same-sex sexual impediment</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -748,7 +748,7 @@
                 <li class="directory-item">
                     <a href="origins-of-suicide.pdf" class="directory-link" target="_blank">
                         <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
