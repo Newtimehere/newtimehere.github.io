@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service - NEW TIMES</title>
+<title>NEW TIMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     }
 
     :root {
-        --bg-black: #0a0a;
+        --bg-black: #0a0a0a;
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
         --text-light-gray: #d1d1d1;
@@ -96,7 +96,7 @@
         font-size: 20px;
         font-weight: 400;
         letter-spacing: 4px;
-        color: #2c2c;
+        color: #2c2c2c;
         text-transform: uppercase;
         line-height: 1;
     }
@@ -131,68 +131,197 @@
         min-height: 100vh;
     }
 
-    .services-section {
+    .hero {
         max-width: 900px;
         margin: 0 auto;
-        padding: 60px 24px 120px;
-        animation: fadeInUp 0.8s ease;
+        padding: 24px 24px 32px;
+        text-align: center;
     }
 
-    .services-wrapper {
-        max-width: 680px;
+    .hero-logo {
+        margin: 0 auto 40px;
+        animation: fadeInUp 0.8s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-main-logo {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        display: block;
         margin: 0 auto;
     }
 
-    .services-text {
+    .hero-text {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.6;
         color: #ffffff;
-        margin-bottom: 40px;
+        max-width: 680px;
+        margin: 0 auto 24px;
+        animation: fadeInUp 0.8s ease 0.2s both;
         font-weight: 400;
+        letter-spacing: 0px;
+        opacity: 1;
     }
 
-    .services-subtitle {
-        font-family: 'Inter', sans-serif;
-        font-size: 32px;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 24px;
-    }
-
-    .services-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .services-list li {
-        margin-bottom: 16px;
-        padding-left: 20px;
-        position: relative;
-    }
-
-    .services-list li:before {
-        content: '›';
-        position: absolute;
-        left: 0;
-        color: var(--link-red);
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
-    .services-list a {
+    .hero-signature {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-top: 24px;
+        margin-bottom: 0;
+        animation: fadeInUp 0.8s ease 0.3s both;
+        opacity: 1;
+    }
+
+    .directory {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 16px 24px 60px;
+        animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .directory-header {
+        padding: 16px 0 24px;
+        border-bottom: 1px solid var(--border-gray);
+        margin-bottom: 0;
+    }
+
+    .directory-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    .directory-list {
+        list-style: none;
+    }
+
+    .directory-item {
+        border-bottom: 1px solid var(--border-gray);
+    }
+
+    .directory-item:last-child {
+        border-bottom: 1px solid var(--border-gray);
+    }
+
+    .directory-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
         color: var(--link-red);
         text-decoration: none;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        gap: 20px;
+        opacity: 1;
+    }
+
+    .directory-link:hover {
+        padding-left: 12px;
+        color: var(--link-red-hover);
+    }
+
+    .directory-link-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 1.6;
+        flex: 1;
+        color: var(--link-red);
         text-shadow: 0 1px 3px rgba(122, 31, 31, 0.4);
     }
 
-    .services-list a:hover {
+    .directory-link:hover .directory-link-text {
         color: var(--link-red-hover);
-        padding-left: 8px;
         text-shadow: 0 1px 4px rgba(155, 45, 45, 0.5);
+    }
+
+    .directory-arrow {
+        width: 18px;
+        height: 18px;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        stroke: var(--link-red);
+        filter: drop-shadow(0 1px 2px rgba(122, 31, 31, 0.3));
+    }
+
+    .directory-link:hover .directory-arrow {
+        opacity: 1;
+        transform: translateX(4px);
+        stroke: var(--link-red-hover);
+        filter: drop-shadow(0 1px 3px rgba(155, 45, 45, 0.4));
+    }
+
+    .footer-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 24px 120px;
+        text-align: center;
+        animation: fadeInUp 0.8s ease 0.5s both;
+    }
+
+    .footer-logo {
+        margin: 0 auto 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        opacity: 1;
+    }
+
+    .footer-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #ffffff;
+        max-width: 680px;
+        margin: 0 auto 48px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        opacity: 1;
+    }
+
+    .video-wrapper {
+        max-width: 680px;
+        margin: 0 auto;
+        animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #000;
+    }
+
+    .video-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+        margin-top: 16px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 1.6;
+        opacity: 1;
     }
 
     .mobile-menu {
@@ -259,7 +388,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid #e5e5;
+        border-bottom: 1px solid #e5e5e5;
     }
 
     .mobile-nav-item:first-child {
@@ -281,6 +410,77 @@
         color: #C41E3A;
     }
 
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--cookie-bg);
+        border-top: 1px solid var(--border-gray);
+        z-index: 997;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 24px;
+    }
+
+    .cookie-banner.visible {
+        transform: translateY(0);
+    }
+
+    .cookie-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    .cookie-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-light-gray);
+        flex: 1;
+        font-weight: 300;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .cookie-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        white-space: nowrap;
+    }
+
+    .cookie-btn-primary {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .cookie-btn-primary:hover {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -295,6 +495,10 @@
     @media (max-width: 768px) {
         :root {
             --header-height: var(--header-height-mobile);
+        }
+
+        body.cookie-visible {
+            padding-bottom: 180px;
         }
 
         .header-inner {
@@ -320,15 +524,87 @@
             padding-top: var(--header-height-mobile);
         }
 
-        .services-section {
-            padding: 40px 20px 100px;
+        .hero {
+            padding: 20px 20px 24px;
         }
-        .services-subtitle {
-            font-size: 28px;
+
+        .hero-logo {
+            margin-bottom: 32px;
+        }
+
+        .hero-main-logo {
+            max-width: 400px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 auto 20px;
+        }
+
+        .hero-signature {
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .directory {
+            padding: 12px 20px 40px;
+        }
+
+        .directory-header {
+            padding: 12px 0 24px;
+        }
+
+        .footer-section {
+            padding: 30px 20px 100px;
+        }
+
+        .footer-logo {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            max-width: 400px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .directory-title {
+            font-size: 17px;
+        }
+
+        .directory-link-text {
+            font-size: 15px;
+        }
+
+        .directory-link {
+            padding: 22px 0;
+            gap: 16px;
         }
 
         .mobile-nav-link {
             font-size: 18px;
+        }
+
+        .cookie-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .cookie-buttons {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
         }
     }
 
@@ -351,11 +627,69 @@
             letter-spacing: 2px;
         }
 
-        .services-section {
-            padding: 30px 16px 80px;
+        .hero {
+            padding: 16px 16px 20px;
         }
-        .services-subtitle {
-            font-size: 24px;
+
+        .hero-main-logo {
+            max-width: 320px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-signature {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+
+        .directory {
+            padding: 8px 16px 30px;
+        }
+
+        .directory-header {
+            padding: 8px 0 24px;
+        }
+
+        .footer-section {
+            padding: 20px 16px 80px;
+        }
+
+        .footer-logo {
+            margin-bottom: 32px;
+        }
+
+        .footer-logo img {
+            max-width: 320px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .directory-title {
+            font-size: 16px;
+        }
+
+        .directory-link-text {
+            font-size: 15px;
+        }
+
+        .directory-link {
+            padding: 22px 0;
+        }
+
+        .cookie-text {
+            font-size: 13px;
+        }
+
+        .cookie-btn {
+            padding: 11px 20px;
+            font-size: 13px;
         }
     }
 </style>
@@ -363,7 +697,7 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <div class="logo-wrapper" onclick="window.location.href='index.html'">
+            <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
                 <span class="logo-text">NEW TIME</span>
             </div>
@@ -381,36 +715,149 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About us</a></li>
+                <li class="mobile-nav-item"><a href="#services" class="mobile-nav-link">Service</a></li>
             </ul>
         </div>
     </div>
 
     <main class="main">
-        <section class="services-section">
-            <div class="services-wrapper">
-                <p class="services-text">
-                    New Time, we offer a wide range of educational services to visitors from around the world. We strive to provide a comprehensive and unique academic experience for all our visitors. Our modern online facilities and prestigious academic achievements make New Time an excellent alternative for those interested in achieving truly unique intelligence at a high, personal, profound level.
-                </p>
-                
-                <h3 class="services-subtitle">The hidden effects:</h3>
-                
-                <ul class="services-list">
-                    <li><a href="origins-of-people-with-disabilities.pdf" target="_blank">Origins of disabled People</a></li>
-                    <li><a href="origins-of-cancerv2.pdf" target="_blank">Origins of cancer</a></li>
-                    <li><a href="same-sexual-impediment.pdf" target="_blank">Same-sex sexual fraud, LGBTTQ+</a></li>
-                    <li><a href="origins-of-infidelity.pdf" target="_blank">Origins of infidelity</a></li>
-                    <li><a href="the-money.pdf" target="_blank">Money and the effect</a></li>
-                    <li><a href="origins-of-suicide.pdf" target="_blank">Origins of suicides</a></li>
-                    <li><a href="origins-of-being-woman-and-men.pdf" target="_blank">Origins of being a man and a woman</a></li>
-                    <li><a href="origins-of-assassins.pdf" target="_blank">Origins of assassins</a></li>
-                    <li><a href="human-love.pdf" target="_blank">Human love</a></li>
-                </ul>
+        <section class="hero" id="home">
+            <div class="hero-logo">
+                <img class="hero-main-logo" src="new.webp" alt="NEW TIME" />
             </div>
+            <p class="hero-text">
+                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
+            </p>
+            <div class="hero-signature">NEW TIMES</div>
         </section>
+
+        <section class="directory" id="about">
+            <div class="directory-header">
+                <h2 class="directory-title">Directory:</h2>
+            </div>
+            <ul class="directory-list">
+                <li class="directory-item">
+                    <a href="origins-of-people-with-disabilities.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of disabled people</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="origins-of-cancerv2.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of cancer</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="same-sexual-impediment.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Same-sex sexual impediment</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="physical-evidence-of-same-sex.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Physical evidence of same-sex, over 21 to see</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="same-sex-direct-and-summarized.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Same-sex direct and summarized</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="origins-of-infidelity.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of infidelity</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="the-money.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">The Money and the effect</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="origins-of-suicide.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of suicides</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="origins-of-being-woman-and-men.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of being woman and men</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="origins-of-assassins.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Origins of assassins</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="directory-item">
+                    <a href="human-love.pdf" class="directory-link" target="_blank">
+                        <span class="directory-link-text">Human love</span>
+                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <div class="footer-section" id="services">
+            <div class="footer-logo">
+                <img src="new.webp" alt="NEW TIME" />
+            </div>
+            <p class="footer-text">
+                We do not believe in social class differences or the differences between people with and without money. Rich and poor are human, being rich does not transform a human body into something unknown because it is all a mental fraud of feeling different with money over others who do not have. Don't live in times past where your life didn't exist, your life is today, you will discover the new times and the hidden fraud of the new times.
+            </p>
+            
+            <div class="video-wrapper">
+                <video controls playsinline preload="metadata" poster="new.webp">
+                    <source src="New Time Here......mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+                <p class="video-caption">New Times Official</p>
+            </div>
+        </div>
     </main>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-inner">
+            <p class="cookie-text">
+                We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
+            </p>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
+                <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -450,6 +897,38 @@
             if (e.key === 'Escape' && isMenuOpen) {
                 closeMenu();
             }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
+
+        document.querySelectorAll('.directory-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
         });
     </script>
 </body>
