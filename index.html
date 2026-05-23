@@ -57,13 +57,12 @@
     }
 
     .header-inner {
-        max-width: 1440px;
-        margin: 0 auto;
+        width: 100%; /* CAMBIADO: sin max-width para que llegue al borde */
         height: var(--header-height);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 12px 0 4px; /* PEGADO A LA IZQUIERDA */
+        padding: 0 12px 0 0; /* CAMBIADO: 0 padding a la izquierda */
     }
 
     .logo-wrapper {
@@ -72,6 +71,7 @@
         cursor: pointer;
         transition: opacity 0.2s ease;
         height: 100%;
+        padding-left: 4px; /* Solo 4px de espacio mínimo */
     }
 
     .logo-wrapper:hover {
@@ -84,7 +84,7 @@
         flex-shrink: 0;
         object-fit: contain;
         display: block;
-        filter: invert(11%) sepia(89%) saturate(6058%) hue-rotate(345deg) brightness(95%) contrast(115%); /* LOGO ROJO */
+        filter: invert(11%) sepia(89%) saturate(6058%) hue-rotate(345deg) brightness(95%) contrast(115%); /* ROJO */
     }
 
     .menu-btn {
@@ -98,6 +98,7 @@
         transition: opacity 0.2s ease;
         align-self: center;
         z-index: 1001;
+        margin-right: 4px;
     }
 
     .menu-btn:hover {
@@ -477,8 +478,12 @@
         }
 
         .header-inner {
-            padding: 0 8px 0 2px; /* SUPER PEGADO AL BORDE IZQUIERDO */
+            padding: 0 8px 0 0; /* CERO PADDING IZQUIERDO EN MOBILE */
             height: var(--header-height-mobile);
+        }
+
+        .logo-wrapper {
+            padding-left: 2px; /* CASI PEGADO AL BORDE */
         }
 
         .logo-icon {
@@ -570,7 +575,11 @@
 
     @media (max-width: 480px) {
         .header-inner {
-            padding: 0 8px 0 2px; /* PEGADÍSIMO AL BORDE */
+            padding: 0 8px 0 0; /* TOTALMENTE PEGADO */
+        }
+
+        .logo-wrapper {
+            padding-left: 0; /* SIN ESPACIO */
         }
 
         .logo-icon {
