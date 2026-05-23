@@ -25,7 +25,8 @@
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
-        --link-red: #A55252; /* COLOR ROJO GRANATE COMO TU EJEMPLO */
+        --link-red: #7A1F1F; /* ROJO OSCURO PROFESIONAL */
+        --link-red-hover: #9B2D2D; /* ROJO BRILLOSO EN HOVER */
     }
 
     html {
@@ -197,7 +198,7 @@
         font-size: 15px;
         font-weight: 400;
         letter-spacing: 0px;
-        color: #ffffff; /* DIRECTORY BLANCO */
+        color: #ffffff;
         opacity: 1;
     }
 
@@ -218,7 +219,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 22px 0;
-        color: var(--link-red); /* CAMBIADO: ROJO GRANATE */
+        color: var(--link-red);
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
@@ -228,32 +229,40 @@
 
     .directory-link:hover {
         padding-left: 12px;
-        color: #C46B6B; /* ROJO MÁS CLARO EN HOVER */
+        color: var(--link-red-hover);
     }
 
     .directory-link-text {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: 0px;
         line-height: 1.6;
         flex: 1;
-        color: var(--link-red); /* CAMBIADO: ROJO GRANATE */
+        color: var(--link-red);
+        text-shadow: 0 1px 3px rgba(122, 31, 31, 0.4);
+    }
+
+    .directory-link:hover .directory-link-text {
+        color: var(--link-red-hover);
+        text-shadow: 0 1px 4px rgba(155, 45, 45, 0.5);
     }
 
     .directory-arrow {
         width: 18px;
         height: 18px;
-        opacity: 0.8;
+        opacity: 0.9;
         transition: all 0.3s ease;
         flex-shrink: 0;
-        stroke: var(--link-red); /* CAMBIADO: FLECHA ROJA */
+        stroke: var(--link-red);
+        filter: drop-shadow(0 1px 2px rgba(122, 31, 31, 0.3));
     }
 
     .directory-link:hover .directory-arrow {
         opacity: 1;
         transform: translateX(4px);
-        stroke: #C46B6B;
+        stroke: var(--link-red-hover);
+        filter: drop-shadow(0 1px 3px rgba(155, 45, 45, 0.4));
     }
 
     .footer-section {
