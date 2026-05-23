@@ -25,6 +25,7 @@
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
+        --link-red: #A55252; /* COLOR ROJO GRANATE COMO TU EJEMPLO */
     }
 
     html {
@@ -132,7 +133,7 @@
     .hero {
         max-width: 900px;
         margin: 0 auto;
-        padding: 24px 24px 32px; /* CAMBIADO: ANTES 60PX ABAJO, AHORA 32PX */
+        padding: 24px 24px 32px;
         text-align: center;
     }
 
@@ -158,7 +159,7 @@
         line-height: 1.6;
         color: #ffffff;
         max-width: 680px;
-        margin: 0 auto 24px; /* CAMBIADO: ANTES 32PX, AHORA 24PX */
+        margin: 0 auto 24px;
         animation: fadeInUp 0.8s ease 0.2s both;
         font-weight: 400;
         letter-spacing: 0px;
@@ -172,8 +173,8 @@
         letter-spacing: 0px;
         text-transform: uppercase;
         color: #ffffff;
-        margin-top: 24px; /* CAMBIADO: ANTES 32PX */
-        margin-bottom: 0; /* CAMBIADO: ANTES 32PX, AHORA 0 */
+        margin-top: 24px;
+        margin-bottom: 0;
         animation: fadeInUp 0.8s ease 0.3s both;
         opacity: 1;
     }
@@ -181,12 +182,12 @@
     .directory {
         max-width: 900px;
         margin: 0 auto;
-        padding: 16px 24px 60px; /* CAMBIADO: ANTES 40PX ARRIBA, AHORA 16PX - SUBE TODO */
+        padding: 16px 24px 60px;
         animation: fadeInUp 0.8s ease 0.4s both;
     }
 
     .directory-header {
-        padding: 16px 0 24px; /* CAMBIADO: ANTES 32PX ARRIBA, AHORA 16PX */
+        padding: 16px 0 24px;
         border-bottom: 1px solid var(--border-gray);
         margin-bottom: 0;
     }
@@ -196,7 +197,7 @@
         font-size: 15px;
         font-weight: 400;
         letter-spacing: 0px;
-        color: #ffffff;
+        color: #ffffff; /* DIRECTORY BLANCO */
         opacity: 1;
     }
 
@@ -217,7 +218,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 22px 0;
-        color: #ffffff;
+        color: var(--link-red); /* CAMBIADO: ROJO GRANATE */
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
@@ -227,7 +228,7 @@
 
     .directory-link:hover {
         padding-left: 12px;
-        color: #d1d1d1;
+        color: #C46B6B; /* ROJO MÁS CLARO EN HOVER */
     }
 
     .directory-link-text {
@@ -237,7 +238,7 @@
         letter-spacing: 0px;
         line-height: 1.6;
         flex: 1;
-        color: #ffffff;
+        color: var(--link-red); /* CAMBIADO: ROJO GRANATE */
     }
 
     .directory-arrow {
@@ -246,11 +247,13 @@
         opacity: 0.8;
         transition: all 0.3s ease;
         flex-shrink: 0;
+        stroke: var(--link-red); /* CAMBIADO: FLECHA ROJA */
     }
 
     .directory-link:hover .directory-arrow {
         opacity: 1;
         transform: translateX(4px);
+        stroke: #C46B6B;
     }
 
     .footer-section {
@@ -513,7 +516,7 @@
         }
 
         .hero {
-            padding: 20px 20px 24px; /* CAMBIADO: MENOS ESPACIO ABAJO */
+            padding: 20px 20px 24px;
         }
 
         .hero-logo {
@@ -527,21 +530,21 @@
         .hero-text {
             font-size: 15px;
             line-height: 1.6;
-            margin: 0 auto 20px; /* CAMBIADO: MENOS ESPACIO */
+            margin: 0 auto 20px;
         }
 
         .hero-signature {
             font-size: 15px;
             margin-top: 20px;
-            margin-bottom: 0; /* CAMBIADO: SIN ESPACIO ABAJO */
+            margin-bottom: 0;
         }
 
         .directory {
-            padding: 12px 20px 40px; /* CAMBIADO: SUBE MÁS */
+            padding: 12px 20px 40px;
         }
 
         .directory-header {
-            padding: 12px 0 24px; /* CAMBIADO: MENOS ESPACIO ARRIBA */
+            padding: 12px 0 24px;
         }
 
         .footer-section {
@@ -616,7 +619,7 @@
         }
 
         .hero {
-            padding: 16px 16px 20px; /* CAMBIADO: AÚN MÁS PEGADO */
+            padding: 16px 16px 20px;
         }
 
         .hero-main-logo {
@@ -634,7 +637,7 @@
         }
 
         .directory {
-            padding: 8px 16px 30px; /* CAMBIADO: SUBE MÁS */
+            padding: 8px 16px 30px;
         }
 
         .directory-header {
