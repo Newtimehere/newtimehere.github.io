@@ -91,7 +91,7 @@
 
     .logo-text {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 20px; /* CAMBIADO: ANTES 26PX, AHORA 20PX - MÁS PEQUEÑO */
+        font-size: 20px;
         font-weight: 400;
         letter-spacing: 4px;
         color: #2c2c2c;
@@ -132,7 +132,7 @@
     .hero {
         max-width: 900px;
         margin: 0 auto;
-        padding: 24px 24px 60px;
+        padding: 24px 24px 32px; /* CAMBIADO: ANTES 60PX ABAJO, AHORA 32PX */
         text-align: center;
     }
 
@@ -158,7 +158,7 @@
         line-height: 1.6;
         color: #ffffff;
         max-width: 680px;
-        margin: 0 auto 32px;
+        margin: 0 auto 24px; /* CAMBIADO: ANTES 32PX, AHORA 24PX */
         animation: fadeInUp 0.8s ease 0.2s both;
         font-weight: 400;
         letter-spacing: 0px;
@@ -172,8 +172,8 @@
         letter-spacing: 0px;
         text-transform: uppercase;
         color: #ffffff;
-        margin-top: 32px;
-        margin-bottom: 32px;
+        margin-top: 24px; /* CAMBIADO: ANTES 32PX */
+        margin-bottom: 0; /* CAMBIADO: ANTES 32PX, AHORA 0 */
         animation: fadeInUp 0.8s ease 0.3s both;
         opacity: 1;
     }
@@ -181,12 +181,12 @@
     .directory {
         max-width: 900px;
         margin: 0 auto;
-        padding: 40px 24px 60px;
+        padding: 16px 24px 60px; /* CAMBIADO: ANTES 40PX ARRIBA, AHORA 16PX - SUBE TODO */
         animation: fadeInUp 0.8s ease 0.4s both;
     }
 
     .directory-header {
-        padding: 32px 0 24px;
+        padding: 16px 0 24px; /* CAMBIADO: ANTES 32PX ARRIBA, AHORA 16PX */
         border-bottom: 1px solid var(--border-gray);
         margin-bottom: 0;
     }
@@ -504,7 +504,7 @@
         }
 
         .logo-text {
-            font-size: 18px; /* CAMBIADO: ANTES 22PX, AHORA 18PX */
+            font-size: 18px;
             letter-spacing: 3px;
         }
 
@@ -513,7 +513,7 @@
         }
 
         .hero {
-            padding: 20px 20px 50px;
+            padding: 20px 20px 24px; /* CAMBIADO: MENOS ESPACIO ABAJO */
         }
 
         .hero-logo {
@@ -527,16 +527,21 @@
         .hero-text {
             font-size: 15px;
             line-height: 1.6;
+            margin: 0 auto 20px; /* CAMBIADO: MENOS ESPACIO */
         }
 
         .hero-signature {
             font-size: 15px;
-            margin-top: 24px;
-            margin-bottom: 24px;
+            margin-top: 20px;
+            margin-bottom: 0; /* CAMBIADO: SIN ESPACIO ABAJO */
         }
 
         .directory {
-            padding: 20px 20px 40px;
+            padding: 12px 20px 40px; /* CAMBIADO: SUBE MÁS */
+        }
+
+        .directory-header {
+            padding: 12px 0 24px; /* CAMBIADO: MENOS ESPACIO ARRIBA */
         }
 
         .footer-section {
@@ -606,12 +611,12 @@
         }
 
         .logo-text {
-            font-size: 16px; /* CAMBIADO: ANTES 20PX, AHORA 16PX */
+            font-size: 16px;
             letter-spacing: 2px;
         }
 
         .hero {
-            padding: 16px 16px 40px;
+            padding: 16px 16px 20px; /* CAMBIADO: AÚN MÁS PEGADO */
         }
 
         .hero-main-logo {
@@ -620,10 +625,20 @@
 
         .hero-text {
             font-size: 15px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-signature {
+            margin-top: 16px;
+            margin-bottom: 0;
         }
 
         .directory {
-            padding: 16px 16px 30px;
+            padding: 8px 16px 30px; /* CAMBIADO: SUBE MÁS */
+        }
+
+        .directory-header {
+            padding: 8px 0 24px;
         }
 
         .footer-section {
