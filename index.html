@@ -62,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 12px 0 18px; /* 18PX DE ESPACIO DEL BORDE IZQUIERDO */
+        padding: 0 12px 0 18px; /* 18PX SEPARADO DEL BORDE IZQ */
     }
 
     .logo-wrapper {
@@ -121,12 +121,12 @@
     .hero {
         max-width: 900px;
         margin: 0 auto;
-        padding: 100px 24px 60px;
+        padding: 24px 24px 60px; /* CAMBIADO: ANTES 100PX, AHORA 24PX - PEGADO A LA BARRA */
         text-align: center;
     }
 
     .hero-logo {
-        margin: 0 auto 48px;
+        margin: 0 auto 40px;
         animation: fadeInUp 0.8s ease;
         display: flex;
         justify-content: center;
@@ -479,7 +479,7 @@
         }
 
         .header-inner {
-            padding: 0 8px 0 12px; /* 12PX DE ESPACIO EN MOBILE */
+            padding: 0 8px 0 12px;
             height: var(--header-height-mobile);
         }
 
@@ -497,11 +497,11 @@
         }
 
         .hero {
-            padding: 80px 20px 50px;
+            padding: 20px 20px 50px; /* CAMBIADO: 20PX EN LUGAR DE 80PX */
         }
 
         .hero-logo {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .hero-main-logo {
@@ -577,7 +577,7 @@
 
     @media (max-width: 480px) {
         .header-inner {
-            padding: 0 8px 0 10px; /* 10PX EN CELULAR CHICO */
+            padding: 0 8px 0 10px;
         }
 
         .logo-wrapper {
@@ -590,7 +590,7 @@
         }
 
         .hero {
-            padding: 60px 16px 40px;
+            padding: 16px 16px 40px; /* CAMBIADO: 16PX EN LUGAR DE 60PX */
         }
 
         .hero-main-logo {
