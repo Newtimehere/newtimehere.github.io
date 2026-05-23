@@ -36,6 +36,11 @@
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         background-color: var(--bg-black);
+        background-image: linear-gradient(rgba(10, 10, 10, 0.90), rgba(10, 10, 10, 0.90)), url('new-time.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
         color: #ffffff;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
@@ -53,7 +58,8 @@
         top: 0;
         left: 0;
         right: 0;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         z-index: 1000;
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
