@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service - NEW TIMES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    :root { --bg-black: #0a0a0a; --text-white: #ffffff; --text-gray: #a8a8a8; --text-light-gray: #d1d1d1; --border-gray: #2a2a2a; --header-height: 70px; --header-height-mobile: 65px; --cookie-bg: #1a1a1a; --link-red: #7A1F1F; --link-red-hover: #9B2D2D; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg-black); color: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .header { position: fixed; top: 0; left: 0; right: 0; background-color: #ffffff; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .header-inner { width: 100%; height: var(--header-height); display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 18px; }
+    .logo-wrapper { display: flex; align-items: center; gap: 12px; cursor: pointer; transition: opacity 0.2s ease; height: 100%; padding-left: 0; margin-left: 0; }
+    .logo-wrapper:hover { opacity: 0.7; }
+    .logo-icon { height: 45px; width: auto; flex-shrink: 0; object-fit: contain; display: block; margin-left: 0; }
+    .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 4px; color: #2c2c2c; text-transform: uppercase; line-height: 1; }
+    .menu-btn { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; transition: opacity 0.2s ease; align-self: center; z-index: 1001; margin-right: 4px; }
+    .menu-btn:hover { opacity: 0.6; }
+    .menu-line { width: 22px; height: 2px; background-color: #000000; transition: all 0.3s ease; }
+    .main { padding-top: var(--header-height); min-height: 100vh; }
+    .services-section { max-width: 900px; margin: 0 auto; padding: 60px 24px 120px; animation: fadeInUp 0.8s ease; }
+    .services-wrapper { max-width: 680px; margin: 0 auto; }
+    .services-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; color: #ffffff; margin-bottom: 40px; font-weight: 400; }
+    .services-subtitle { font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 24px; }
+    .services-list { list-style: none; padding: 0; }
+    .services-list li { margin-bottom: 16px; padding-left: 20px; position: relative; }
+    .services-list li:before { content: '›'; position: absolute; left: 0; color: var(--link-red); font-size: 20px; line-height: 1.2; }
+    .services-list a { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--link-red); text-decoration: none; transition: all 0.3s ease; text-shadow: 0 1px 3px rgba(122, 31, 31, 0.4); }
+    .services-list a:hover { color: var(--link-red-hover); padding-left: 8px; text-shadow: 0 1px 4px rgba(155, 45, 45, 0.5); }
+    .mobile-menu { position: fixed; top: 0; left: auto; right: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; z-index: 999; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; box-shadow: -2px 0 20px rgba(0,0,0,0.15); }
+    .mobile-menu.active { transform: translateX(0); }
+    .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+    .menu-overlay.active { opacity: 1; visibility: visible; }
+    .mobile-menu-inner { padding: 80px 0 40px; }
+    .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 32px; cursor: pointer; color: #333; padding: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .mobile-nav-list { list-style: none; }
+    .mobile-nav-item { border-bottom: 1px solid #e5e5e5; }
+    .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
+    .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; }
+    .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 40px 20px 100px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } }
+    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 30px 16px 80px; } .services-subtitle { font-size: 24px; } }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-wrapper" onclick="window.location.href='index.html'">
+                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME" />
+                <span class="logo-text">NEW TIME</span>
+            </div>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
+        <div class="mobile-menu-inner">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
+                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="services-section">
+            <div class="services-wrapper">
+                <p class="services-text">
+                    New Time, we offer a wide range of educational services to visitors from around the world. We strive to provide a comprehensive and unique academic experience for all our visitors. Our modern online facilities and prestigious academic achievements make New Time an excellent alternative for those interested in achieving truly unique intelligence at a high, personal, profound level.
+                </p>
+                
+                <h3 class="services-subtitle">The hidden effects:</h3>
+                
+                <ul class="services-list">
+                    <li><a href="origins-of-people-with-disabilities.pdf" target="_blank">Origins of disabled People</a></li>
+                    <li><a href="origins-of-cancerv2.pdf" target="_blank">Origins of cancer</a></li>
+                    <li><a href="same-sexual-impediment.pdf" target="_blank">Same-sex sexual fraud, LGBTTQ+</a></li>
+                    <li><a href="origins-of-infidelity.pdf" target="_blank">Origins of infidelity</a></li>
+                    <li><a href="the-money.pdf" target="_blank">Money and the effect</a></li>
+                    <li><a href="origins-of-suicide.pdf" target="_blank">Origins of suicides</a></li>
+                    <li><a href="origins-of-being-woman-and-men.pdf" target="_blank">Origins of being a man and a woman</a></li>
+                    <li><a href="origins-of-assassins.pdf" target="_blank">Origins of assassins</a></li>
+                    <li><a href="human-love.pdf" target="_blank">Human love</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            isMenuOpen = true;
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen ? closeMenu() : openMenu();
+        });
+
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
