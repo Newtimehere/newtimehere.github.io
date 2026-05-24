@@ -21,7 +21,7 @@
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
-        --text-light-gray: #d1d1d1;
+        --text-light-gray: #d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
@@ -37,7 +37,7 @@
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         background-color: var(--bg-black);
-        background-image: url('new-time.jpg');
+        background-image: url('nnew-time^7.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -260,10 +260,12 @@
         line-height: 1.6;
         flex: 1;
         color: var(--link-red);
+        text-shadow: 0 1px 3px rgba(122, 31, 0.4);
     }
 
     .directory-link:hover .directory-link-text {
         color: var(--link-red-hover);
+        text-shadow: 0 1px 4px rgba(155, 45, 0.5);
     }
 
     .directory-arrow {
@@ -273,12 +275,14 @@
         transition: all 0.3s ease;
         flex-shrink: 0;
         stroke: var(--link-red);
+        filter: drop-shadow(0 1px 2px rgba(122, 31, 31, 0.3));
     }
 
     .directory-link:hover .directory-arrow {
         opacity: 1;
         transform: translateX(4px);
         stroke: var(--link-red-hover);
+        filter: drop-shadow(0 1px 3px rgba(155, 45, 0.4));
     }
 
     .footer-section {
@@ -422,7 +426,7 @@
     }
 
     .mobile-nav-link:hover {
-        background-color: #f5f5f5;
+        background-color: #f5f5;
         color: #C41E3A;
     }
 
