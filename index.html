@@ -20,13 +20,14 @@
     :root {
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8;
+        --text-gray: #a8a8a8;
         --text-light-gray: #d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
-        --cookie-bg: #1a;
+        --cookie-bg: #1a1a1a;
         --link-red: #7A1F1F;
+        --link-red-hover: #9B2D2D;
     }
 
     html {
@@ -138,7 +139,8 @@
     .menu-line {
         width: 22px;
         height: 2px;
-        background-color: #000000;
+        background-color: transparent;
+        border: 1px solid #2c2c2c;
         transition: all 0.3s ease;
     }
 
@@ -246,22 +248,14 @@
         opacity: 1;
     }
 
-    .directory-link:visited {
-        color: var(--link-red);
-    }
-
     .directory-link:hover {
         padding-left: 12px;
-        color: var(--link-red);
-    }
-
-    .directory-link:active {
-        color: var(--link-red);
+        color: var(--link-red-hover);
     }
 
     .directory-link-text {
         font-family: 'Inter', sans-serif;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 0px;
         line-height: 1.6;
@@ -270,11 +264,7 @@
     }
 
     .directory-link:hover .directory-link-text {
-        color: var(--link-red);
-    }
-
-    .directory-link:visited .directory-link-text {
-        color: var(--link-red);
+        color: var(--link-red-hover);
     }
 
     .directory-arrow {
@@ -289,7 +279,7 @@
     .directory-link:hover .directory-arrow {
         opacity: 1;
         transform: translateX(4px);
-        stroke: var(--link-red);
+        stroke: var(--link-red-hover);
     }
 
     .footer-section {
@@ -415,11 +405,11 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+        border-bottom: 1px solid transparent;
     }
 
     .mobile-nav-item:first-child {
-        border-top: 1px solid rgba(44, 44, 44, 0.08);
+        border-top: 1px solid transparent;
     }
 
     .mobile-nav-link {
@@ -606,7 +596,7 @@
         }
 
         .directory-link-text {
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .directory-link {
@@ -655,7 +645,7 @@
         }
 
         .hero {
-            padding: 16px 20px;
+            padding: 16px 16px 20px;
         }
 
         .hero-main-logo {
@@ -703,7 +693,7 @@
         }
 
         .directory-link-text {
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .directory-link {
