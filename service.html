@@ -20,7 +20,7 @@
     .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 4px; color: #2c2c2c; text-transform: uppercase; line-height: 1; }
     .menu-btn { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; transition: opacity 0.2s ease; align-self: center; z-index: 1001; margin-right: 4px; }
     .menu-btn:hover { opacity: 0.6; }
-    .menu-line { width: 22px; height: 2px; background-color: #000000; transition: all 0.3s ease; }
+    .menu-line { width: 22px; height: 2px; background-color: transparent; border: 1px solid #2c2c2c; transition: all 0.3s ease; }
     .main { padding-top: var(--header-height); min-height: 100vh; background-color: #ffffff; }
     .services-section { max-width: 900px; margin: 0 auto; padding: 60px 24px 80px; animation: fadeInUp 0.8s ease; }
     .services-wrapper { max-width: 680px; margin: 0 auto; }
@@ -29,10 +29,13 @@
     .services-list { list-style: none; padding: 0; margin-bottom: 30px; }
     .services-list li { margin-bottom: 16px; padding-left: 20px; position: relative; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--link-red); font-weight: 500; }
     .services-list li:before { content: '›'; position: absolute; left: 0; color: var(--link-red); font-size: 20px; line-height: 1.2; }
+    .service-video-wrapper { max-width: 680px; margin: 40px auto 0; }
+    .service-video-wrapper video { width: 100%; height: auto; display: block; background: #000; }
+    .video-caption { font-family: 'Inter', sans-serif; font-size: 15px; color: #2c2c2c; margin-top: 16px; font-weight: 400; text-align: center; letter-spacing: 0px; line-height: 1.6; }
     .service-bottom-img { display: block; max-width: 140px; width: 100%; height: auto; margin: 60px auto 0; opacity: 0.9; }
-    .mobile-menu { position: fixed; top: 0; left: auto; right: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; z-index: 999; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; box-shadow: -2px 0 20px rgba(0,0,0,0.15); }
+    .mobile-menu { position: fixed; top: 0; left: auto; right: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; z-index: 999; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; box-shadow: none; }
     .mobile-menu.active { transform: translateX(0); }
-    .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+    .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: transparent; z-index: 998; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
     .menu-overlay.active { opacity: 1; visibility: visible; }
     .mobile-menu-inner { padding: 80px 0 40px; }
     .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 32px; cursor: pointer; color: #333; padding: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
@@ -40,7 +43,7 @@
     .mobile-nav-item { border-bottom: 1px solid #e5e5e5; }
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; }
-    .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
+    .mobile-nav-link:hover { background-color: transparent; color: #333333; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 40px 20px 60px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } }
     @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 30px 16px 50px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } }
@@ -94,6 +97,14 @@
                     <li>Origins of assassins</li>
                     <li>Human love</li>
                 </ul>
+
+                <div class="service-video-wrapper">
+                    <video controls playsinline preload="metadata" poster="new.webp">
+                        <source src="New Time Here......mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                    <p class="video-caption">New Times Official</p>
+                </div>
 
                 <img class="service-bottom-img" src="new-time666.jpg" alt="NEW TIME" />
             </div>
