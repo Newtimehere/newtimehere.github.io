@@ -139,7 +139,8 @@
     .menu-line {
         width: 22px;
         height: 2px;
-        background-color: #000000;
+        background-color: transparent;
+        border: 1px solid #2c2c2c;
         transition: all 0.3s ease;
     }
 
@@ -353,7 +354,7 @@
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto;
-        box-shadow: -2px 0 20px rgba(0,0,0,0.15);
+        box-shadow: none;
     }
 
     .mobile-menu.active {
@@ -366,7 +367,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
         z-index: 998;
         opacity: 0;
         visibility: hidden;
@@ -422,8 +423,8 @@
     }
 
     .mobile-nav-link:hover {
-        background-color: #f5f5;
-        color: #C41E3A;
+        background-color: transparent;
+        color: #333333;
     }
 
     .cookie-banner {
