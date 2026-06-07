@@ -19,9 +19,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
-        padding: 20px;
+        padding: 12px 20px 20px 20px;
     }
 
     .magazine-title {
@@ -32,7 +32,7 @@
         color: #ffffff;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
         line-height: 1;
     }
 
@@ -46,18 +46,24 @@
     }
 
     @media (max-width: 768px) {
+        body {
+            padding: 10px 16px 16px 16px;
+        }
         .magazine-title {
             font-size: 28px;
             letter-spacing: 5px;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
     }
 
     @media (max-width: 480px) {
+        body {
+            padding: 8px 12px 12px 12px;
+        }
         .magazine-title {
             font-size: 22px;
             letter-spacing: 3px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
     }
 </style>
