@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Flipbook: jQuery + Turn.js + PDF.js -->
+<!-- Flipbook dependencies -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -279,6 +279,14 @@
         color: var(--link-red);
     }
 
+    .directory-link:hover .directory-link-text {
+        color: var(--link-red);
+    }
+
+    .directory-link:visited .directory-link-text {
+        color: var(--link-red);
+    }
+
     .directory-arrow {
         width: 18px;
         height: 18px;
@@ -511,7 +519,7 @@
         color: #000000;
     }
 
-    /* FLIPBOOK MODAL */
+    /* FLIPBOOK MODAL STYLES */
     .flipbook-modal {
         position: fixed;
         top: 0;
@@ -533,7 +541,7 @@
     .flipbook-container {
         position: relative;
         width: 100%;
-        max-width: 1000px;
+        max-width: 1200px;
         height: 90vh;
         display: flex;
         align-items: center;
@@ -542,12 +550,12 @@
 
     .flipbook-close {
         position: absolute;
-        top: -45px;
+        top: -40px;
         right: 0;
         background: #fff;
         border: none;
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         font-size: 24px;
         cursor: pointer;
@@ -557,7 +565,6 @@
         justify-content: center;
         color: #000;
         line-height: 1;
-        font-weight: 300;
     }
 
     .flipbook-close:hover {
@@ -565,8 +572,8 @@
     }
 
     #flipbook {
-        width: 900px;
-        height: 600px;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
     }
 
@@ -575,9 +582,10 @@
         background-size: 100% 100%;
     }
 
-    #flipbook .page canvas {
+    #flipbook .page img {
         width: 100%;
         height: 100%;
+        object-fit: contain;
     }
 
     .flipbook-loader {
@@ -588,30 +596,6 @@
         color: #fff;
         font-size: 16px;
         font-family: 'Inter', sans-serif;
-    }
-
-    .flipbook-controls {
-        position: absolute;
-        bottom: -55px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 12px;
-    }
-
-    .flipbook-btn {
-        background: #fff;
-        border: none;
-        padding: 10px 18px;
-        cursor: pointer;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        color: #000;
-        border-radius: 4px;
-    }
-
-    .flipbook-btn:hover {
-        background: #e0e0e0;
     }
 
     @keyframes fadeInUp {
@@ -740,24 +724,15 @@
             text-align: center;
         }
 
-        #flipbook {
-            width: 100%;
-            height: 70vh;
-        }
-
         .flipbook-container {
             height: 85vh;
         }
 
         .flipbook-close {
-            top: -40px;
-            width: 34px;
-            height: 34px;
-            font-size: 22px;
-        }
-
-        .flipbook-controls {
-            bottom: -50px;
+            top: -35px;
+            width: 32px;
+            height: 32px;
+            font-size: 20px;
         }
     }
 
@@ -845,18 +820,9 @@
             font-size: 13px;
         }
 
-        #flipbook {
-            height: 65vh;
-        }
-
         .flipbook-container {
             height: 80vh;
             padding: 10px;
-        }
-
-        .flipbook-btn {
-            padding: 8px 14px;
-            font-size: 13px;
         }
     }
 </style>
@@ -1002,11 +968,4 @@
             </div>
             <p class="footer-text">
                 We do not believe in social class differences or the differences between people with and without money. Rich and poor are human, being rich does not transform a human body into something unknown because it is all a mental fraud of feeling different with money over others who do not have. Don't live in times past where your life didn't exist, your life is today, you will discover the new times and the hidden fraud of the new times.
-            </p>
-            
-            <div class="video-wrapper">
-                <video controls playsinline preload="metadata" poster="new.webp">
-                    <source src="New Time Here..mp4" type="video/mp4">
-                    Tu navegador no soporta video HTML5.
-                </video>
-                <p class="video-caption">New
+            </
