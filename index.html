@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - NEW TIMES</title>
+<title>About us - NEW TIMES</title>
 <meta name="description" content="About New Times Magazine">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +58,10 @@
         bottom: 0;
         background: rgba(10, 10, 10, 0.88);
         z-index: -1;
+    }
+
+    body.cookie-visible {
+        padding-bottom: 120px;
     }
 
     .header {
@@ -148,45 +152,28 @@
     .about-section {
         max-width: 900px;
         margin: 0 auto;
-        padding: 60px 24px 80px;
+        padding: 60px 24px 60px;
         text-align: center;
         animation: fadeInUp 0.8s ease;
     }
 
-    .magazine-title {
+    .about-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 42px;
+        font-size: 36px;
         font-weight: 500;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         color: #ffffff;
-        text-transform: uppercase;
         margin-bottom: 32px;
-        line-height: 1.2;
+        text-transform: uppercase;
     }
 
-    .magazine-image-wrapper {
-        max-width: 600px;
-        margin: 0 auto 40px;
-    }
-
-    .magazine-image-wrapper img {
-        width: 100%;
+    .magazine-image {
+        max-width: 100%;
+        width: 600px;
         height: auto;
         display: block;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        border: 1px solid var(--border-gray);
-    }
-
-    .about-text {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #ffffff;
-        max-width: 680px;
         margin: 0 auto;
-        font-weight: 300;
-        letter-spacing: 0px;
-        opacity: 0.9;
+        border-radius: 4px;
     }
 
     .mobile-menu {
@@ -275,6 +262,77 @@
         color: #333333;
     }
 
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--cookie-bg);
+        border-top: 1px solid var(--border-gray);
+        z-index: 997;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 24px;
+    }
+
+    .cookie-banner.visible {
+        transform: translateY(0);
+    }
+
+    .cookie-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    .cookie-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-light-gray);
+        flex: 1;
+        font-weight: 300;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .cookie-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        white-space: nowrap;
+    }
+
+    .cookie-btn-primary {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .cookie-btn-primary:hover {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -289,6 +347,10 @@
     @media (max-width: 768px) {
         :root {
             --header-height: var(--header-height-mobile);
+        }
+
+        body.cookie-visible {
+            padding-bottom: 180px;
         }
 
         .header-inner {
@@ -315,21 +377,36 @@
         }
 
         .about-section {
-            padding: 40px 20px 60px;
+            padding: 40px 20px 40px;
         }
 
-        .magazine-title {
-            font-size: 32px;
-            letter-spacing: 2px;
+        .about-title {
+            font-size: 28px;
             margin-bottom: 24px;
         }
 
-        .about-text {
-            font-size: 15px;
+        .magazine-image {
+            width: 100%;
         }
 
         .mobile-nav-link {
             font-size: 18px;
+        }
+
+        .cookie-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .cookie-buttons {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
         }
     }
 
@@ -353,16 +430,21 @@
         }
 
         .about-section {
-            padding: 32px 16px 50px;
+            padding: 32px 16px 32px;
         }
 
-        .magazine-title {
-            font-size: 28px;
-            letter-spacing: 1px;
+        .about-title {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .about-text {
-            font-size: 15px;
+        .cookie-text {
+            font-size: 13px;
+        }
+
+        .cookie-btn {
+            padding: 11px 20px;
+            font-size: 13px;
         }
     }
 </style>
@@ -397,15 +479,22 @@
 
     <main class="main">
         <section class="about-section">
-            <h1 class="magazine-title">Magazine New Time</h1>
-            <div class="magazine-image-wrapper">
-                <img src="magazine-666.jpg" alt="Magazine New Time" />
-            </div>
-            <p class="about-text">
-                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions.
-            </p>
+            <h1 class="about-title">Magazine New Time</h1>
+            <img class="magazine-image" src="magazine-666.jpg" alt="Magazine New Time" />
         </section>
     </main>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-inner">
+            <p class="cookie-text">
+                We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
+            </p>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
+                <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -445,6 +534,32 @@
             if (e.key === 'Escape' && isMenuOpen) {
                 closeMenu();
             }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
         });
     </script>
 </body>
