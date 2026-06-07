@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 10, 0.88);
+        background: rgba(10, 10, 0.88);
         z-index: -1;
     }
 
@@ -292,38 +292,12 @@
         stroke: var(--link-red);
     }
 
-    .about-section {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 24px 60px;
-        text-align: center;
-        animation: fadeInUp 0.8s ease 0.5s both;
-    }
-
-    .about-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 28px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 32px;
-    }
-
-    .about-image {
-        max-width: 100%;
-        width: 680px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
     .footer-section {
         max-width: 900px;
         margin: 0 auto;
         padding: 40px 24px 120px;
         text-align: center;
-        animation: fadeInUp 0.8s ease 0.6s both;
+        animation: fadeInUp 0.8s ease 0.5s both;
     }
 
     .footer-logo {
@@ -355,7 +329,7 @@
     .video-wrapper {
         max-width: 680px;
         margin: 0 auto;
-        animation: fadeInUp 0.8s ease 0.7s both;
+        animation: fadeInUp 0.8s ease 0.6s both;
     }
 
     .video-wrapper video {
@@ -434,6 +408,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 2;
+    }
+
+    .mobile-menu-back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        color: #333;
+        padding: 0;
+        height: 40px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        z-index: 2;
+    }
+
+    .mobile-menu-back.visible {
+        display: flex;
     }
 
     .mobile-nav-list {
@@ -461,6 +459,34 @@
     .mobile-nav-link:hover {
         background-color: transparent;
         color: #333333;
+    }
+
+    .about-menu-content {
+        display: none;
+        padding: 20px 24px 40px;
+        text-align: center;
+    }
+
+    .about-menu-content.active {
+        display: block;
+    }
+
+    .about-menu-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #2c2c2c;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    .about-menu-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .cookie-banner {
@@ -609,19 +635,6 @@
             padding: 12px 0 24px;
         }
 
-        .about-section {
-            padding: 40px 20px 40px;
-        }
-
-        .about-title {
-            font-size: 24px;
-            margin-bottom: 28px;
-        }
-
-        .about-image {
-            width: 100%;
-        }
-
         .footer-section {
             padding: 30px 20px 100px;
         }
@@ -655,6 +668,11 @@
 
         .mobile-nav-link {
             font-size: 18px;
+        }
+
+        .about-menu-title {
+            font-size: 22px;
+            margin-bottom: 20px;
         }
 
         .cookie-inner {
@@ -719,15 +737,6 @@
             padding: 8px 0 24px;
         }
 
-        .about-section {
-            padding: 30px 16px 30px;
-        }
-
-        .about-title {
-            font-size: 22px;
-            margin-bottom: 24px;
-        }
-
         .footer-section {
             padding: 20px 16px 80px;
         }
@@ -756,6 +765,15 @@
 
         .directory-link {
             padding: 22px 0;
+        }
+
+        .about-menu-title {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .about-menu-content {
+            padding: 16px 20px 32px;
         }
 
         .cookie-text {
@@ -788,12 +806,17 @@
     
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
+        <button class="mobile-menu-back" id="menuBackBtn">← Back</button>
         <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
+            <ul class="mobile-nav-list" id="mobileNavList">
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About us</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="aboutMenuLink">About us</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
             </ul>
+            <div class="about-menu-content" id="aboutMenuContent">
+                <h2 class="about-menu-title">About us</h2>
+                <img class="about-menu-image" src="magazine-666.jpg" alt="About us" />
+            </div>
         </div>
     </div>
 
@@ -808,7 +831,7 @@
             <div class="hero-signature">NEW TIMES</div>
         </section>
 
-        <section class="directory" id="directory">
+        <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
             </div>
@@ -904,11 +927,6 @@
             </ul>
         </section>
 
-        <section class="about-section" id="about">
-            <h2 class="about-title">About us</h2>
-            <img class="about-image" src="magazine-666.jpg" alt="About us" />
-        </section>
-
         <div class="footer-section" id="services">
             <div class="footer-logo">
                 <img src="new.webp" alt="NEW TIMES Logo" />
@@ -944,20 +962,4 @@
         const mobileMenu = document.getElementById('mobileMenu');
         const menuOverlay = document.getElementById('menuOverlay');
         const menuCloseBtn = document.getElementById('menuCloseBtn');
-        let isMenuOpen = false;
-
-        function openMenu() {
-            isMenuOpen = true;
-            mobileMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            isMenuOpen = false;
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        menuBtn.addEventListener('click', () => {
+        const menuBackBtn = document.getElementById('menuBackBtn');
