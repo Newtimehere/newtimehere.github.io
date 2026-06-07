@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-    :root { --bg-black: #0a0a; --text-white: #ffffff; --text-gray: #a8a8a8; --text-light-gray: #d1d1d1; --border-gray: #2a2a2a; --header-height: 70px; --header-height-mobile: 65px; --cookie-bg: #1a1a1a; --link-red: #7A1F1F; --link-red-hover: #9B2D2D; }
+    :root { --bg-black: #0a0a0a; --text-white: #ffffff; --text-gray: #a8a8a8; --text-light-gray: #d1d1d1; --border-gray: #2a2a2a; --header-height: 70px; --header-height-mobile: 65px; --cookie-bg: #1a1a1a; --link-red: #7A1F1F; --link-red-hover: #9B2D2D; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #ffffff; color: #2c2c2c; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     .header { position: fixed; top: 0; left: 0; right: 0; background-color: #ffffff; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
@@ -22,7 +22,7 @@
     .menu-btn:hover { opacity: 0.6; }
     .menu-line { width: 22px; height: 2px; background-color: #000000; transition: all 0.3s ease; }
     .main { padding-top: var(--header-height); min-height: 100vh; background-color: #ffffff; }
-    .services-section { max-width: 900px; margin: 0 auto; padding: 60px 24px 80px; animation: fadeInUp 0.8s ease; }
+    .services-section { max-width: 900px; margin: 0 auto; padding: 24px 24px 80px; animation: fadeInUp 0.8s ease; }
     .services-wrapper { max-width: 680px; margin: 0 auto; }
     .services-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; color: #2c2c2c; margin-bottom: 40px; font-weight: 400; }
     .services-subtitle { font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 600; color: #2c2c2c; margin-bottom: 24px; }
@@ -45,8 +45,8 @@
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; }
     .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 40px 20px 60px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } }
-    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 30px 16px 50px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } }
+    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 16px 20px 60px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } }
+    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 12px 16px 50px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } }
 </style>
 </head>
 <body>
