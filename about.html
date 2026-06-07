@@ -6,7 +6,7 @@
 <title>About Us - NEW TIME MAGAZINE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -21,7 +21,15 @@
         align-items: center;
         justify-content: flex-start;
         min-height: 100vh;
-        padding: 32px 20px 20px 20px;
+        padding: 32px 20px 40px 20px;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .magazine-title {
@@ -40,36 +48,75 @@
         max-width: 100%;
         width: auto;
         height: auto;
-        max-height: 82vh;
+        max-height: 78vh;
         display: block;
         box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+        margin-bottom: 20px;
+    }
+
+    .magazine-link {
+        align-self: flex-start;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 24px;
+        border: 1px solid #ffffff;
+        transition: all 0.3s ease;
+    }
+
+    .magazine-link:hover {
+        background-color: #ffffff;
+        color: #000000;
     }
 
     @media (max-width: 768px) {
         body {
-            padding: 24px 16px 16px 16px;
+            padding: 24px 16px 32px 16px;
         }
         .magazine-title {
             font-size: 28px;
             letter-spacing: 5px;
             margin-bottom: 22px;
         }
+        .magazine-image {
+            margin-bottom: 18px;
+        }
+        .magazine-link {
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 9px 20px;
+        }
     }
 
     @media (max-width: 480px) {
         body {
-            padding: 20px 12px 12px 12px;
+            padding: 20px 12px 28px 12px;
         }
         .magazine-title {
             font-size: 22px;
             letter-spacing: 3px;
             margin-bottom: 18px;
         }
+        .magazine-image {
+            margin-bottom: 16px;
+        }
+        .magazine-link {
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 8px 18px;
+        }
     }
 </style>
 </head>
 <body>
-    <h1 class="magazine-title">New Time Magazine</h1>
-    <img class="magazine-image" src="magazine-666.jpg" alt="New Time Magazine">
+    <div class="content-wrapper">
+        <h1 class="magazine-title">New Time Magazine</h1>
+        <img class="magazine-image" src="magazine-666.jpg" alt="New Time Magazine">
+        <a href="https://online.fliphtml5.com/xehyf/SHINE/" class="magazine-link" target="_blank">Read SHINE Issue</a>
+    </div>
 </body>
 </html>
