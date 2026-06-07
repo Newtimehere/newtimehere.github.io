@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 0.88);
+        background: rgba(10, 10, 10, 0.88);
         z-index: -1;
     }
 
@@ -408,30 +408,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2;
-    }
-
-    .mobile-menu-back {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: none;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        color: #333;
-        padding: 0;
-        height: 40px;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        z-index: 2;
-    }
-
-    .mobile-menu-back.visible {
-        display: flex;
     }
 
     .mobile-nav-list {
@@ -459,34 +435,6 @@
     .mobile-nav-link:hover {
         background-color: transparent;
         color: #333333;
-    }
-
-    .about-menu-content {
-        display: none;
-        padding: 20px 24px 40px;
-        text-align: center;
-    }
-
-    .about-menu-content.active {
-        display: block;
-    }
-
-    .about-menu-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 24px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        color: #2c2c2c;
-        text-transform: uppercase;
-        margin-bottom: 24px;
-    }
-
-    .about-menu-image {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
     }
 
     .cookie-banner {
@@ -670,11 +618,6 @@
             font-size: 18px;
         }
 
-        .about-menu-title {
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
         .cookie-inner {
             flex-direction: column;
             align-items: flex-start;
@@ -767,15 +710,6 @@
             padding: 22px 0;
         }
 
-        .about-menu-title {
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .about-menu-content {
-            padding: 16px 20px 32px;
-        }
-
         .cookie-text {
             font-size: 13px;
         }
@@ -806,17 +740,12 @@
     
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
-        <button class="mobile-menu-back" id="menuBackBtn">← Back</button>
         <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list" id="mobileNavList">
+            <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="aboutMenuLink">About us</a></li>
+                <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About us</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
             </ul>
-            <div class="about-menu-content" id="aboutMenuContent">
-                <h2 class="about-menu-title">About us</h2>
-                <img class="about-menu-image" src="magazine-666.jpg" alt="About us" />
-            </div>
         </div>
     </div>
 
@@ -962,4 +891,67 @@
         const mobileMenu = document.getElementById('mobileMenu');
         const menuOverlay = document.getElementById('menuOverlay');
         const menuCloseBtn = document.getElementById('menuCloseBtn');
-        const menuBackBtn = document.getElementById('menuBackBtn');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            isMenuOpen = true;
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen ? closeMenu() : openMenu();
+        });
+
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
+
+        document.querySelectorAll('.directory-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4,
