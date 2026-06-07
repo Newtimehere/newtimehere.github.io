@@ -198,6 +198,36 @@
         opacity: 1;
     }
 
+    /* NUEVO: Sección About us con la foto y título */
+    .about-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 80px 24px 60px;
+        text-align: center;
+        scroll-margin-top: var(--header-height);
+        animation: fadeInUp 0.8s ease 0.3s both;
+    }
+
+    .about-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .about-image {
+        max-width: 650px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
     .directory {
         max-width: 900px;
         margin: 0 auto;
@@ -415,7 +445,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -508,34 +538,6 @@
         color: #000000;
     }
 
-    /* NUEVO: Estilos para la sección About */
-    .about-section {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 24px 60px;
-        text-align: center;
-        scroll-margin-top: var(--header-height);
-    }
-
-    .about-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 32px;
-        font-weight: 500;
-        letter-spacing: 2px;
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 32px;
-    }
-
-    .about-image {
-        max-width: 600px;
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        border-radius: 4px;
-    }
-
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -603,6 +605,17 @@
             margin-bottom: 0;
         }
 
+        .about-section {
+            padding: 60px 20px 40px;
+            scroll-margin-top: var(--header-height-mobile);
+        }
+
+        .about-title {
+            font-size: 28px;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+
         .directory {
             padding: 12px 20px 40px;
         }
@@ -661,16 +674,6 @@
             width: 100%;
             text-align: center;
         }
-
-        .about-section {
-            padding: 40px 20px 40px;
-            scroll-margin-top: var(--header-height-mobile);
-        }
-
-        .about-title {
-            font-size: 26px;
-            margin-bottom: 24px;
-        }
     }
 
     @media (max-width: 480px) {
@@ -708,6 +711,11 @@
         .hero-signature {
             margin-top: 16px;
             margin-bottom: 0;
+        }
+
+        .about-title {
+            font-size: 24px;
+            letter-spacing: 1px;
         }
 
         .directory {
@@ -756,10 +764,6 @@
             padding: 11px 20px;
             font-size: 13px;
         }
-
-        .about-title {
-            font-size: 22px;
-        }
     }
 </style>
 </head>
@@ -804,7 +808,7 @@
 
         <section class="about-section" id="about-section">
             <h2 class="about-title">Magazine New Time</h2>
-            <img class="about-image" src="tu-foto.jpg" alt="Magazine New Time" />
+            <img class="about-image" src="magazine-666.jpg" alt="Magazine New Time" />
         </section>
 
         <section class="directory" id="about">
@@ -979,31 +983,3 @@
 
         setTimeout(() => {
             if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
-
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
-
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
-
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
-
-        document.querySelectorAll('.directory-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        });
-    </script>
-</body>
-</html>
