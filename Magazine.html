@@ -32,18 +32,6 @@
         align-items: center;
     }
 
-    .magazine-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 42px;
-        font-weight: 400;
-        letter-spacing: 8px;
-        color: #ffffff;
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 28px;
-        line-height: 1;
-    }
-
     .magazine-image {
         max-width: 100%;
         width: auto;
@@ -52,6 +40,24 @@
         display: block;
         box-shadow: 0 10px 40px rgba(255,255,255,0.1);
         margin-bottom: 28px;
+    }
+
+    .magazine-description {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: #ffffff;
+        text-align: left;
+        margin-bottom: 28px;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .magazine-description strong {
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
     .magazine-link {
@@ -77,9 +83,9 @@
         body {
             padding: 24px 16px 32px 16px;
         }
-        .magazine-title {
-            font-size: 28px;
-            letter-spacing: 5px;
+        .magazine-description {
+            font-size: 18px;
+            letter-spacing: 0.5px;
             margin-bottom: 22px;
         }
         .magazine-image {
@@ -96,9 +102,9 @@
         body {
             padding: 20px 12px 28px 12px;
         }
-        .magazine-title {
-            font-size: 22px;
-            letter-spacing: 3px;
+        .magazine-description {
+            font-size: 16px;
+            letter-spacing: 0.5px;
             margin-bottom: 18px;
         }
         .magazine-image {
@@ -114,8 +120,12 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <h1 class="magazine-title">New Time Magazine</h1>
         <img class="magazine-image" src="magazine-666.jpg" alt="New Time Magazine">
+        <p class="magazine-description">
+            <strong>New Time Magazine:</strong><br><br>
+            New Time Magazine isn’t your typical business publication. We go beyond quarterly reports and market trends to cover what actually matters: happiness, fashion, professional growth, and even the harder parts of life.<br><br>
+            We’re not here to repackage the same old stories. At New Time Magazine, you get reality — unfiltered, relevant, and worth your time.
+        </p>
         <a href="https://online.fliphtml5.com/xehyf/SHINE/" class="magazine-link" target="_blank">See Magazine</a>
     </div>
 </body>
