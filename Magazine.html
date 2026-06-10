@@ -84,11 +84,29 @@
         padding: 10px 24px;
         border: 1px solid #ffffff;
         transition: all 0.3s ease;
+        margin-bottom: 32px;
     }
 
     .magazine-link:hover {
         background-color: #ffffff;
         color: #000000;
+    }
+
+    .gallery-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 4px;
+    }
+
+    .gallery-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+        box-shadow: 0 8px 30px rgba(255,255,255,0.08);
     }
 
     @media (max-width: 768px) {
@@ -112,6 +130,10 @@
             font-size: 13px;
             letter-spacing: 1px;
             padding: 9px 20px;
+            margin-bottom: 28px;
+        }
+        .gallery-container {
+            gap: 20px;
         }
     }
 
@@ -136,6 +158,10 @@
             font-size: 12px;
             letter-spacing: 1px;
             padding: 8px 18px;
+            margin-bottom: 24px;
+        }
+        .gallery-container {
+            gap: 16px;
         }
     }
 </style>
@@ -149,6 +175,12 @@
             We’re not here to repackage the same old stories. At New Time Magazine, you get reality — unfiltered, relevant, and worth your time.
         </p>
         <a href="https://online.fliphtml5.com/xehyf/SHINE/" class="magazine-link" target="_blank">See Magazine</a>
+        
+        <div class="gallery-container">
+            <img class="gallery-image" src="AQN2crFe560rtX5mAq.jpg" alt="Gallery Image 1">
+            <img class="gallery-image" src="AQOjDmkxAhSeeyWv0.jpg" alt="Gallery Image 2">
+            <img class="gallery-image" src="AQPfJHyOGXpT1HTJif.jpg" alt="Gallery Image 3">
+        </div>
     </div>
 </body>
 </html>
