@@ -20,13 +20,13 @@
     :root {
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8a8;
+        --text-gray: #a8a8;
         --text-light-gray: #d1d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
-        --link-red: #7A1F1F;
+        --link-red: #7A1F;
     }
 
     html {
@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 10, 0.88);
+        background: rgba(10, 10, 0.88);
         z-index: -1;
     }
 
@@ -300,7 +300,7 @@
     }
 
     .speaker-btn:hover {
-        background: rgba(122, 31, 31, 0.1);
+        background: rgba(122, 31, 0.1);
         transform: scale(1.05);
     }
 
@@ -456,7 +456,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -810,7 +810,7 @@
                     <a href="origins-of-people-with-disabilities.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Origins of disabled people</span>
                         <div class="directory-actions">
-                            <button class="speaker-btn" data-audio="sound-of-disabled-peop....mp3" aria-label="Play audio">
+                            <button class="speaker-btn" data-audio="sound-of-disabled-people.mp3" aria-label="Play audio">
                                 <svg class="speaker-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
                                 </svg>
@@ -851,15 +851,7 @@
                         </div>
                     </a>
                 </li>
-
-
-
-
-
-
-
-
-                               <li class="directory-item">
+                                <li class="directory-item">
                     <a href="physical-evidence-of-same-sex.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Physical evidence of same-sex, over 21 to see</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1033,7 +1025,6 @@
                 
                 const audioSrc = this.getAttribute('data-audio');
                 
-                // Si hay un audio sonando y es el mismo botón, pausar
                 if (currentAudio && currentButton === this) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
@@ -1043,14 +1034,12 @@
                     return;
                 }
                 
-                // Si hay otro audio sonando, detenerlo
                 if (currentAudio) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
                     if (currentButton) currentButton.classList.remove('playing');
                 }
                 
-                // Reproducir nuevo audio
                 currentAudio = new Audio(audioSrc);
                 currentButton = this;
                 this.classList.add('playing');
@@ -1060,7 +1049,6 @@
                     this.classList.remove('playing');
                 });
                 
-                // Cuando termine el audio
                 currentAudio.addEventListener('ended', () => {
                     this.classList.remove('playing');
                     currentAudio = null;
