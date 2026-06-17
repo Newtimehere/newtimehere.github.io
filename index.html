@@ -18,15 +18,15 @@
     }
 
     :root {
-        --bg-black: #0a0a0a;
+        --bg-black: #0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8;
-        --text-light-gray: #d1d1d1;
-        --border-gray: #2a2a2a;
+        --text-gray: #a8a8a8;
+        --text-light-gray: #d1d1;
+        --border-gray: #2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
-        --link-red: #7A1F;
+        --link-red: #7A1F1F;
     }
 
     html {
@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 0.88);
+        background: rgba(10, 10, 10, 0.88);
         z-index: -1;
     }
 
@@ -285,11 +285,11 @@
     }
 
     .speaker-btn {
-        width: 32px;
-        height: 32px;
-        border: 1.5px solid var(--link-red);
+        width: 28px;
+        height: 28px;
+        border: 2px solid var(--link-red);
         background: transparent;
-        border-radius: 4px;
+        border-radius: 3px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -300,8 +300,8 @@
     }
 
     .speaker-btn:hover {
-        background: rgba(122, 31, 0.1);
-        transform: scale(1.05);
+        background: rgba(122, 31, 31, 0.15);
+        transform: scale(1.08);
     }
 
     .speaker-btn:active {
@@ -309,12 +309,17 @@
     }
 
     .speaker-btn.playing {
-        background: rgba(122, 31, 31, 0.2);
+        background: rgba(122, 31, 31, 0.25);
+        border-color: #ffffff;
+    }
+
+    .speaker-btn.playing .speaker-icon {
+        fill: #ffffff;
     }
 
     .speaker-icon {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         fill: var(--link-red);
     }
 
@@ -456,11 +461,11 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
-        border-top: 1px solid rgba(44, 44, 44, 0.08);
+        border-top: 1px solid rgba(44, 44, 0.08);
     }
 
     .mobile-nav-link {
@@ -851,7 +856,16 @@
                         </div>
                     </a>
                 </li>
-                                <li class="directory-item">
+
+
+
+
+
+
+
+
+
+                               <li class="directory-item">
                     <a href="physical-evidence-of-same-sex.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Physical evidence of same-sex, over 21 to see</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
