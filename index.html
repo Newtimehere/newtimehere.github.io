@@ -21,7 +21,7 @@
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
-        --text-light-gray: #d1d1d1;
+        --text-light-gray: #d1d1;
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 10, 0.88);
+        background: rgba(10, 10, 0.88);
         z-index: -1;
     }
 
@@ -292,19 +292,65 @@
         stroke: var(--link-red);
     }
 
-    .directory-audio-wrapper {
+    .directory-audio-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 22px 0;
         gap: 20px;
+    }
+
+    .directory-audio-link {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        color: var(--link-red);
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .directory-audio-link:hover {
+        padding-left: 12px;
         color: var(--link-red);
     }
 
-    .directory-audio-wrapper audio {
-        height: 32px;
-        max-width: 200px;
+    .speaker-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
         flex-shrink: 0;
+        margin-left: 12px;
+    }
+
+    .speaker-icon {
+        width: 26px;
+        height: 26px;
+        fill: #ffffff;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+    }
+
+    .speaker-btn:hover .speaker-icon {
+        opacity: 1;
+        transform: scale(1.2);
+        fill: var(--link-red);
+    }
+
+    .speaker-btn.playing .speaker-icon {
+        fill: var(--link-red);
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
     }
 
     .footer-section {
@@ -629,13 +675,14 @@
             gap: 16px;
         }
 
-        .directory-audio-wrapper {
+        .directory-audio-row {
             padding: 22px 0;
             gap: 16px;
         }
 
-        .directory-audio-wrapper audio {
-            max-width: 140px;
+        .speaker-icon {
+            width: 24px;
+            height: 24px;
         }
 
         .mobile-nav-link {
@@ -734,9 +781,9 @@
             padding: 22px 0;
         }
 
-        .directory-audio-wrapper audio {
-            max-width: 120px;
-            height: 28px;
+        .speaker-icon {
+            width: 22px;
+            height: 22px;
         }
 
         .cookie-text {
@@ -803,18 +850,24 @@
                     </a>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-audio-wrapper">
-                        <span class="directory-link-text">Origins of cancer</span>
-                        <audio controls preload="none">
+                    <div class="directory-audio-row">
+                        <a href="666-666.pdf" class="directory-audio-link" target="_blank" rel="noopener noreferrer">
+                            <span class="directory-link-text">Origins of cancer</span>
+                        </a>
+                        <button class="speaker-btn" id="cancerAudioBtn" onclick="toggleAudio('cancerAudio', this)">
+                            <svg class="speaker-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                        <audio id="cancerAudio" preload="none">
                             <source src="origins-cancer.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
                         </audio>
                     </div>
                 </li>
                 <li class="directory-item">
                     <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Same-sex sexual impediment</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -846,7 +899,7 @@
                 <li class="directory-item">
                     <a href="the-money.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">The Money and the effect</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -854,7 +907,7 @@
                 <li class="directory-item">
                     <a href="origins-of-suicide.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -987,6 +1040,33 @@
                 this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
             });
         });
+
+        function toggleAudio(audioId, element) {
+            const audio = document.getElementById(audioId);
+            const btn = element.querySelector('.speaker-btn');
+            
+            document.querySelectorAll('audio').forEach(a => {
+                if (a.id !== audioId) {
+                    a.pause();
+                    a.currentTime = 0;
+                    const otherBtn = a.parentElement.querySelector('.speaker-btn');
+                    if (otherBtn) otherBtn.classList.remove('playing');
+                }
+            });
+
+            if (audio.paused) {
+                audio.play();
+                btn.classList.add('playing');
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                btn.classList.remove('playing');
+            }
+
+            audio.onended = function() {
+                btn.classList.remove('playing');
+            };
+        }
     </script>
 </body>
 </html>
