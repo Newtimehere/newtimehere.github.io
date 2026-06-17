@@ -292,66 +292,6 @@
         stroke: var(--link-red);
     }
 
-    .directory-item-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 22px 0;
-        gap: 12px;
-    }
-
-    .directory-item-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        flex: 1;
-    }
-
-    .directory-audio-btn {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        border: 1px solid #3a3a3a;
-        border-radius: 3px;
-        padding: 7px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
-        flex-shrink: 0;
-    }
-
-    .directory-audio-btn:hover {
-        background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
-        border-color: var(--link-red);
-        transform: scale(1.08);
-        box-shadow: 0 4px 12px rgba(122,31,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-
-    .directory-audio-btn:active {
-        transform: scale(0.96);
-    }
-
-    .directory-audio-btn svg {
-        width: 16px;
-        height: 16px;
-        fill: #d0d0d0;
-        transition: fill 0.3s ease;
-    }
-
-    .directory-audio-btn:hover svg {
-        fill: var(--link-red);
-    }
-
-    .directory-audio-btn.playing {
-        border-color: var(--link-red);
-        background: linear-gradient(135deg, #2d1a1a 0%, #3a2d2d 100%);
-    }
-
-    .directory-audio-btn.playing svg {
-        fill: var(--link-red);
-    }
-
     .footer-section {
         max-width: 900px;
         margin: 0 auto;
@@ -475,7 +415,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -674,10 +614,6 @@
             gap: 16px;
         }
 
-        .directory-item-content {
-            padding: 22px 0;
-        }
-
         .mobile-nav-link {
             font-size: 18px;
         }
@@ -774,10 +710,6 @@
             padding: 22px 0;
         }
 
-        .directory-item-content {
-            padding: 22px 0;
-        }
-
         .cookie-text {
             font-size: 13px;
         }
@@ -842,21 +774,12 @@
                     </a>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-item-content">
-                        <div class="directory-item-left">
-                            <a href="666-666.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; flex: 1;">
-                                <span class="directory-link-text">Origins of cancer</span>
-                            </a>
-                            <button class="directory-audio-btn" onclick="playAudio(event, 'origins-cancer.mp3', this)" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                                </svg>
-                            </button>
-                        </div>
+                    <a href="666-666.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
+                        <span class="directory-link-text">Origins of cancer</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </div>
+                    </a>
                 </li>
                 <li class="directory-item">
                     <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
@@ -952,4 +875,88 @@
     </main>
 
     <div class="cookie-banner" id="cookieBanner">
-        <div
+        <div class="cookie-inner">
+            <p class="cookie-text">
+                We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
+            </p>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
+                <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuCloseBtn = document.getElementById('menuCloseBtn');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            isMenuOpen = true;
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen ? closeMenu() : openMenu();
+        });
+
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
+
+        document.querySelectorAll('.directory-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
