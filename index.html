@@ -292,43 +292,51 @@
         stroke: var(--link-red);
     }
 
-    .sound-btn {
-        width: 28px;
-        height: 28px;
-        border: 1px solid var(--link-red);
+    .directory-controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .audio-btn {
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid var(--link-red);
+        border-radius: 4px;
         background: transparent;
-        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         transition: all 0.3s ease;
-        flex-shrink: 0;
         padding: 0;
-        margin-right: 12px;
-        border-radius: 2px;
+        transform: skewX(-8deg);
     }
 
-    .sound-btn:hover {
+    .audio-btn:hover {
         background: var(--link-red);
-        transform: scale(1.05);
+        transform: skewX(-8deg) scale(1.05);
     }
 
-    .sound-btn svg {
-        width: 14px;
-        height: 14px;
-        stroke: var(--link-red);
-        fill: none;
-        transition: stroke 0.3s ease;
+    .audio-btn svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--link-red);
+        transform: skewX(8deg);
+        transition: fill 0.3s ease;
     }
 
-    .sound-btn:hover svg {
-        stroke: #ffffff;
+    .audio-btn:hover svg {
+        fill: #ffffff;
     }
 
-    .directory-link-wrapper {
-        display: flex;
-        align-items: center;
-        flex: 1;
+    .audio-btn.playing {
+        background: var(--link-red);
+    }
+
+    .audio-btn.playing svg {
+        fill: #ffffff;
     }
 
     .footer-section {
@@ -454,7 +462,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -653,17 +661,6 @@
             gap: 16px;
         }
 
-        .sound-btn {
-            width: 26px;
-            height: 26px;
-            margin-right: 10px;
-        }
-
-        .sound-btn svg {
-            width: 13px;
-            height: 13px;
-        }
-
         .mobile-nav-link {
             font-size: 18px;
         }
@@ -760,17 +757,6 @@
             padding: 22px 0;
         }
 
-        .sound-btn {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-
-        .sound-btn svg {
-            width: 12px;
-            height: 12px;
-        }
-
         .cookie-text {
             font-size: 13px;
         }
@@ -836,25 +822,20 @@
                 </li>
                 <li class="directory-item">
                     <div class="directory-link">
-                        <div class="directory-link-wrapper">
-                            <button class="sound-btn" onclick="playSound('sound-cancer.mp3'); event.stopPropagation();" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <a href="666-666.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text" style="text-decoration:none;">Origins of cancer</a>
+                        <div class="directory-controls">
+                            <button class="audio-btn" data-audio="sound-cancer.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
                                 </svg>
                             </button>
-                            <a href="666-666.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration:none;flex:1;">
-                                <span class="directory-link-text">Origins of cancer</span>
-                            </a>
-                        </div>
-                        <a href="666-666.pdf" target="_blank" rel="noopener noreferrer">
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </a>
+                        </div>
                     </div>
                 </li>
-                <li class="directory-item">
+                  <li class="directory-item">
                     <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
                         <span class="directory-link-text">Same-sex sexual impediment</span>
                         <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -959,7 +940,7 @@
         </div>
     </div>
 
-    <audio id="audioPlayer"></audio>
+    <audio id="audioPlayer" preload="none"></audio>
 
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -1033,11 +1014,36 @@
             });
         });
 
-        function playSound(audioFile) {
-            const audio = document.getElementById('audioPlayer');
-            audio.src = audioFile;
-            audio.play();
-        }
+        // Audio player para la bocina de "Origins of cancer"
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioBtns = document.querySelectorAll('.audio-btn');
+        
+        audioBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const audioSrc = this.getAttribute('data-audio');
+                
+                if (audioPlayer.src.includes(audioSrc) && !audioPlayer.paused) {
+                    audioPlayer.pause();
+                    this.classList.remove('playing');
+                } else {
+                    audioBtns.forEach(b => b.classList.remove('playing'));
+                    audioPlayer.src = audioSrc;
+                    audioPlayer.play();
+                    this.classList.add('playing');
+                }
+            });
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            audioBtns.forEach(b => b.classList.remove('playing'));
+        });
+
+        audioPlayer.addEventListener('pause', () => {
+            audioBtns.forEach(b => b.classList.remove('playing'));
+        });
     </script>
 </body>
-</html>
+</html>              
