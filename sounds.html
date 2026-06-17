@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origins of Cancer - Audio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            gap: 24px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 0;
+        }
+        audio {
+            width: 100%;
+            max-width: 500px;
+            height: 54px;
+        }
+        .back-btn {
+            color: #7A1F1F;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 8px;
+            transition: opacity 0.2s ease;
+        }
+        .back-btn:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Origins of Cancer</h1>
+    <audio controls autoplay>
+        <source src="origins-cancer.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    <a href="index.html" class="back-btn">← Volver al directorio</a>
+</body>
+</html>
