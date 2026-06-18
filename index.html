@@ -18,11 +18,11 @@
     }
 
     :root {
-        --bg-black: #0a0a;
+        --bg-black: #0a0a0a;
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
-        --text-light-gray: #d1d1;
-        --border-gray: #2a2a;
+        --text-light-gray: #d1d1d1;
+        --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
@@ -284,43 +284,42 @@
         flex-shrink: 0;
     }
 
-    .speaker-btn {
-        width: 28px;
-        height: 28px;
-        border: 2px solid var(--link-red);
+    .audio-btn {
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid var(--link-red);
+        border-radius: 4px;
         background: transparent;
-        border-radius: 3px;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         padding: 0;
-        flex-shrink: 0;
     }
 
-    .speaker-btn:hover {
-        background: rgba(122, 31, 31, 0.15);
-        transform: scale(1.08);
+    .audio-btn:hover {
+        background: var(--link-red);
+        transform: scale(1.05);
     }
 
-    .speaker-btn:active {
-        transform: scale(0.95);
+    .audio-btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--link-red);
+        transition: stroke 0.3s ease;
     }
 
-    .speaker-btn.playing {
-        background: rgba(122, 31, 31, 0.25);
-        border-color: #ffffff;
+    .audio-btn:hover svg {
+        stroke: #ffffff;
     }
 
-    .speaker-btn.playing .speaker-icon {
-        fill: #ffffff;
+    .audio-btn.playing {
+        background: var(--link-red);
     }
 
-    .speaker-icon {
-        width: 14px;
-        height: 14px;
-        fill: var(--link-red);
+    .audio-btn.playing svg {
+        stroke: #ffffff;
     }
 
     .directory-arrow {
@@ -465,7 +464,7 @@
     }
 
     .mobile-nav-item:first-child {
-        border-top: 1px solid rgba(44, 44, 0.08);
+        border-top: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-link {
@@ -812,122 +811,188 @@
             </div>
             <ul class="directory-list">
                 <li class="directory-item">
-                    <a href="origins-of-people-with-disabilities.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of disabled people</span>
+                    <div class="directory-link">
+                        <a href="origins-of-people-with-disabilities.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of disabled people</a>
                         <div class="directory-actions">
-                            <button class="speaker-btn" data-audio="sound-of-disabled-people.mp3" aria-label="Play audio">
-                                <svg class="speaker-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            <button class="audio-btn" data-audio="sound-of-disabled-peop.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="666-666.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of cancer</span>
+                    <div class="directory-link">
+                        <a href="666-666.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of cancer</a>
                         <div class="directory-actions">
-                            <button class="speaker-btn" data-audio="sound-cancer.mp3" aria-label="Play audio">
-                                <svg class="speaker-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            <button class="audio-btn" data-audio="sound-cancer.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="same-sex-sexual-impediment.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Same-sex sexual impediment</span>
+                    <div class="directory-link">
+                        <a href="same-sex-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Same-sex sexual impediment</a>
                         <div class="directory-actions">
-                            <button class="speaker-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
-                                <svg class="speaker-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                    </a>
-                </li>
-
-
-
-
-
-
-
-
-
-                              <li class="directory-item">
-                    <a href="physical-evidence-of-same-sex.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Physical evidence of same-sex, over 21 to see</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="same-sex-sexual-and-summarized%5E666.PDF" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Same-sex direct and summarized</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="physical-evidence-of-same-sex.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Physical evidence of same-sex, over 21 to see</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-physical-evidenc.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="origins-of-infidelity.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of infidelity</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link-text">Same-sex direct and summarized</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-questions-answ.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="the-money.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">The Money and the effect</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="origins-of-infidelity.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of infidelity</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-infidelity.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </li>
+
+
+
+
+
+
+
+
+                               <li class="directory-item">
+                    <div class="directory-link">
+                        <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">The Money and the effect</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-money-and-effec.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="origins-of-suicide.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of suicides</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="origins-of-suicide.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of suicides</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-origins-of-suicid.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="origins-of-being-woman-and-men666.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of being woman and men</span>
-                        <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="origins-of-being-woman-and-men666.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of being woman and men</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-origins-woman-a.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="origins-of-assassins.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Origins of assassins</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="origins-of-assassins.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Origins of assassins</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-origins-of-assas.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
                 <li class="directory-item">
-                    <a href="human-love%5E1.pdf" class="directory-link" target="_blank" rel="noopener noreferrer">
-                        <span class="directory-link-text">Human love</span>
-                        <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="directory-link">
+                        <a href="human-love%5E1.pdf" target="_blank" rel="noopener noreferrer" class="directory-link-text">Human love</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-human-love.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -1028,54 +1093,52 @@
             hideCookieBanner();
         });
 
-        // AUDIO PLAYER LOGIC
+        // NUEVO: Lógica para reproducir audio
         let currentAudio = null;
-        let currentButton = null;
+        let currentBtn = null;
 
-        document.querySelectorAll('.speaker-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
+        document.querySelectorAll('.audio-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
                 const audioSrc = this.getAttribute('data-audio');
                 
-                if (currentAudio && currentButton === this) {
+                // Si hay un audio sonando y es el mismo botón, pausar
+                if (currentAudio && currentBtn === this) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
+                    currentBtn.classList.remove('playing');
                     currentAudio = null;
-                    this.classList.remove('playing');
-                    currentButton = null;
+                    currentBtn = null;
                     return;
                 }
                 
+                // Si hay otro audio sonando, pararlo
                 if (currentAudio) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
-                    if (currentButton) currentButton.classList.remove('playing');
+                    if (currentBtn) currentBtn.classList.remove('playing');
                 }
                 
+                // Reproducir nuevo audio
                 currentAudio = new Audio(audioSrc);
-                currentButton = this;
+                currentBtn = this;
                 this.classList.add('playing');
                 
                 currentAudio.play().catch(err => {
-                    console.log('Error reproduciendo audio:', err);
+                    console.log('Error al reproducir audio:', err);
                     this.classList.remove('playing');
                 });
                 
+                // Cuando termine el audio, quitar el estado playing
                 currentAudio.addEventListener('ended', () => {
-                    this.classList.remove('playing');
+                    if (currentBtn) currentBtn.classList.remove('playing');
                     currentAudio = null;
-                    currentButton = null;
+                    currentBtn = null;
                 });
-            });
-        });
-
-        document.querySelectorAll('.directory-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
             });
         });
     </script>
 </body>
-</html>                 
+</html>
