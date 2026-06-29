@@ -542,6 +542,86 @@
         color: #000000;
     }
 
+    .young-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .young-modal.active {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .young-modal-content {
+        background-color: var(--bg-black);
+        border: 1px solid var(--border-gray);
+        max-width: 800px;
+        width: 100%;
+        margin: 60px auto;
+        padding: 40px 32px;
+        position: relative;
+        animation: fadeInUp 0.4s ease;
+    }
+
+    .young-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 32px;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.2s ease;
+    }
+
+    .young-modal-close:hover {
+        opacity: 0.6;
+    }
+
+    .young-modal h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 24px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .young-modal p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--text-light-gray);
+        margin-bottom: 24px;
+        white-space: pre-line;
+    }
+
+    .young-modal strong {
+        color: #ffffff;
+        font-weight: 600;
+        display: block;
+        margin-top: 28px;
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -667,6 +747,19 @@
             width: 100%;
             text-align: center;
         }
+
+        .young-modal-content {
+            padding: 32px 20px;
+            margin: 40px auto;
+        }
+
+        .young-modal h2 {
+            font-size: 26px;
+        }
+
+        .young-modal p {
+            font-size: 15px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -779,7 +872,7 @@
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-                <li class="mobile-nav-item"><a href="for-the-young.html" class="mobile-nav-link">For the young</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungBtn">For the young</a></li>
                 <li class="mobile-nav-item"><a href="team.html" class="mobile-nav-link">Team</a></li>
                 <li class="mobile-nav-item"><a href="biography.html" class="mobile-nav-link">Biography</a></li>
             </ul>
@@ -873,7 +966,8 @@
                             <button class="audio-btn" data-audio="sound-questions-answers.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke
+                                                                           <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1011,6 +1105,42 @@
         </div>
     </div>
 
+    <!-- MODAL FOR THE YOUNG -->
+    <div class="young-modal" id="youngModal">
+        <div class="young-modal-content">
+            <button class="young-modal-close" id="youngModalClose">&times;</button>
+            <h2>New Times For The Young</h2>
+            <p><strong>The Fraudulent Clock ⏰</strong>
+People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = fraud.
+Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.
+
+<strong>Laws + TV 📺</strong>
+Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣 = fake.
+Hidden truth: You get 90 years on Earth. The 9-to-5 steals 60. They rob and kill you with paperwork and call it “legal.”
+
+<strong>Cost of Living Scam 💸</strong>
+They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = fraud.
+Hidden Truth: Life is free. You’re born from straight sex. No bill, no subscription, no tax.
+
+<strong>Food Fraud 🍔</strong>
+Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = cancer.
+Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏
+
+<strong>Fraudulent Laws ⚖️</strong>
+🤣 “Equal justice” 😆 for all. Murderers post bail and walk. Companies get licenses to sell cancer in a bag. Gay marriage protected by law = all fraud.
+Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease, it kills. Gay marriage is sexual fraud. Make it illegal.
+
+<strong>Church Scam ⛪</strong>
+“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.
+Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.
+
+<strong>College Degree Scam 🎓</strong>
+Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” 😆 guaranteed, right? 🤣
+“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud
+Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave—broke, in uniform, faking a smile.</p>
+        </div>
+    </div>
+
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1121,6 +1251,38 @@
                 });
             });
         });
+
+        // FOR THE YOUNG MODAL LOGIC
+        const forYoungBtn = document.getElementById('forYoungBtn');
+        const youngModal = document.getElementById('youngModal');
+        const youngModalClose = document.getElementById('youngModalClose');
+
+        forYoungBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMenu();
+            youngModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        youngModalClose.addEventListener('click', () => {
+            youngModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        youngModal.addEventListener('click', (e) => {
+            if (e.target === youngModal) {
+                youngModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && youngModal.classList.contains('active')) {
+                youngModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
-</html>                
+</html>
+                                       
