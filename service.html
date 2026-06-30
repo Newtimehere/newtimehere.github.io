@@ -42,11 +42,27 @@
     .mobile-nav-list { list-style: none; }
     .mobile-nav-item { border-bottom: 1px solid #e5e5e5; }
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
-    .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; }
+    .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; cursor: pointer; }
     .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
+
+    /* Service Modal - MISMO ESTILO DE LA FOTO */
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 5000; opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; align-items: flex-start; justify-content: center; padding-top: 90px; overflow-y: auto; }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-content { background-color: #ffffff; width: 90%; max-width: 680px; max-height: calc(100vh - 120px); overflow-y: auto; position: relative; padding: 40px 32px 48px; box-shadow: 0 8px 40px rgba(0,0,0,0.6); animation: modalSlideIn 0.3s ease; }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 32px; cursor: pointer; color: #2c2c2c; padding: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s ease; line-height: 1; font-weight: 300; }
+    .modal-close:hover { opacity: 0.5; }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400; letter-spacing: 5px; color: #2c2c2c; text-transform: uppercase; text-align: left; margin-bottom: 28px; line-height: 1.2; }
+    .modal-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #2c2c2c; margin-bottom: 20px; font-weight: 400; }
+    .modal-subtitle { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: #2c2c2c; margin-bottom: 16px; margin-top: 32px; }
+    .modal-subtitle-red { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: var(--link-red); margin-bottom: 16px; margin-top: 32px; }
+    .modal-pillar { margin-bottom: 20px; }
+    .modal-pillar-title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #000000; margin-bottom: 6px; }
+    .modal-pillar-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #2c2c2c; }
+
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 16px 20px 50px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } }
-    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 12px 16px 40px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } }
+    @keyframes modalSlideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 16px 20px 50px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } .modal-overlay { padding-top: 80px; } .modal-content { padding: 32px 24px 40px; width: 94%; } .modal-title { font-size: 32px; letter-spacing: 4px; } .modal-subtitle, .modal-subtitle-red { font-size: 22px; } }
+    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 12px 16px 40px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } .modal-overlay { padding-top: 75px; } .modal-content { padding: 28px 20px 36px; } .modal-title { font-size: 28px; letter-spacing: 3px; } .modal-subtitle, .modal-subtitle-red { font-size: 20px; } }
 </style>
 </head>
 <body>
@@ -72,8 +88,60 @@
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+                <li class="mobile-nav-item"><a class="mobile-nav-link" id="serviceLink">Service</a></li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Service Modal: TEXTO QUE PEDISTE -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <h1 class="modal-title">New Time</h1>
+            
+            <p class="modal-text">
+                New Time is an entity dedicated to offering specialized services with a focus on firmness, commitment, and high-level truth. Its proposal centers on delivering direct solutions to complex situations, prioritizing transparency and integrity in every process.
+            </p>
+            
+            <h2 class="modal-subtitle">Services and Approach</h2>
+            <p class="modal-text">
+                New Time’s services are distinguished by three fundamental pillars:
+            </p>
+
+            <div class="modal-pillar">
+                <div class="modal-pillar-title">Firmness</div>
+                <p class="modal-pillar-text">
+                    It maintains a solid and decisive stance when facing challenges, ensuring consistent and unambiguous responses. Every action is carried out with determination to uphold the organization’s principles and protect the interests of those who trust its services.
+                </p>
+            </div>
+
+            <div class="modal-pillar">
+                <div class="modal-pillar-title">Commitment</div>
+                <p class="modal-pillar-text">
+                    It takes full responsibility in every case. New Time’s commitment goes beyond the contractual; it involves continuous follow-through, loyalty to the truth, and dedication to achieving real, measurable results.
+                </p>
+            </div>
+
+            <div class="modal-pillar">
+                <div class="modal-pillar-title">High-Level Truth:</div>
+                <p class="modal-pillar-text">
+                    It operates under an elevated standard of truthfulness. New Time is committed to exposing facts as they are, without distortion, promoting clarity as the foundation of trust.
+                </p>
+            </div>
+
+            <h2 class="modal-subtitle-red">Direct Service Against Hidden Effects</h2>
+            <p class="modal-text">
+                One of New Time’s distinguishing aspects is its direct service to address the hidden effects of fraudulent appearances. The organization specializes in identifying and neutralizing situations that are fraudulent precisely because of their hidden effect: those that appear legitimate, but conceal harmful consequences or intentions.
+            </p>
+
+            <p class="modal-text">
+                This service consists of detection through in-depth analysis to reveal what is not evident at first glance, exposure with a clear presentation of the hidden mechanisms that generate the fraud, and direct action with intervention focused on eliminating the harmful effect, not just the superficial appearance.
+            </p>
+
+            <h2 class="modal-subtitle">Philosophy</h2>
+            <p class="modal-text">
+                New Time understands that true fraud is not always visible. For that reason, its mission is to dismantle deceptive structures at the root, restoring clarity and justice where they have been compromised.
+            </p>
         </div>
     </div>
 
@@ -112,43 +180,68 @@
     </main>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuCloseBtn = document.getElementById('menuCloseBtn');
-        let isMenuOpen = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuCloseBtn = document.getElementById('menuCloseBtn');
+            const serviceLink = document.getElementById('serviceLink');
+            const serviceModal = document.getElementById('serviceModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            let isMenuOpen = false;
 
-        function openMenu() {
-            isMenuOpen = true;
-            mobileMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            isMenuOpen = false;
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        menuBtn.addEventListener('click', () => {
-            isMenuOpen ? closeMenu() : openMenu();
-        });
-
-        menuCloseBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                closeMenu();
+            function openMenu() {
+                isMenuOpen = true;
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
+
+            function closeMenu() {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openServiceModal(e) {
+                if(e) e.preventDefault();
+                closeMenu();
+                setTimeout(() => {
+                    serviceModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 100);
+            }
+
+            function closeServiceModal() {
+                serviceModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen ? closeMenu() : openMenu();
+            });
+
+            menuCloseBtn.addEventListener('click', closeMenu);
+            menuOverlay.addEventListener('click', closeMenu);
+            serviceLink.addEventListener('click', openServiceModal);
+            modalCloseBtn.addEventListener('click', closeServiceModal);
+            
+            serviceModal.addEventListener('click', (e) => {
+                if (e.target === serviceModal) {
+                    closeServiceModal();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (serviceModal.classList.contains('active')) {
+                        closeServiceModal();
+                    } else if (isMenuOpen) {
+                        closeMenu();
+                    }
+                }
+            });
         });
     </script>
 </body>
