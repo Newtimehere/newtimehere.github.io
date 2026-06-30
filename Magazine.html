@@ -22,6 +22,32 @@
         justify-content: flex-start;
         min-height: 100vh;
         padding: 32px 20px 40px 20px;
+        position: relative;
+    }
+
+    .magazine-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        font-weight: 300;
+        color: #ffffff;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        line-height: 1;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.2s ease;
+    }
+
+    .magazine-close:hover {
+        opacity: 0.6;
     }
 
     .content-wrapper {
@@ -139,6 +165,13 @@
         body {
             padding: 24px 16px 32px 16px;
         }
+        .magazine-close {
+            top: 16px;
+            right: 16px;
+            font-size: 28px;
+            width: 36px;
+            height: 36px;
+        }
         .magazine-title {
             font-size: 28px;
             letter-spacing: 5px;
@@ -175,6 +208,13 @@
         body {
             padding: 20px 12px 28px 12px;
         }
+        .magazine-close {
+            top: 12px;
+            right: 12px;
+            font-size: 26px;
+            width: 32px;
+            height: 32px;
+        }
         .magazine-title {
             font-size: 22px;
             letter-spacing: 3px;
@@ -210,6 +250,7 @@
 </style>
 </head>
 <body>
+    <a href="index.html" class="magazine-close">&times;</a>
     <div class="content-wrapper">
         <h1 class="magazine-title">New Time Magazine</h1>
         <img class="magazine-image" src="magazine-666.jpg" alt="New Time Magazine">
