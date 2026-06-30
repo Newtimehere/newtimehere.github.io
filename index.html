@@ -18,15 +18,15 @@
     }
 
     :root {
-        --bg-black: #0a;
+        --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8;
-        --text-light-gray: #d1d1;
-        --border-gray: #2a;
+        --text-gray: #a8a8a8;
+        --text-light-gray: #d1d1d1;
+        --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
-        --cookie-bg: #1a;
-        --link-red: #7A1F;
+        --cookie-bg: #1a1a1a;
+        --link-red: #7A1F1F;
     }
 
     html {
@@ -542,7 +542,7 @@
         color: #000000;
     }
 
-    /* Modal For The Young */
+    /* MODAL For The Young */
     .young-modal-overlay {
         position: fixed;
         top: 0;
@@ -566,7 +566,7 @@
     .young-modal {
         max-width: 800px;
         margin: 60px auto;
-        background: #0a0a;
+        background: #0a0a0a;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
@@ -623,14 +623,14 @@
         margin-bottom: 16px;
     }
 
-    /* NUEVO: Modal Biography - FONDO BLANCO */
+    /* BIOGRAPHY MODAL - NUEVO */
     .bio-modal-overlay {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0.95);
+        background: rgba(0, 0, 0, 0.95);
         z-index: 2000;
         opacity: 0;
         visibility: hidden;
@@ -648,10 +648,10 @@
         max-width: 800px;
         margin: 60px auto;
         background: #ffffff;
-        border: 1px solid #e0e0e0;
+        border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
-        color: #000000;
+        color: #0a0a0a;
     }
 
     .bio-modal-close {
@@ -660,7 +660,7 @@
         right: 16px;
         background: none;
         border: none;
-        color: #000000;
+        color: #0a0a0a;
         font-size: 32px;
         cursor: pointer;
         width: 40px;
@@ -680,7 +680,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
         font-weight: 500;
-        color: #000000;
+        color: #0a0a0a;
         margin-bottom: 32px;
         text-align: left;
         letter-spacing: 1px;
@@ -691,29 +691,28 @@
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
-        color: #000000;
+        color: #0a0a0a;
     }
 
     .bio-modal-content h3 {
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
-        color: #000000;
+        color: var(--link-red);
     }
 
     .bio-modal-content p {
         margin-bottom: 16px;
     }
 
-    .bio-modal-content strong {
-        font-weight: 600;
+    .bio-modal-image {
+        text-align: center;
+        margin-top: 24px;
     }
 
-    .bio-modal-logo {
-        display: block;
-        width: 80px;
+    .bio-modal-image img {
+        max-width: 200px;
         height: auto;
-        margin: 32px auto 0;
     }
 
     @keyframes fadeInUp {
@@ -851,10 +850,6 @@
             font-size: 28px;
             margin-bottom: 24px;
         }
-
-        .bio-modal-logo {
-            width: 70px;
-        }
     }
 
     @media (max-width: 480px) {
@@ -948,10 +943,6 @@
         .young-modal-content, .bio-modal-content {
             font-size: 14px;
         }
-
-        .bio-modal-logo {
-            width: 60px;
-        }
     }
 </style>
 </head>
@@ -986,7 +977,7 @@
         </div>
     </div>
 
-    <!-- Modal For The Young -->
+    <!-- MODAL For The Young -->
     <div class="young-modal-overlay" id="youngModal">
         <div class="young-modal">
             <button class="young-modal-close" id="youngModalClose">&times;</button>
@@ -1024,38 +1015,37 @@
         </div>
     </div>
 
-    <!-- Modal Biography -->
+    <!-- MODAL BIOGRAPHY - NUEVO -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
             <h2 class="bio-modal-title">New Time</h2>
             <div class="bio-modal-content">
                 <p>New Time is a U.S.-based digital media and research organization that examines contemporary social, economic, and cultural systems. Established this year, it focuses on documenting the hidden effects of practices, institutions, and narratives that present themselves as legitimate while delivering outcomes the organization describes as fraudulent.</p>
-
+                
                 <h3>History and Purpose</h3>
                 <p>New Time was founded to investigate the gap between how modern systems are described and how they actually function. Its core thesis is that many structures maintain an appearance of normalcy or legality while producing results that compromise public welfare, individual autonomy, or factual integrity. Through research and commentary, New Time aims to identify and explain these contradictions to provide a more accurate understanding of present conditions.</p>
                 <p>The organization follows standards of transparency, source documentation, and direct reporting. Areas of coverage include economic policy, institutional conduct, public health, education, media, and labor systems.</p>
 
                 <h3>Editorial Focus</h3>
                 <p>New Time’s reporting is organized around key areas of inquiry:</p>
-
-                <h3>Systemic Misrepresentation</h3>
-                <p>The platform evaluates instances in which institutional or cultural narratives conflict with measurable evidence. It compares official accounts of systems with documented outcomes to identify disparities between presentation and effect.</p>
-
-                <h3>Redefining Accountability</h3>
-                <p>New Time assesses how prevailing definitions of success, legality, and authority operate in practice. It examines the influence of accepted standards on individual decision-making, economic stability, and social outcomes.</p>
-
-                <h3>Hidden Effects</h3>
-                <p>The organization’s central mandate is to trace the downstream consequences of policies, technologies, and social norms that are framed as benign or necessary. This involves documenting externalities, long-term costs, and patterns of deception sustained through routine practice. When the results contradict a system’s stated purpose, they are classified as fraud.</p>
+                <p><strong>Systemic Misrepresentation</strong><br>
+                The platform evaluates instances in which institutional or cultural narratives conflict with measurable evidence. It compares official accounts of systems with documented outcomes to identify disparities between presentation and effect.</p>
+                <p><strong>Redefining Accountability</strong><br>
+                New Time assesses how prevailing definitions of success, legality, and authority operate in practice. It examines the influence of accepted standards on individual decision-making, economic stability, and social outcomes.</p>
+                <p><strong>Hidden Effects</strong><br>
+                The organization’s central mandate is to trace the downstream consequences of policies, technologies, and social norms that are framed as benign or necessary. This involves documenting externalities, long-term costs, and patterns of deception sustained through routine practice. When the results contradict a system’s stated purpose, they are classified as fraud.</p>
 
                 <h3>Activity and Reach</h3>
-                                <p>New Time operates a website that publishes research articles, analytical essays, and case studies. Its readership is composed primarily of young adults and professionals interested in critical analysis of contemporary institutions. The organization functions exclusively online.</p>
+                <p>New Time operates                 <p>New Time operates a website that publishes research articles, analytical essays, and case studies. Its readership is composed primarily of young adults and professionals interested in critical analysis of contemporary institutions. The organization functions exclusively online.</p>
                 <p>The platform is recognized for its straightforward editorial approach and for covering subjects that receive limited treatment in mainstream media. Editorial policy emphasizes precision, sourcing, and accessibility.</p>
 
                 <h3>Philosophy</h3>
                 <p>New Time’s stated position is: “A system cannot be understood by its stated purpose alone; it must be judged by its results.” The organization promotes evidence-based analysis, independent inquiry, and personal accountability as essential for evaluating the legitimacy of social and economic structures.</p>
 
-                <img src="new.webp" alt="NEW TIMES Logo" class="bio-modal-logo" />
+                <div class="bio-modal-image">
+                    <img src="new.webp" alt="NEW TIME Logo" />
+                </div>
             </div>
         </div>
     </div>
@@ -1109,7 +1099,7 @@
                     </div>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-row">
+                          <div class="directory-row">
                         <a href="same-sex-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
@@ -1126,7 +1116,7 @@
                 </li>
                 <li class="directory-item">
                     <div class="directory-row">
-                        <a href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical evidence of same-sex content: 21+ only</a>
+                        <a href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical evidence of same-sex: 21+ only</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1150,7 +1140,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1182,7 +1172,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1241,7 +1231,7 @@
                         <a href="human-love%5E1.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Human love</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-human-love.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1321,7 +1311,7 @@
             }
         });
 
-        // Modal For The Young
+        // MODAL For The Young
         const youngModal = document.getElementById('youngModal');
         const forYoungLink = document.getElementById('forYoungLink');
         const youngModalClose = document.getElementById('youngModalClose');
@@ -1344,7 +1334,7 @@
             if (e.target === youngModal) closeYoungModal();
         });
 
-        // NUEVO: Modal Biography
+        // MODAL BIOGRAPHY - NUEVO
         const bioModal = document.getElementById('bioModal');
         const bioLink = document.getElementById('bioLink');
         const bioModalClose = document.getElementById('bioModalClose');
