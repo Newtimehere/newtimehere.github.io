@@ -157,16 +157,16 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        padding: 40px 20px;
+        padding: 0 20px 40px;
     }
     .service-modal-content {
         background-color: #ffffff;
         color: #2c2c2c;
         max-width: 700px;
         width: 100%;
-        padding: 60px 50px;
+        padding: 25px 50px 60px;
         position: relative;
-        margin-top: 40px;
+        margin-top: 0;
         animation: slideUp 0.4s ease;
     }
     .service-close {
@@ -190,7 +190,8 @@
         font-size: 32px;
         font-weight: 400;
         letter-spacing: 4px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        margin-top: 0;
         text-transform: uppercase;
         color: #2c2c2c;
     }
@@ -198,7 +199,7 @@
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         font-weight: 400;
         color: #2c2c2c;
     }
@@ -206,8 +207,8 @@
         font-family: 'Inter', sans-serif;
         font-size: 20px;
         font-weight: 700;
-        margin-top: 35px;
-        margin-bottom: 15px;
+        margin-top: 30px;
+        margin-bottom: 12px;
         color: #2c2c2c;
     }
     .service-modal-content h2.red-heading {
@@ -217,8 +218,8 @@
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 700;
-        margin-top: 25px;
-        margin-bottom: 10px;
+        margin-top: 20px;
+        margin-bottom: 8px;
         color: #2c2c2c;
     }
     @keyframes slideUp {
@@ -231,17 +232,20 @@
         .logo-wrapper { gap: 10px; } 
         .logo-icon { height: 40px; } 
         .logo-text { font-size: 18px; letter-spacing: 3px; } 
-        .service-modal-content { padding: 50px 30px; }
-        .service-modal-content h1 { font-size: 26px; }
+        .service-modal-content { padding: 20px 30px 50px; }
+        .service-modal-content h1 { font-size: 26px; margin-bottom: 18px; }
+        .service-close { top: 20px; right: 25px; }
     }
     @media (max-width: 480px) { 
         .header-inner { padding: 0 8px 0 10px; } 
         .logo-wrapper { gap: 8px; } 
         .logo-icon { height: 36px; } 
         .logo-text { font-size: 16px; letter-spacing: 2px; } 
-        .service-modal-content { padding: 40px 20px; }
-        .service-modal-content h1 { font-size: 24px; }
-        .service-modal-content h2 { font-size: 18px; }
+        .service-modal-content { padding: 15px 20px 40px; }
+        .service-modal-content h1 { font-size: 24px; margin-bottom: 15px; }
+        .service-modal-content h2 { font-size: 18px; margin-top: 25px; margin-bottom: 10px; }
+        .service-modal-content p { margin-bottom: 18px; }
+        .service-close { top: 15px; right: 20px; }
     }
 </style>
 </head>
@@ -295,8 +299,8 @@
         const mobileMenu = document.getElementById('mobileMenu');
         const menuOverlay = document.getElementById('menuOverlay');
         const menuCloseBtn = document.getElementById('menuCloseBtn');
-        const serviceModal = document.getElementById('serviceModal');
         const closeService = document.getElementById('closeService');
+        const serviceModal = document.getElementById('serviceModal');
         let isMenuOpen = false;
         function openMenu() {
             isMenuOpen = true;
@@ -330,7 +334,11 @@
         });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                window.location.href = 'index.html';
+                if (isMenuOpen) {
+                    closeMenu();
+                } else {
+                    window.location.href = 'index.html';
+                }
             }
         });
     </script>
