@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service - NEW TIME</title>
+<title>NEW TIME</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
@@ -94,6 +94,29 @@
         padding-top: var(--header-height); 
         min-height: 100vh; 
         background-color: #ffffff; 
+    }
+    .hero-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 80px 24px;
+        text-align: center;
+    }
+    .hero-section h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 6px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        color: #2c2c2c;
+    }
+    .hero-section p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #2c2c2c;
+        max-width: 600px;
+        margin: 0 auto;
     }
     .mobile-menu { 
         position: fixed; 
@@ -249,6 +272,8 @@
         .logo-icon { height: 40px; } 
         .logo-text { font-size: 18px; letter-spacing: 3px; } 
         .main { padding-top: var(--header-height-mobile); } 
+        .hero-section { padding: 60px 20px; }
+        .hero-section h1 { font-size: 36px; letter-spacing: 4px; }
         .service-modal-content { padding: 50px 30px; }
         .service-modal-content h1 { font-size: 26px; }
     }
@@ -257,6 +282,7 @@
         .logo-wrapper { gap: 8px; } 
         .logo-icon { height: 36px; } 
         .logo-text { font-size: 16px; letter-spacing: 2px; } 
+        .hero-section h1 { font-size: 28px; letter-spacing: 3px; }
         .service-modal-content { padding: 40px 20px; }
         .service-modal-content h1 { font-size: 24px; }
         .service-modal-content h2 { font-size: 18px; }
@@ -282,13 +308,18 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
                 <li class="mobile-nav-item"><a class="mobile-nav-link" id="openServiceLink">Service</a></li>
             </ul>
         </div>
     </div>
-    <main class="main"></main>
+    <main class="main">
+        <section class="hero-section">
+            <h1>NEW TIME</h1>
+            <p>Founded in the United States to uncover and expose the hidden effects of practices that present themselves as legitimate while delivering harmful outcomes.</p>
+        </section>
+    </main>
     <div class="service-modal" id="serviceModal">
         <div class="service-modal-content">
             <button class="service-close" id="closeService">&times;</button>
@@ -367,10 +398,6 @@
                     closeMenu();
                 }
             }
-        });
-        window.addEventListener('load', () => {
-            serviceModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
     </script>
 </body>
