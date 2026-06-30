@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 10, 0.88);
+        background: rgba(10, 10, 0.88);
         z-index: -1;
     }
 
@@ -623,7 +623,7 @@
         margin-bottom: 16px;
     }
 
-    /* BIOGRAPHY MODAL - NUEVO */
+    /* BIOGRAPHY MODAL */
     .bio-modal-overlay {
         position: fixed;
         top: 0;
@@ -713,6 +713,115 @@
     .bio-modal-image img {
         max-width: 200px;
         height: auto;
+    }
+
+    .bio-modal-footer {
+        text-align: center;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .bio-modal-footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .bio-modal-footer-logo img {
+        height: 30px;
+        width: auto;
+    }
+
+    .bio-modal-footer-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    /* TEAM MODAL */
+    .team-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .team-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .team-modal {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #0a0a0a;
+        border: 1px solid var(--border-gray);
+        padding: 40px 32px;
+        position: relative;
+    }
+
+    .team-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .team-modal-close:hover {
+        opacity: 1;
+    }
+
+    .team-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .team-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #ffffff;
+        white-space: pre-wrap;
+    }
+
+    .team-modal-content strong {
+        font-weight: 600;
+        color: var(--link-red);
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-size: 17px;
     }
 
     @keyframes fadeInUp {
@@ -841,12 +950,12 @@
             text-align: center;
         }
 
-        .young-modal, .bio-modal {
+        .young-modal, .bio-modal, .team-modal {
             margin: 20px auto;
             padding: 32px 20px;
         }
 
-        .young-modal-title, .bio-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title {
             font-size: 28px;
             margin-bottom: 24px;
         }
@@ -936,11 +1045,11 @@
             font-size: 13px;
         }
 
-        .young-modal-title, .bio-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title {
             font-size: 24px;
         }
 
-        .young-modal-content, .bio-modal-content {
+        .young-modal-content, .bio-modal-content, .team-modal-content {
             font-size: 14px;
         }
     }
@@ -971,7 +1080,7 @@
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
-                <li class="mobile-nav-item"><a href="team.html" class="mobile-nav-link">Team</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
             </ul>
         </div>
@@ -1005,7 +1114,7 @@
 
                 <h3>Church Scam ⛪</h3>
                 <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
-                <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
+                <p>Hidden                 <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
 
                 <h3>College Degree Scam 🎓</h3>
                 <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
@@ -1015,7 +1124,7 @@
         </div>
     </div>
 
-    <!-- MODAL BIOGRAPHY - NUEVO -->
+    <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
@@ -1037,7 +1146,7 @@
                 The organization’s central mandate is to trace the downstream consequences of policies, technologies, and social norms that are framed as benign or necessary. This involves documenting externalities, long-term costs, and patterns of deception sustained through routine practice. When the results contradict a system’s stated purpose, they are classified as fraud.</p>
 
                 <h3>Activity and Reach</h3>
-                <p>New Time operates                 <p>New Time operates a website that publishes research articles, analytical essays, and case studies. Its readership is composed primarily of young adults and professionals interested in critical analysis of contemporary institutions. The organization functions exclusively online.</p>
+                <p>New Time operates a website that publishes research articles, analytical essays, and case studies. Its readership is composed primarily of young adults and professionals interested in critical analysis of contemporary institutions. The organization functions exclusively online.</p>
                 <p>The platform is recognized for its straightforward editorial approach and for covering subjects that receive limited treatment in mainstream media. Editorial policy emphasizes precision, sourcing, and accessibility.</p>
 
                 <h3>Philosophy</h3>
@@ -1046,7 +1155,74 @@
                 <div class="bio-modal-image">
                     <img src="new.webp" alt="NEW TIME Logo" />
                 </div>
+
+                <div class="bio-modal-footer">
+                    <div class="bio-modal-footer-logo">
+                        <img src="666-removebg-preview.png" alt="NEW TIME Logo" />
+                        <span class="bio-modal-footer-text">NEW TIME</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL TEAM -->
+    <div class="team-modal-overlay" id="teamModal">
+        <div class="team-modal">
+            <button class="team-modal-close" id="teamModalClose">&times;</button>
+            <h2 class="team-modal-title">NEW TIME TEAM</h2>
+            <div class="team-modal-content"><strong>Sebastián: Founder</strong>
+Born in 1990 in the United States. Graduated from Davis High School in Kaysville, Utah, in 2007. Attended Harvard University. I founded New Time because mainstream institutions ignore what actually matters. We operate on three principles: resolve, commitment, and truth. No spin. No compromises with falsehoods.
+
+<strong>Sophie: Sexologist</strong>
+Born in 1999 in the United States. Holds a doctorate from Harvard University. 60M+ followers. She doesn’t push sex-positivity marketing. She exposes sexual misinformation, breaks down hard data on STD transmission, and calls out industries that profit from sexual confusion. Her work is clinical. Her conclusions are blunt.
+
+<strong>Jack: Finance</strong>
+Born in 1993 in the United States. African American. He attended Harvard but didn’t graduate. He earned his degree from another university in Massachusetts, focusing on economic stagnation and financial flows. He currently works inside the White House. He tracks where money actually moves, who chokes the system, and why “poverty” is manufactured. He doesn’t trade in theory. He brings receipts.
+
+<strong>Why You Won’t See Our Faces:</strong>
+We don’t appear on camera. That’s not a branding move. It’s for safety. Say what we say and you get targeted. Speak plainly about power, money, and sex, and you become a target.
+
+<strong>John F. Kennedy:</strong>
+Assassinated for personal political motives. He confronted organized crime and spoke out on the erosion of freedom, land consolidation, the mental health crisis, rigged job markets, and the class-system narrative that blames “money” for poverty created by those who control it.
+
+<strong>Charlie Kirk:</strong>
+Assassinated. He faced public backlash for stating that LGBTQ+ ideology is a form of sexual fraud. His position: That belief, in itself, indicates a sexual disability, and discrimination, hatred, homophobia, and intolerance will persist because they aren’t recognized as people with disabilities, given their reality of intellectual and sexual disability.”
+
+<strong>New Time informs the government:</strong>
+
+1. “Mom, Dad, why do same-sex couples exist if you 
+aren’t in one?”
+
+2. “Mom, Dad, why wasn’t I born of the same sex?”
+
+3. “Mom, Dad, why are there only two categories: 
+heterosexual and same-sex?”
+
+4. “What’s the difference between them?”
+
+5. “Mom, Dad, can I try a same-sex relationship? I 
+keep seeing advertisements and media campaigns 
+that make it look appealing and normal.”
+
+6. “Mom, Dad, why can’t I explore it if the 
+government recognizes it as a normal way of life?”
+
+7. “Mom, Dad, if I don’t accept these people, I’ll be 
+labeled homophobic, intolerant, hateful, or 
+discriminatory. I’m pressured to accept same-sex 
+relationships and to believe they’re normal. What 
+should I do?”
+
+As a mother or father, you have no answers to these questions. The government has 
+become complicit in this situation. To avoid confronting the truth, it hides behind 
+accusations like “You’re homophobic,” “You’re intolerant,” or “That’s discrimination.” The
+truth is that this is sexual fraud, and it’s real. Concealing the truth markets fraud as 
+entertainment, which conditions people to view this lifestyle as normal.
+
+If governments do not grant LGBTQ+ people the same rights as individuals born with disabilities, they will continue to believe it’s normal to have bodily sensations that conflict with their biological sex.
+
+Thank you for visiting New Time. We appreciate your time.</div>
         </div>
     </div>
 
@@ -1304,7 +1480,7 @@
         menuOverlay.addEventListener('click', closeMenu);
 
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            if (link.id !== 'forYoungLink' && link.id !== 'bioLink') {
+            if (link.id !== 'forYoungLink' && link.id !== 'bioLink' && link.id !== 'teamLink') {
                 link.addEventListener('click', () => {
                     closeMenu();
                 });
@@ -1334,7 +1510,7 @@
             if (e.target === youngModal) closeYoungModal();
         });
 
-        // MODAL BIOGRAPHY - NUEVO
+        // MODAL BIOGRAPHY
         const bioModal = document.getElementById('bioModal');
         const bioLink = document.getElementById('bioLink');
         const bioModalClose = document.getElementById('bioModalClose');
@@ -1357,11 +1533,35 @@
             if (e.target === bioModal) closeBioModal();
         });
 
+        // MODAL TEAM
+        const teamModal = document.getElementById('teamModal');
+        const teamLink = document.getElementById('teamLink');
+        const teamModalClose = document.getElementById('teamModalClose');
+
+        function openTeamModal(e) {
+            if (e) e.preventDefault();
+            teamModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
+        function closeTeamModal() {
+            teamModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        teamLink.addEventListener('click', openTeamModal);
+        teamModalClose.addEventListener('click', closeTeamModal);
+        teamModal.addEventListener('click', (e) => {
+            if (e.target === teamModal) closeTeamModal();
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 if (isMenuOpen) closeMenu();
                 if (youngModal.classList.contains('active')) closeYoungModal();
                 if (bioModal.classList.contains('active')) closeBioModal();
+                if (teamModal.classList.contains('active')) closeTeamModal();
             }
         });
 
@@ -1391,7 +1591,7 @@
             hideCookieBanner();
         });
 
-        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
+        // AUDIO LOGIC
         let currentAudio = null;
         let currentBtn = null;
 
