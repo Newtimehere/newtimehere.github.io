@@ -9,16 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-    :root { --bg-black: #0a0a0a; --text-white: #ffffff; --text-gray: #a8a8a8; --text-light-gray: #d1d1d1; --border-gray: #2a2a2a; --header-height: 70px; --header-height-mobile: 65px; --cookie-bg: #1a1a1a; --link-red: #7A1F1F; --link-red-hover: #9B2D2D; }
+    :root { --bg-black: #0a0a0a; --text-white: #ffffff; --text-gray: #a8a8a8; --header-height: 70px; --header-height-mobile: 65px; --link-red: #7A1F1F; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #0a0a0a; color: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     .header { position: fixed; top: 0; left: 0; right: 0; background-color: #ffffff; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
     .header-inner { width: 100%; height: var(--header-height); display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 18px; }
-    .logo-wrapper { display: flex; align-items: center; gap: 12px; cursor: pointer; transition: opacity 0.2s ease; height: 100%; padding-left: 0; margin-left: 0; }
+    .logo-wrapper { display: flex; align-items: center; gap: 12px; cursor: pointer; transition: opacity 0.2s ease; height: 100%; }
     .logo-wrapper:hover { opacity: 0.7; }
-    .logo-icon { height: 45px; width: auto; flex-shrink: 0; object-fit: contain; display: block; margin-left: 0; }
+    .logo-icon { height: 45px; width: auto; flex-shrink: 0; object-fit: contain; display: block; }
     .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 4px; color: #2c2c2c; text-transform: uppercase; line-height: 1; }
-    .menu-btn { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; transition: opacity 0.2s ease; align-self: center; z-index: 1001; margin-right: 4px; }
+    .menu-btn { background: none; border: none; cursor: pointer; padding: 8px; display: flex; flex-direction: column; gap: 5px; transition: opacity 0.2s ease; z-index: 1001; margin-right: 4px; }
     .menu-btn:hover { opacity: 0.6; }
     .menu-line { width: 22px; height: 2px; background-color: #000000; transition: all 0.3s ease; }
     .main { padding-top: var(--header-height); min-height: 100vh; background-color: #0a0a0a; display: flex; align-items: center; justify-content: center; }
@@ -27,7 +27,7 @@
     .home-content p { font-size: 16px; color: var(--text-gray); }
     
     /* Mobile Menu */
-    .mobile-menu { position: fixed; top: 0; left: auto; right: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; z-index: 3000; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; box-shadow: -2px 0 20px rgba(0,0,0,0.15); }
+    .mobile-menu { position: fixed; top: 0; right: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; z-index: 3000; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; box-shadow: -2px 0 20px rgba(0,0,0,0.15); }
     .mobile-menu.active { transform: translateX(0); }
     .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 2999; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
     .menu-overlay.active { opacity: 1; visibility: visible; }
@@ -39,8 +39,8 @@
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; cursor: pointer; }
     .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
 
-    /* Service Modal - FONDO BLANCO + ESTILO DE LA FOTO */
-    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 4000; opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; align-items: flex-start; justify-content: center; padding-top: 90px; overflow-y: auto; }
+    /* Service Modal - FUNCIONA AHORA */
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 5000; opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; align-items: flex-start; justify-content: center; padding-top: 90px; overflow-y: auto; }
     .modal-overlay.active { opacity: 1; visibility: visible; }
     .modal-content { background-color: #ffffff; width: 90%; max-width: 680px; max-height: calc(100vh - 120px); overflow-y: auto; position: relative; padding: 40px 32px 48px; box-shadow: 0 8px 40px rgba(0,0,0,0.6); animation: modalSlideIn 0.3s ease; }
     .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 32px; cursor: pointer; color: #2c2c2c; padding: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s ease; line-height: 1; font-weight: 300; }
@@ -54,8 +54,8 @@
     .modal-pillar-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #2c2c2c; }
 
     @keyframes modalSlideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .home-content h1 { font-size: 36px; letter-spacing: 5px; } .modal-overlay { padding-top: 80px; } .modal-content { padding: 32px 24px 40px; width: 94%; } .modal-title { font-size: 32px; letter-spacing: 4px; } .modal-subtitle, .modal-subtitle-red { font-size: 22px; } }
-    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .home-content h1 { font-size: 28px; letter-spacing: 3px; } .modal-overlay { padding-top: 75px; } .modal-content { padding: 28px 20px 36px; } .modal-title { font-size: 28px; letter-spacing: 3px; } .modal-subtitle, .modal-subtitle-red { font-size: 20px; } }
+    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .home-content h1 { font-size: 36px; letter-spacing: 5px; } .modal-overlay { padding-top: 80px; } .modal-content { padding: 32px 24px 40px; width: 94%; } .modal-title { font-size: 32px; letter-spacing: 4px; } .modal-subtitle, .modal-subtitle-red { font-size: 22px; } }
+    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; } .logo-text { font-size: 16px; letter-spacing: 2px; } .home-content h1 { font-size: 28px; letter-spacing: 3px; } .modal-overlay { padding-top: 75px; } .modal-content { padding: 28px 20px 36px; } .modal-title { font-size: 28px; letter-spacing: 3px; } .modal-subtitle, .modal-subtitle-red { font-size: 20px; } }
 </style>
 </head>
 <body>
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <!-- Service Modal: FONDO BLANCO + TEXTO NUEVO -->
+    <!-- Service Modal CON TEXTO NUEVO -->
     <div class="modal-overlay" id="serviceModal">
         <div class="modal-content">
             <button class="modal-close" id="modalCloseBtn">&times;</button>
@@ -149,63 +149,68 @@
     </main>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuCloseBtn = document.getElementById('menuCloseBtn');
-        const serviceLink = document.getElementById('serviceLink');
-        const serviceModal = document.getElementById('serviceModal');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        let isMenuOpen = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuCloseBtn = document.getElementById('menuCloseBtn');
+            const serviceLink = document.getElementById('serviceLink');
+            const serviceModal = document.getElementById('serviceModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            let isMenuOpen = false;
 
-        function openMenu() {
-            isMenuOpen = true;
-            mobileMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            isMenuOpen = false;
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function openServiceModal() {
-            closeMenu();
-            serviceModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeServiceModal() {
-            serviceModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        menuBtn.addEventListener('click', () => {
-            isMenuOpen ? closeMenu() : openMenu();
-        });
-
-        menuCloseBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-        serviceLink.addEventListener('click', openServiceModal);
-        modalCloseBtn.addEventListener('click', closeServiceModal);
-        
-        serviceModal.addEventListener('click', (e) => {
-            if (e.target === serviceModal) {
-                closeServiceModal();
+            function openMenu() {
+                isMenuOpen = true;
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
-        });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (serviceModal.classList.contains('active')) {
+            function closeMenu() {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openServiceModal(e) {
+                if(e) e.preventDefault();
+                closeMenu();
+                setTimeout(() => {
+                    serviceModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 100);
+            }
+
+            function closeServiceModal() {
+                serviceModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen ? closeMenu() : openMenu();
+            });
+
+            menuCloseBtn.addEventListener('click', closeMenu);
+            menuOverlay.addEventListener('click', closeMenu);
+            serviceLink.addEventListener('click', openServiceModal);
+            modalCloseBtn.addEventListener('click', closeServiceModal);
+            
+            serviceModal.addEventListener('click', (e) => {
+                if (e.target === serviceModal) {
                     closeServiceModal();
-                } else if (isMenuOpen) {
-                    closeMenu();
                 }
-            }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (serviceModal.classList.contains('active')) {
+                        closeServiceModal();
+                    } else if (isMenuOpen) {
+                        closeMenu();
+                    }
+                }
+            });
         });
     </script>
 </body>
