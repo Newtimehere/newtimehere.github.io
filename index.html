@@ -22,7 +22,7 @@
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
         --text-light-gray: #d1d1d1;
-        --border-gray: #2a2a;
+        --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 0.88);
+        background: rgba(10, 10, 10, 0.88);
         z-index: -1;
     }
 
@@ -453,7 +453,7 @@
     }
 
     .mobile-nav-item:first-child {
-        border-top: 1px solid rgba(44, 44, 0.08);
+        border-top: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-link {
@@ -543,40 +543,43 @@
     }
 
     /* MODAL FOR THE YOUNG */
-    .fty-modal {
+    .modal-overlay {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0,0,0,0.92);
+        background-color: rgba(0, 0, 0, 0.85);
         z-index: 2000;
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        overflow-y: auto;
     }
 
-    .fty-modal.active {
-        display: flex;
+    .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
-    .fty-content {
-        background: #0a0a0a;
+    .modal-content {
+        background-color: #0a0a0a;
         border: 1px solid var(--border-gray);
-        max-width: 700px;
+        max-width: 800px;
         width: 100%;
         max-height: 90vh;
         overflow-y: auto;
-        padding: 40px 30px;
+        padding: 40px 32px;
         position: relative;
-        animation: fadeInUp 0.3s ease;
+        animation: fadeInUp 0.4s ease;
     }
 
-    .fty-close {
+    .modal-close {
         position: absolute;
-        top: 15px;
+        top: 16px;
         right: 20px;
         background: none;
         border: none;
@@ -585,38 +588,36 @@
         cursor: pointer;
         line-height: 1;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
     }
 
-    .fty-close:hover {
-        opacity: 0.6;
+    .modal-close:hover {
+        opacity: 1;
     }
 
-    .fty-title {
+    .modal-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 32px;
-        font-weight: 400;
+        font-size: 28px;
+        font-weight: 500;
         letter-spacing: 2px;
         color: #ffffff;
-        margin-bottom: 32px;
         text-transform: uppercase;
+        margin-bottom: 32px;
         text-align: left;
     }
 
-    .fty-section {
+    .modal-section {
         margin-bottom: 32px;
-        padding-bottom: 32px;
-        border-bottom: 1px solid var(--border-gray);
     }
 
-    .fty-section:last-child {
-        border-bottom: none;
+    .modal-section:last-child {
         margin-bottom: 0;
-        padding-bottom: 0;
     }
 
-    .fty-section h3 {
+    .modal-section h3 {
         font-family: 'Inter', sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -625,21 +626,23 @@
         line-height: 1.4;
     }
 
-    .fty-section p {
+    .modal-section p {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.7;
         color: var(--text-light-gray);
         margin-bottom: 12px;
+        font-weight: 400;
     }
 
-    .fty-section p:last-child {
+    .modal-section p:last-child {
         margin-bottom: 0;
     }
 
-    .fty-section strong {
-        color: #ffffff;
-        font-weight: 600;
+    .modal-divider {
+        height: 1px;
+        background: var(--border-gray);
+        margin: 40px 0;
     }
 
     @keyframes fadeInUp {
@@ -768,20 +771,20 @@
             text-align: center;
         }
 
-        .fty-content {
-            padding: 30px 20px;
+        .modal-content {
+            padding: 32px 20px;
         }
 
-        .fty-title {
-            font-size: 26px;
+        .modal-title {
+            font-size: 24px;
             margin-bottom: 24px;
         }
 
-        .fty-section h3 {
-            font-size: 17px;
+        .modal-section h3 {
+            font-size: 16px;
         }
 
-        .fty-section p {
+        .modal-section p {
             font-size: 14px;
         }
     }
@@ -869,10 +872,6 @@
             padding: 11px 20px;
             font-size: 13px;
         }
-
-        .fty-title {
-            font-size: 22px;
-        }
     }
 </style>
 </head>
@@ -900,7 +899,7 @@
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forTheYoungLink">For the young</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
                 <li class="mobile-nav-item"><a href="team.html" class="mobile-nav-link">Team</a></li>
                 <li class="mobile-nav-item"><a href="biography.html" class="mobile-nav-link">Biography</a></li>
             </ul>
@@ -957,7 +956,7 @@
                 </li>
                 <li class="directory-item">
                     <div class="directory-row">
-                        <a href="same-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
+                        <a href="same-sex-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -994,7 +993,42 @@
                             <button class="audio-btn" data-audio="sound-questions-answers.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                   viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> 
+                                                           </svg>
+                        </div>
+                    </div>
+                </li>
+                <li class="directory-item">
+                    <div class="directory-row">
+                        <a href="origins-of-infidelity.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Origins of infidelity</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-infidelity.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </li>
+                                <li class="directory-item">
+                    <div class="directory-row">
+                        <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">The Money and the effect</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1085,6 +1119,51 @@
         </div>
     </main>
 
+    <!-- MODAL FOR THE YOUNG -->
+    <div class="modal-overlay" id="forYoungModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeForYoung">&times;</button>
+            <h2 class="modal-title">New Times For Young</h2>
+            
+            <!-- PARTE 1 -->
+            <div class="modal-section">
+                <h3>The Fraudulent Clock ⏰</h3>
+                <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = fraud.</p>
+                <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
+                
+                <h3>Laws + TV 📺</h3>
+                <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣 = fake.</p>
+                <p>Hidden truth: You get 90 years on Earth. The 9-to-5 steals 60. They rob and kill you with paperwork and call it “legal.”</p>
+                
+                <h3>Cost of Living Scam 💸</h3>
+                <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = fraud.</p>
+                <p>Hidden Truth: Life is free. You’re born from straight sex. No bill, no subscription, no tax.</p>
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <!-- PARTE 2 -->
+            <div class="modal-section">
+                <h3>Food Fraud 🍔</h3>
+                <p>Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = cancer.</p>
+                <p>Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
+                
+                <h3>Fraudulent Laws ⚖️</h3>
+                <p>🤣 “Equal justice” 😆 for all. Murderers post bail and walk. Companies get licenses to sell cancer in a bag. Gay marriage protected by law = all fraud.</p>
+                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease, it kills. Gay marriage is sexual fraud. Make it illegal.</p>
+                
+                <h3>Church Scam ⛪</h3>
+                <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
+                <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
+                
+                <h3>College Degree Scam 🎓</h3>
+                <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
+                <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
+                <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave—broke, in uniform, faking a smile.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-inner">
             <p class="cookie-text">
@@ -1093,57 +1172,6 @@
             <div class="cookie-buttons">
                 <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
                 <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL FOR THE YOUNG -->
-    <div class="fty-modal" id="ftyModal">
-        <div class="fty-content">
-            <button class="fty-close" id="ftyClose">&times;</button>
-            <h2 class="fty-title">New Times For Young</h2>
-            
-            <div class="fty-section">
-                <h3>The Fraudulent Clock ⏰</h3>
-                <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = fraud.</p>
-                <p><strong>Hidden truth:</strong> The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>Laws + TV 📺</h3>
-                <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣 = fake.</p>
-                <p><strong>Hidden truth:</strong> You get 90 years on Earth. The 9-to-5 steals 60. They rob and kill you with paperwork and call it “legal.”</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>Cost of Living Scam 💸</h3>
-                <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = fraud.</p>
-                <p><strong>Hidden Truth:</strong> Life is free. You’re born from straight sex. No bill, no subscription, no tax.</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>Food Fraud 🍔</h3>
-                <p>Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = cancer.</p>
-                <p><strong>Hidden Truth:</strong> Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>Fraudulent Laws ⚖️</h3>
-                <p>🤣 “Equal justice” 😆 for all. Murderers post bail and walk. Companies get licenses to sell cancer in a bag. Gay marriage protected by law = all fraud.</p>
-                <p><strong>Hidden truth:</strong> Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease, it kills. Gay marriage is sexual fraud. Make it illegal.</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>Church Scam ⛪</h3>
-                <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
-                <p><strong>Hidden truth:</strong> Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
-            </div>
-
-            <div class="fty-section">
-                <h3>College Degree Scam 🎓</h3>
-                <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
-                <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
-                <p><strong>Hidden truth:</strong> Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave—broke, in uniform, faking a smile.</p>
             </div>
         </div>
     </div>
@@ -1178,12 +1206,7 @@
 
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
-                if (link.id === 'forTheYoungLink') {
-                    e.preventDefault();
-                    closeMenu();
-                    document.getElementById('ftyModal').classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                } else {
+                if (link.id !== 'forYoungLink') {
                     closeMenu();
                 }
             });
@@ -1192,22 +1215,6 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && isMenuOpen) {
                 closeMenu();
-            }
-        });
-
-        // FOR THE YOUNG MODAL
-        const ftyModal = document.getElementById('ftyModal');
-        const ftyClose = document.getElementById('ftyClose');
-
-        ftyClose.addEventListener('click', () => {
-            ftyModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        ftyModal.addEventListener('click', (e) => {
-            if (e.target === ftyModal) {
-                ftyModal.classList.remove('active');
-                document.body.style.overflow = '';
             }
         });
 
@@ -1281,7 +1288,38 @@
                 });
             });
         });
+
+        // MODAL FOR THE YOUNG LOGIC
+        const forYoungLink = document.getElementById('forYoungLink');
+        const forYoungModal = document.getElementById('forYoungModal');
+        const closeForYoung = document.getElementById('closeForYoung');
+
+        forYoungLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMenu();
+            forYoungModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeForYoung.addEventListener('click', () => {
+            forYoungModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        forYoungModal.addEventListener('click', (e) => {
+            if (e.target === forYoungModal) {
+                forYoungModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && forYoungModal.classList.contains('active')) {
+                forYoungModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 
+                           
