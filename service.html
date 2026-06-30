@@ -44,9 +44,46 @@
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; font-weight: 400; color: #333333; text-decoration: none; transition: all 0.2s ease; }
     .mobile-nav-link:hover { background-color: #f5f5f5; color: #C41E3A; }
+    
+    /* Modal de Services como en la foto */
+    .service-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .service-modal-overlay.active { opacity: 1; visibility: visible; }
+    .service-modal { background-color: #ffffff; width: 100%; max-width: 600px; max-height: 85vh; overflow-y: auto; position: relative; animation: modalSlideUp 0.3s ease; }
+    .service-modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #333; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .service-modal-content { padding: 40px 30px 30px; }
+    .service-modal-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; letter-spacing: 2px; color: #2c2c2c; text-transform: uppercase; margin-bottom: 24px; }
+    .service-modal-text { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #2c2c2c; margin-bottom: 24px; }
+    .service-modal-subtitle { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: #2c2c2c; margin: 28px 0 16px; }
+    
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { :root { --header-height: var(--header-height-mobile); } .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } .logo-wrapper { gap: 10px; } .logo-icon { height: 40px; margin-left: 0; } .logo-text { font-size: 18px; letter-spacing: 3px; } .main { padding-top: var(--header-height-mobile); } .services-section { padding: 16px 20px 50px; } .services-subtitle { font-size: 28px; } .mobile-nav-link { font-size: 18px; } .service-bottom-img { max-width: 120px; } }
-    @media (max-width: 480px) { .header-inner { padding: 0 8px 0 10px; } .logo-wrapper { gap: 8px; } .logo-icon { height: 36px; margin-left: 0; } .logo-text { font-size: 16px; letter-spacing: 2px; } .services-section { padding: 12px 16px 40px; } .services-subtitle { font-size: 24px; } .service-bottom-img { max-width: 100px; } }
+    @keyframes modalSlideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    
+    @media (max-width: 768px) { 
+        :root { --header-height: var(--header-height-mobile); } 
+        .header-inner { padding: 0 8px 0 12px; height: var(--header-height-mobile); } 
+        .logo-wrapper { gap: 10px; } 
+        .logo-icon { height: 40px; margin-left: 0; } 
+        .logo-text { font-size: 18px; letter-spacing: 3px; } 
+        .main { padding-top: var(--header-height-mobile); } 
+        .services-section { padding: 16px 20px 50px; } 
+        .services-subtitle { font-size: 28px; } 
+        .mobile-nav-link { font-size: 18px; } 
+        .service-bottom-img { max-width: 120px; }
+        .service-modal-content { padding: 35px 24px 24px; }
+        .service-modal-title { font-size: 24px; }
+    }
+    @media (max-width: 480px) { 
+        .header-inner { padding: 0 8px 0 10px; } 
+        .logo-wrapper { gap: 8px; } 
+        .logo-icon { height: 36px; margin-left: 0; } 
+        .logo-text { font-size: 16px; letter-spacing: 2px; } 
+        .services-section { padding: 12px 16px 40px; } 
+        .services-subtitle { font-size: 24px; } 
+        .service-bottom-img { max-width: 100px; }
+        .service-modal-content { padding: 30px 20px 20px; }
+        .service-modal-title { font-size: 22px; letter-spacing: 1px; }
+        .service-modal-text { font-size: 14px; }
+    }
 </style>
 </head>
 <body>
@@ -72,8 +109,25 @@
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="index.html#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About us</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="serviceMenuLink">Service</a></li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Modal de Service -->
+    <div class="service-modal-overlay" id="serviceModalOverlay">
+        <div class="service-modal">
+            <button class="service-modal-close" id="serviceModalClose">&times;</button>
+            <div class="service-modal-content">
+                <h2 class="service-modal-title">NEW TIME</h2>
+                <p class="service-modal-text">
+                    New Time is a U.S.-based digital media and research organization that examines contemporary social, economic, and cultural systems. Established this year, it focuses on documenting the hidden effects of practices, institutions, and narratives that present themselves as legitimate while delivering outcomes the organization describes as fraudulent.
+                </p>
+                <h3 class="service-modal-subtitle">History and Purpose</h3>
+                <p class="service-modal-text">
+                    New Time was founded to investigate the gap between how modern systems are described and how they actually function. Its core thesis is that many structures maintain an appearance of normalcy or legality while producing results that compromise public welfare, individual autonomy, or factual integrity. Through research and commentary, New Time aims to identify and explain these contradictions to provide a more accurate
+                </p>
+            </div>
         </div>
     </div>
 
@@ -116,6 +170,9 @@
         const mobileMenu = document.getElementById('mobileMenu');
         const menuOverlay = document.getElementById('menuOverlay');
         const menuCloseBtn = document.getElementById('menuCloseBtn');
+        const serviceMenuLink = document.getElementById('serviceMenuLink');
+        const serviceModalOverlay = document.getElementById('serviceModalOverlay');
+        const serviceModalClose = document.getElementById('serviceModalClose');
         let isMenuOpen = false;
 
         function openMenu() {
@@ -132,22 +189,52 @@
             document.body.style.overflow = '';
         }
 
+        function openServiceModal() {
+            closeMenu();
+            setTimeout(() => {
+                serviceModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }, 300);
+        }
+
+        function closeServiceModal() {
+            serviceModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         menuBtn.addEventListener('click', () => {
             isMenuOpen ? closeMenu() : openMenu();
         });
 
         menuCloseBtn.addEventListener('click', closeMenu);
         menuOverlay.addEventListener('click', closeMenu);
+        serviceModalClose.addEventListener('click', closeServiceModal);
+        serviceModalOverlay.addEventListener('click', (e) => {
+            if (e.target === serviceModalOverlay) {
+                closeServiceModal();
+            }
+        });
+
+        serviceMenuLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openServiceModal();
+        });
 
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
+            if (link !== serviceMenuLink) {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            }
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                closeMenu();
+            if (e.key === 'Escape') {
+                if (serviceModalOverlay.classList.contains('active')) {
+                    closeServiceModal();
+                } else if (isMenuOpen) {
+                    closeMenu();
+                }
             }
         });
     </script>
