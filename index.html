@@ -20,12 +20,12 @@
     :root {
         --bg-black: #0a0a0a;
         --text-white: #ffffff;
-        --text-gray: #a8a8a8;
+        --text-gray: #a8a8;
         --text-light-gray: #d1d1d1;
-        --border-gray: #2a2a2a;
+        --border-gray: #2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
-        --cookie-bg: #1a;
+        --cookie-bg: #1a1a;
         --link-red: #7A1F;
     }
 
@@ -449,7 +449,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -524,7 +524,7 @@
 
     .cookie-btn-primary {
         background-color: #ffffff;
-        color: #000;
+        color: #000000;
     }
 
     .cookie-btn-primary:hover {
@@ -566,7 +566,7 @@
     .young-modal {
         max-width: 800px;
         margin: 60px auto;
-        background: #0a0a0a;
+        background: #0a0a;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
@@ -623,7 +623,7 @@
         margin-bottom: 16px;
     }
 
-    /* BIOGRAPHY MODAL - ACTUALIZADO A BLANCO */
+    /* BIOGRAPHY MODAL */
     .bio-modal-overlay {
         position: fixed;
         top: 0;
@@ -651,7 +651,7 @@
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
-        color: #0a0a0a;
+        color: #0a0a;
     }
 
     .bio-modal-close {
@@ -660,7 +660,7 @@
         right: 16px;
         background: none;
         border: none;
-        color: #0a0a0a;
+        color: #0a0a;
         font-size: 32px;
         cursor: pointer;
         width: 40px;
@@ -680,7 +680,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
         font-weight: 500;
-        color: #0a0a0a;
+        color: #0a;
         margin-bottom: 32px;
         text-align: left;
         letter-spacing: 1px;
@@ -691,7 +691,7 @@
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
-        color: #0a0a0a;
+        color: #0a0a;
     }
 
     .bio-modal-content h3 {
@@ -705,25 +705,35 @@
         margin-bottom: 16px;
     }
 
-    .bio-modal-content ul {
-        margin: 16px 0 16px 20px;
-    }
-
-    .bio-modal-content li {
-        margin-bottom: 12px;
-    }
-
-    .bio-modal-image {
+    .bio-modal-footer {
         text-align: center;
         margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #e5e5;
     }
 
-    .bio-modal-image img {
-        max-width: 150px;
-        height: auto;
+    .bio-modal-footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
     }
 
-    /* TEAM MODAL - NUEVO BLANCO */
+    .bio-modal-footer-logo img {
+        height: 24px;
+        width: auto;
+    }
+
+    .bio-modal-footer-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    /* TEAM MODAL */
     .team-modal-overlay {
         position: fixed;
         top: 0;
@@ -747,11 +757,10 @@
     .team-modal {
         max-width: 800px;
         margin: 60px auto;
-        background: #ffffff;
+        background: #0a0a0a;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
-        color: #0a0a0a;
     }
 
     .team-modal-close {
@@ -760,7 +769,7 @@
         right: 16px;
         background: none;
         border: none;
-        color: #0a0a0a;
+        color: #ffffff;
         font-size: 32px;
         cursor: pointer;
         width: 40px;
@@ -780,7 +789,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
         font-weight: 500;
-        color: #0a0a0a;
+        color: #ffffff;
         margin-bottom: 32px;
         text-align: left;
         letter-spacing: 1px;
@@ -791,18 +800,17 @@
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
-        color: #0a0a0a;
+        color: #ffffff;
+        white-space: pre-wrap;
     }
 
-    .team-modal-content h3 {
-        font-size: 18px;
+    .team-modal-content strong {
         font-weight: 600;
-        margin: 28px 0 12px;
         color: var(--link-red);
-    }
-
-    .team-modal-content p {
-        margin-bottom: 16px;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-size: 17px;
     }
 
     @keyframes fadeInUp {
@@ -1091,17 +1099,11 @@
 
                 <h3>Fraudulent Laws ⚖️</h3>
                 <p>🤣 “Equal justice” 😆 for all. Murderers post bail and walk. Companies get licenses to sell cancer in a bag. Gay marriage protected by law = all fraud.</p>
-                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease                 <h3>Church Scam ⛪</h3>
-                <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
-                <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
-
-                <h3>College Degree Scam 🎓</h3>
-                <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “ it kills. Gay marriage protected by law = all fraud.</p>
-                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease, it kills. Gay marriage is sexual fraud . Make it illegal.</p>
+                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease, it kills. Gay marriage is sexual fraud. Make it illegal.</p>
 
                 <h3>Church Scam ⛪</h3>
                 <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
-                <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
+                <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said                 <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
 
                 <h3>College Degree Scam 🎓</h3>
                 <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
@@ -1111,7 +1113,7 @@
         </div>
     </div>
 
-        <!-- MODAL BIOGRAPHY - ACTUALIZADO -->
+    <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
@@ -1139,37 +1141,73 @@
                 <h3>Philosophy</h3>
                 <p>New Time’s stated position is: “A system cannot be understood by its stated purpose alone; it must be judged by its results.” The organization promotes evidence-based analysis, independent inquiry, and personal accountability as essential for evaluating the legitimacy of social and economic structures.</p>
 
-                <div class="bio-modal-image">
-                    <img src="new-time666.jpg" alt="NEW TIME Logo" />
+                <div class="bio-modal-footer">
+                    <div class="bio-modal-footer-logo">
+                        <img src="666-removebg-preview.png" alt="NEW TIME Logo" />
+                        <span class="bio-modal-footer-text">NEW TIME</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL TEAM - ACTUALIZADO -->
+    <!-- MODAL TEAM -->
     <div class="team-modal-overlay" id="teamModal">
         <div class="team-modal">
             <button class="team-modal-close" id="teamModalClose">&times;</button>
             <h2 class="team-modal-title">NEW TIME TEAM</h2>
-            <div class="team-modal-content">
-                <h3>Sebastian: Founder</h3>
-                <p>Born in 1990 in the United States. Graduated from Davis High School in Kaysville, Utah, in 2007. Attended Harvard University. I founded New Time because mainstream institutions ignore what actually matters. We operate on three principles: resolve, commitment, and truth. No spin. No compromises with falsehoods.</p>
+            <div class="team-modal-content"><strong>Sebastian: Founder</strong>
+Born in 1990 in the United States. Graduated from Davis High School in Kaysville, Utah, in 2007. Attended Harvard University. I founded New Time because mainstream institutions ignore what actually matters. We operate on three principles: resolve, commitment, and truth. No spin. No compromises with falsehoods.
 
-                <h3>Sophie: Sexologist</h3>
-                <p>Born in 1999 in the United States. Holds a doctorate from Harvard University. 60M+ followers. She doesn’t push sex-positivity marketing. She exposes sexual misinformation, breaks down hard data on STD transmission, and calls out industries that profit from sexual confusion. Her work is clinical. Her conclusions are blunt.</p>
+<strong>Sophie: Sexologist</strong>
+Born in 1999 in the United States. Holds a doctorate from Harvard University. 60M+ followers. She doesn’t push sex-positivity marketing. She exposes sexual misinformation, breaks down hard data on STD transmission, and calls out industries that profit from sexual confusion. Her work is clinical. Her conclusions are blunt.
 
-                <h3>Jack: Finance</h3>
-                <p>Born in 1993 in the United States. African American. He attended Harvard but didn’t graduate. He earned his degree from another university in Massachusetts, focusing on economic stagnation and financial flows. He currently works inside the White House. He tracks where money actually moves, who chokes the system, and why “poverty” is manufactured. He doesn’t trade in theory. He brings receipts.</p>
+<strong>Jack: Finance</strong>
+Born in 1993 in the United States. African American. He attended Harvard but didn’t graduate. He earned his degree from another university in Massachusetts, focusing on economic stagnation and financial flows. He currently works inside the White House. He tracks where money actually moves, who chokes the system, and why “poverty” is manufactured. He doesn’t trade in theory. He brings receipts.
 
-                <h3>Why You Won’t See Our Faces</h3>
-                <p>We don’t appear on camera. That’s not a branding move. It’s for safety. Say what we say and you get targeted. Speak plainly about power, money, and sex, and you become a target.</p>
+<strong>Why You Won’t See Our Faces:</strong>
+We don’t appear on camera. That’s not a branding move. It’s for safety. Say what we say and you get targeted. Speak plainly about power, money, and sex, and you become a target.
 
-                <h3>John F. Kennedy</h3>
-                <p>Assassinated for personal political motives. He confronted organized crime and spoke out on the erosion of freedom, land consolidation, the mental health crisis, rigged job markets, and the class-system narrative that blames “money” for poverty created by those who control it.</p>
+<strong>John F. Kennedy:</strong>
+Assassinated for personal political motives. He confronted organized crime and spoke out on the erosion of freedom, land consolidation, the mental health crisis, rigged job markets, and the class-system narrative that blames “money” for poverty created by those who control it.
 
-                <h3>Charlie Kirk</h3>
-                <p>He was murdered after facing severe public backlash for stating that LGBTQ+ ideology constitutes sexual fraud. His position was that this belief indicates a sexual disability, and that discrimination, hatred, homophobia, and intolerance will persist because people with intellectual and sexual disabilities are not recognized as disabled.</p>
-            </div>
+<strong>Charlie Kirk:</strong>
+He was murdered after facing severe public backlash for stating that LGBTQ+ ideology constitutes sexual fraud. His position was that this belief indicates a sexual disability, and that discrimination, hatred, homophobia, and intolerance will persist because people with intellectual and sexual disabilities are not recognized as disabled.
+
+<strong>New Time informs the government:</strong>
+
+1. “Mom, Dad, why do same-sex couples exist if you 
+aren’t in one?”
+
+2. “Mom, Dad, why wasn’t I born of the same sex?”
+
+3. “Mom, Dad, why are there only two categories: 
+heterosexual and same-sex?”
+
+4. “What’s the difference between them?”
+
+5. “Mom, Dad, can I try a same-sex relationship? I 
+keep seeing advertisements and media campaigns 
+that make it look appealing and normal.”
+
+6. “Mom, Dad, why can’t I explore it if the 
+government recognizes it as a normal way of life?”
+
+7. “Mom, Dad, if I don’t accept these people, I’ll be 
+labeled homophobic, intolerant, hateful, or 
+discriminatory. I’m pressured to accept same-sex 
+relationships and to believe they’re normal. What 
+should I do?”
+
+As a mother or father, you have no answers to these questions. The government has 
+become complicit in this situation. To avoid confronting the truth, it hides behind 
+accusations like “You’re homophobic,” “You’re intolerant,” or “That’s discrimination.” The
+truth is that this is sexual fraud, and it’s real. Concealing the truth markets fraud as 
+entertainment, which conditions people to view this lifestyle as normal.
+
+If governments do not grant LGBTQ+ people the same rights as individuals born with disabilities, they will continue to believe it’s normal to have bodily sensations that conflict with their biological sex.
+
+Thank you for visiting New Time. We appreciate your time.</div>
         </div>
     </div>
 
@@ -1199,7 +1237,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1258,7 +1296,7 @@
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-questions-answers.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1274,7 +1312,7 @@
                         <a href="origins-of-infidelity.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Origins of infidelity</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-infidelity.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1290,7 +1328,7 @@
                         <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">The Money and the effect</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1480,7 +1518,7 @@
             if (e.target === bioModal) closeBioModal();
         });
 
-        // MODAL TEAM - NUEVO
+        // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
@@ -1538,7 +1576,7 @@
             hideCookieBanner();
         });
 
-        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
+        // AUDIO LOGIC
         let currentAudio = null;
         let currentBtn = null;
 
@@ -1584,4 +1622,4 @@
         });
     </script>
 </body>
-</html>
+   </html>
