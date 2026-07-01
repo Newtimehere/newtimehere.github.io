@@ -812,6 +812,88 @@
         font-size: 14px;
     }
 
+    /* THE GOVERNMENTS MODAL - NUEVO */
+    .gov-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .gov-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .gov-modal {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #ffffff;
+        border: 1px solid var(--border-gray);
+        padding: 40px 32px;
+        position: relative;
+        color: #0a0a0a;
+    }
+
+    .gov-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #0a0a0a;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .gov-modal-close:hover {
+        opacity: 1;
+    }
+
+    .gov-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .gov-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #0a0a0a;
+    }
+
+    .gov-modal-content h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 28px 0 12px;
+        color: var(--link-red);
+    }
+
+    .gov-modal-content p {
+        margin-bottom: 16px;
+    }
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -938,12 +1020,12 @@
             text-align: center;
         }
 
-        .young-modal, .bio-modal, .team-modal {
+        .young-modal, .bio-modal, .team-modal, .gov-modal {
             margin: 20px auto;
             padding: 32px 20px;
         }
 
-        .young-modal-title, .bio-modal-title, .team-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title, .gov-modal-title {
             font-size: 28px;
             margin-bottom: 24px;
         }
@@ -1033,11 +1115,11 @@
             font-size: 13px;
         }
 
-        .young-modal-title, .bio-modal-title, .team-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title, .gov-modal-title {
             font-size: 24px;
         }
 
-        .young-modal-content, .bio-modal-content, .team-modal-content {
+        .young-modal-content, .bio-modal-content, .team-modal-content, .gov-modal-content {
             font-size: 14px;
         }
     }
@@ -1070,6 +1152,7 @@
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="govLink">The governments</a></li>
             </ul>
         </div>
     </div>
@@ -1082,7 +1165,7 @@
             <div class="young-modal-content">
                 <h3>The Fraudulent Clock ⏰</h3>
                 <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = fraud.</p>
-                <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
+                               <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
 
                 <h3>Laws + TV 📺</h3>
                 <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣 = fake.</p>
@@ -1098,8 +1181,9 @@
 
                 <h3>Fraudulent Laws ⚖️</h3>
                 <p>🤣 “Equal justice” 😆 for all. Murderers post bail and walk. Companies get licenses to sell cancer in a bag. Gay marriage protected by law = all fraud.</p>
-                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease                 <h3>Church Scam ⛪</h3>
-                <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest                 <h3>Church Scam ⛪</h3>
+                <p>Hidden truth: Killers shouldn’t get bail. You took a life—you forfeit yours. Ban the grease</p>
+
+                <h3>Church Scam ⛪</h3>
                 <p>“Gentlemen, to get right with God: 1. Worship this statue 😄 2. Show up Sunday 3. Drop money in the plate. Soul saved!” While the priest grins and passes the basket = fraud.</p>
                 <p>Hidden truth: Saturday is God’s day. Sunday is for sex—that’s why you’re horny. Real churches don’t charge. Money corrupts. The Bible said it first.</p>
 
@@ -1173,6 +1257,23 @@
                 <p>He argued that some seek to normalize sexual disability by portraying governments and politicians as victims.</p>
 
                 <p class="final-thanks">Thank you for visiting New Time</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL THE GOVERNMENTS - NUEVO -->
+    <div class="gov-modal-overlay" id="govModal">
+        <div class="gov-modal">
+            <button class="gov-modal-close" id="govModalClose">&times;</button>
+            <h2 class="gov-modal-title">The Governments</h2>
+            <div class="gov-modal-content">
+                <h3>Part 1: The Structure</h3>
+                <p>Governments present themselves as service providers elected by the people. The structure claims representation, protection, and order.</p>
+                <p>Hidden function: Governments operate as the administrative arm of economic interests. Laws are written to protect capital flow, not citizens. Elections select managers, not decision makers.</p>
+                
+                <h3>Part 2: The Result</h3>
+                <p>Stated purpose: Serve the public, maintain justice, ensure welfare.</p>
+                <p>Documented result: Debt cycles, manufactured scarcity, legalized corporate fraud, and selective enforcement. When outcomes contradict the stated purpose, the system is fraudulent by definition.</p>
             </div>
         </div>
     </div>
@@ -1431,7 +1532,7 @@
         menuOverlay.addEventListener('click', closeMenu);
 
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            if (link.id !== 'forYoungLink' && link.id !== 'bioLink' && link.id !== 'teamLink') {
+            if (link.id !== 'forYoungLink' && link.id !== 'bioLink' && link.id !== 'teamLink' && link.id !== 'govLink') {
                 link.addEventListener('click', () => {
                     closeMenu();
                 });
@@ -1507,16 +1608,41 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
+        // MODAL THE GOVERNMENTS - NUEVO
+        const govModal = document.getElementById('govModal');
+        const govLink = document.getElementById('govLink');
+        const govModalClose = document.getElementById('govModalClose');
+
+        function openGovModal(e) {
+            if (e) e.preventDefault();
+            govModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
+        function closeGovModal() {
+            govModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        govLink.addEventListener('click', openGovModal);
+        govModalClose.addEventListener('click', closeGovModal);
+        govModal.addEventListener('click', (e) => {
+            if (e.target === govModal) closeGovModal();
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 if (isMenuOpen) closeMenu();
                 if (youngModal.classList.contains('active')) closeYoungModal();
                 if (bioModal.classList.contains('active')) closeBioModal();
                 if (teamModal.classList.contains('active')) closeTeamModal();
+                if (govModal.classList.contains('active')) closeGovModal();
             }
         });
 
         const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementBy         const cookieBanner = document.getElementById('cookieBanner');
         const acceptNecessary = document.getElementById('acceptNecessary');
         const acceptAll = document.getElementById('acceptAll');
 
@@ -1588,4 +1714,4 @@
         });
     </script>
 </body>
-</html>
+</html>  
