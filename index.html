@@ -25,7 +25,7 @@
         --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
-        --cookie-bg: #1a1a;
+        --cookie-bg: #1a1a1a;
         --link-red: #7A1F1F;
     }
 
@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 0.88);
+        background: rgba(10, 10, 10, 0.88);
         z-index: -1;
     }
 
@@ -623,7 +623,7 @@
         margin-bottom: 16px;
     }
 
-    /* BIOGRAPHY MODAL - ACTUALIZADO A BLANCO */
+    /* BIOGRAPHY MODAL */
     .bio-modal-overlay {
         position: fixed;
         top: 0;
@@ -723,7 +723,7 @@
         height: auto;
     }
 
-    /* TEAM MODAL - NUEVO BLANCO */
+    /* TEAM MODAL */
     .team-modal-overlay {
         position: fixed;
         top: 0;
@@ -812,8 +812,8 @@
         font-size: 14px;
     }
 
-    /* CONTACT MODAL - NUEVO */
-    .contact-modal-overlay {
+    /* CONTACTS MODAL - NUEVO */
+    .contacts-modal-overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -828,12 +828,12 @@
         padding: 20px;
     }
 
-    .contact-modal-overlay.active {
+    .contacts-modal-overlay.active {
         opacity: 1;
         visibility: visible;
     }
 
-    .contact-modal {
+    .contacts-modal {
         max-width: 800px;
         margin: 60px auto;
         background: #ffffff;
@@ -843,7 +843,7 @@
         color: #0a0a0a;
     }
 
-    .contact-modal-close {
+    .contacts-modal-close {
         position: absolute;
         top: 16px;
         right: 16px;
@@ -861,11 +861,11 @@
         transition: opacity 0.2s ease;
     }
 
-    .contact-modal-close:hover {
+    .contacts-modal-close:hover {
         opacity: 1;
     }
 
-    .contact-modal-title {
+    .contacts-modal-title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
         font-weight: 500;
@@ -876,21 +876,21 @@
         text-transform: uppercase;
     }
 
-    .contact-modal-content {
+    .contacts-modal-content {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
         color: #0a0a0a;
     }
 
-    .contact-modal-content h3 {
+    .contacts-modal-content h3 {
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
         color: var(--link-red);
     }
 
-    .contact-modal-content p {
+    .contacts-modal-content p {
         margin-bottom: 16px;
     }
 
@@ -1020,12 +1020,12 @@
             text-align: center;
         }
 
-        .young-modal, .bio-modal, .team-modal, .contact-modal {
+        .young-modal, .bio-modal, .team-modal, .contacts-modal {
             margin: 20px auto;
             padding: 32px 20px;
         }
 
-        .young-modal-title, .bio-modal-title, .team-modal-title, .contact-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
             font-size: 28px;
             margin-bottom: 24px;
         }
@@ -1115,11 +1115,11 @@
             font-size: 13px;
         }
 
-        .young-modal-title, .bio-modal-title, .team-modal-title, .contact-modal-title {
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
             font-size: 24px;
         }
 
-        .young-modal-content, .bio-modal-content, .team-modal-content, .contact-modal-content {
+        .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
             font-size: 14px;
         }
     }
@@ -1152,7 +1152,7 @@
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactLink">Contacts</a></li>
+                <li class="mobile-nav-item"><a href="#" class="                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactsLink">Contacts</a></li>
             </ul>
         </div>
     </div>
@@ -1194,7 +1194,7 @@
         </div>
     </div>
 
-        <!-- MODAL BIOGRAPHY - ACTUALIZADO -->
+    <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
@@ -1229,7 +1229,7 @@
         </div>
     </div>
 
-    <!-- MODAL TEAM - ACTUALIZADO CON TEXTO NUEVO -->
+    <!-- MODAL TEAM -->
     <div class="team-modal-overlay" id="teamModal">
         <div class="team-modal">
             <button class="team-modal-close" id="teamModalClose">&times;</button>
@@ -1261,19 +1261,19 @@
     </div>
 
     <!-- MODAL CONTACTS - NUEVO -->
-    <div class="contact-modal-overlay" id="contactModal">
-        <div class="contact-modal">
-            <button class="contact-modal-close" id="contactModalClose">&times;</button>
-            <h2 class="contact-modal-title">CONTACT</h2>
-            <div class="contact-modal-content">
+    <div class="contacts-modal-overlay" id="contactsModal">
+        <div class="contacts-modal">
+            <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
+            <h2 class="contacts-modal-title">CONTACT</h2>
+            <div class="contacts-modal-content">
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
                 <h3>Email</h3>
                 <p>info@newtimehere.github.io</p>
-                
+
                 <h3>Social Media</h3>
                 <p>Follow our updates and reports on our official channels.</p>
-                
+
                 <h3>Research Submissions</h3>
                 <p>We accept documented research and evidence-based reports. All submissions are reviewed for source verification and factual accuracy before publication.</p>
             </div>
@@ -1534,7 +1534,7 @@
         menuOverlay.addEventListener('click', closeMenu);
 
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            if (link.id !== 'forYoungLink' && link.id !== 'bioLink' && link.id !== 'teamLink' && link.id !== 'contactLink') {
+            if (link.id !== 'forYoungLink' && link.id !== 'bioLink' && link.id !== 'teamLink' && link.id !== 'contactsLink') {
                 link.addEventListener('click', () => {
                     closeMenu();
                 });
@@ -1587,7 +1587,7 @@
             if (e.target === bioModal) closeBioModal();
         });
 
-        // MODAL TEAM - NUEVO
+        // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
@@ -1602,8 +1602,6 @@
         function closeTeamModal() {
             teamModal.classList.remove('active');
             document.body.style.overflow = '';
-        }
-
         teamLink.addEventListener('click', openTeamModal);
         teamModalClose.addEventListener('click', closeTeamModal);
         teamModal.addEventListener('click', (e) => {
@@ -1611,40 +1609,26 @@
         });
 
         // MODAL CONTACTS - NUEVO
-        const contactModal = document.getElementById('contactModal');
-        const contactLink = document.getElementById('contactLink');
-        const contactModalClose = document.getElementById('contactModalClose');
+        const contactsModal = document.getElementById('contactsModal');
+        const contactsLink = document.getElementById('contactsLink');
+        const contactsModalClose = document.getElementById('contactsModalClose');
 
-        function openContactModal(e) {
+        function openContactsModal(e) {
             if (e) e.preventDefault();
-            contactModal.classList.add('active');
+            contactsModal.classList.add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
         }
 
-        function closeContactModal() {
-            contactModal.classList.remove('active');
+        function closeContactsModal() {
+            contactsModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        contact         const contactModalClose = document.getElementById('contactModalClose');
-
-        function openContactModal(e) {
-            if (e) e.preventDefault();
-            contactModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
-
-        function closeContactModal() {
-            contactModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        contactLink.addEventListener('click', openContactModal);
-        contactModalClose.addEventListener('click', closeContactModal);
-        contactModal.addEventListener('click', (e) => {
-            if (e.target === contactModal) closeContactModal();
+        contactsLink.addEventListener('click', openContactsModal);
+        contactsModalClose.addEventListener('click', closeContactsModal);
+        contactsModal.addEventListener('click', (e) => {
+            if (e.target === contactsModal) closeContactsModal();
         });
 
         document.addEventListener('keydown', (e) => {
@@ -1653,7 +1637,7 @@
                 if (youngModal.classList.contains('active')) closeYoungModal();
                 if (bioModal.classList.contains('active')) closeBioModal();
                 if (teamModal.classList.contains('active')) closeTeamModal();
-                if (contactModal.classList.contains('active')) closeContactModal();
+                if (contactsModal.classList.contains('active')) closeContactsModal();
             }
         });
 
@@ -1730,3 +1714,4 @@
     </script>
 </body>
 </html>
+                                               
