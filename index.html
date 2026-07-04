@@ -22,11 +22,11 @@
         --text-white: #ffffff;
         --text-gray: #a8a8a8;
         --text-light-gray: #d1d1d1;
-        --border-gray: #2a;
+        --border-gray: #2a2a2a;
         --header-height: 70px;
         --header-height-mobile: 65px;
         --cookie-bg: #1a1a1a;
-        --link-red: #7A1F;
+        --link-red: #7A1F1F;
     }
 
     html {
@@ -170,6 +170,19 @@
         height: auto;
         display: block;
         margin: 0 auto;
+    }
+
+    .hero-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #ffffff;
+        max-width: 680px;
+        margin: 0 auto 24px;
+        animation: fadeInUp 0.8s ease 0.2s both;
+        font-weight: 400;
+        letter-spacing: 0px;
+        opacity: 1;
     }
 
     .hero-signature {
@@ -436,11 +449,11 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
-        border-top: 1px solid rgba(44, 44, 0.08);
+        border-top: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-link {
@@ -638,7 +651,7 @@
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
-        color: #0a0a;
+        color: #0a0a0a;
     }
 
     .bio-modal-close {
@@ -720,7 +733,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0.95);
+        background: rgba(0, 0, 0, 0.95);
         z-index: 2000;
         opacity: 0;
         visibility: hidden;
@@ -750,7 +763,7 @@
         right: 16px;
         background: none;
         border: none;
-        color: #0a0a;
+        color: #0a0a0a;
         font-size: 32px;
         cursor: pointer;
         width: 40px;
@@ -805,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - ACTUALIZADO */
+    /* CONTACTS MODAL - EDITADO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -817,7 +830,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow-y: hidden;
+        overflow: hidden;
         padding: 20px;
     }
 
@@ -827,13 +840,13 @@
     }
 
     .contacts-modal {
-        max-width: 600px;
+        max-width: 800px;
         margin: 60px auto;
         background: #ffffff;
         border: 1px solid var(--border-gray);
-        padding: 40px 40px;
+        padding: 40px 32px;
         position: relative;
-        color: #0a0a;
+        color: #0a0a0a;
     }
 
     .contacts-modal-close {
@@ -843,16 +856,15 @@
         background: none;
         border: none;
         color: #0a0a0a;
-        font-size: 28px;
+        font-size: 32px;
         cursor: pointer;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        opacity: 0.6;
+        opacity: 0.7;
         transition: opacity 0.2s ease;
-        line-height: 1;
     }
 
     .contacts-modal-close:hover {
@@ -862,34 +874,33 @@
     .contacts-modal-title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
-        font-weight: 400;
+        font-weight: 500;
         color: #0a0a0a;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
         text-align: left;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         text-transform: uppercase;
     }
 
     .contacts-modal-content {
         font-family: 'Inter', sans-serif;
         font-size: 15px;
-        line-height: 1.7;
+        line-height: 1.8;
         color: #0a0a0a;
     }
 
     .contacts-modal-content h3 {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        margin: 24px 0 8px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 28px 0 12px;
         color: var(--link-red);
-        text-transform: none;
-        letter-spacing: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .contacts-modal-content p {
-        margin-bottom: 12px;
-        font-weight: 400;
+        margin-bottom: 16px;
     }
 
     @keyframes fadeInUp {
@@ -945,6 +956,12 @@
 
         .hero-main-logo {
             max-width: 400px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 auto 20px;
         }
 
         .hero-signature {
@@ -1050,6 +1067,11 @@
             max-width: 320px;
         }
 
+        .hero-text {
+            font-size: 15px;
+            margin: 0 auto 16px;
+        }
+
         .hero-signature {
             margin-top: 16px;
             margin-bottom: 0;
@@ -1128,9 +1150,8 @@
     </header>
 
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
+        <div class="mobile-menu" id="mobileMenu">
+              <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
@@ -1143,6 +1164,7 @@
             </ul>
         </div>
     </div>
+
     <!-- MODAL For The Young -->
     <div class="young-modal-overlay" id="youngModal">
         <div class="young-modal">
@@ -1180,7 +1202,7 @@
         </div>
     </div>
 
-        <!-- MODAL BIOGRAPHY -->
+    <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
@@ -1252,7 +1274,6 @@
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
             <h2 class="contacts-modal-title">CONTACT</h2>
             <div class="contacts-modal-content">
-                <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
                 <h3>Email</h3>
                 <p>contactnewtimehere@gmail.com</p>
@@ -1271,6 +1292,9 @@
             <div class="hero-logo">
                 <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" />
             </div>
+            <p class="hero-text">
+                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
+            </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
 
@@ -1289,7 +1313,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1313,7 +1337,7 @@
                 </li>
                 <li class="directory-item">
                           <div class="directory-row">
-                        <a href="same-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
+                        <a href="same-sex-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1353,7 +1377,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1364,7 +1388,7 @@
                         <a href="origins-of-infidelity.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Origins of infidelity</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-infidelity.mp3" aria-label="Play audio">
-                                <svg viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1380,7 +1404,7 @@
                         <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">The Money and the effect</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
-                                <svg viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1401,7 +1425,7 @@
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <svg class="directory-arrow" viewBox="0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
@@ -1571,7 +1595,7 @@
         });
 
         // MODAL TEAM
-        const teamModal = document.getElementById('teamModal');
+        const team  Modal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
@@ -1606,8 +1630,7 @@
         }
 
         function closeContactsModal() {
-            
-                  contactsModal.classList.remove('active');
+            contactsModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
@@ -1653,7 +1676,7 @@
             hideCookieBanner();
         });
 
-        // AUDIO LOGIC
+        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
         let currentBtn = null;
 
@@ -1699,5 +1722,4 @@
         });
     </script>
 </body>
-</html> 
-    
+</html>   
