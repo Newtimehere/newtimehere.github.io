@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - ACTUALIZADO */
+    /* CONTACTS MODAL - NUEVO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,7 +830,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow-y: auto;
+        overflow-y: hidden;
         padding: 20px;
     }
 
@@ -840,16 +840,15 @@
     }
 
     .contacts-modal {
-        max-width: 800px;
-        margin: 60px auto;
-        background: #ffffff;
-        border: 1px solid var(--border-gray);
-        padding: 40px 32px;
-        position: relative;
-        color: #0a0a0a;
-        max-height: fit-content;
-        overflow: hidden;
-    }
+    max-width: 800px;
+    margin: 60px auto;
+    background: #ffffff;
+    border: 1px solid var(--border-gray);
+    padding: 40px 32px;
+    position: relative;
+    color: #0a0a0a; max-height: fit-content;
+    overflow: hidden; 
+}
 
     .contacts-modal-close {
         position: absolute;
@@ -892,19 +891,17 @@
     }
 
     .contacts-modal-content h3 {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        margin: 24px 0 8px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 28px 0 12px;
         color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .contacts-modal-content p {
         margin-bottom: 16px;
-    }
-
-    .contacts-modal-content .bold-text {
-        font-weight: 700;
     }
 
     @keyframes fadeInUp {
@@ -1157,7 +1154,7 @@
         <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
-                       <ul class="mobile-nav-list">
+            <ul class="mobile-nav-list">
                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
@@ -1272,25 +1269,25 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - SOLO ESTO SE EDITÓ -->
+    <!-- MODAL CONTACTS - ACTUALIZADO -->
     <div class="contacts-modal-overlay" id="contactsModal">
-        <div class="contacts-modal">
-            <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
-            <h2 class="contacts-modal-title">CONTACT</h2>
-            <div class="contacts-modal-content">
-                <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
-                
-                <h3>Email</h3>
-                <p class="bold-text">contactnewtimehere@gmail.com</p>
+    <div class="contacts-modal">
+        <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
+        <h2 class="contacts-modal-title">CONTACT</h2>
+        <div class="contacts-modal-content">
+            <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
+            
+            <h3>EMAIL</h3>
+            <p class="bold-text">contactnewtimehere@gmail.com</p>
 
-                <h3>Social Media</h3>
-                <p class="bold-text">Instagram, Tik Tok, YouTube, and in the others.</p>
+            <h3>SOCIAL MEDIA</h3>
+            <p class="bold-text">Instagram, Tik Tok, YouTube, and in the others.</p>
 
-                <h3>Research Submissions</h3>
-                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
-            </div>
+            <h3>RESEARCH SUBMISSIONS</h3>
+            <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
         </div>
     </div>
+</div>
 
     <main class="main">
         <section class="hero" id="home">
@@ -1588,6 +1585,13 @@
             closeMenu();
         }
 
+        function openBioModal(e) {
+            if (e) e.preventDefault();
+            bioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
         function closeBioModal() {
             bioModal.classList.remove('active');
             document.body.style.overflow = '';
@@ -1597,7 +1601,7 @@
         bioModalClose.addEventListener('click', closeBioModal);
         bioModal.addEventListener('click', (e) => {
             if (e.target === bioModal) closeBioModal();
-                   });
+        });
 
         // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
@@ -1728,4 +1732,3 @@
     </script>
 </body>
 </html>
-        
