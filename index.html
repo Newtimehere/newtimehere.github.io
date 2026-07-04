@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - ACTUALIZADO Y ESTÁTICO */
+    /* CONTACTS MODAL - ACTUALIZADO SIN SCROLL */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,7 +830,6 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow: hidden;
         padding: 20px;
     }
 
@@ -1133,43 +1132,7 @@
         }
     }
 </style>
-</head>
-<body>
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIMES Logo" />
-                <span class="logo-text">NEW TIME</span>
-            </div>
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu
-                <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
-        <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
-                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactsLink">Contacts</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- MODAL For The Young -->
-    <div class="young-modal-overlay" id="youngModal">
-        <div class="young-modal">
-            <button class="young-modal-close" id="youngModalClose">&times;</button>
+-close" id="youngModalClose">&times;</button>
             <h2 class="young-modal-title">New Times For Young</h2>
             <div class="young-modal-content">
                 <h3>The Fraudulent Clock ⏰</h3>
@@ -1269,7 +1232,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - ACTUALIZADO SEGÚN FOTO DE MUESTRA -->
+    <!-- MODAL CONTACTS - ACTUALIZADO CON TÍTULOS EN MAYÚSCULAS -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1501,8 +1464,7 @@
             </div>
         </div>
     </main>
-
-    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-inner">
             <p class="cookie-text">
                 We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
@@ -1597,7 +1559,7 @@
         });
 
         // MODAL TEAM
-                const teamModal = document.getElementById('teamModal');
+        const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
@@ -1619,7 +1581,7 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS - ACTUALIZADO Y ESTÁTICO
+        // MODAL CONTACTS - NUEVO
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
         const contactsModalClose = document.getElementById('contactsModalClose');
@@ -1725,4 +1687,3 @@
     </script>
 </body>
 </html>
-          
