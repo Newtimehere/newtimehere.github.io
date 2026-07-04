@@ -1100,7 +1100,7 @@
         .footer-text {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 32px;
+            margin-bottom:         margin-bottom: 32px;
         }
 
         .directory-title {
@@ -1154,7 +1154,7 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
@@ -1269,24 +1269,92 @@
     </div>
 
     <!-- MODAL CONTACTS - ACTUALIZADO -->
-    <div class="contacts-modal-overlay" id="contactsModal">
-        <div class="contacts-modal">
-            <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
-            <h2 class="contacts-modal-title">CONTACT</h2>
-            <div class="contacts-modal-content">
-                <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
-                
-                <h3>Email</h3>
-                <p>contactnewtimehere@gmail.com</p>
+<style>
+    .contacts-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .contacts-modal {
+        background: #fff;
+        padding: 40px 35px 35px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        overflow: hidden; /* Modal estático sin scroll */
+        max-height: 90vh;
+    }
+    
+    .contacts-modal-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #000;
+    }
+    
+    .contacts-modal-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 32px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        color: #000;
+    }
+    
+    .contacts-modal-content h3 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #8B3A3A; /* Rojo igual a la primera foto */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 25px;
+        margin-bottom: 8px;
+    }
+    
+    .contacts-modal-content p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #000;
+        margin-bottom: 10px;
+    }
+    
+    .contacts-modal-content .bold-text {
+        font-weight: 700;
+    }
+</style>
 
-                <h3>Social Media</h3>
-                <p>Instagram, Tik Tok, YouTube, and in the others.</p>
+<div class="contacts-modal-overlay" id="contactsModal">
+    <div class="contacts-modal">
+        <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
+        <h2 class="contacts-modal-title">CONTACT</h2>
+        <div class="contacts-modal-content">
+            <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
+            
+            <h3>EMAIL</h3>
+            <p class="bold-text">contactnewtimehere@gmail.com</p>
 
-                <h3>Research Submissions</h3>
-                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
-            </div>
+            <h3>SOCIAL MEDIA</h3>
+            <p class="bold-text">Instagram, Tik Tok, YouTube, and in the others.</p>
+
+            <h3>RESEARCH SUBMISSIONS</h3>
+            <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
         </div>
     </div>
+</div>
 
     <main class="main">
         <section class="hero" id="home">
@@ -1556,7 +1624,7 @@
 
         function openYoungModal(e) {
             if (e) e.preventDefault();
-            youngModal.classList.add('active');
+            youngModal.classList .add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
         }
@@ -1576,13 +1644,6 @@
         const bioModal = document.getElementById('bioModal');
         const bioLink = document.getElementById('bioLink');
         const bioModalClose = document.getElementById('bioModalClose');
-
-        function openBioModal(e) {
-            if (e) e.preventDefault();
-            bioModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
 
         function openBioModal(e) {
             if (e) e.preventDefault();
@@ -1624,100 +1685,8 @@
         teamModal.addEventListener('click', (e) => {
             if (e.target === teamModal) closeTeamModal();
         });
-       <!-- MODAL CONTACTS - ACTUALIZADO + FIX MENÚ -->
-<div id="contactsModal" class="modal contacts-modal-static">
-    <div class="modal-content">
-        <span class="modal-close" id="contactsModalClose">&times;</span>
-        
-        <div class="contacts-header">
-            <h2 class="contact-main-title">CONTACT</h2>
-            <!-- Texto debajo del logo borrado y reemplazado -->
-            <p class="contacts-intro">
-                Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.
-            </p>
-        </div>
 
-        <div class="contacts-body">
-            <h3 class="contact-title-red">EMAIL</h3>
-            <p class="contact-value-bold">contactnewtimehere@gmail.com</p>
-
-            <h3 class="contact-title-red">SOCIAL MEDIA</h3>
-            <p class="contact-value-bold">Instagram, TikTok, YouTube, and in the others.</p>
-
-            <h3 class="contact-title-red">RESEARCH SUBMISSIONS</h3>
-            <p class="contacts-text">
-                For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.
-            </p>
-        </div>
-    </div>
-</div>
-
-<style>
-/* Solo estilos de Contacts - no toca nada más */
-
-/* Modal estático - no rueda */
-.contacts-modal-static .modal-content {
-    overflow-y: hidden !important;
-    overflow-x: hidden !important;
-    max-height: none;
-    height: auto;
-}
-
-/* Título CONTACT principal */
-.contact-main-title {
-    font-family: 'Times New Roman', Georgia, serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-    color: #000;
-}
-
-/* Texto intro reemplazado */
-.contacts-intro {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0 0 30px 0;
-    color: #333;
-}
-
-/* Títulos rojos estilo foto 1 */
-.contact-title-red {
-    font-family: 'Times New Roman', Georgia, serif;
-    color: #8B3A3A;
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 28px 0 12px 0;
-}
-
-/* Email y redes en negrita */
-.contact-value-bold {
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #000;
-    margin: 0 0 8px 0;
-}
-
-.contacts-text {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-}
-
-.contacts-body {
-    padding-bottom: 10px;
-}
-</style>
-
-<script>
-// MODAL CONTACTS - NUEVO + FIX MENÚ
+        // MODAL CONTACTS - NUEVO
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
         const contactsModalClose = document.getElementById('contactsModalClose');
@@ -1726,28 +1695,18 @@
             if (e) e.preventDefault();
             contactsModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
             closeMenu();
         }
 
         function closeContactsModal() {
             contactsModal.classList.remove('active');
             document.body.style.overflow = '';
-            document.documentElement.style.overflow = ''; // Fix: libera el scroll
         }
 
         contactsLink.addEventListener('click', openContactsModal);
         contactsModalClose.addEventListener('click', closeContactsModal);
         contactsModal.addEventListener('click', (e) => {
             if (e.target === contactsModal) closeContactsModal();
-        });
-
-        // Fix: asegurar que el scroll vuelve cuando termina la animación
-        contactsModal.addEventListener('transitionend', () => {
-            if (!contactsModal.classList.contains('active')) {
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-            }
         });
 
         document.addEventListener('keydown', (e) => {
@@ -1785,9 +1744,7 @@
             localStorage.setItem('cookieConsent', 'all');
             hideCookieBanner();
         });
-</script>
 
-        
         // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
         let currentBtn = null;
