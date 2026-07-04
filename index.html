@@ -1619,6 +1619,29 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
+                // MODAL TEAM
+        const teamModal = document.getElementById('teamModal');
+        const teamLink = document.getElementById('teamLink');
+        const teamModalClose = document.getElementById('teamModalClose');
+
+        function openTeamModal(e) {
+            if (e) e.preventDefault();
+            teamModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
+        function closeTeamModal() {
+            teamModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        teamLink.addEventListener('click', openTeamModal);
+        teamModalClose.addEventListener('click', closeTeamModal);
+        teamModal.addEventListener('click', (e) => {
+            if (e.target === teamModal) closeTeamModal();
+        });
+
         // MODAL CONTACTS
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
@@ -1724,4 +1747,4 @@
         });
     </script>
 </body>
-</html>                         
+</html>                
