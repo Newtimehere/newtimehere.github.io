@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - EDITADO */
+    /* CONTACTS MODAL - NUEVO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,7 +830,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow-y: hidden;
+        overflow-y: auto;
         padding: 20px;
     }
 
@@ -847,7 +847,6 @@
         padding: 40px 32px;
         position: relative;
         color: #0a0a0a;
-        overflow: hidden;
     }
 
     .contacts-modal-close {
@@ -1154,7 +1153,7 @@
         <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
-                        <ul class="mobile-nav-list">
+            <ul class="mobile-nav-list">
                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
@@ -1269,7 +1268,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - EDITADO -->
+    <!-- MODAL CONTACTS - ACTUALIZADO -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1277,13 +1276,13 @@
             <div class="contacts-modal-content">
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
-                <h3>EMAIL</h3>
-                <p><strong>contactnewtimehere@gmail.com</strong></p>
+                <h3>Email</h3>
+                <p>contactnewtimehere@gmail.com</p>
 
-                <h3>SOCIAL MEDIA</h3>
-                <p><strong>Instagram, Tic Toc, YouTube, and in the others.</strong></p>
+                <h3>Social Media</h3>
+                <p>Instagram, Tik Tok, YouTube, and in the others.</p>
 
-                <h3>RESEARCH SUBMISSIONS</h3>
+                <h3>Research Submissions</h3>
                 <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
             </div>
         </div>
@@ -1295,7 +1294,7 @@
                 <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" />
             </div>
             <p class="hero-text">
-                Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.
+                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
@@ -1585,6 +1584,13 @@
             closeMenu();
         }
 
+        function openBioModal(e) {
+            if (e) e.preventDefault();
+            bioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
         function closeBioModal() {
             bioModal.classList.remove('active');
             document.body.style.overflow = '';
@@ -1597,29 +1603,6 @@
         });
 
         // MODAL TEAM
-        const teamModal = document.getElementById('teamModal');
-        const teamLink = document.getElementById('teamLink');
-        const teamModalClose = document.getElementById('teamModalClose');
-
-        function openTeamModal(e) {
-            if (e) e.preventDefault();
-            teamModal.classList.add('active
-                       document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
-
-        function closeTeamModal() {
-            teamModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        teamLink.addEventListener('click', openTeamModal);
-        teamModalClose.addEventListener('click', closeTeamModal);
-        teamModal.addEventListener('click', (e) => {
-            if (e.target === teamModal) closeTeamModal();
-        });
-
-                // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
@@ -1642,64 +1625,34 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS
-        const contactsModal = document.getElementById('contactsModal');
-        const contactsLink = document.getElementById('contactsLink');
-        const contactsModalClose = document.getElementById('contactsModalClose');
+        <!-- MODAL CONTACTS - ACTUALIZADO -->
+<div id="contactsModal" class="modal contacts-modal-static">
+    <div class="modal-content">
+        <span class="modal-close" id="contactsModalClose">&times;</span>
+        
+        <div class="contacts-header">
+            <h2 class="contact-main-title">CONTACT</h2>
+            <!-- Texto debajo del logo borrado y reemplazado -->
+            <p class="contacts-intro">
+                Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.
+            </p>
+        </div>
 
-        function openContactsModal(e) {
-            if (e) e.preventDefault();
-            contactsModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
+        <div class="contacts-body">
+            <!-- Títulos rojos igual que la foto 1 -->
+            <h3 class="contact-title-red">EMAIL</h3>
+            <p class="contact-value-bold">contactnewtimehere@gmail.com</p>
 
-        function closeContactsModal() {
-            contactsModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+            <h3 class="contact-title-red">SOCIAL MEDIA</h3>
+            <p class="contact-value-bold">Instagram, TikTok, YouTube, and in the others.</p>
 
-        contactsLink.addEventListener('click', openContactsModal);
-        contactsModalClose.addEventListener('click', closeContactsModal);
-        contactsModal.addEventListener('click', (e) => {
-            if (e.target === contactsModal) closeContactsModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (isMenuOpen) closeMenu();
-                if (youngModal.classList.contains('active')) closeYoungModal();
-                if (bioModal.classList.contains('active')) closeBioModal();
-                if (teamModal.classList.contains('active')) closeTeamModal();
-                if (contactsModal.classList.contains('active')) closeContactsModal();
-            }
-        });
-
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptNecessary = document.getElementById('acceptNecessary');
-        const acceptAll = document.getElementById('acceptAll');
-
-        setTimeout(() => {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
-
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
-
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
-
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
+            <h3 class="contact-title-red">RESEARCH SUBMISSIONS</h3>
+            <p class="contacts-text">
+                For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.
+            </p>
+        </div>
+    </div>
+</div>
 
         // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
@@ -1747,4 +1700,4 @@
         });
     </script>
 </body>
-</html>                
+</html>
