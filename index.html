@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - NUEVO */
+    /* CONTACTS MODAL - ACTUALIZADO Y ESTÁTICO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,8 +830,10 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow-y: auto;
         padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contacts-modal-overlay.active {
@@ -841,7 +843,7 @@
 
     .contacts-modal {
         max-width: 800px;
-        margin: 60px auto;
+        width: 100%;
         background: #ffffff;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
@@ -1154,7 +1156,7 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
@@ -1268,7 +1270,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - ACTUALIZADO -->
+    <!-- MODAL CONTACTS - ACTUALIZADO CON TÍTULOS ROJOS -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1276,13 +1278,13 @@
             <div class="contacts-modal-content">
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
-                <h3>Email</h3>
+                <h3>EMAIL</h3>
                 <p>contactnewtimehere@gmail.com</p>
 
-                <h3>Social Media</h3>
+                <h3>SOCIAL MEDIA</h3>
                 <p>Instagram, Tik Tok, YouTube, and in the others.</p>
 
-                <h3>Research Submissions</h3>
+                <h3>RESEARCH SUBMISSIONS</h3>
                 <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
             </div>
         </div>
@@ -1294,7 +1296,7 @@
                 <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" />
             </div>
             <p class="hero-text">
-                Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath. You won't find this level of detail anywhere else. With New Times, you get the full story and direct answers to your questions
+                Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
@@ -1584,13 +1586,6 @@
             closeMenu();
         }
 
-        function openBioModal(e) {
-            if (e) e.preventDefault();
-            bioModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
-
         function closeBioModal() {
             bioModal.classList.remove('active');
             document.body.style.overflow = '';
@@ -1607,7 +1602,7 @@
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
-        function openTeamModal(e) {
+                   function openTeamModal(e) {
             if (e) e.preventDefault();
             teamModal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1730,4 +1725,4 @@
         });
     </script>
 </body>
-</html>
+</html>            
