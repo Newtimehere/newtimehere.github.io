@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - NUEVO */
+    /* CONTACTS MODAL - ACTUALIZADO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -847,6 +847,8 @@
         padding: 40px 32px;
         position: relative;
         color: #0a0a0a;
+        max-height: fit-content;
+        overflow: hidden;
     }
 
     .contacts-modal-close {
@@ -890,17 +892,19 @@
     }
 
     .contacts-modal-content h3 {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 20px;
-        font-weight: 500;
-        margin: 28px 0 12px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 24px 0 8px;
         color: var(--link-red);
-        letter-spacing: 1px;
-        text-transform: uppercase;
     }
 
     .contacts-modal-content p {
         margin-bottom: 16px;
+    }
+
+    .contacts-modal-content .bold-text {
+        font-weight: 700;
     }
 
     @keyframes fadeInUp {
@@ -1100,7 +1104,7 @@
         .footer-text {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom:         margin-bottom: 32px;
+            margin-bottom: 32px;
         }
 
         .directory-title {
@@ -1153,8 +1157,8 @@
         <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                       <ul class="mobile-nav-list">
+                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
@@ -1268,93 +1272,26 @@
         </div>
     </div>
 
-   <!-- MODAL CONTACTS - ACTUALIZADO -->
-<style>
-    .contacts-modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-    
-    .contacts-modal {
-        background: #fff;
-        padding: 40px 35px 35px;
-        max-width: 500px;
-        width: 90%;
-        position: relative;
-        overflow: hidden; /* Modal estático, sin scroll */
-    }
-    
-    .contacts-modal-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 28px;
-        cursor: pointer;
-        color: #000;
-    }
-    
-    .contacts-modal-title {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 32px;
-        font-weight: 400;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
-        color: #000;
-    }
-    
-    .contacts-modal-content h3 {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 18px;
-        font-weight: 400;
-        color: #8B3A3A; /* Rojo como en la foto 1 */
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-top: 25px;
-        margin-bottom: 8px;
-    }
-    
-    .contacts-modal-content p {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #000;
-        margin-bottom: 10px;
-    }
-    
-    .contacts-modal-content .bold {
-        font-weight: 700;
-    }
-</style>
+    <!-- MODAL CONTACTS - SOLO ESTO SE EDITÓ -->
+    <div class="contacts-modal-overlay" id="contactsModal">
+        <div class="contacts-modal">
+            <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
+            <h2 class="contacts-modal-title">CONTACT</h2>
+            <div class="contacts-modal-content">
+                <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
+                
+                <h3>Email</h3>
+                <p class="bold-text">contactnewtimehere@gmail.com</p>
 
-<div class="contacts-modal-overlay" id="contactsModal">
-    <div class="contacts-modal">
-        <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
-        <h2 class="contacts-modal-title">CONTACT</h2>
-        <div class="contacts-modal-content">
-            <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
-            
-            <h3>EMAIL</h3>
-            <p class="bold">contactnewtimehere@gmail.com</p>
+                <h3>Social Media</h3>
+                <p class="bold-text">Instagram, Tik Tok, YouTube, and in the others.</p>
 
-            <h3>SOCIAL MEDIA</h3>
-            <p class="bold">Instagram, Tik Tok, YouTube, and in the others.</p>
-
-            <h3>RESEARCH SUBMISSIONS</h3>
-            <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
+                <h3>Research Submissions</h3>
+                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
+            </div>
         </div>
     </div>
-</div>
-    
+
     <main class="main">
         <section class="hero" id="home">
             <div class="hero-logo">
@@ -1623,7 +1560,7 @@
 
         function openYoungModal(e) {
             if (e) e.preventDefault();
-            youngModal.classList .add('active');
+            youngModal.classList.add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
         }
@@ -1660,7 +1597,7 @@
         bioModalClose.addEventListener('click', closeBioModal);
         bioModal.addEventListener('click', (e) => {
             if (e.target === bioModal) closeBioModal();
-        });
+                   });
 
         // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
@@ -1686,63 +1623,63 @@
         });
 
         // MODAL CONTACTS - NUEVO
-const contactsModal = document.getElementById('contactsModal');
-const contactsLink = document.getElementById('contactsLink');
-const contactsModalClose = document.getElementById('contactsModalClose');
+        const contactsModal = document.getElementById('contactsModal');
+        const contactsLink = document.getElementById('contactsLink');
+        const contactsModalClose = document.getElementById('contactsModalClose');
 
-function openContactsModal(e) {
-    if (e) e.preventDefault();
-    contactsModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    closeMenu();
-}
+        function openContactsModal(e) {
+            if (e) e.preventDefault();
+            contactsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
 
-function closeContactsModal() {
-    contactsModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
+        function closeContactsModal() {
+            contactsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-contactsLink.addEventListener('click', openContactsModal);
-contactsModalClose.addEventListener('click', closeContactsModal);
-contactsModal.addEventListener('click', (e) => {
-    if (e.target === contactsModal) closeContactsModal();
-});
+        contactsLink.addEventListener('click', openContactsModal);
+        contactsModalClose.addEventListener('click', closeContactsModal);
+        contactsModal.addEventListener('click', (e) => {
+            if (e.target === contactsModal) closeContactsModal();
+        });
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        if (isMenuOpen) closeMenu();
-        if (youngModal.classList.contains('active')) closeYoungModal();
-        if (bioModal.classList.contains('active')) closeBioModal();
-        if (teamModal.classList.contains('active')) closeTeamModal();
-        if (contactsModal.classList.contains('active')) closeContactsModal();
-    }
-});
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (isMenuOpen) closeMenu();
+                if (youngModal.classList.contains('active')) closeYoungModal();
+                if (bioModal.classList.contains('active')) closeBioModal();
+                if (teamModal.classList.contains('active')) closeTeamModal();
+                if (contactsModal.classList.contains('active')) closeContactsModal();
+            }
+        });
 
-const cookieBanner = document.getElementById('cookieBanner');
-const acceptNecessary = document.getElementById('acceptNecessary');
-const acceptAll = document.getElementById('acceptAll');
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
 
-setTimeout(() => {
-    if (!localStorage.getItem('cookieConsent')) {
-        cookieBanner.classList.add('visible');
-        document.body.classList.add('cookie-visible');
-    }
-}, 800);
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
 
-function hideCookieBanner() {
-    cookieBanner.classList.remove('visible');
-    document.body.classList.remove('cookie-visible');
-}
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
 
-acceptNecessary.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'necessary');
-    hideCookieBanner();
-});
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
 
-acceptAll.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'all');
-    hideCookieBanner();
-});
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
 
         // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
@@ -1791,3 +1728,4 @@ acceptAll.addEventListener('click', () => {
     </script>
 </body>
 </html>
+        
