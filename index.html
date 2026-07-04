@@ -29,15 +29,17 @@
         --link-red: #7A1F1F;
     }
 
-   .modal-content h2,
-.modal-content h3,
-.modal-content h4 {
-    color: #7A1F1F !important;
-}
-.modal-content h3,
-.modal-content h4 {
-    color: #7A1F1F;
-}
+    .young-modal-content h3,
+    .bio-modal-content h3,
+    .team-modal-content h3,
+    .contacts-modal-content h3,
+    .young-modal-content h4,
+    .bio-modal-content h4,
+    .team-modal-content h4,
+    .contacts-modal-content h4 {
+        color: var(--link-red) !important;
+    }
+
     html {
         scroll-behavior: smooth;
     }
@@ -551,7 +553,7 @@
         color: #000000;
     }
 
-    /* MODAL For The Young */
+    /* MODAL For The Young - SERVICE */
     .young-modal-overlay {
         position: fixed;
         top: 0;
@@ -575,10 +577,11 @@
     .young-modal {
         max-width: 800px;
         margin: 60px auto;
-        background: #0a0a0a;
+        background: #ffffff;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
         position: relative;
+        color: #0a0a0a;
     }
 
     .young-modal-close {
@@ -587,7 +590,7 @@
         right: 16px;
         background: none;
         border: none;
-        color: #ffffff;
+        color: #0a0a0a;
         font-size: 32px;
         cursor: pointer;
         width: 40px;
@@ -607,7 +610,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 36px;
         font-weight: 500;
-        color: #ffffff;
+        color: #0a0a0a;
         margin-bottom: 32px;
         text-align: left;
         letter-spacing: 1px;
@@ -618,14 +621,13 @@
         font-family: 'Inter', sans-serif;
         font-size: 15px;
         line-height: 1.8;
-        color: #ffffff;
+        color: #0a0a0a;
     }
 
     .young-modal-content h3 {
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
-        color: var(--link-red);
     }
 
     .young-modal-content p {
@@ -707,7 +709,6 @@
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
-        color: var(--link-red);
     }
 
     .bio-modal-content p {
@@ -807,7 +808,6 @@
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
-        color: var(--link-red);
     }
 
     .team-modal-content p {
@@ -896,7 +896,6 @@
         font-size: 18px;
         font-weight: 600;
         margin: 28px 0 12px;
-        color: var(--link-red);
     }
 
     .contacts-modal-content p {
@@ -1164,8 +1163,7 @@
             </ul>
         </div>
     </div>
-
-    <!-- MODAL For The Young -->
+  <!-- MODAL For The Young -->
     <div class="young-modal-overlay" id="youngModal">
         <div class="young-modal">
             <button class="young-modal-close" id="youngModalClose">&times;</button>
@@ -1201,8 +1199,7 @@
             </div>
         </div>
     </div>
-
-    <!-- MODAL BIOGRAPHY -->
+  <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
@@ -1723,4 +1720,11 @@
         });
     </script>
 </body>
-</html>
+   </html>
+
+
+
+
+
+   
+    
