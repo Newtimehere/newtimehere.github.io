@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 0.88);
+        background: rgba(10, 10, 10, 0.88);
         z-index: -1;
     }
 
@@ -449,7 +449,7 @@
     }
 
     .mobile-nav-item {
-        border-bottom: 1px solid rgba(44, 44, 0.08);
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
     }
 
     .mobile-nav-item:first-child {
@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - CAMBIO: Sin scroll */
+    /* CONTACTS MODAL - EDITADO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,7 +830,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow: hidden;
+        overflow-y: hidden;
         padding: 20px;
     }
 
@@ -847,6 +847,7 @@
         padding: 40px 32px;
         position: relative;
         color: #0a0a0a;
+        overflow: hidden;
     }
 
     .contacts-modal-close {
@@ -889,13 +890,12 @@
         color: #0a0a0a;
     }
 
-    /* CAMBIO: Títulos rojos #8B2E2E como la foto 1 */
     .contacts-modal-content h3 {
         font-family: 'Cormorant Garamond', serif;
         font-size: 20px;
         font-weight: 500;
         margin: 28px 0 12px;
-        color: #8B2E2E;
+        color: var(--link-red);
         letter-spacing: 1px;
         text-transform: uppercase;
     }
@@ -1154,7 +1154,7 @@
         <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
+                        <ul class="mobile-nav-list">
                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
@@ -1162,7 +1162,8 @@
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactsLink">Contacts</a></li>
-            </ul         </div>
+            </ul>
+        </div>
     </div>
 
     <!-- MODAL For The Young -->
@@ -1268,7 +1269,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - YA CON LOS CAMBIOS -->
+    <!-- MODAL CONTACTS - EDITADO -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1276,14 +1277,14 @@
             <div class="contacts-modal-content">
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
-                <h3>Email</h3>
-                <p>info@newtimehere.github.io</p>
+                <h3>EMAIL</h3>
+                <p><strong>contactnewtimehere@gmail.com</strong></p>
 
-                <h3>Social Media</h3>
-                <p>Follow our updates and reports on our official channels.</p>
+                <h3>SOCIAL MEDIA</h3>
+                <p><strong>Instagram, Tic Toc, YouTube, and in the others.</strong></p>
 
-                <h3>Research Submissions</h3>
-                <p>We accept documented research and evidence-based reports. All submissions are reviewed for source verification and factual accuracy before publication.</p>
+                <h3>RESEARCH SUBMISSIONS</h3>
+                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
             </div>
         </div>
     </div>
@@ -1293,7 +1294,6 @@
             <div class="hero-logo">
                 <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" />
             </div>
-            <!-- CAMBIO: Texto nuevo debajo del logo -->
             <p class="hero-text">
                 Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.
             </p>
@@ -1603,8 +1603,7 @@
 
         function openTeamModal(e) {
             if (e) e.preventDefault();
-            teamModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            teamModal.classList.add('active             document.body.style.overflow = 'hidden';
             closeMenu();
         }
 
@@ -1619,11 +1618,10 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS - NUEVO
+        // MODAL CONTACTS
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
-        const contactsModalClose = document.getElementById
-       ('contactsModalClose');
+        const contactsModalClose = document.getElementById('contactsModalClose');
 
         function openContactsModal(e) {
             if (e) e.preventDefault();
