@@ -29,15 +29,6 @@
         --link-red: #7A1F1F;
     }
 
-    .bio-modal-content h3,
-    .team-modal-content h3 {
-        color: #7A1F1F !important;
-        font-size: 18px !important;
-        font-weight: 600 !important;
-        font-family: 'Inter', sans-serif !important;
-        margin: 28px 0 12px !important;
-    }
-
     html {
         scroll-behavior: smooth;
     }
@@ -704,10 +695,13 @@
     }
 
     .bio-modal-content h3 {
-        font-size: 18px;
-        font-weight: 600;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
         margin: 28px 0 12px;
         color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .bio-modal-content p {
@@ -804,10 +798,13 @@
     }
 
     .team-modal-content h3 {
-        font-size: 18px;
-        font-weight: 600;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
         margin: 28px 0 12px;
         color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .team-modal-content p {
@@ -893,10 +890,13 @@
     }
 
     .contacts-modal-content h3 {
-        font-size: 18px;
-        font-weight: 600;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
         margin: 28px 0 12px;
         color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .contacts-modal-content p {
@@ -994,144 +994,144 @@
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 40px;
-            }
+        }
 
-    .directory-title {
-        font-size: 20px;
+        .directory-title {
+            font-size: 20px;
+        }
+
+        .directory-link {
+            font-size: 16px;
+        }
+
+        .directory-row {
+            padding: 22px 0;
+            gap: 16px;
+        }
+
+        .mobile-nav-link {
+            font-size: 18px;
+        }
+
+        .cookie-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .cookie-buttons {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .young-modal, .bio-modal, .team-modal, .contacts-modal {
+            margin: 20px auto;
+            padding: 32px 20px;
+        }
+
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
     }
 
-    .directory-link {
-        font-size: 16px;
-    }
+    @media (max-width: 480px) {
+        .header-inner {
+            padding: 0 8px 0 10px;
+        }
 
-    .directory-row {
-        padding: 22px 0;
-        gap: 16px;
-    }
+        .logo-wrapper {
+            gap: 8px;
+        }
 
-    .mobile-nav-link {
-        font-size: 18px;
-    }
+        .logo-icon {
+            height: 36px;
+            margin-left: 0;
+        }
 
-    .cookie-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
+        .logo-text {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
 
-    .cookie-buttons {
-        width: 100%;
-        flex-direction: column;
-    }
+        .hero {
+            padding: 16px 20px;
+        }
 
-    .cookie-btn {
-        width: 100%;
-        text-align: center;
-    }
+        .hero-main-logo {
+            max-width: 320px;
+        }
 
-    .young-modal, .bio-modal, .team-modal, .contacts-modal {
-        margin: 20px auto;
-        padding: 32px 20px;
-    }
+        .hero-text {
+            font-size: 15px;
+            margin: 0 auto 16px;
+        }
 
-    .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
-        font-size: 28px;
-        margin-bottom: 24px;
-    }
-}
+        .hero-signature {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
 
-@media (max-width: 480px) {
-    .header-inner {
-        padding: 0 8px 0 10px;
-    }
+        .directory {
+            padding: 8px 16px 30px;
+        }
 
-    .logo-wrapper {
-        gap: 8px;
-    }
+        .directory-header {
+            padding: 8px 0 24px;
+        }
 
-    .logo-icon {
-        height: 36px;
-        margin-left: 0;
-    }
+        .footer-section {
+            padding: 20px 16px 80px;
+        }
 
-    .logo-text {
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
+        .footer-logo {
+            margin-bottom: 32px;
+        }
 
-    .hero {
-        padding: 16px 20px;
-    }
+        .footer-logo img {
+            max-width: 320px;
+        }
 
-    .hero-main-logo {
-        max-width: 320px;
-    }
+        .footer-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom:         margin-bottom: 32px;
+        }
 
-    .hero-text {
-        font-size: 15px;
-        margin: 0 auto 16px;
-    }
+        .directory-title {
+            font-size: 19px;
+        }
 
-    .hero-signature {
-        margin-top: 16px;
-        margin-bottom: 0;
-    }
+        .directory-link {
+            font-size: 16px;
+        }
 
-    .directory {
-        padding: 8px 16px 30px;
-    }
+        .directory-row {
+            padding: 22px 0;
+        }
 
-    .directory-header {
-        padding: 8px 0 24px;
-    }
+        .cookie-text {
+            font-size: 13px;
+        }
 
-    .footer-section {
-        padding: 20px 16px 80px;
-    }
+        .cookie-btn {
+            padding: 11px 20px;
+            font-size: 13px;
+        }
 
-    .footer-logo {
-        margin-bottom: 32px;
-    }
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
+            font-size: 24px;
+        }
 
-    .footer-logo img {
-        max-width: 320px;
+        .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
+            font-size: 14px;
+        }
     }
-
-    .footer-text {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 32px;
-    }
-
-    .directory-title {
-        font-size: 19px;
-    }
-
-    .directory-link {
-        font-size: 16px;
-    }
-
-    .directory-row {
-        padding: 22px 0;
-    }
-
-    .cookie-text {
-        font-size: 13px;
-    }
-
-    .cookie-btn {
-        padding: 11px 20px;
-        font-size: 13px;
-    }
-
-    .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
-        font-size: 24px;
-    }
-
-    .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
-        font-size: 14px;
-    }
-}
 </style>
 </head>
 <body>
@@ -1338,7 +1338,7 @@
                 </li>
                 <li class="directory-item">
                           <div class="directory-row">
-                        <a href="same-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
+                        <a href="same-sex-sexual-impediment.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex sexual impediment</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1405,21 +1405,6 @@
                         <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">The Money and the effect</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </li>
-                <li class="directory-item">
-                    <div class="directory-row">
-                        <a href="the-money.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">The Money and the effect</a>
-                        <div class="directory-actions">
-                            <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1436,7 +1421,7 @@
                         <a href="origins-of-suicide.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Origins of suicides</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-origins-of-suicides.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1468,7 +1453,7 @@
                         <a href="assassins-here.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Origins of assassins</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-origins-of-assassins.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1484,7 +1469,7 @@
                         <a href="human-love%5E1.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Human love</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-human-love.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -1571,7 +1556,7 @@
 
         function openYoungModal(e) {
             if (e) e.preventDefault();
-            youngModal.classList.add('active');
+            youngModal.classList .add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
         }
