@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - ESTÁTICO SIN SCROLL */
+    /* CONTACTS MODAL - ACTUALIZADO Y ESTÁTICO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,8 +830,11 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        padding: 20px;
         overflow: hidden;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contacts-modal-overlay.active {
@@ -841,7 +844,7 @@
 
     .contacts-modal {
         max-width: 800px;
-        margin: 60px auto;
+        width: 100%;
         background: #ffffff;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
@@ -1144,6 +1147,9 @@
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
+                <span class="menu-line"></
+                 span>
+                <span class="menu-line"></span>
                 <span class="menu-line"></span>
             </button>
         </div>
@@ -1155,22 +1161,6 @@
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
-        <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
@@ -1284,7 +1274,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - EDITADO: Títulos como foto 1 + estático sin scroll -->
+    <!-- MODAL CONTACTS - EDITADO SEGÚN FOTO 1 Y ESTÁTICO -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1293,13 +1283,13 @@
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
                 <h3>Email</h3>
-                <p>contactnewtimehere@gmail.com</p>
+                <p>info@newtimehere.github.io</p>
 
                 <h3>Social Media</h3>
-                <p>Instagram, Tik Tok, YouTube, and in the others.</p>
+                <p>Follow our updates and reports on our official channels.</p>
 
                 <h3>Research Submissions</h3>
-                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
+                <p>We accept documented research and evidence-based reports. All submissions are reviewed for source verification and factual accuracy before publication.</p>
             </div>
         </div>
     </div>
@@ -1593,7 +1583,7 @@
         const bioLink = document.getElementById('bioLink');
         const bioModalClose = document.getElementById('bioModalClose');
 
-                function openBioModal(e) {
+        function openBioModal(e) {
             if (e) e.preventDefault();
             bioModal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1612,7 +1602,7 @@
         });
 
         // MODAL TEAM
-        const teamModal = document.getElementById('teamModal');
+        const teamModal = document.getElementById('teamModal ntById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
@@ -1634,7 +1624,7 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS - NUEVO
+        // MODAL CONTACTS
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
         const contactsModalClose = document.getElementById('contactsModalClose');
@@ -1739,4 +1729,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
