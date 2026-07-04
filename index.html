@@ -832,9 +832,6 @@
         transition: all 0.3s ease;
         overflow: hidden;
         padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .contacts-modal-overlay.active {
@@ -844,7 +841,7 @@
 
     .contacts-modal {
         max-width: 800px;
-        width: 100%;
+        margin: 60px auto;
         background: #ffffff;
         border: 1px solid var(--border-gray);
         padding: 40px 32px;
@@ -1147,16 +1144,14 @@
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
-                <span class="menu-line"></
-                 span>
-                <span class="menu-line"></span>
                 <span class="menu-line"></span>
             </button>
         </div>
     </header>
 
     <div class="menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu" id="mobileMenu
+                <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
@@ -1274,7 +1269,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - EDITADO SEGÚN FOTO 1 Y ESTÁTICO -->
+    <!-- MODAL CONTACTS - ACTUALIZADO SEGÚN FOTO DE MUESTRA -->
     <div class="contacts-modal-overlay" id="contactsModal">
         <div class="contacts-modal">
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
@@ -1282,14 +1277,14 @@
             <div class="contacts-modal-content">
                 <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
-                <h3>Email</h3>
-                <p>info@newtimehere.github.io</p>
+                <h3>EMAIL</h3>
+                <p>contactnewtimehere@gmail.com</p>
 
-                <h3>Social Media</h3>
-                <p>Follow our updates and reports on our official channels.</p>
+                <h3>SOCIAL MEDIA</h3>
+                <p>Instagram, Tik Tok, YouTube, and in the others.</p>
 
-                <h3>Research Submissions</h3>
-                <p>We accept documented research and evidence-based reports. All submissions are reviewed for source verification and factual accuracy before publication.</p>
+                <h3>RESEARCH SUBMISSIONS</h3>
+                <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
             </div>
         </div>
     </div>
@@ -1602,7 +1597,7 @@
         });
 
         // MODAL TEAM
-        const teamModal = document.getElementById('teamModal ntById('teamModal');
+                const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
@@ -1624,7 +1619,7 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS
+        // MODAL CONTACTS - ACTUALIZADO Y ESTÁTICO
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
         const contactsModalClose = document.getElementById('contactsModalClose');
@@ -1729,4 +1724,5 @@
         });
     </script>
 </body>
-</html> 
+</html>
+          
