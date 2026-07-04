@@ -84,7 +84,7 @@
     .menu-line { 
         width: 22px; 
         height: 2px; 
-        background-color: #000000; 
+        background-color: #000; 
         transition: all 0.3s ease; 
     }
     .mobile-menu { 
@@ -133,7 +133,7 @@
         justify-content: center; 
     }
     .mobile-nav-list { list-style: none; }
-    .mobile-nav-item { border-bottom: 1px solid #e5e5e5; }
+    .mobile-nav-item { border-bottom: 1px solid #e5e5; }
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
     .mobile-nav-link { 
         display: block; 
@@ -204,24 +204,29 @@
         font-weight: 400;
         color: #2c2c2c;
     }
+    /* CAMBIO APLICADO AQUÍ: Mismo estilo que SEBASTIAN: FOUNDER */
     .service-modal-content h2 {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Cormorant Garamond', serif;
         font-size: 20px;
-        font-weight: 700;
+        font-weight: 500;
         margin-top: 30px;
         margin-bottom: 12px;
-        color: #2c2c2c;
+        color: var(--modal-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
     .service-modal-content h2.red-heading {
         color: var(--modal-red);
     }
     .service-modal-content h3 {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        font-weight: 500;
         margin-top: 20px;
         margin-bottom: 8px;
-        color: #2c2c2c;
+        color: var(--modal-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
     @keyframes slideUp {
         from { opacity: 0; transform: translateY(30px); }
