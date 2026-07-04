@@ -818,7 +818,7 @@
         font-size: 14px;
     }
 
-    /* CONTACTS MODAL - EDITADO */
+    /* CONTACTS MODAL - NUEVO */
     .contacts-modal-overlay {
         position: fixed;
         top: 0;
@@ -830,7 +830,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        overflow: hidden;
+        overflow-y: auto;
         padding: 20px;
     }
 
@@ -1154,7 +1154,7 @@
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
-                <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
                 <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
@@ -1274,6 +1274,7 @@
             <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
             <h2 class="contacts-modal-title">CONTACT</h2>
             <div class="contacts-modal-content">
+                <p>For inquiries, research collaboration, or media requests, contact New Time.</p>
                 
                 <h3>Email</h3>
                 <p>contactnewtimehere@gmail.com</p>
@@ -1583,6 +1584,13 @@
             closeMenu();
         }
 
+        function openBioModal(e) {
+            if (e) e.preventDefault();
+            bioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
         function closeBioModal() {
             bioModal.classList.remove('active');
             document.body.style.overflow = '';
@@ -1594,7 +1602,7 @@
             if (e.target === bioModal) closeBioModal();
         });
 
-                // MODAL TEAM
+        // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
@@ -1604,7 +1612,9 @@
             teamModal.classList.add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
-                function closeTeamModal() {
+        }
+
+        function closeTeamModal() {
             teamModal.classList.remove('active');
             document.body.style.overflow = '';
         }
@@ -1615,7 +1625,7 @@
             if (e.target === teamModal) closeTeamModal();
         });
 
-        // MODAL CONTACTS
+        // MODAL CONTACTS - NUEVO
         const contactsModal = document.getElementById('contactsModal');
         const contactsLink = document.getElementById('contactsLink');
         const contactsModalClose = document.getElementById('contactsModalClose');
