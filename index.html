@@ -1151,7 +1151,7 @@
 
     <div class="menu-overlay" id="menuOverlay"></div>
         <div class="mobile-menu" id="mobileMenu">
-              <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
+        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
@@ -1594,8 +1594,8 @@
             if (e.target === bioModal) closeBioModal();
         });
 
-        // MODAL TEAM
-        const team  Modal = document.getElementById('teamModal');
+                // MODAL TEAM
+        const teamModal = document.getElementById('teamModal');
         const teamLink = document.getElementById('teamLink');
         const teamModalClose = document.getElementById('teamModalClose');
 
@@ -1604,9 +1604,7 @@
             teamModal.classList.add('active');
             document.body.style.overflow = 'hidden';
             closeMenu();
-        }
-
-        function closeTeamModal() {
+                function closeTeamModal() {
             teamModal.classList.remove('active');
             document.body.style.overflow = '';
         }
@@ -1722,4 +1720,4 @@
         });
     </script>
 </body>
-</html>   
+</html>
