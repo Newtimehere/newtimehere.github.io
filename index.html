@@ -1268,7 +1268,7 @@
         </div>
     </div>
 
-    <!-- MODAL CONTACTS - ACTUALIZADO -->
+   <!-- MODAL CONTACTS - ACTUALIZADO -->
 <style>
     .contacts-modal-overlay {
         position: fixed;
@@ -1289,8 +1289,7 @@
         max-width: 500px;
         width: 90%;
         position: relative;
-        overflow: hidden; /* Modal estático sin scroll */
-        max-height: 90vh;
+        overflow: hidden; /* Modal estático, sin scroll */
     }
     
     .contacts-modal-close {
@@ -1317,7 +1316,7 @@
         font-family: 'Times New Roman', Times, serif;
         font-size: 18px;
         font-weight: 400;
-        color: #8B3A3A; /* Rojo igual a la primera foto */
+        color: #8B3A3A; /* Rojo como en la foto 1 */
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-top: 25px;
@@ -1332,7 +1331,7 @@
         margin-bottom: 10px;
     }
     
-    .contacts-modal-content .bold-text {
+    .contacts-modal-content .bold {
         font-weight: 700;
     }
 </style>
@@ -1345,17 +1344,17 @@
             <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
             
             <h3>EMAIL</h3>
-            <p class="bold-text">contactnewtimehere@gmail.com</p>
+            <p class="bold">contactnewtimehere@gmail.com</p>
 
             <h3>SOCIAL MEDIA</h3>
-            <p class="bold-text">Instagram, Tik Tok, YouTube, and in the others.</p>
+            <p class="bold">Instagram, Tik Tok, YouTube, and in the others.</p>
 
             <h3>RESEARCH SUBMISSIONS</h3>
             <p>For commercial advertising inquiries with New Time, please contact us through any of our official platforms. We do not accept inquiries for other purposes; they will be declined. All requests are reviewed to verify the source and accuracy before publication.</p>
         </div>
     </div>
 </div>
-
+    
     <main class="main">
         <section class="hero" id="home">
             <div class="hero-logo">
@@ -1687,63 +1686,63 @@
         });
 
         // MODAL CONTACTS - NUEVO
-        const contactsModal = document.getElementById('contactsModal');
-        const contactsLink = document.getElementById('contactsLink');
-        const contactsModalClose = document.getElementById('contactsModalClose');
+const contactsModal = document.getElementById('contactsModal');
+const contactsLink = document.getElementById('contactsLink');
+const contactsModalClose = document.getElementById('contactsModalClose');
 
-        function openContactsModal(e) {
-            if (e) e.preventDefault();
-            contactsModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
+function openContactsModal(e) {
+    if (e) e.preventDefault();
+    contactsModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    closeMenu();
+}
 
-        function closeContactsModal() {
-            contactsModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+function closeContactsModal() {
+    contactsModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
 
-        contactsLink.addEventListener('click', openContactsModal);
-        contactsModalClose.addEventListener('click', closeContactsModal);
-        contactsModal.addEventListener('click', (e) => {
-            if (e.target === contactsModal) closeContactsModal();
-        });
+contactsLink.addEventListener('click', openContactsModal);
+contactsModalClose.addEventListener('click', closeContactsModal);
+contactsModal.addEventListener('click', (e) => {
+    if (e.target === contactsModal) closeContactsModal();
+});
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (isMenuOpen) closeMenu();
-                if (youngModal.classList.contains('active')) closeYoungModal();
-                if (bioModal.classList.contains('active')) closeBioModal();
-                if (teamModal.classList.contains('active')) closeTeamModal();
-                if (contactsModal.classList.contains('active')) closeContactsModal();
-            }
-        });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (isMenuOpen) closeMenu();
+        if (youngModal.classList.contains('active')) closeYoungModal();
+        if (bioModal.classList.contains('active')) closeBioModal();
+        if (teamModal.classList.contains('active')) closeTeamModal();
+        if (contactsModal.classList.contains('active')) closeContactsModal();
+    }
+});
 
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptNecessary = document.getElementById('acceptNecessary');
-        const acceptAll = document.getElementById('acceptAll');
+const cookieBanner = document.getElementById('cookieBanner');
+const acceptNecessary = document.getElementById('acceptNecessary');
+const acceptAll = document.getElementById('acceptAll');
 
-        setTimeout(() => {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
+setTimeout(() => {
+    if (!localStorage.getItem('cookieConsent')) {
+        cookieBanner.classList.add('visible');
+        document.body.classList.add('cookie-visible');
+    }
+}, 800);
 
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
+function hideCookieBanner() {
+    cookieBanner.classList.remove('visible');
+    document.body.classList.remove('cookie-visible');
+}
 
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
+acceptNecessary.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'necessary');
+    hideCookieBanner();
+});
 
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
+acceptAll.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'all');
+    hideCookieBanner();
+});
 
         // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
