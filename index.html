@@ -1730,7 +1730,7 @@
             });
         });
     </script>
-    <!-- NEW TIME CHAT SOLO PARA "FOR THE YOUNG" -->
+    <!-- NEW TIME CHAT PARA "FOR THE YOUNG" -->
 <button id="newtime-btn">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#8B0000" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z"/>
@@ -1748,7 +1748,7 @@
     width: 60px; height: 60px;
     cursor: pointer; z-index: 9999; backdrop-filter: blur(6px);
     transition: all 0.2s;
-    display: none; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: center;
   }
   #newtime-btn:hover { background: rgba(0,0,0,0.25); }
   
@@ -1776,10 +1776,6 @@
 .newtime-welcome { 
     text-align: left; font-weight: 600; margin-bottom: 12px; color: #000; font-size: 15px; line-height: 1.4;
   }
-.newtime-msg {
-    background: #f5f5f7; padding: 12px; border-radius: 8px;
-    margin-bottom: 12px; line-height: 1.5; font-size: 14px; color: #1d1d1f;
-  }
 .newtime-btn {
     display: block; width: 100%; padding: 12px; margin: 8px 0;
     background: white; border: 1px solid #d2d2d7; border-radius: 8px;
@@ -1788,6 +1784,10 @@
 .newtime-btn:hover { background: #f5f5f7; }
 .newtime-audio { width: 100%; margin: 12px 0; }
 .newtime-topic-img { width: 100%; border-radius: 8px; margin: 12px 0; display: block; }
+.newtime-msg {
+    background: #f5f5f7; padding: 12px; border-radius: 8px;
+    margin-bottom: 12px; line-height: 1.5; font-size: 14px; color: #1d1d1f;
+  }
 .newtime-email {
     display: block; width: 100%; padding: 10px; margin-top: 8px;
     background: #c90000; color: white; border: none; border-radius: 8px;
@@ -1835,21 +1835,6 @@
 </div>
 
 <script>
-  // MOSTRAR EL CHAT SOLO EN "FOR THE YOUNG"
-  function checkPage() {
-    const path = window.location.pathname.toLowerCase();
-    const isForTheYoung = path.includes('for-the-young') || path.includes('fortheyoung') || path.includes('for_the_young');
-    const btn = document.getElementById('newtime-btn');
-    if (isForTheYoung) {
-      btn.style.display = 'flex';
-    } else {
-      btn.style.display = 'none';
-    }
-  }
-  
-  window.addEventListener('load', checkPage);
-  window.addEventListener('hashchange', checkPage);
-
   const btn = document.getElementById('newtime-btn');
   const chat = document.getElementById('newtime-chat');
   btn.onclick = () => {
@@ -1861,7 +1846,6 @@
     document.getElementById('topic-audio').pause();
   }
 
-  // AUDIOS EN EL MISMO ORDEN DE TU CAPTURA DE GITHUB
   const topics = {
     'cancer': {
       title: 'Origins of cancer', 
@@ -1902,6 +1886,9 @@
     document.getElementById('topic-audio').pause();
   }
 </script>
-<!-- FIN CHAT NEW TIME -->      
+<!-- FIN CHAT NEW TIME -->    
+    
+  
+  
 </body>
 </html>
