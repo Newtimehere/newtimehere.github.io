@@ -1735,50 +1735,50 @@
 <style>
   #newtime-btn {
     position: fixed; bottom: 20px; right: 20px; 
-    background: rgba(0,0,0,0.5); color: white;
-    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; 
+    background: rgba(201,0,0,0.6); color: white;
+    border: 1px solid rgba(201,0,0,0.3); border-radius: 50%; 
     width: 60px; height: 60px; font-size: 24px;
     cursor: pointer; z-index: 9999; backdrop-filter: blur(6px);
     transition: all 0.2s;
   }
-  #newtime-btn:hover { background: rgba(0,0,0,0.7); }
+  #newtime-btn:hover { background: rgba(201,0,0,0.8); }
   
   #newtime-chat {
     display: none; position: fixed; bottom: 90px; right: 20px; width: 340px;
     background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.16);
-    font-family: system-ui; z-index: 9999; max-height: 80vh; overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui; z-index: 9999; max-height: 80vh; overflow-y: auto;
   }
   #newtime-header {
     background: #000; color: white; padding: 16px; border-radius: 12px 12px 0 0;
-    font-weight: bold; text-align: center;
+    font-weight: 600; text-align: center; font-size: 15px; letter-spacing: 0.5px;
   }
   #newtime-body { padding: 16px; }
 .newtime-logo { 
     width: 120px; display: block; margin: 0 auto 12px; border-radius: 8px;
   }
 .newtime-welcome { 
-    text-align: center; font-weight: bold; margin-bottom: 16px; color: #000; font-size: 16px;
+    text-align: left; font-weight: 600; margin-bottom: 12px; color: #000; font-size: 15px; line-height: 1.4;
   }
 .newtime-msg {
-    background: #f1f1f1; padding: 12px; border-radius: 8px;
-    margin-bottom: 12px; line-height: 1.4; font-size: 14px; color: #333;
+    background: #f5f5f7; padding: 12px; border-radius: 8px;
+    margin-bottom: 12px; line-height: 1.5; font-size: 14px; color: #1d1d1f;
   }
 .newtime-btn {
     display: block; width: 100%; padding: 12px; margin: 8px 0;
-    background: white; border: 1px solid #ddd; border-radius: 8px;
-    text-align: left; cursor: pointer; color: #000;
+    background: white; border: 1px solid #d2d2d7; border-radius: 8px;
+    text-align: left; cursor: pointer; color: #1d1d1f; font-size: 14px;
   }
-.newtime-btn:hover { background: #f5f5f5; }
+.newtime-btn:hover { background: #f5f5f7; }
 .newtime-audio { width: 100%; margin: 12px 0; }
 .newtime-topic-img { width: 100%; border-radius: 8px; margin: 12px 0; display: block; }
 .newtime-email {
     display: block; width: 100%; padding: 10px; margin-top: 8px;
     background: #c90000; color: white; border: none; border-radius: 8px;
-    text-align: center; text-decoration: none; font-weight: bold;
+    text-align: center; text-decoration: none; font-weight: 600; font-size: 14px;
   }
 .newtime-back {
-    background: #eee; color: #000; border: none; padding: 8px;
-    width: 100%; margin-top: 12px; border-radius: 6px; cursor: pointer;
+    background: #e8e8ed; color: #000; border: none; padding: 8px;
+    width: 100%; margin-top: 12px; border-radius: 6px; cursor: pointer; font-size: 14px;
   }
 </style>
 
@@ -1789,11 +1789,7 @@
     <!-- PANTALLA 1: BIENVENIDA -->
     <div id="newtime-screen1">
       <img src="photo-new-time-chat.jpg" class="newtime-logo" alt="NEW TIME">
-      <div class="newtime-welcome">Welcome to New Time Truth Hidden</div>
-      <div class="newtime-msg">
-        We believe in full transparency. We look past the surface to uncover what's really happening beneath.<br><br>
-        What topic would you like to explore?
-      </div>
+      <div class="newtime-welcome">Welcome to Chat Friends, we're going to talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.</div>
       <button class="newtime-btn" onclick="showTopic('cancer')">
         Origins of cancer
       </button>
@@ -1807,7 +1803,7 @@
 
     <!-- PANTALLA 2: AUDIO + FOTO + EMAIL -->
     <div id="newtime-screen2" style="display:none;">
-      <div id="topic-title" style="font-weight:bold; margin-bottom:12px; color: #000;"></div>
+      <div id="topic-title" style="font-weight:600; margin-bottom:12px; color: #000; font-size: 15px;"></div>
       <img id="topic-image" class="newtime-topic-img" src="" alt="Topic Image">
       <audio id="topic-audio" class="newtime-audio" controls></audio>
       <div class="newtime-msg" id="topic-text"></div>
