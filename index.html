@@ -1735,13 +1735,15 @@
 <style>
   #newtime-btn {
     position: fixed; bottom: 20px; right: 20px; 
-    background: rgba(201,0,0,0.6); color: white;
-    border: 1px solid rgba(201,0,0,0.3); border-radius: 50%; 
+    background: rgba(0,0,0,0.3); 
+    border: 1px solid rgba(255,255,255,0.2); 
+    border-radius: 50%; 
     width: 60px; height: 60px; font-size: 24px;
     cursor: pointer; z-index: 9999; backdrop-filter: blur(6px);
     transition: all 0.2s;
+    color: #8B0000;
   }
-  #newtime-btn:hover { background: rgba(201,0,0,0.8); }
+  #newtime-btn:hover { background: rgba(0,0,0,0.5); }
   
   #newtime-chat {
     display: none; position: fixed; bottom: 90px; right: 20px; width: 340px;
@@ -1751,7 +1753,15 @@
   #newtime-header {
     background: #000; color: white; padding: 16px; border-radius: 12px 12px 0 0;
     font-weight: 600; text-align: center; font-size: 15px; letter-spacing: 0.5px;
+    position: relative;
   }
+  #newtime-close {
+    position: absolute; top: 12px; right: 12px; 
+    background: none; border: none; color: white; 
+    font-size: 20px; cursor: pointer; line-height: 1; padding: 0;
+    width: 24px; height: 24px;
+  }
+  #newtime-close:hover { opacity: 0.7; }
   #newtime-body { padding: 16px; }
 .newtime-logo { 
     width: 120px; display: block; margin: 0 auto 12px; border-radius: 8px;
@@ -1783,7 +1793,10 @@
 </style>
 
 <div id="newtime-chat">
-  <div id="newtime-header">NEW TIME</div>
+  <div id="newtime-header">
+    NEW TIME
+    <button id="newtime-close" onclick="closeChat()">×</button>
+  </div>
   <div id="newtime-body">
     
     <!-- PANTALLA 1: BIENVENIDA -->
@@ -1819,6 +1832,11 @@
   const chat = document.getElementById('newtime-chat');
   btn.onclick = () => {
     chat.style.display = chat.style.display === 'none' || chat.style.display === ''? 'block' : 'none';
+  }
+
+  function closeChat() {
+    document.getElementById('newtime-chat').style.display = 'none';
+    document.getElementById('topic-audio').pause();
   }
 
   // AUDIOS EN EL MISMO ORDEN DE TU CAPTURA DE GITHUB
