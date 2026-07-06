@@ -1748,25 +1748,26 @@
     font-weight: bold; text-align: center;
   }
   #newtime-body { padding: 16px; }
-.newtime-logo { width: 80px; display: block; margin: 0 auto 12px; }
-.newtime-welcome { text-align: center; font-weight: bold; margin-bottom: 16px; }
-.newtime-msg {
+ .newtime-logo { width: 80px; display: block; margin: 0 auto 12px; }
+ .newtime-welcome { text-align: center; font-weight: bold; margin-bottom: 16px; }
+ .newtime-msg {
     background: #f1f1f1; padding: 12px; border-radius: 8px;
     margin-bottom: 12px; line-height: 1.4; font-size: 14px;
   }
-.newtime-btn {
+ .newtime-btn {
     display: block; width: 100%; padding: 12px; margin: 8px 0;
     background: white; border: 1px solid #ddd; border-radius: 8px;
     text-align: left; cursor: pointer;
   }
-.newtime-btn:hover { background: #f5f5f5; }
-.newtime-audio { width: 100%; margin: 12px 0; }
-.newtime-email {
+ .newtime-btn:hover { background: #f5f5f5; }
+ .newtime-audio { width: 100%; margin: 12px 0; }
+ .newtime-topic-img { width: 100%; border-radius: 8px; margin: 12px 0; }
+ .newtime-email {
     display: block; width: 100%; padding: 10px; margin-top: 8px;
     background: #c90000; color: white; border: none; border-radius: 8px;
     text-align: center; text-decoration: none; font-weight: bold;
   }
-.newtime-back {
+ .newtime-back {
     background: #eee; color: #000; border: none; padding: 8px;
     width: 100%; margin-top: 12px; border-radius: 6px; cursor: pointer;
   }
@@ -1795,9 +1796,10 @@
       </button>
     </div>
 
-    <!-- PANTALLA 2: AUDIO + EMAIL -->
+    <!-- PANTALLA 2: AUDIO + FOTO + EMAIL -->
     <div id="newtime-screen2" style="display:none;">
       <div id="topic-title" style="font-weight:bold; margin-bottom:12px;"></div>
+      <img id="topic-image" class="newtime-topic-img" src="" alt="Topic Image">
       <audio id="topic-audio" class="newtime-audio" controls></audio>
       <div class="newtime-msg" id="topic-text"></div>
       <a id="topic-email" class="newtime-email" href="">Contact by Email</a>
@@ -1814,24 +1816,26 @@
     chat.style.display = chat.style.display === 'none'? 'block' : 'none';
   }
 
-  // EMAIL YA CONFIGURADO: contactnewtimehere@gmail.com
-  // SOLO CAMBIA LOS NOMBRES DE AUDIO SI SON DIFERENTES
+  // ARCHIVOS CONFIGURADOS SEGÚN TUS CAPTURAS
   const topics = {
     'disabled': {
       title: 'Origins of disabled people',
-      audio: 'disabled.mp3',
+      audio: 'sound-of-disabled-people.mp3',
+      image: 'photo-new-time-chat.jpg',
       text: 'Listen to the full explanation below. For private inquiries, email us.',
       email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
     },
     'cancer': {
       title: 'Origins of cancer', 
-      audio: 'cancer.mp3',
+      audio: 'sound-cancer.mp3',
+      image: 'photo-new-time-chat.jpg',
       text: 'Listen to the full explanation below. For private inquiries, email us.',
       email: 'contactnewtimehere@gmail.com?subject=Origins of cancer'
     },
     'same-sex': {
       title: 'Same-sex sexual impediment',
-      audio: 'samesex.mp3',
+      audio: 'sound-infidelity.mp3',
+      image: 'photo-new-time-chat.jpg',
       text: 'Listen to the full explanation below. For private inquiries, email us.',
       email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment'
     }
@@ -1842,6 +1846,7 @@
     document.getElementById('newtime-screen2').style.display = 'block';
     document.getElementById('topic-title').innerText = topics[topic].title;
     document.getElementById('topic-audio').src = topics[topic].audio;
+    document.getElementById('topic-image').src = topics[topic].image;
     document.getElementById('topic-text').innerText = topics[topic].text;
     document.getElementById('topic-email').href = 'mailto:' + topics[topic].email;
   }
@@ -1853,7 +1858,5 @@
   }
 </script>
 <!-- FIN CHAT NEW TIME -->
-
-
 </body>
 </html>
