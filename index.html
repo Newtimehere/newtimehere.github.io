@@ -1149,7 +1149,210 @@
             </button>
         </div>
     </header>
+<!-- MODAL For The Young -->
+<div class="young-modal-overlay" id="youngModal">
+    <div class="young-modal">
+        <button class="young-modal-close" id="youngModalClose">&times;</button>
+        <h2 class="young-modal-title">New Times For Young</h2>
+        <div class="young-modal-content">
+            <h3>The Fraudulent Clock ⏰</h3>
+            <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = FRAUD.</p>
+            <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
 
+            <h3>Lawful Robbery 🏛️</h3>
+            <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣 = FRAUD.</p>
+            <p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud.😆🤣. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀</p>
+
+            <h3>Cost of Living Scam 💸</h3>
+            <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = FRAUD.</p>
+            <p>Hidden Truth: Sex is free👧👨. Having kids is free. The earth gives us everything for free. We’re supposed to make stuff and share it. The “cost of living” is a scam 🏛️</p>
+
+            <h3>Food Fraud 🍔</h3>
+            <p>Dude holding Hot Cheetos: “100% Natural FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = CANCER.</p>
+            <p>Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
+
+            <h3>Fraudulent Laws ⚖️</h3>
+            <p>🤣 “Equal justice” 😆 for everybody. Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.</p>
+            <p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That' sex fraud.</p>
+
+            <h3>Church Scam ⛪</h3>
+            <p>“Gentlemen, want to get right with God? 1. Worship this statue 😄 2. Show up Sunday 3. Drop cash in the plate. Boom, soul saved!” On fraudulent Sunday, money moved = FRAUD.</p>
+            <p>Hidden truth: Saturday is God’s day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂️📖😠</p>
+            
+            <h3>College Degree Scam 🎓</h3>
+            <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
+            <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
+            <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
+        </div>
+
+        <!-- BOTON CHAT NEW TIME - AHORA SI SALE -->
+        <button id="newtime-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#8B0000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z"/>
+            <circle cx="7" cy="10" r="1.5"/>
+            <circle cx="12" cy="10" r="1.5"/>
+            <circle cx="17" cy="10" r="1.5"/>
+          </svg>
+        </button>
+    </div>
+</div>
+
+<!-- ESTILOS DEL CHAT - PEGALO EN TU <head> O DONDE TENGAS LOS CSS -->
+<style>
+ .young-modal { position: relative; } /* IMPORTANTE PARA QUE EL BOTON SE ANGLE */
+  
+  #newtime-btn {
+    position: absolute; bottom: 20px; right: 20px; 
+    background: rgba(255,255,255,0.08); 
+    border: 1px solid rgba(255,255,255,0.15); 
+    border-radius: 50%; 
+    width: 50px; height: 50px;
+    cursor: pointer; z-index: 10000; backdrop-filter: blur(4px);
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #newtime-btn:hover { background: rgba(255,255,255,0.15); }
+  
+  #newtime-chat {
+    display: none; position: absolute; bottom: 80px; right: 20px; width: 320px;
+    background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.4);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui; z-index: 10001; max-height: 65vh; overflow-y: auto;
+  }
+  #newtime-header {
+    background: #000; color: white; padding: 14px; border-radius: 12px 12px 0 0;
+    font-weight: 600; text-align: center; font-size: 14px; letter-spacing: 0.5px;
+    position: relative;
+  }
+  #newtime-close {
+    position: absolute; top: 10px; right: 10px; 
+    background: none; border: none; color: white; 
+    font-size: 18px; cursor: pointer; line-height: 1; padding: 0;
+    width: 22px; height: 22px;
+  }
+  #newtime-close:hover { opacity: 0.7; }
+  #newtime-body { padding: 14px; }
+.newtime-logo { 
+    width: 100px; display: block; margin: 0 auto 10px; border-radius: 8px;
+  }
+.newtime-welcome { 
+    text-align: left; font-weight: 600; margin-bottom: 10px; color: #000; font-size: 14px; line-height: 1.4;
+  }
+.newtime-btn {
+    display: block; width: 100%; padding: 10px; margin: 6px 0;
+    background: white; border: 1px solid #d2d2d7; border-radius: 8px;
+    text-align: left; cursor: pointer; color: #1d1d1f; font-size: 13px;
+  }
+.newtime-btn:hover { background: #f5f5f7; }
+.newtime-audio { width: 100%; margin: 10px 0; }
+.newtime-topic-img { width: 100%; border-radius: 8px; margin: 10px 0; display: block; }
+.newtime-msg {
+    background: #f5f5f7; padding: 10px; border-radius: 8px;
+    margin-bottom: 10px; line-height: 1.5; font-size: 13px; color: #1d1d1f;
+  }
+.newtime-email {
+    display: block; width: 100%; padding: 9px; margin-top: 8px;
+    background: #c90000; color: white; border: none; border-radius: 8px;
+    text-align: center; text-decoration: none; font-weight: 600; font-size: 13px;
+  }
+.newtime-back {
+    background: #e8e8ed; color: #000; border: none; padding: 8px;
+    width: 100%; margin-top: 10px; border-radius: 6px; cursor: pointer; font-size: 13px;
+  }
+</style>
+
+<!-- CHAT NEW TIME -->
+<div id="newtime-chat">
+  <div id="newtime-header">
+    NEW TIME
+    <button id="newtime-close" onclick="closeChat()">×</button>
+  </div>
+  <div id="newtime-body">
+    
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <div id="newtime-screen1">
+      <img src="photo-new-time-chat.jpg" class="newtime-logo" alt="NEW TIME">
+      <div class="newtime-welcome">Welcome to Chat Friends, we're going to talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.</div>
+      <button class="newtime-btn" onclick="showTopic('cancer')">
+        Origins of cancer
+      </button>
+      <button class="newtime-btn" onclick="showTopic('disabled')">
+        Origins of disabled people
+      </button>
+      <button class="newtime-btn" onclick="showTopic('same-sex')">
+        Same-sex sexual impediment
+      </button>
+    </div>
+
+    <!-- PANTALLA 2: AUDIO + FOTO + EMAIL -->
+    <div id="newtime-screen2" style="display:none;">
+      <div id="topic-title" style="font-weight:600; margin-bottom:10px; color: #000; font-size: 14px;"></div>
+      <img id="topic-image" class="newtime-topic-img" src="" alt="Topic Image">
+      <audio id="topic-audio" class="newtime-audio" controls></audio>
+      <div class="newtime-msg" id="topic-text"></div>
+      <a id="topic-email" class="newtime-email" href="">Contact by Email</a>
+      <button class="newtime-back" onclick="goBack()">← Back to topics</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- SCRIPT DEL CHAT - PEGALO ANTES DE </body> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('newtime-btn');
+    const chat = document.getElementById('newtime-chat');
+    if(btn && chat) {
+      btn.onclick = () => {
+        chat.style.display = chat.style.display === 'none' || chat.style.display === ''? 'block' : 'none';
+      }
+    }
+  });
+
+  function closeChat() {
+    document.getElementById('newtime-chat').style.display = 'none';
+    document.getElementById('topic-audio').pause();
+  }
+
+  const topics = {
+    'cancer': {
+      title: 'Origins of cancer', 
+      audio: 'chat-origins-of-cancer.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Origins of cancer'
+    },
+    'disabled': {
+      title: 'Origins of disabled people',
+      audio: 'chat-origins-of-disabled-people.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
+    },
+    'same-sex': {
+      title: 'Same-sex sexual impediment',
+      audio: 'chat-same-sex-sexual-fraud.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment'
+    }
+  };
+
+  function showTopic(topic) {
+    document.getElementById('newtime-screen1').style.display = 'none';
+    document.getElementById('newtime-screen2').style.display = 'block';
+    document.getElementById('topic-title').innerText = topics[topic].title;
+    document.getElementById('topic-audio').src = topics[topic].audio;
+    document.getElementById('topic-image').src = topics[topic].image;
+    document.getElementById('topic-text').innerText = topics[topic].text;
+    document.getElementById('topic-email').href = 'mailto:' + topics[topic].email;
+  }
+
+  function goBack() {
+    document.getElementById('newtime-screen2').style.display = 'none';
+    document.getElementById('newtime-screen1').style.display = 'block';
+    document.getElementById('topic-audio').pause();
+  }
+</script>
     <div class="menu-overlay" id="menuOverlay"></div>
         <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
@@ -1165,42 +1368,7 @@
             </ul>
         </div>
     </div>
-<!-- MODAL For The Young -->
-    <div class="young-modal-overlay" id="youngModal">
-        <div class="young-modal">
-            <button class="young-modal-close" id="youngModalClose">&times;</button>
-            <h2 class="young-modal-title">New Times For Young</h2>
-            <div class="young-modal-content">
-                <h3>The Fraudulent Clock ⏰</h3>
-                <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = FRAUD.</p>
-                <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
 
-                <h3>Lawful Robbery 🏛️</h3>
-                <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣                 = FRAUD.</p>
-                <p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud.😆🤣. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀
-
-                <h3>Cost of Living Scam 💸</h3>
-                <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = FRAUD.</p>
-                <p>Hidden Truth: Sex is free👧👨. Having kids is free. The earth gives us everything for free. We’re supposed to make stuff and share it. The “cost of living” is a scam 🏛️
-
-                <h3>Food Fraud 🍔</h3>
-                <p>Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = CANCER.</p>
-                <p>Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
-
-                <h3>Fraudulent Laws ⚖️</h3>
-<p>🤣 “Equal justice” 😆 for everybody. Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.</p>
-<p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That' sex fraud.</p>
-
-<h3>Church Scam ⛪</h3>
-<p>“Gentlemen, want to get right with God? 1. Worship this statue 😄 2. Show up Sunday 3. Drop cash in the plate. Boom, soul saved!” On fraudulent Sunday, money moved = FRAUD.</p>
-<p>Hidden truth: Saturday is God’s day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂️📖😠</p>
-                <h3>College Degree Scam 🎓</h3>
-                <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
-                <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
-                <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
-            </div>
-        </div>
-    </div>
     <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
