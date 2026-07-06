@@ -1730,14 +1730,19 @@
             });
         });
     </script>
- <!-- NEW TIME CHAT CON LOGO + AUDIO + EMAIL -->
+<!-- NEW TIME CHAT CON LOGO + AUDIO + EMAIL -->
 <button id="newtime-btn">💬</button>
 <style>
   #newtime-btn {
-    position: fixed; bottom: 20px; right: 20px; background: #000; color: white;
-    border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px;
-    cursor: pointer; z-index: 9999;
+    position: fixed; bottom: 20px; right: 20px; 
+    background: rgba(0,0,0,0.5); color: white;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; 
+    width: 60px; height: 60px; font-size: 24px;
+    cursor: pointer; z-index: 9999; backdrop-filter: blur(6px);
+    transition: all 0.2s;
   }
+  #newtime-btn:hover { background: rgba(0,0,0,0.7); }
+  
   #newtime-chat {
     display: none; position: fixed; bottom: 90px; right: 20px; width: 340px;
     background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.16);
@@ -1789,11 +1794,11 @@
         We believe in full transparency. We look past the surface to uncover what's really happening beneath.<br><br>
         What topic would you like to explore?
       </div>
-      <button class="newtime-btn" onclick="showTopic('disabled')">
-        Origins of disabled people
-      </button>
       <button class="newtime-btn" onclick="showTopic('cancer')">
         Origins of cancer
+      </button>
+      <button class="newtime-btn" onclick="showTopic('disabled')">
+        Origins of disabled people
       </button>
       <button class="newtime-btn" onclick="showTopic('same-sex')">
         Same-sex sexual impediment
@@ -1820,24 +1825,25 @@
     chat.style.display = chat.style.display === 'none' || chat.style.display === ''? 'block' : 'none';
   }
 
+  // AUDIOS EN EL MISMO ORDEN DE TU CAPTURA DE GITHUB
   const topics = {
-    'disabled': {
-      title: 'Origins of disabled people',
-      audio: 'sound-of-disabled-people.mp3',
-      image: 'photo-new-time-chat.jpg',
-      text: 'Listen to the full explanation below. For private inquiries, email us.',
-      email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
-    },
     'cancer': {
       title: 'Origins of cancer', 
-      audio: 'sound-cancer.mp3',
+      audio: 'chat-origins-of-cancer.mp3',
       image: 'photo-new-time-chat.jpg',
       text: 'Listen to the full explanation below. For private inquiries, email us.',
       email: 'contactnewtimehere@gmail.com?subject=Origins of cancer'
     },
+    'disabled': {
+      title: 'Origins of disabled people',
+      audio: 'chat-origins-of-disabled-people.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
+    },
     'same-sex': {
       title: 'Same-sex sexual impediment',
-      audio: 'sound-infidelity.mp3',
+      audio: 'chat-same-sex-sexual-fraud.mp3',
       image: 'photo-new-time-chat.jpg',
       text: 'Listen to the full explanation below. For private inquiries, email us.',
       email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment'
