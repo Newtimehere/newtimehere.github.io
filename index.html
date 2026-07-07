@@ -1149,7 +1149,11 @@
             </button>
         </div>
     </header>
-<!-- MODAL For The Young -->
+
+   
+   
+   
+   <!-- MODAL For The Young -->
 <div class="young-modal-overlay" id="youngModal">
     <div class="young-modal">
         <button class="young-modal-close" id="youngModalClose">&times;</button>
@@ -1185,80 +1189,17 @@
             <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
         </div>
 
-        <!-- BOTON CHAT NEW TIME - AHORA SI SALE -->
-        <button id="newtime-btn">
+        <!-- BOTON CHAT - SIEMPRE VISIBLE CUANDO EL MODAL ABRE -->
+        <div id="newtime-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#8B0000" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z"/>
             <circle cx="7" cy="10" r="1.5"/>
             <circle cx="12" cy="10" r="1.5"/>
             <circle cx="17" cy="10" r="1.5"/>
           </svg>
-        </button>
+        </div>
     </div>
 </div>
-
-<!-- ESTILOS DEL CHAT - PEGALO EN TU <head> O DONDE TENGAS LOS CSS -->
-<style>
- .young-modal { position: relative; } /* IMPORTANTE PARA QUE EL BOTON SE ANGLE */
-  
-  #newtime-btn {
-    position: absolute; bottom: 20px; right: 20px; 
-    background: rgba(255,255,255,0.08); 
-    border: 1px solid rgba(255,255,255,0.15); 
-    border-radius: 50%; 
-    width: 50px; height: 50px;
-    cursor: pointer; z-index: 10000; backdrop-filter: blur(4px);
-    transition: all 0.2s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  #newtime-btn:hover { background: rgba(255,255,255,0.15); }
-  
-  #newtime-chat {
-    display: none; position: absolute; bottom: 80px; right: 20px; width: 320px;
-    background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.4);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui; z-index: 10001; max-height: 65vh; overflow-y: auto;
-  }
-  #newtime-header {
-    background: #000; color: white; padding: 14px; border-radius: 12px 12px 0 0;
-    font-weight: 600; text-align: center; font-size: 14px; letter-spacing: 0.5px;
-    position: relative;
-  }
-  #newtime-close {
-    position: absolute; top: 10px; right: 10px; 
-    background: none; border: none; color: white; 
-    font-size: 18px; cursor: pointer; line-height: 1; padding: 0;
-    width: 22px; height: 22px;
-  }
-  #newtime-close:hover { opacity: 0.7; }
-  #newtime-body { padding: 14px; }
-.newtime-logo { 
-    width: 100px; display: block; margin: 0 auto 10px; border-radius: 8px;
-  }
-.newtime-welcome { 
-    text-align: left; font-weight: 600; margin-bottom: 10px; color: #000; font-size: 14px; line-height: 1.4;
-  }
-.newtime-btn {
-    display: block; width: 100%; padding: 10px; margin: 6px 0;
-    background: white; border: 1px solid #d2d2d7; border-radius: 8px;
-    text-align: left; cursor: pointer; color: #1d1d1f; font-size: 13px;
-  }
-.newtime-btn:hover { background: #f5f5f7; }
-.newtime-audio { width: 100%; margin: 10px 0; }
-.newtime-topic-img { width: 100%; border-radius: 8px; margin: 10px 0; display: block; }
-.newtime-msg {
-    background: #f5f5f7; padding: 10px; border-radius: 8px;
-    margin-bottom: 10px; line-height: 1.5; font-size: 13px; color: #1d1d1f;
-  }
-.newtime-email {
-    display: block; width: 100%; padding: 9px; margin-top: 8px;
-    background: #c90000; color: white; border: none; border-radius: 8px;
-    text-align: center; text-decoration: none; font-weight: 600; font-size: 13px;
-  }
-.newtime-back {
-    background: #e8e8ed; color: #000; border: none; padding: 8px;
-    width: 100%; margin-top: 10px; border-radius: 6px; cursor: pointer; font-size: 13px;
-  }
-</style>
 
 <!-- CHAT NEW TIME -->
 <div id="newtime-chat">
@@ -1267,23 +1208,13 @@
     <button id="newtime-close" onclick="closeChat()">×</button>
   </div>
   <div id="newtime-body">
-    
-    <!-- PANTALLA 1: BIENVENIDA -->
     <div id="newtime-screen1">
       <img src="photo-new-time-chat.jpg" class="newtime-logo" alt="NEW TIME">
       <div class="newtime-welcome">Welcome to Chat Friends, we're going to talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.</div>
-      <button class="newtime-btn" onclick="showTopic('cancer')">
-        Origins of cancer
-      </button>
-      <button class="newtime-btn" onclick="showTopic('disabled')">
-        Origins of disabled people
-      </button>
-      <button class="newtime-btn" onclick="showTopic('same-sex')">
-        Same-sex sexual impediment
-      </button>
+      <button class="newtime-btn" onclick="showTopic('cancer')">Origins of cancer</button>
+      <button class="newtime-btn" onclick="showTopic('disabled')">Origins of disabled people</button>
+      <button class="newtime-btn" onclick="showTopic('same-sex')">Same-sex sexual impediment</button>
     </div>
-
-    <!-- PANTALLA 2: AUDIO + FOTO + EMAIL -->
     <div id="newtime-screen2" style="display:none;">
       <div id="topic-title" style="font-weight:600; margin-bottom:10px; color: #000; font-size: 14px;"></div>
       <img id="topic-image" class="newtime-topic-img" src="" alt="Topic Image">
@@ -1292,84 +1223,102 @@
       <a id="topic-email" class="newtime-email" href="">Contact by Email</a>
       <button class="newtime-back" onclick="goBack()">← Back to topics</button>
     </div>
-
   </div>
 </div>
 
-<!-- SCRIPT DEL CHAT - PEGALO ANTES DE </body> -->
+<style>
+/* ARREGLO 1: EL MODAL NECESITA POSITION RELATIVE */
+.young-modal { position: relative!important; }
+  
+/* BOTON DEL CHAT */
+#newtime-btn {
+  position: absolute; bottom: 20px; right: 20px; 
+  background: rgba(255,255,255,0.1); 
+  border: 1px solid rgba(139,0,0,0.4); 
+  border-radius: 50%; 
+  width: 50px; height: 50px;
+  cursor: pointer; z-index: 99999; backdrop-filter: blur(4px);
+  transition: all 0.2s;
+  display: flex!important; align-items: center; justify-content: center;
+}
+#newtime-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* CHAT */
+#newtime-chat {
+  display: none; position: absolute; bottom: 80px; right: 20px; width: 320px;
+  background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.5);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui; z-index: 100000; max-height: 65vh; overflow-y: auto;
+}
+#newtime-header {
+  background: #000; color: white; padding: 14px; border-radius: 12px 12px 0 0;
+  font-weight: 600; text-align: center; font-size: 14px; letter-spacing: 0.5px;
+  position: relative;
+}
+#newtime-close {
+  position: absolute; top: 10px; right: 10px; 
+  background: none; border: none; color: white; 
+  font-size: 18px; cursor: pointer; line-height: 1; padding: 0;
+  width: 22px; height: 22px;
+}
+#newtime-close:hover { opacity: 0.7; }
+#newtime-body { padding: 14px; }
+.newtime-logo { width: 100px; display: block; margin: 0 auto 10px; border-radius: 8px; }
+.newtime-welcome { text-align: left; font-weight: 600; margin-bottom: 10px; color: #000; font-size: 14px; line-height: 1.4; }
+.newtime-btn { display: block; width: 100%; padding: 10px; margin: 6px 0; background: white; border: 1px solid #d2d2d7; border-radius: 8px; text-align: left; cursor: pointer; color: #1d1d1f; font-size: 13px; }
+.newtime-btn:hover { background: #f5f5f7; }
+.newtime-audio { width: 100%; margin: 10px 0; }
+.newtime-topic-img { width: 100%; border-radius: 8px; margin: 10px 0; display: block; }
+.newtime-msg { background: #f5f5f7; padding: 10px; border-radius: 8px; margin-bottom: 10px; line-height: 1.5; font-size: 13px; color: #1d1d1f; }
+.newtime-email { display: block; width: 100%; padding: 9px; margin-top: 8px; background: #c90000; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; font-size: 13px; }
+.newtime-back { background: #e8e8ed; color: #000; border: none; padding: 8px; width: 100%; margin-top: 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+</style>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('newtime-btn');
+// FORZAR QUE EL BOTON FUNCIONE CUANDO ABRA EL MODAL
+document.addEventListener('click', function(e) {
+  if (e.target.closest('#newtime-btn')) {
     const chat = document.getElementById('newtime-chat');
-    if(btn && chat) {
-      btn.onclick = () => {
-        chat.style.display = chat.style.display === 'none' || chat.style.display === ''? 'block' : 'none';
-      }
-    }
-  });
-
-  function closeChat() {
-    document.getElementById('newtime-chat').style.display = 'none';
-    document.getElementById('topic-audio').pause();
+    chat.style.display = chat.style.display === 'block'? 'none' : 'block';
   }
+});
 
-  const topics = {
-    'cancer': {
-      title: 'Origins of cancer', 
-      audio: 'chat-origins-of-cancer.mp3',
-      image: 'photo-new-time-chat.jpg',
-      text: 'Listen to the full explanation below. For private inquiries, email us.',
-      email: 'contactnewtimehere@gmail.com?subject=Origins of cancer'
-    },
-    'disabled': {
-      title: 'Origins of disabled people',
-      audio: 'chat-origins-of-disabled-people.mp3',
-      image: 'photo-new-time-chat.jpg',
-      text: 'Listen to the full explanation below. For private inquiries, email us.',
-      email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
-    },
-    'same-sex': {
-      title: 'Same-sex sexual impediment',
-      audio: 'chat-same-sex-sexual-fraud.mp3',
-      image: 'photo-new-time-chat.jpg',
-      text: 'Listen to the full explanation below. For private inquiries, email us.',
-      email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment'
-    }
-  };
+function closeChat() {
+  document.getElementById('newtime-chat').style.display = 'none';
+  document.getElementById('topic-audio').pause();
+}
 
-  function showTopic(topic) {
-    document.getElementById('newtime-screen1').style.display = 'none';
-    document.getElementById('newtime-screen2').style.display = 'block';
-    document.getElementById('topic-title').innerText = topics[topic].title;
-    document.getElementById('topic-audio').src = topics[topic].audio;
-    document.getElementById('topic-image').src = topics[topic].image;
-    document.getElementById('topic-text').innerText = topics[topic].text;
-    document.getElementById('topic-email').href = 'mailto:' + topics[topic].email;
-  }
+const topics = {
+  'cancer': { title: 'Origins of cancer', audio: 'chat-origins-of-cancer.mp3', image: 'photo-new-time-chat.jpg', text: 'Listen to the full explanation below. For private inquiries, email us.', email: 'contactnewtimehere@gmail.com?subject=Origins of cancer' },
+  'disabled': { title: 'Origins of disabled people', audio: 'chat-origins-of-disabled-people.mp3', image: 'photo-new-time-chat.jpg', text: 'Listen to the full explanation below. For private inquiries, email us.', email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people' },
+  'same-sex': { title: 'Same-sex sexual impediment', audio: 'chat-same-sex-sexual-fraud.mp3', image: 'photo-new-time-chat.jpg', text: 'Listen to the full explanation below. For private inquiries, email us.', email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment' }
+};
 
-  function goBack() {
-    document.getElementById('newtime-screen2').style.display = 'none';
-    document.getElementById('newtime-screen1').style.display = 'block';
-    document.getElementById('topic-audio').pause();
-  }
+function showTopic(topic) {
+  document.getElementById('newtime-screen1').style.display = 'none';
+  document.getElementById('newtime-screen2').style.display = 'block';
+  document.getElementById('topic-title').innerText = topics[topic].title;
+  document.getElementById('topic-audio').src = topics[topic].audio;
+  document.getElementById('topic-image').src = topics[topic].image;
+  document.getElementById('topic-text').innerText = topics[topic].text;
+  document.getElementById('topic-email').href = 'mailto:' + topics[topic].email;
+}
+
+function goBack() {
+  document.getElementById('newtime-screen2').style.display = 'none';
+  document.getElementById('newtime-screen1').style.display = 'block';
+  document.getElementById('topic-audio').pause();
+}
 </script>
-    <div class="menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
-        <div class="mobile-menu-inner">
-            <ul class="mobile-nav-list">
-                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
-                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Service</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">For the young</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactsLink">Contacts</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- MODAL BIOGRAPHY -->
+   
+   
+   
+   
+   
+   
+   
+      
+   
+   <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
             <button class="bio-modal-close" id="bioModalClose">&times;</button>
