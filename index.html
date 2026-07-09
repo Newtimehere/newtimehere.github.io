@@ -726,15 +726,14 @@
     .bio-modal-content p {
         margin-bottom: 16px;
     }
-
+ 
     .bio-modal-content ul {
         margin: 16px 0 16px 20px;
     }
 
     .bio-modal-content li {
         margin-bottom: 12px;
-    }
-
+     
     .bio-modal-image {
         text-align: center;
         margin-top: 24px;
@@ -1907,5 +1906,71 @@
             });
         });
     </script>
+       
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300&display=swap" rel="stylesheet">
+
+<section id="nt-album" style="background:#0a0a0a; color:#e8e6e1; padding: 40px 0 80px; font-family:'Cormorant Garamond', serif; overflow:hidden;">
+  <!-- barra progreso -->
+  <div style="height:1px; background:rgba(255,255,255,0.1); margin:0 24px 32px; position:relative;">
+    <div id="nt-progress" style="height:1px; background:#8B3A3A; width:20%; transition:width 0.6s ease;"></div>
+  </div>
+
+  <!-- top info -->
+  <div style="display:flex; justify-content:space-between; padding:0 24px 18px; font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:0.6;">
+    <span id="nt-label" style="color:#9e4a4a;">Human love</span>
+    <span id="nt-counter">01 / 05</span>
+  </div>
+
+  <!-- track swipeable -->
+  <div id="nt-track" style="display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; cursor:grab; gap:12px; padding:0 24px;">
+    <div class="nt-slide" style="min-width:85vw; scroll-snap-align:center; position:relative;">
+      <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000" style="width:100%; height:68vh; object-fit:cover; filter:brightness(0.85);">
+      <p style="margin-top:16px; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.5; font-family:'Inter',sans-serif;">Chapter I — Origin</p>
+    </div>
+    <div class="nt-slide" style="min-width:85vw; scroll-snap-align:center;">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000" style="width:100%; height:68vh; object-fit:cover; filter:brightness(0.85);">
+      <p style="margin-top:16px; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.5; font-family:'Inter',sans-serif;">Chapter II — Time</p>
+    </div>
+    <div class="nt-slide" style="min-width:85vw; scroll-snap-align:center;">
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000" style="width:100%; height:68vh; object-fit:cover; filter:brightness(0.85);">
+      <p style="margin-top:16px; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.5; font-family:'Inter',sans-serif;">Chapter III — Form</p>
+    </div>
+    <div class="nt-slide" style="min-width:85vw; scroll-snap-align:center;">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000" style="width:100%; height:68vh; object-fit:cover; filter:brightness(0.85);">
+      <p style="margin-top:16px; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.5; font-family:'Inter',sans-serif;">Chapter IV — Human</p>
+    </div>
+    <div class="nt-slide" style="min-width:85vw; scroll-snap-align:center;">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000" style="width:100%; height:68vh; object-fit:cover; filter:brightness(0.85);">
+      <p style="margin-top:16px; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.5; font-family:'Inter',sans-serif;">Chapter V — New Time</p>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:48px; letter-spacing:0.3em; text-transform:uppercase; font-size:14px; opacity:0.9;">NEW TIME</div>
+  <div style="text-align:center; margin-top:6px; font-family:'Inter',sans-serif; font-size:10px; letter-spacing:0.2em; opacity:0.4;">New Times Official</div>
+</section>
+
+<script>
+const track = document.getElementById('nt-track');
+const progress = document.getElementById('nt-progress');
+const counter = document.getElementById('nt-counter');
+const label = document.getElementById('nt-label');
+const titles = ["Human love","Silent code","Hidden fraud","Human love","New Times"];
+
+let isDown=false, startX, scrollLeft;
+track.addEventListener('mousedown', e=>{isDown=true; startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft; track.style.cursor='grabbing'});
+track.addEventListener('mouseleave', ()=>isDown=false);
+track.addEventListener('mouseup', ()=>isDown=false);
+track.addEventListener('mousemove', e=>{if(!isDown) return; e.preventDefault(); const x=e.pageX-track.offsetLeft; const walk=(x-startX)*1.5; track.scrollLeft=scrollLeft-walk;});
+
+track.addEventListener('scroll', ()=>{
+  const max = track.scrollWidth - track.clientWidth;
+  const pct = (track.scrollLeft / max) * 100;
+  progress.style.width = pct + '%';
+  const idx = Math.round(track.scrollLeft / (track.clientWidth*0.85));
+  counter.textContent = `0${idx+1} / 05`;
+  label.textContent = titles[idx] || titles[0];
+});
+</script>
+<style>#nt-track::-webkit-scrollbar{display:none}</style>
 </body>
 </html>
