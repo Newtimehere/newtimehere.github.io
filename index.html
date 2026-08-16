@@ -3,32 +3,54 @@
 <html lang="en">
 <head>
 
+<!-- AVISO V6 FINAL - LOGO ARRIBA INFO ABAJITO - NEGRO PURO COMO TU FOTO -->
 <div id="nt-overlay">
   <div id="nt-box">
-    <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
-    <div class="btns">
-      <button id="no">No Accept</button>
-      <button id="yes">Accept</button>
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
+      <div class="nt-btns">
+        <button id="nt-no">No Accept</button>
+        <button id="nt-yes">Accept</button>
+      </div>
     </div>
   </div>
 </div>
-
 <style>
-#nt-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:99999}
-#nt-box{position:relative;width:88%;max-width:300px;background:linear-gradient(180deg, rgba(35,35,35,.92), rgba(5,5,5,.94));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 20px;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.8), 0 20px 60px rgba(0,0,0,.8);overflow:hidden}
-#nt-box::before{content:'';position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(180deg, rgba(255,255,255,.12), transparent);pointer-events:none}
-#nt-box p{position:relative;color:#f1f1f1;font-size:12.5px;line-height:1.55;margin:0 0 16px;font-family:system-ui}
-.btns{position:relative;display:flex;gap:8px}
-.btns button{flex:1;padding:9px;border-radius:8px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
-#no{background:transparent;border:1px solid rgba(255,255,255,.4);color:#bbb}
-#yes{background:linear-gradient(180deg,#fff,#e8e8e8);border:1px solid #fff;color:#000;font-weight:700;box-shadow:0 2px 10px rgba(255,255,255,.2)}
+  #nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
+  #nt-overlay.hide{opacity:0;pointer-events:none}
+  #nt-box{width:100%;max-width:320px;text-align:center}
+  .nt-logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+  .nt-shield{width:32px;height:38px;flex-shrink:0}
+  .nt-logo-text{font-family:'Inter', sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase;line-height:1}
+  .nt-legal{margin-top:6px}
+  .nt-legal p{color:rgba(255,255,255,0.65);font-family:'Inter', sans-serif;font-size:10px;line-height:1.5;font-weight:300;letter-spacing:0.2px;margin:0 0 16px;padding:0 8px}
+  .nt-btns{display:flex;gap:8px;justify-content:center;margin-top:4px}
+  .nt-btns button{padding:8px 18px;border-radius:6px;font-family:'Inter', sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s}
+  #nt-no{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6)}
+  #nt-no:hover{border-color:rgba(255,255,255,0.4);color:#fff}
+  #nt-yes{background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px}
+  #nt-yes:hover{background:#f0f0f0}
 </style>
-
 <script>
-document.getElementById('yes').onclick=()=>{document.getElementById('nt-overlay').remove();localStorage.setItem('nt','1')};
-document.getElementById('no').onclick=()=>location.href='https://google.com';
-if(localStorage.getItem('nt')=='1') document.getElementById('nt-overlay').remove();
-</script> 
+  (function(){
+    const ov=document.getElementById('nt-overlay');
+    const yes=document.getElementById('nt-yes');
+    const no=document.getElementById('nt-no');
+    if(localStorage.getItem('newtime_legal_ok')==='1'){ov.remove();return;}
+    yes.onclick=()=>{localStorage.setItem('newtime_legal_ok','1');ov.classList.add('hide');setTimeout(()=>ov.remove(),400);};
+    no.onclick=()=>{window.location.href='https://www.google.com';};
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEW TIMES - Full transparency. The full story.</title>
 <meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
