@@ -3,6 +3,32 @@
 <html lang="en">
 <head>
 
+<div id="nt-overlay">
+  <div id="nt-box">
+    <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
+    <div class="btns">
+      <button id="no">No Accept</button>
+      <button id="yes">Accept</button>
+    </div>
+  </div>
+</div>
+
+<style>
+#nt-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:99999}
+#nt-box{position:relative;width:88%;max-width:300px;background:linear-gradient(180deg, rgba(35,35,35,.92), rgba(5,5,5,.94));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 20px;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.8), 0 20px 60px rgba(0,0,0,.8);overflow:hidden}
+#nt-box::before{content:'';position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(180deg, rgba(255,255,255,.12), transparent);pointer-events:none}
+#nt-box p{position:relative;color:#f1f1f1;font-size:12.5px;line-height:1.55;margin:0 0 16px;font-family:system-ui}
+.btns{position:relative;display:flex;gap:8px}
+.btns button{flex:1;padding:9px;border-radius:8px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+#no{background:transparent;border:1px solid rgba(255,255,255,.4);color:#bbb}
+#yes{background:linear-gradient(180deg,#fff,#e8e8e8);border:1px solid #fff;color:#000;font-weight:700;box-shadow:0 2px 10px rgba(255,255,255,.2)}
+</style>
+
+<script>
+document.getElementById('yes').onclick=()=>{document.getElementById('nt-overlay').remove();localStorage.setItem('nt','1')};
+document.getElementById('no').onclick=()=>location.href='https://google.com';
+if(localStorage.getItem('nt')=='1') document.getElementById('nt-overlay').remove();
+</script> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEW TIMES - Full transparency. The full story.</title>
 <meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
