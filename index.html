@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+/* FIX DEFINITIVO PARA QUE SE VEA COMO HARVARD */
+.nt-wrap, .nt-wrap2{
+  background: transparent;
+  padding: 0;
+  margin: 16px 0 0 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
-<!-- AVISO V6 FINAL - LOGO ARRIBA INFO ABAJITO - NEGRO PURO COMO TU FOTO -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- AVISO V6 FINAL... -->
-  <style>
-    #nt-overlay{position:fixed;inset:0;...}
-    #nt-overlay.hide{...}
-    #nt-box{...}
-    ...todo tu estilo viejo...
+.nt-grid, .nt-grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-    /* AQUÍ PEGA MI ARREGLO AL FINAL DE TU STYLE */
-    .nt-wrap, .nt-wrap2{
-      background:transparent;
-      padding:0 16px;
-      width:100vw;
-      margin-left:calc(-50vw + 50%);
-      box-sizing:border-box;
-    }
-    .nt-wrap2{margin-top:16px}
-    .nt-grid, .nt-grid2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-      max-width:100%;
-      margin:0 auto;
-    }
-    /* ...resto del código que te di... */
-  </style>
-</head>
+@media(max-width:768px){
+  .nt-grid, .nt-grid2{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.footer-section{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 0 !important;
+  box-sizing: border-box;
+  width: 100%;
+}
 <body>
 
   <!-- ESTO QUE ESTABA EN EL HEAD, AHORA VA AQUÍ -->
