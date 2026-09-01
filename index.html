@@ -3,27 +3,43 @@
 <head>
 
 <!-- AVISO V6 FINAL - LOGO ARRIBA INFO ABAJITO - NEGRO PURO COMO TU FOTO -->
-<div id="nt-overlay">
-  <div id="nt-box">
-    <div class="nt-logo-row">
-      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
-        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
-        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
-        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
-        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
-      </svg>
-      <span class="nt-logo-text">NEW TIME</span>
-    </div>
-    <div class="nt-legal">
-      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
-      <div class="nt-btns">
-        <button id="nt-no">No Accept</button>
-        <button id="nt-yes">Accept</button>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- AVISO V6 FINAL... -->
+  <style>
+    #nt-overlay{position:fixed;inset:0;...}
+    #nt-overlay.hide{...}
+    #nt-box{...}
+    ...todo tu estilo viejo...
+
+    /* AQUÍ PEGA MI ARREGLO AL FINAL DE TU STYLE */
+    .nt-wrap, .nt-wrap2{
+      background:transparent;
+      padding:0 16px;
+      width:100vw;
+      margin-left:calc(-50vw + 50%);
+      box-sizing:border-box;
+    }
+    .nt-wrap2{margin-top:16px}
+    .nt-grid, .nt-grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      max-width:100%;
+      margin:0 auto;
+    }
+    /* ...resto del código que te di... */
+  </style>
+</head>
+<body>
+
+  <!-- ESTO QUE ESTABA EN EL HEAD, AHORA VA AQUÍ -->
+  <div id="nt-overlay">
+    <div id="nt-box">...tu aviso...</div>
   </div>
-</div>
+
+  <!-- Aquí va el resto de tu página y los cards -->
 <style>
   #nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
   #nt-overlay.hide{opacity:0;pointer-events:none}
