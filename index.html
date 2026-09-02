@@ -1740,222 +1740,91 @@ opacity: 1;
         <div class="footer-section" id="services">
     <div class="footer-logo"><img src="new.webp" alt="NEW TIMES Logo" /></div>
     <div class="footer-text"><p>New Time Direct Truth:</p><p>1. With us, you learned true inner growth. Universities are not built to teach you the hidden truth about how your mind grows they are built to serve the economic system. But you already know that truth within yourself.</p></div>
-      <!-- INICIO 2 CARDS - SEPARADOS ESPACIO NORMAL - SIN BORDES BLANCOS -->
+    <!-- INICIO 2 CARDS - IZQUIERDA SIN ESQUINAS BLANCAS -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
-.nt-wrap{
-  background:transparent;
-  padding:0;
-  margin:0;
-}
-.nt-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  max-width:100%;
-  margin:0;
-}
-@media(max-width:768px){
-  .nt-grid{grid-template-columns:1fr; gap:16px}
-}
-.nt-hero{
-  position:relative;
-  width:100%;
-  height:520px;
-  overflow:hidden;
-  background:#000;
-  border:0;
-  margin:0;
-}
-@media(max-width:768px){.nt-hero{height:68vh}}
-.nt-hero img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;
-  display:block;
-  border:0;
-}
-.nt-overlay{
-  position:absolute;inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 60%, transparent 85%);
-}
-.nt-content{
-  position:absolute;bottom:0;left:0;right:0;padding:24px 22px 26px;z-index:2;
-}
-.nt-title{
-  font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;
-  text-transform:uppercase;letter-spacing:0.10em;line-height:0.95;
-  font-size:clamp(30px,3vw,44px);
-  margin:0;
-}
-.nt-paragraph{
-  margin-top:12px;color:rgba(255,255,255,0.88);font-family:'Inter',sans-serif;
-  font-weight:300;font-size:13px;line-height:1.45;max-width:300px;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-}
-.nt-explore{
-  margin-top:18px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;
-}
-.nt-circle{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
-}
-.nt-circle svg{stroke:#fff}
-.nt-text{color:#fff;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
+body{ background:#000 !important; margin:0 !important; }
+.nt-wrap{ background:#000 !important; padding:0; margin:0; width:100%; display:flex; justify-content:center; }
+.nt-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:100%; margin:0; width:100%; background:#000; }
+@media(max-width:768px){ .nt-grid{grid-template-columns:1fr; gap:14px;} }
+.nt-hero{ position:relative; width:100%; height:520px; overflow:hidden; background:#000; border:0; margin:0; text-align:left !important; border-radius:0 !important; outline:0 !important; box-shadow:none !important; }
+@media(max-width:768px){.nt-hero{height:620px;}}
+.nt-hero img{ position:absolute;inset:0;width:100%;height:100%; object-fit:cover; display:block; border:0; border-radius:0 !important; }
+.nt-overlay{ position:absolute;inset:0; background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 80%); border-radius:0 !important; }
+.nt-content{ position:absolute !important; bottom:0 !important; left:0 !important; right:0 !important; padding:0 22px 26px 22px !important; text-align:left !important; display:flex !important; flex-direction:column !important; align-items:flex-start !important; justify-content:flex-start !important; }
+.nt-title{ font-family:'Cormorant Garamond',serif; text-transform:uppercase; letter-spacing:0.15em; font-size:clamp(28px,3vw,38px); line-height:0.95; margin:0; color:#fff; font-weight:300; text-align:left !important; align-self:flex-start !important; margin-left:0 !important; width:100% !important; }
+.nt-paragraph{ margin-top:12px; color:rgba(255,255,255,0.78); font-weight:300; font-size:13px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; font-family:'Inter',sans-serif; text-align:left !important; align-self:flex-start !important; margin-left:0 !important; margin-right:auto !important; max-width:300px !important; width:100% !important; }
+.nt-explore{ margin-top:18px; display:inline-flex !important; align-items:center !important; gap:10px; text-decoration:none; text-align:left !important; justify-content:flex-start !important; align-self:flex-start !important; margin-left:0 !important; }
+.nt-circle{ width:36px;height:36px;border-radius:50%; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(8px); display:flex;align-items:center;justify-content:center; color:#fff; font-size:14px; }
+.nt-explore-text{ color:#fff; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; font-family:'Inter',sans-serif; }
 </style>
 
 <div class="nt-wrap">
 <div class="nt-grid">
-  <!-- NEW TIME MAGAZINE -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="New Time Magazine">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">New Time<br>Magazine</h2>
-      <p class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</p>
-      <a class="nt-explore" href="https://online.fliphtml5.com/xehyf/SHINE-3hMM/" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore New Time</span>
-      </a>
-    </div>
-  </div>
 
-  <!-- FOR THE YOUNG -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="For the young">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">For the<br>young</h2>
-      <p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p>
-      <a class="nt-explore" href="https://online.fliphtml5.com/xehyf/SHINE-3hMM/" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore For The Young</span>
-      </a>
-    </div>
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">NEW TIME<br>MAGAZINE</h2>
+    <p class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE NEW TIME</span></a>
   </div>
 </div>
-</div>
-<!-- FIN -->
-<!-- INICIO 4 CARDS NUEVOS - TEAM - FRIENDS - ALL NEW TIME - SERVICE -->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
-.nt-wrap2{
-  background:transparent;
-  padding:0;
-  margin:16px 0 0 0;
-}
-.nt-grid2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  max-width:100%;
-  margin:0;
-}
-@media(max-width:768px){
-  .nt-grid2{grid-template-columns:1fr; gap:16px}
-}
-.nt-hero{
-  position:relative;
-  width:100%;
-  height:520px;
-  overflow:hidden;
-  background:#000;
-  border:0;
-  margin:0;
-}
-@media(max-width:768px){.nt-hero{height:68vh}}
-.nt-hero img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;
-  display:block;border:0;
-}
-.nt-overlay{
-  position:absolute;inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 60%, transparent 85%);
-}
-.nt-content{
-  position:absolute;bottom:0;left:0;right:0;padding:24px 22px 26px;z-index:2;
-}
-.nt-title{
-  font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;
-  text-transform:uppercase;letter-spacing:0.10em;line-height:0.95;
-  font-size:clamp(30px,3vw,44px);margin:0;
-}
-.nt-paragraph{
-  margin-top:12px;color:rgba(255,255,255,0.88);font-family:'Inter',sans-serif;
-  font-weight:300;font-size:13px;line-height:1.45;max-width:320px;
-  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
-}
-.nt-explore{
-  margin-top:18px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;
-}
-.nt-circle{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
-}
-.nt-circle svg{stroke:#fff}
-.nt-text{color:#fff;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
-</style>
 
-<div class="nt-wrap2">
-<div class="nt-grid2">
-  <!-- TEAM -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Team">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Team</h2>
-      <p class="nt-paragraph">A fully professional team of world-class premium investigations. That's why New Time investigates today, your present.</p>
-      <a class="nt-explore" href="#" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore Team</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- FRIENDS -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Friends">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Friends</h2>
-      <p class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you, so doubts and confusion never remain in nothing. As your friend, you will discover the secret of the hidden truth.</p>
-      <a class="nt-explore" href="#" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore Friends</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- ALL NEW TIME -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="All New Time">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">All New<br>Time</h2>
-      <p class="nt-paragraph">We are who you truly wait for every second to identify yourself. Because dreaming is not a cost, it is free access. We invite you to see New Time up close and enjoy every moment.</p>
-      <a class="nt-explore" href="#" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore All</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- SERVICE -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Service">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Service</h2>
-      <p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth. We don't profit from prestige or commercialize antiquity, because truth has no profit.</p>
-      <a class="nt-explore" href="#" target="_blank">
-        <span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="nt-text">Explore Service</span>
-      </a>
-    </div>
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">FOR THE<br>YOUNG</h2>
+    <p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FOR THE YOUNG</span></a>
   </div>
 </div>
+
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">TEAM</h2>
+    <p class="nt-paragraph">A fully professional team of world-class premium investigations. That's why New Time investigates today, your present.</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE TEAM</span></a>
+  </div>
 </div>
-<!-- FIN 4 CARDS NUEVOS -->
+
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">FRIENDS</h2>
+    <p class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you, so doubts and confusion never remain in nothing. As your friend, you will discover the...</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FRIENDS</span></a>
+  </div>
+</div>
+
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">ALL NEW<br>TIME</h2>
+    <p class="nt-paragraph">We are who you truly wait for every second to identify yourself. Because dreaming is not a cost, it is free access. We invite you to see New Time up close and enjoy every moment.</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE ALL</span></a>
+  </div>
+</div>
+
+<div class="nt-hero">
+  <img src="new-time.jpg" alt="">
+  <div class="nt-overlay"></div>
+  <div class="nt-content">
+    <h2 class="nt-title">SERVICE</h2>
+    <p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth. We don't profit from prestige or commercialize antiquity,...</p>
+    <a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE SERVICE</span></a>
+  </div>
+</div>
+
+</div>
+</div>
+<!-- FIN 6 CARDS -->
               
   <p>2. Same-sex disgust is discrimination, hate used to the truth that it is a fraudulent gender. Money is fake power to hide that all products are free, from the world itself, to share. The price is the fraud. Discover more origins with New Time.    </p>
             
