@@ -1749,68 +1749,41 @@ opacity: 1;
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
 
+/* FIX PARA EL HUECO EN DESKTOP */
+html, body{margin:0; padding:0; width:100%; box-sizing:border-box; overflow-x:hidden;}
+
 .nt-master-wrap{
-  background: transparent;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
+  max-width: 1100px; /* IGUAL QUE TU EJEMPLO */
   width: 100%;
+  margin: 0 auto; /* CENTRADO PERFECTO */
+  padding: 0 24px; /* MISMO ESPACIO IZQ Y DER */
+  box-sizing: border-box;
+  background: transparent;
 }
 
 .nt-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 1fr 1fr; /* 2 columnas en desktop como el ejemplo */
+  gap: 16px; /* GUTTERS IGUALES */
   width: 100%;
   box-sizing: border-box;
 }
 
 @media(max-width:768px){
   .nt-master-wrap{ padding: 0 16px; }
-  .nt-grid{ grid-template-columns:1fr 1fr; gap:16px; } /* 2 columnas también en móvil como en tu foto, si lo quieres en 1 cambia a 1fr */
+  .nt-grid{ grid-template-columns: 1fr 1fr; } /* si en móvil lo quieres de 1 en 1, cambia a 1fr */
 }
 
-.nt-hero{
-  position:relative;
-  width:100%;
-  height:520px;
-  overflow:hidden;
-  background:#000;
-  border:0;
-  margin:0;
-}
-@media(max-width:768px){ .nt-hero{height: 68vh; } }
-
-.nt-hero img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;
-  display:block;border:0;
-}
-.nt-overlay{
-  position:absolute;inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 60%, transparent 85%);
-}
-.nt-content{
-  position:absolute;bottom:0;left:0;right:0;padding:24px 22px 26px;z-index:2;
-}
-.nt-title{
-  font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;
-  text-transform:uppercase;letter-spacing:0.10em;line-height:0.95;
-  font-size:clamp(30px,3vw,44px);margin:0;
-}
-.nt-paragraph{
-  margin-top:12px;color:rgba(255,255,255,0.88);font-family:'Inter',sans-serif;
-  font-weight:300;font-size:13px;line-height:1.45;max-width:320px;
-  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
-}
-.nt-explore{
-  margin-top:18px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;
-}
-.nt-circle{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
-}
+/* TUS CARDS */
+.nt-hero{position:relative;width:100%;height:520px;overflow:hidden;background:#000;border:0;margin:0;}
+@media(max-width:768px){.nt-hero{height:68vh}}
+.nt-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block;border:0;}
+.nt-overlay{position:absolute;inset:0;background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 60%, transparent 85%);}
+.nt-content{position:absolute;bottom:0;left:0;right:0;padding:24px 22px 26px;z-index:2;}
+.nt-title{font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;text-transform:uppercase;letter-spacing:0.10em;line-height:0.95;font-size:clamp(30px,3vw,44px);margin:0;}
+.nt-paragraph{margin-top:12px;color:rgba(255,255,255,0.88);font-family:'Inter',sans-serif;font-weight:300;font-size:13px;line-height:1.45;max-width:320px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.nt-explore{margin-top:18px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
+.nt-circle{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;}
 .nt-circle svg{stroke:#fff}
 .nt-text{color:#fff;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
 </style>
@@ -1818,71 +1791,17 @@ opacity: 1;
 <div class="nt-master-wrap">
 <div class="nt-grid">
 
-  <!-- 1 - NEW TIME MAGAZINE -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="New Time Magazine">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">New Time<br>Magazine</h2>
-      <p class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</p>
-      <a class="nt-explore" href="https://online.fliphtml5.com/xehyf/SHINE-3hMM/" target="_blank"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore New Time</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="New Time Magazine"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">New Time<br>Magazine</h2><p class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore New Time</span></a></div></div>
 
-  <!-- 2 - FOR THE YOUNG -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="For the young">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">For the<br>young</h2>
-      <p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p>
-      <a class="nt-explore" href="https://online.fliphtml5.com/xehyf/SHINE-3hMM/" target="_blank"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore For The Young</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="For the young"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">For the<br>young</h2><p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore For The Young</span></a></div></div>
 
-  <!-- 3 - TEAM -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Team">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Team</h2>
-      <p class="nt-paragraph">A fully professional team of world-class premium investigations. That's why New Time investigates today, your present.</p>
-      <a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Team</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="Team"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">Team</h2><p class="nt-paragraph">A fully professional team of world-class premium investigations. That's why New Time investigates today, your present.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Team</span></a></div></div>
 
-  <!-- 4 - FRIENDS -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Friends">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Friends</h2>
-      <p class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you, so doubts and confusion never remain in nothing.</p>
-      <a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Friends</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="Friends"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">Friends</h2><p class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Friends</span></a></div></div>
 
-  <!-- 5 - ALL NEW TIME -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="All New Time">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">All New<br>Time</h2>
-      <p class="nt-paragraph">We are who you truly wait for every second to identify yourself. Because dreaming is not a cost, it is free access.</p>
-      <a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore All</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="All New Time"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">All New<br>Time</h2><p class="nt-paragraph">We are who you truly wait for every second to identify yourself. Because dreaming is not a cost, it is free access.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore All</span></a></div></div>
 
-  <!-- 6 - SERVICE -->
-  <div class="nt-hero">
-    <img src="new-time.jpg" alt="Service">
-    <div class="nt-overlay"></div>
-    <div class="nt-content">
-      <h2 class="nt-title">Service</h2>
-      <p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth.</p>
-      <a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2" stroke-linecap="round"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Service</span></a>
-    </div>
-  </div>
+  <div class="nt-hero"><img src="new-time.jpg" alt="Service"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">Service</h2><p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth.</p><a class="nt-explore" href="#"><span class="nt-circle"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10H16" stroke-width="1.2"/><path d="M10.5 5L16 10L10.5 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nt-text">Explore Service</span></a></div></div>
 
 </div>
 </div>
