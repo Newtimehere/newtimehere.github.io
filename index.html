@@ -1,3 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- AVISO V6 FINAL - LOGO ARRIBA INFO ABAJITO - NEGRO PURO COMO TU FOTO -->
+<div id="nt-overlay">
+  <div id="nt-box">
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
+      <div class="nt-btns">
+        <button id="nt-no">No Accept</button>
+        <button id="nt-yes">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
+  #nt-overlay.hide{opacity:0;pointer-events:none}
+  #nt-box{width:100%;max-width:320px;text-align:center}
+  .nt-logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+  .nt-shield{width:32px;height:38px;flex-shrink:0}
+  .nt-logo-text{font-family:'Inter', sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase;line-height:1}
+  .nt-legal{margin-top:6px}
+  .nt-legal p{color:rgba(255,255,255,0.65);font-family:'Inter', sans-serif;font-size:10px;line-height:1.5;font-weight:300;letter-spacing:0.2px;margin:0 0 16px;padding:0 8px}
+  .nt-btns{display:flex;gap:8px;justify-content:center;margin-top:4px}
+  .nt-btns button{padding:8px 18px;border-radius:6px;font-family:'Inter', sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s}
+  #nt-no{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6)}
+  #nt-no:hover{border-color:rgba(255,255,255,0.4);color:#fff}
+  #nt-yes{background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px}
+  #nt-yes:hover{background:#f0f0f0}
+</style>
+<script>
+  (function(){
+    const ov=document.getElementById('nt-overlay');
+    const yes=document.getElementById('nt-yes');
+    const no=document.getElementById('nt-no');
+    if(localStorage.getItem('newtime_legal_ok')==='1'){ov.remove();return;}
+    yes.onclick=()=>{localStorage.setItem('newtime_legal_ok','1');ov.classList.add('hide');setTimeout(()=>ov.remove(),400);};
+    no.onclick=()=>{window.location.href='https://www.google.com';};
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEW TIMES - Full transparency. The full story.</title>
+<meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v=8" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8" />
+<link rel="shortcut icon" href="/favicon.ico?v=8" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=8" />
+<link rel="manifest" href="/site.webmanifest?v=8" />
+<!-- PORTADA GRANDE PARA WHATSAPP/FACEBOOK -->
+<meta property="og:site_name" content="NEW TIME">
+<meta property="og:title" content="NEW TIME">
+<meta property="og:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://newtimehere.com/Photo-share.webp">
+<meta property="og:url" content="https://newtimehere.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEW TIME">
+<meta name="twitter:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta name="twitter:image" content="https://newtimehere.com/Photo-share.webp">
+
+<!-- LOGO PARA GOOGLE SEARCH -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "NEW TIME",
+"url": "https://newtimehere.com",
+"logo": "https://newtimehere.com/android-chrome-512x512.png"
+}
+</script>
+
+  
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    :root {
+        --bg-black: #0a0a0a;
+        --text-white: #ffffff;
+        --text-gray: #a8a8a8;
+        --text-light-gray: #d1d1d1;
+        --border-gray: #2a2a2a;
+        --header-height: 70px;
+        --header-height-mobile: 65px;
+        --cookie-bg: #1a1a1a;
+        --link-red: #7A1F1F;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg-black);
+        background-image: url('nnew-time^7.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding-bottom: 0;
+        transition: padding-bottom 0.3s ease;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 10, 10, 0.88);
+        z-index: -1;
+    }
+
+    body.cookie-visible {
+        padding-bottom: 120px;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        z-index: 1000;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .header-inner {
+        width: 100%;
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px 0 18px;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+        height: 100%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .logo-wrapper:hover {
+        opacity: 0.7;
+    }
+
+    .logo-icon {
+        height: 45px;
+        width: auto;
+        flex-shrink: 0;
+        object-fit: contain;
+        display: block;
+        margin-left: 0;
+    }
+
+    .logo-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: #2c2c2c;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transition: opacity 0.2s ease;
+        align-self: center;
+        z-index: 1001;
+        margin-right: 4px;
+    }
+
+    .menu-btn:hover {
+        opacity: 0.6;
+    }
+
+    .menu-line {
+        width: 22px;
+        height: 2px;
+        background-color: #000000;
+        transition: all 0.3s ease;
+    }
+
+    .main {
+        padding-top: var(--header-height);
+        min-height: 100vh;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 24px 32px;
+        text-align: center;
+    }
+
+    .hero-logo {
+        margin: 0 auto 20px;
+        animation: fadeInUp 0.8s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-main-logo {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .hero-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #ffffff;
+        max-width: 680px;
+        margin: 0 auto 24px;
+        animation: fadeInUp 0.8s ease 0.2s both;
+        font-weight: 400;
+        letter-spacing: 0px;
+        opacity: 1;
+    }
+
+    .hero-signature {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-top: 24px;
+        margin-bottom: 0;
+        animation: fadeInUp 0.8s ease 0.3s both;
+        opacity: 1;
+    }
+
+    .directory {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 16px 24px 60px;
+        animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .directory-header {
+        padding: 16px 0 24px;
+        border-bottom: 1px solid var(--border-gray);
+        margin-bottom: 0;
+    }
+
+    .directory-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #ffffff;
+        opacity: 1;
+        text-transform: uppercase;
+    }
+
+    .directory-list {
+        list-style: none;
+    }
+
+    .directory-item {
+        border-bottom: 1px solid var(--border-gray);
+    }
+
+    .directory-item:last-child {
+        border-bottom: 1px solid var(--border-gray);
+    }
+
+    .directory-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+        gap: 20px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .directory-row:hover {
+        padding-left: 12px;
+    }
+
+    .directory-link {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 1.6;
+        flex: 1;
+        color: var(--link-red);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .directory-link:visited {
+        color: var(--link-red);
+    }
+
+    .directory-link:hover {
+        color: var(--link-red);
+    }
+
+    .directory-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .audio-btn {
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid var(--link-red);
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .audio-btn:hover {
+        background: var(--link-red);
+        transform: scale(1.05);
+    }
+
+    .audio-btn svg {
+        width: 12px;
+        height: 12px;
+        stroke: var(--link-red);
+        transition: stroke 0.3s ease;
+    }
+
+    .audio-btn:hover svg {
+        stroke: #ffffff;
+    }
+
+    .audio-btn.playing {
+        background: var(--link-red);
+    }
+
+    .audio-btn.playing svg {
+        stroke: #ffffff;
+    }
+
+    .directory-arrow {
+        width: 18px;
+        height: 18px;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        stroke: var(--link-red);
+    }
+
+    .directory-row:hover .directory-arrow {
+        opacity: 1;
+        transform: translateX(4px);
+        stroke: var(--link-red);
+    }
+
+    .footer-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 0px !important;
+        text-align: center;
+        animation: fadeInUp 0.8s ease 0.5s both;
+    }
+
+    .footer-logo {
+    margin: -30px auto 15px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+    .footer-text {
+font-family: 'Inter', sans-serif;
+font-size: 15px;
+line-height: 1.7;
+color: #ffffff;
+max-width: 680px;
+margin: 25px 0 10px 0 !important;
+font-weight: 400;
+text-align: left;
+opacity: 1;
+}
+.footer-text p {
+    margin-bottom: 28px;
+    text-align: left;
+}
+.footer-text .stair-2 { margin-left: 0px; }
+.footer-text .stair-3 { margin-left: 0px; }
+.footer-text .final-truth {
+    margin-left: 0px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+    .video-wrapper {
+        max-width: 680px;
+        margin: 0 auto;
+        animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #000;
+    }
+
+    .video-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+        margin-top: 16px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 1.6;
+        opacity: 1;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 85%;
+        max-width: 320px;
+        height: 100%;
+        background-color: #ffffff;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        box-shadow: none;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-inner {
+        padding: 80px 0 40px;
+    }
+
+    .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #333;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-nav-list {
+        list-style: none;
+    }
+
+    .mobile-nav-item {
+        border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+    }
+
+    .mobile-nav-item:first-child {
+        border-top: 1px solid rgba(44, 44, 44, 0.08);
+    }
+
+    .mobile-nav-link {
+        display: block;
+        padding: 20px 24px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #333333;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-nav-link:hover {
+        background-color: transparent;
+        color: #333333;
+    }
+
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--cookie-bg);
+        border-top: 1px solid var(--border-gray);
+        z-index: 997;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 24px;
+    }
+
+    .cookie-banner.visible {
+        transform: translateY(0);
+    }
+
+    .cookie-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    .cookie-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-light-gray);
+        flex: 1;
+        font-weight: 300;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .cookie-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        white-space: nowrap;
+    }
+
+    .cookie-btn-primary {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .cookie-btn-primary:hover {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary {
+        background-color: transparent;
+        color: #ffffff;
+    }
+
+    .cookie-btn-secondary:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    /* MODAL For The Young */
+    .young-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .young-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .young-modal {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #0a0a0a;
+        border: 1px solid var(--border-gray);
+        padding: 40px 32px;
+        position: relative;
+    }
+
+    .young-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .young-modal-close:hover {
+        opacity: 1;
+    }
+
+    .young-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .young-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #ffffff;
+    }
+
+    .young-modal-content h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 28px 0 12px;
+        color: var(--link-red);
+    }
+
+    .young-modal-content p {
+        margin-bottom: 16px;
+    }
+
+    /* BIOGRAPHY MODAL */
+    .bio-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .bio-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .bio-modal {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #ffffff;
+        border: 1px solid var(--border-gray);
+        padding: 40px 32px;
+        position: relative;
+        color: #0a0a0a;
+    }
+
+    .bio-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #0a0a0a;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .bio-modal-close:hover {
+        opacity: 1;
+    }
+
+    .bio-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .bio-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #0a0a0a;
+    }
+
+    .bio-modal-content h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 28px 0 12px;
+        color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .bio-modal-content p {
+        margin-bottom: 16px;
+    }
+
+    .bio-modal-content ul {
+        margin: 16px 0 16px 20px;
+    }
+
+    .bio-modal-content li {
+        margin-bottom: 12px;
+    }
+
+    .bio-modal-image {
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    .bio-modal-image img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    /* TEAM MODAL */
+    .team-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .team-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .team-modal {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #ffffff;
+        border: 1px solid var(--border-gray);
+        padding: 40px 32px;
+        position: relative;
+        color: #0a0a0a;
+    }
+
+    .team-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #0a0a0a;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .team-modal-close:hover {
+        opacity: 1;
+    }
+
+    .team-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .team-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #0a0a0a;
+    }
+
+    .team-modal-content h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 28px 0 12px;
+        color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .team-modal-content p {
+        margin-bottom: 16px;
+    }
+
+    .team-modal-content .final-thanks {
+        text-align: center;
+        font-weight: 700;
+        margin-top: 24px;
+        font-size: 14px;
+    }
+
+    /* CONTACTS MODAL - NUEVO */
+    .contacts-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        overflow-y: hidden;
+        padding: 20px;
+    }
+
+    .contacts-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .contacts-modal {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #ffffff;
+    border: 1px solid var(--border-gray);
+    padding: 40px 32px;
+    position: relative;
+    color: #0a0a0a; max-height: fit-content;
+    overflow: hidden; 
+}
+
+    .contacts-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #0a0a0a;
+        font-size: 32px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .contacts-modal-close:hover {
+        opacity: 1;
+    }
+
+    .contacts-modal-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .contacts-modal-content {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #0a0a0a;
+    }
+
+    .contacts-modal-content h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 28px 0 12px;
+        color: var(--link-red);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .contacts-modal-content p {
+        margin-bottom: 16px;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --header-height: var(--header-height-mobile);
+        }
+
+        body.cookie-visible {
+            padding-bottom: 180px;
+        }
+
+        .header-inner {
+            padding: 0 8px 0 12px;
+            height: var(--header-height-mobile);
+        }
+
+        .logo-wrapper {
+            gap: 10px;
+        }
+
+        .logo-icon {
+            height: 40px;
+            margin-left: 0;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
+        .main {
+            padding-top: var(--header-height-mobile);
+        }
+
+        .hero {
+            padding: 20px 24px;
+        }
+
+        .hero-logo {
+            margin-bottom: 20px;
+        }
+
+        .hero-main-logo {
+            max-width: 400px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 auto 20px;
+        }
+
+        .hero-signature {
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .directory {
+            padding: 12px 20px 40px;
+        }
+
+        .directory-header {
+            padding: 12px 0 24px;
+        }
+
+        .footer-section {
+            padding: 30px 20px 100px;
+        }
+
+        .footer-logo {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            max-width: 400px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .directory-title {
+            font-size: 20px;
+        }
+
+        .directory-link {
+            font-size: 16px;
+        }
+
+        .directory-row {
+            padding: 22px 0;
+            gap: 16px;
+        }
+
+        .mobile-nav-link {
+            font-size: 18px;
+        }
+
+        .cookie-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .cookie-buttons {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .young-modal, .bio-modal, .team-modal, .contacts-modal {
+            margin: 20px auto;
+            padding: 32px 20px;
+        }
+
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-inner {
+            padding: 0 8px 0 10px;
+        }
+
+        .logo-wrapper {
+            gap: 8px;
+        }
+
+        .logo-icon {
+            height: 36px;
+            margin-left: 0;
+        }
+
+        .logo-text {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            padding: 16px 20px;
+        }
+
+        .hero-main-logo {
+            max-width: 320px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-signature {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+
+        .directory {
+            padding: 8px 16px 30px;
+        }
+
+        .directory-header {
+            padding: 8px 0 24px;
+        }
+
+        .footer-section {
+            padding: 20px 16px 80px;
+        }
+
+        .footer-logo {
+            margin-bottom: 32px;
+        }
+
+        .footer-logo img {
+            max-width: 320px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .directory-title {
+            font-size: 19px;
+        }
+
+        .directory-link {
+            font-size: 16px;
+        }
+
+        .directory-row {
+            padding: 22px 0;
+        }
+
+        .cookie-text {
+            font-size: 13px;
+        }
+
+        .cookie-btn {
+            padding: 11px 20px;
+            font-size: 13px;
+        }
+
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
+            font-size: 24px;
+        }
+
+        .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIMES Logo" />
+                <span class="logo-text">NEW TIME</span>
+            </div>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
+        <div class="mobile-menu-inner">
+            <ul class="mobile-nav-list">
+                            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="forYoungLink">Youth</a></li> 
+                <li class="mobile-nav-item"><a href="Magazine.html" class="mobile-nav-link">Magazine</a></li>
+                <li class="mobile-nav-item"><a href="all-new-time.html" class="mobile-nav-link">New Time</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="teamLink">Team</a></li>
+                <li class="mobile-nav-item"><a href="service.html" class="mobile-nav-link">Services</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="bioLink">Biography</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="contactsLink">Contacts</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MODAL For The Young -->
+    <div class="young-modal-overlay" id="youngModal">
+        <div class="young-modal">
+            <button class="young-modal-close" id="youngModalClose">&times;</button>
+            <h2 class="young-modal-title">New Times For Young</h2>
+            <div class="young-modal-content">
+                <h3>The Fraudulent Clock ⏰</h3>
+                <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = FRAUD.</p>
+                <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
+
+                <h3>Lawful Robbery 🏛️</h3>
+                <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣                 = FRAUD.</p>
+                <p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud.😆🤣. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀
+
+                <h3>Cost of Living Scam 💸</h3>
+                <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = FRAUD.</p>
+                <p>Hidden Truth: Sex is free👧👨. Having kids is free. The earth gives us everything for free. We’re supposed to make stuff and share it. The “cost of living” is a scam 🏛️
+
+                <h3>Food Fraud 🍔</h3>
+                <p>Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = CANCER.</p>
+                <p>Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
+
+                <h3>Fraudulent Laws ⚖️</h3>
+<p>🤣 “Equal justice” 😆 for everybody. Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.</p>
+<p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That' sex fraud.</p>
+
+<h3>Church Scam ⛪</h3>
+<p>“Gentlemen, want to get right with God? 1. Worship this statue 😄 2. Show up Sunday 3. Drop cash in the plate. Boom, soul saved!” On fraudulent Sunday, money moved = FRAUD.</p>
+<p>Hidden truth: Saturday is God’s day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂️📖😠</p>
+                <h3>College Degree Scam 🎓</h3>
+                <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
+                <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
+                <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
+           <!-- NEW TIME CHAT CON LOGO + AUDIO + EMAIL -->
+<button id="newtime-btn">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#8B0000" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z"/>
+    <circle cx="7" cy="10" r="1.5"/>
+    <circle cx="12" cy="10" r="1.5"/>
+    <circle cx="17" cy="10" r="1.5"/>
+  </svg>
+</button>
+<style>
+  #newtime-btn {
+    position: fixed; bottom: 20px; right: 20px; 
+    background: rgba(0,0,0,0.2); 
+    border: 1px solid rgba(255,255,255,0.15); 
+    border-radius: 50%; 
+    width: 60px; height: 60px;
+    cursor: pointer; z-index: 9999; backdrop-filter: blur(6px);
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #newtime-btn:hover { background: rgba(0,0,0,0.35); }
+  
+  #newtime-chat {
+    display: none; position: fixed; bottom: 90px; right: 20px; width: 340px;
+    background: white; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui; z-index: 9999; max-height: 80vh; overflow-y: auto;
+  }
+  #newtime-header {
+    background: #000; color: white; padding: 16px; border-radius: 12px 12px 0 0;
+    font-weight: 600; text-align: center; font-size: 15px; letter-spacing: 0.5px;
+    position: relative;
+  }
+  #newtime-close {
+    position: absolute; top: 12px; right: 12px; 
+    background: none; border: none; color: white; 
+    font-size: 20px; cursor: pointer; line-height: 1; padding: 0;
+    width: 24px; height: 24px;
+  }
+  #newtime-close:hover { opacity: 0.7; }
+  #newtime-body { padding: 16px; }
+.newtime-logo { 
+    width: 120px; display: block; margin: 0 auto 12px; border-radius: 8px;
+  }
+.newtime-welcome { 
+    text-align: left; font-weight: 600; margin-bottom: 12px; color: #000; font-size: 15px; line-height: 1.4;
+  }
+.newtime-msg {
+    background: #f5f5f7; padding: 12px; border-radius: 8px;
+    margin-bottom: 12px; line-height: 1.5; font-size: 14px; color: #1d1d1f;
+  }
+.newtime-btn {
+    display: block; width: 100%; padding: 12px; margin: 8px 0;
+    background: white; border: 1px solid #d2d2d7; border-radius: 8px;
+    text-align: left; cursor: pointer; color: #1d1d1f; font-size: 14px;
+  }
+.newtime-btn:hover { background: #f5f5f7; }
+.newtime-audio { width: 100%; margin: 12px 0; }
+.newtime-topic-img { width: 100%; border-radius: 8px; margin: 12px 0; display: block; }
+.newtime-email {
+    display: block; width: 100%; padding: 10px; margin-top: 8px;
+    background: #c90000; color: white; border: none; border-radius: 8px;
+    text-align: center; text-decoration: none; font-weight: 600; font-size: 14px;
+  }
+.newtime-back {
+    background: #e8e8ed; color: #000; border: none; padding: 8px;
+    width: 100%; margin-top: 12px; border-radius: 6px; cursor: pointer; font-size: 14px;
+  }
+</style>
+
+<div id="newtime-chat">
+  <div id="newtime-header">
+    NEW TIME
+    <button id="newtime-close" onclick="closeChat()">×</button>
+  </div>
+  <div id="newtime-body">
+    
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <div id="newtime-screen1">
+      <img src="photo-new-time-chat.jpg" class="newtime-logo" alt="NEW TIME">
+      <div class="newtime-welcome">Welcome to Chat Friends, we're going to talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.</div>
+      <button class="newtime-btn" onclick="showTopic('cancer')">
+        Origins of cancer
+      </button>
+      <button class="newtime-btn" onclick="showTopic('disabled')">
+        Origins of disabled people
+      </button>
+      <button class="newtime-btn" onclick="showTopic('same-sex')">
+        Same-Sex Gender Fraud
+      </button>
+    </div>
+
+    <!-- PANTALLA 2: AUDIO + FOTO + EMAIL -->
+    <div id="newtime-screen2" style="display:none;">
+      <div id="topic-title" style="font-weight:600; margin-bottom:12px; color: #000; font-size: 15px;"></div>
+      <img id="topic-image" class="newtime-topic-img" src="" alt="Topic Image">
+      <audio id="topic-audio" class="newtime-audio" controls></audio>
+      <div class="newtime-msg" id="topic-text"></div>
+      <a id="topic-email" class="newtime-email" href="">Contact by Email</a>
+      <button class="newtime-back" onclick="goBack()">← Back to topics</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('newtime-btn');
+  const chat = document.getElementById('newtime-chat');
+  btn.onclick = () => {
+    chat.style.display = chat.style.display === 'none' || chat.style.display === ''? 'block' : 'none';
+  }
+
+  function closeChat() {
+    document.getElementById('newtime-chat').style.display = 'none';
+    document.getElementById('topic-audio').pause();
+  }
+
+  // AUDIOS EN EL MISMO ORDEN DE TU CAPTURA DE GITHUB
+  const topics = {
+    'cancer': {
+      title: 'Origins of cancer', 
+      audio: 'chat-origins-of-cancer.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Origins of cancer'
+    },
+    'disabled': {
+      title: 'Origins of disabled people',
+      audio: 'chat-origins-of-disabled-people.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Origins of disabled people'
+    },
+    'same-sex': {
+      title: 'Same-sex sexual impediment',
+      audio: 'chat-same-sex-sexual-fraud.mp3',
+      image: 'photo-new-time-chat.jpg',
+      text: 'Listen to the full explanation below. For private inquiries, email us.',
+      email: 'contactnewtimehere@gmail.com?subject=Same-sex sexual impediment'
+    }
+  };
+
+  function showTopic(topic) {
+    document.getElementById('newtime-screen1').style.display = 'none';
+    document.getElementById('newtime-screen2').style.display = 'block';
+    document.getElementById('topic-title').innerText = topics[topic].title;
+    document.getElementById('topic-audio').src = topics[topic].audio;
+    document.getElementById('topic-image').src = topics[topic].image;
+    document.getElementById('topic-text').innerText = topics[topic].text;
+    document.getElementById('topic-email').href = 'mailto:' + topics[topic].email;
+  }
+
+  function goBack() {
+    document.getElementById('newtime-screen2').style.display = 'none';
+    document.getElementById('newtime-screen1').style.display = 'block';
+    document.getElementById('topic-audio').pause();
+  }
+</script>
+<!-- FIN CHAT NEW TIME -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL BIOGRAPHY -->
+    <div class="bio-modal-overlay" id="bioModal">
+        <div class="bio-modal">
+            <button class="bio-modal-close" id="bioModalClose">&times;</button>
+            <h2 class="bio-modal-title">New Time</h2>
+            <div class="bio-modal-content">
+                <p>New Time is a U.S.-based digital media and research organization that examines contemporary social, economic, and cultural systems. Established this year, it focuses on documenting the hidden effects of practices, institutions, and narratives that present themselves as legitimate while delivering outcomes the organization describes as fraudulent.</p>
+                
+                <h3>History and Purpose</h3>
+                <p>New Time was founded to investigate the gap between how modern systems are described and how they actually function. Its core thesis is that many structures maintain an appearance of normalcy or legality while producing results that compromise public welfare, individual autonomy, or factual integrity. Through research and commentary, New Time aims to identify and explain these contradictions to provide a more accurate understanding of present conditions.</p>
+                <p>The organization follows standards of transparency, source documentation, and direct reporting. Areas of coverage include economic policy, institutional conduct, public health, education, media, and labor systems.</p>
+
+                <h3>Editorial Focus</h3>
+                <p>New Time’s reporting is organized around key areas of inquiry:</p>
+                <p><strong>Systemic Misrepresentation</strong><br>
+                The platform evaluates instances in which institutional or cultural narratives conflict with measurable evidence. It compares official accounts of systems with documented outcomes to identify disparities between presentation and effect.</p>
+                <p><strong>Redefining Accountability</strong><br>
+                New Time assesses how prevailing definitions of success, legality, and authority operate in practice. It examines the influence of accepted standards on individual decision-making, economic stability, and social outcomes.</p>
+                <p><strong>Hidden Effects</strong><br>
+                The organization’s central mandate is to trace the downstream consequences of policies, technologies, and social norms that are framed as benign or necessary. This involves documenting externalities, long-term costs, and patterns of deception sustained through routine practice. When the results contradict a system’s stated purpose, they are classified as fraud.</p>
+
+                <h3>Activity and Reach</h3>
+                <p>New Time operates a website that publishes research articles, analytical essays, and case studies. Its readership is composed primarily of young adults and professionals interested in critical analysis of contemporary institutions. The organization functions exclusively online.</p>
+                <p>The platform is distinguished by its direct editorial approach and by addressing topics that receive little attention in traditional media. Its editorial policy prioritizes precision, source verification, and accessibility.</p>
+
+                <h3>Philosophy</h3>
+                <p>New Time’s stated position is: “A system cannot be understood by its stated purpose alone; it must be judged by its results.” The organization promotes evidence-based analysis, independent inquiry, and personal accountability as essential for evaluating the legitimacy of social and economic structures.</p>
+
+                <div class="bio-modal-image">
+                    <img src="new-time666.jpg" alt="NEW TIME Logo" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL TEAM -->
+    <div class="team-modal-overlay" id="teamModal">
+        <div class="team-modal">
+            <button class="team-modal-close" id="teamModalClose">&times;</button>
+            <h2 class="team-modal-title">NEW TIME TEAM</h2>
+            <div class="team-modal-content">
+                <h3>Sebastian: Founder</h3>
+                <p>He was born in 1990 in the United States. He graduated from Davis High School in Kaysville in 2007 and studied at Harvard University. He is the founder of New Time, Origins of the Hidden Truth.</p>
+
+                <h3>Sophie: Sexologist</h3>
+                <p>Born in 1999 in the United States. Holds a doctorate from Harvard University. 60M+ followers. She doesn’t push sex-positivity marketing. She exposes sexual misinformation, breaks down hard data on STD transmission, and calls out industries that profit from sexual confusion. Her work is clinical. Her conclusions are blunt.</p>
+
+                <h3>Jack: Finance</h3>
+                <p>Born in 1993 in the United States. African American. He attended Harvard but didn’t graduate. He earned his degree from another university in Massachusetts, focusing on economic stagnation and financial flows. He tracks where money actually moves, who chokes the system, and why “poverty” is manufactured. He doesn’t trade in theory. He brings receipts.</p>
+
+                <h3>Why You Won’t See Our Faces</h3>
+                <p> We don’t use profile pictures. This isn’t a marketing tactic. It’s for safety. New Time protects our people from attacks. They’re not common, but the risk is real. People think a same-sex image is normal. In reality, it's sex fraud. Money looks normal. Its hidden effect is deadly slavery and the root of poverty. Two people have been killed for exposing the truth.</p>
+
+                <h3>John F. Kennedy</h3>
+                <p>Assassinated for personal political motives. He confronted organized crime and spoke out on the erosion of freedom, land consolidation, the mental health crisis, rigged job markets, and the class-system narrative that blames “money” for poverty created by those who control it.</p>
+
+                <h3>Charlie Kirk</h3>
+                <p>He was murdered after facing strong public backlash for stating that LGBTQ+ ideology constitutes sexual fraud.</p>
+                <p>His position was that this belief indicates a sexual disability, and that discrimination, hatred, homophobia, and intolerance will persist because people with intellectual and sexual disabilities are not recognized as such.</p>
+                <p>He argued that some seek to normalize sexual disability by portraying governments and politicians as victims.</p>
+
+                <p class="final-thanks">Thank you for visiting New Time</p>
+            </div>
+        </div>
     </div>
 
     <!-- MODAL CONTACTS - ACTUALIZADO -->
