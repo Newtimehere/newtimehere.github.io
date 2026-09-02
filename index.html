@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1747,28 +1748,20 @@ opacity: 1;
   <!-- INICIO 2 CARDS - SEPARADOS ESPACIO NORMAL - SIN BORDES BLANCOS -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
-
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; width: 100%; background: #d8dadde6; }
-
 .nt-wrap{
-  background: #d8dadde6; /* mismo gris de Harvard */
-  max-width: 1440px; /* ancho maximo para que se centre */
-  margin: 0 auto; /* esto lo centra */
-  padding: 16px; /* este es el espacio igual en todas las esquinas */
+  background:transparent;
+  padding:0;
+  margin:0;
 }
 .nt-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px; /* mismo gap que el padding para que quede simetrico */
-  width:100%;
+  gap:16px;
   max-width:100%;
-  margin:0 auto;
-  justify-content: center;
+  margin:0;
 }
 @media(max-width:768px){
   .nt-grid{grid-template-columns:1fr; gap:16px}
-  .nt-wrap{padding:16px;}
 }
 .nt-hero{
   position:relative;
@@ -1813,6 +1806,7 @@ html, body { margin: 0; padding: 0; width: 100%; background: #d8dadde6; }
 }
 .nt-circle svg{stroke:#fff}
 .nt-text{color:#fff;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
+</style>
 
 <div class="nt-wrap">
 <div class="nt-grid">
@@ -2205,40 +2199,7 @@ html, body { margin: 0; padding: 0; width: 100%; background: #d8dadde6; }
                     currentBtn = null;
                 });
             });
-        });
-    </script>
-</body>
-  </html>
-
-        
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-        
-                    
+         });
+     </script>
+ </body>
+   </html>
