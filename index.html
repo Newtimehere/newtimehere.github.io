@@ -1748,21 +1748,31 @@ opacity: 1;
   <!-- INICIO 2 CARDS - SEPARADOS ESPACIO NORMAL - SIN BORDES BLANCOS -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
+
 .nt-wrap{
-  background:transparent;
-  padding:0;
-  margin:0;
+  background: transparent;
+  max-width: 1120px; /* ANCHO MÁXIMO DE LA COLUMNA */
+  margin: 0 auto; /* CENTRADO PERFECTO */
+  padding: 0 24px; /* MISMA ESQUINA IZQ Y DER = 24px */
+  box-sizing: border-box;
+  width: 100%;
 }
+
 .nt-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  max-width:100%;
-  margin:0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 @media(max-width:768px){
   .nt-grid{grid-template-columns:1fr; gap:16px}
+  .nt-wrap{padding: 0 16px;} /* en móvil menos padding para que quede igual */
 }
+
 .nt-hero{
   position:relative;
   width:100%;
@@ -1806,8 +1816,6 @@ opacity: 1;
 }
 .nt-circle svg{stroke:#fff}
 .nt-text{color:#fff;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
-</style>
-
 <div class="nt-wrap">
 <div class="nt-grid">
   <!-- NEW TIME MAGAZINE -->
