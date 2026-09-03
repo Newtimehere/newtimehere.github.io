@@ -4,48 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For The Young - NEW TIME</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:#fff;color:#2c2c2c;line-height:1.6;overflow:hidden}
-    .header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-    .header-inner{width:100%;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 18px}
-    .logo-wrapper{display:flex;align-items:center;gap:12px;cursor:pointer}
-    .logo-icon{height:45px;width:auto}
-    .logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:4px;text-transform:uppercase;margin-top:-6px}
-    .menu-btn{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
-    .menu-line{width:22px;height:2px;background:#000}
-    .service-modal{position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;padding:0 20px 40px}
-    .service-modal-content{background:#0a0a0a;color:#fff;max-width:700px;width:100%;padding:28px 50px 60px;position:relative;margin-top:45px;animation:slideUp .4s ease;border:1px solid #2a2a2a}
-    .service-close{position:absolute;top:28px;right:30px;font-size:28px;cursor:pointer;color:#fff;background:none;border:none}
-    .service-modal-content h1{font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:4px;margin-bottom:18px;margin-top:10px;text-transform:uppercase;color:#fff}
-    .service-modal-content h2{font-size:18px;font-weight:600;margin:28px 0 12px;color:#7A1F1F}
-    .service-modal-content p{font-size:15px;line-height:1.8;margin-bottom:16px}
-    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:768px){.service-modal-content{padding:25px 30px 50px;margin-top:40px}.service-modal-content h1{font-size:26px}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#000;color:#fff;overflow:hidden}
+.header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:1000;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.logo-wrapper{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-icon{height:45px}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:4px;color:#2c2c2c}
+.service-modal{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:2000;display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;padding:90px 20px 40px}
+.service-modal-content{background:#0a0a0a;color:#fff;max-width:680px;width:90%;padding:40px 40px 50px;position:relative;border:1px solid #2a2a2a;animation:slideUp .4s ease}
+.service-close{position:absolute;top:18px;right:20px;font-size:28px;color:#fff;background:none;border:none;cursor:pointer}
+.service-modal-content h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;letter-spacing:4px;text-transform:uppercase;margin-bottom:30px;line-height:1.2}
+.service-modal-content h2{font-size:18px;font-weight:600;color:#7A1F1F;margin:32px 0 14px}
+.service-modal-content p{font-size:15px;line-height:1.7;margin-bottom:18px;color:#e0e0e0}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 <header class="header">
-<div class="header-inner">
 <div class="logo-wrapper" onclick="window.location.href='index.html'">
-<img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIME"><span class="logo-text">NEW TIME</span>
-</div>
-<button class="menu-btn" id="menuBtn"><span class="menu-line"></span><span class="menu-line"></span><span class="menu-line"></span></button>
+<img class="logo-icon" src="666-removebg-preview.png"><span class="logo-text">NEW TIME</span>
 </div>
 </header>
+
 <div class="service-modal" id="serviceModal">
 <div class="service-modal-content">
 <button class="service-close" id="closeService">&times;</button>
-<h1>New Times For Young</h1>
+<h1>NEW TIMES FOR YOUNG</h1>
 
 <h2>The Fraudulent Clock ⏰</h2>
-<p>People hit you with "good morning" at 1am while leaving the club 😆 but bro… it's still pitch black outside = FRAUD.</p>
+<p>People hit you with "good morning" at 1am while leaving the club 😆 but bro... it's still pitch black outside = FRAUD.</p>
 <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn't flip the sun on.</p>
 
 <h2>Lawful Robbery 🏛️</h2>
 <p>Suit. Tie. Three alarms screaming. And THAT'S freedom? 🤣 = FRAUD.</p>
-<p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀</p>
+<p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud. 😆🤣. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀</p>
 
 <h2>Cost of Living Scam 💸</h2>
 <p>They got you thinking life comes with a price tag 😆🤭. You "need" the bare minimum, you live scared of going broke = FRAUD.</p>
@@ -55,26 +49,13 @@
 <p>Dude holding Hot Cheetos: "100% Natural FDA Approved 🤣" Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that "food" = CANCER.</p>
 <p>Hidden Truth: Real food is organic, no grease, doesn't kill you slow. Real prayer = "Thank God I'm alive, even though this tastes like chemo" 🙏</p>
 
-<h2>Fraudulent Laws ⚖️</h2>
-<p>🤣 "Equal justice" 😆 for everybody. Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.</p>
-<p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That's sex fraud.</p>
-
-<h2>Church Scam ⛪</h2>
-<p>"Gentlemen, want to get right with God? 1. Worship this statue 😄 2. Show up Sunday 3. Drop cash in the plate. Boom, soul saved!" On fraudulent Sunday, money moved = FRAUD.</p>
-<p>Hidden truth: Saturday is God's day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂️📖😠</p>
-
-<h2>College Degree Scam 🎓</h2>
-<p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = "success" guaranteed, right? 🤣</p>
-<p>"Clap for the new grad! Mom's sobbing, Dad's filming, diploma up: 'That's my boy! We did it! Family win!'" Cue tears, confetti, Instagram: #proud</p>
-<p>Hidden truth: Y'all are clapping at a funeral. You're celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
-
 </div>
 </div>
+
 <script>
-const closeService=document.getElementById('closeService');const serviceModal=document.getElementById('serviceModal');
-closeService.addEventListener('click',()=>{window.location.href='index.html';});
-serviceModal.addEventListener('click',(e)=>{if(e.target===serviceModal){window.location.href='index.html';}});
-document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){window.location.href='index.html';}});
+document.getElementById('closeService').onclick=()=>{window.location.href='index.html';};
+document.getElementById('serviceModal').onclick=(e)=>{if(e.target.id==='serviceModal')window.location.href='index.html';};
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')window.location.href='index.html';});
 </script>
 </body>
 </html>
