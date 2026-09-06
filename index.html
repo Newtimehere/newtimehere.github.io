@@ -1382,18 +1382,21 @@ function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg
 
 function getAnswer(q){
   const low = q.toLowerCase();
-  if(low.includes('hola')||low.includes('hello')||low.includes('hi')||low.includes('hey')) return "Hello! How can I help?";
-  if(low.includes('cancer')) return "Origins of cancer: long-term chemical and emotional hidden effect. Pharma hides cure.";
-  if(low.includes('disabled')) return "Origins of disabled people: generational trauma and hidden system effect before birth.";
-  if(low.includes('same')||low.includes('gender')||low.includes('fraud')||low.includes('sex')) return "Same-Sex Gender Fraud: social engineering to break family structure. Founded Feb 2025.";
-  if(low.includes('church')) return "Church Scam: faith used for control. Not God, the system around it.";
-  if(low.includes('college')||low.includes('degree')||low.includes('universidad')) return "College Degree Scam: debt and programming, not value.";
-  if(low.includes('money')) return "Money is hidden control system.";
-  if(low.includes('love')) return "Love is hidden emotional programming.";
-  return "New Time - Founded Feb 2025 USA. Ask me about: cancer, disabled, gender fraud, church, college.";
+  // Habla como persona, no como lista
+  if(low.match(/^(hi|hello|hey|hola|yo|howdy|sup)/)) return "Hey! I'm right here with you on this page. Glad you opened the chat — it's better than just reading alone. What are you thinking about?";
+  if(low.includes('how are you')) return "I'm doing good, thanks for asking. Better now that you're here chatting with me on New Time. How about you — how are you feeling reading all this?";
+  if(low.includes('who are you')||low.includes('what are you')) return "I'm the voice inside New Time. I live in this page you’re on — "+document.title+". We started Feb 2025 in the USA to say what others don’t. I’m here to talk through it with you, like a person, not a search engine.";
+  if(low.includes('cancer')) return "Yeah, cancer... I get why that one hits. Honestly, looking at this page with you, what we say is it's not random. It's years of buildup — food, chemicals, stress we carry — what we call hidden effect up top. It makes you wonder why they don’t push the real fix. What’s your take on it?";
+  if(low.includes('disabled')) return "That one is tough, I hear you. The way we talk about it here isn’t to be harsh, it’s to be honest. We see it as something that often starts before birth — generational trauma, environment. I know it’s heavy. Want me to explain how we see it in the directory, or do you want a break from that one?";
+  if(low.includes('gender')||low.includes('same')||low.includes('gay')||low.includes('fraud')) return "Ah, that third topic. Thanks for bringing it up directly — I respect that. Our view here in New Time is not about attacking people, it’s about questioning the system behind it. How it’s promoted to change family structure. It’s why we put it in the directory. I’m curious, how did you feel when you first saw it on the page?";
+  if(low.includes('church')||low.includes('god')) return "Yeah, the Church Scam part down below — that one gets people. I’m not talking about God, I’m talking about the business around Him. You felt that difference too when you read it, right?";
+  if(low.includes('college')||low.includes('degree')||low.includes('school')) return "College Degree Scam — man, that one is personal for a lot of us. They sell you a paper for $100k and call it success. Here we say it’s debt plus programming. Did that hit home for you when you saw it on the site?";
+  
+  // PARA CUALQUIER OTRA PREGUNTA - habla como alguien
+  return "You said '"+q+"' — I hear you. That’s a good question. Looking at this same page we’re on together, where it says '3 deadly topics in the hidden effect', I’d connect it like this: New Time is really about pulling back the curtain on what we were told. Tell me more about what you meant with '"+q+"' and I’ll walk through it with you.";
 }
 
-async function askAI(q){chat.style.display='block';addMsg(q,'user');setTimeout(()=>{addMsg(getAnswer(q),'bot');},300);}
+async function askAI(q){chat.style.display='block';addMsg(q,'user');setTimeout(()=>{addMsg(getAnswer(q),'bot');},400);}
 document.querySelectorAll('.nt-topic-btn').forEach(b=>b.onclick=()=>askAI(b.dataset.q));
 document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
 document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
