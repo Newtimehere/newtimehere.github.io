@@ -1554,26 +1554,45 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <!-- NEW TIME AT A GLANCE - ESQUINAS EXACTAS COMO DIRECTORY -->
+        <!-- NEW TIME AT A GLANCE - FINAL COMPLETO -->
 <section class="nt-glance-bar">
   <div class="nt-glance-inner">
+    
     <div class="nt-glance-left">
       <h2>New Time at a glance</h2>
       <p>Founded in February 2025. A direct look at the hidden effect behind the system and full transparency for your questions.</p>
-      <div class="nt-glance-img"><img src="new.webp" alt="New Time"></div>
+      <div class="nt-glance-img">
+        <img src="new.webp" alt="New Time">
+      </div>
     </div>
+
     <div class="nt-glance-right">
-      <div class="nt-stat"><div class="nt-stat-number">2025</div><div class="nt-stat-label">Founded in the U.S.</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">11</div><div class="nt-stat-label">Original researches in the Directory</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">100%</div><div class="nt-stat-label">Full transparency, no corporate filter</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">6</div><div class="nt-stat-label">Magazine, Youth, Team, Friends, All, Service</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">1</div><div class="nt-stat-label">Mission: Expose the truth behind appearances</div></div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">2025</div>
+        <div class="nt-stat-label">Founded in the U.S.</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">11</div>
+        <div class="nt-stat-label">Original researches in the Directory</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">100%</div>
+        <div class="nt-stat-label">Full transparency, no corporate filter</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">6</div>
+        <div class="nt-stat-label">Magazine, Youth, Team, Friends, All, Service</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">1</div>
+        <div class="nt-stat-label">Mission: Expose the truth behind appearances</div>
+      </div>
     </div>
+
   </div>
 </section>
 
 <style>
-/* COPIA EXACTA DEL .directory PARA ESQUINAS IGUALES */
 .nt-glance-bar{
   background:#000000;
   max-width:900px;
@@ -1590,17 +1609,20 @@ opacity: 1;
 .nt-glance-left h2{
   font-family:'Cormorant Garamond', serif;
   font-size:13px;
+  font-weight:500;
   letter-spacing:1.2px;
   text-transform:uppercase;
-  font-weight:500;
-  margin-bottom:10px;
+  color:#fff;
+  margin:0 0 10px 0;
 }
 .nt-glance-left p{
   font-family:'Inter', sans-serif;
   font-size:9.5px;
   line-height:1.6;
   color:rgba(255,255,255,0.55);
-  margin-bottom:14px;
+  font-weight:300;
+  margin:0 0 14px 0;
+  max-width:280px;
 }
 .nt-glance-img{
   width:100%;
@@ -1613,14 +1635,44 @@ opacity: 1;
   height:100%;
   object-fit:cover;
   object-position:center;
+  display:block;
 }
-.nt-glance-right{display:flex;flex-direction:column;gap:14px}
-.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:14px;color:#fff}
-.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;color:rgba(255,255,255,0.5);border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:5px;display:block}
+.nt-glance-right{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding-top:2px;
+}
+.nt-stat-number{
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;
+  font-weight:400;
+  color:#fff;
+  margin-bottom:3px;
+}
+.nt-stat-label{
+  font-family:'Inter', sans-serif;
+  font-size:9px;
+  line-height:1.5;
+  color:rgba(255,255,255,0.5);
+  font-weight:300;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  padding-bottom:5px;
+  display:block;
+  max-width:280px;
+}
 @media(max-width:768px){
-  .nt-glance-bar{padding:18px 20px; margin-top:24px}
-  .nt-glance-inner{grid-template-columns:1fr;gap:20px}
-  .nt-glance-img{height:140px}
+  .nt-glance-bar{
+    padding:18px 20px;
+    margin-top:24px;
+  }
+  .nt-glance-inner{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .nt-glance-img{
+    height:140px;
+  }
 }
 </style>
         <div class="nt-stat"><div class="nt-stat-number">11</div><div class="nt-stat-label">Original researches in the Directory</div></div>
