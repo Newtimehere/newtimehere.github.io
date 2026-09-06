@@ -1554,8 +1554,7 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <!-- NEW TIME AT A GLANCE - MEDIANO ALINEADO CON DIRECTORY -->
-<div class="nt-glance-wrapper">
+        <div class="nt-glance-wrapper">
 <section class="nt-glance-bar">
   <div class="nt-glance-inner">
     <div class="nt-glance-left">
@@ -1575,29 +1574,33 @@ opacity: 1;
 </div>
 
 <style>
+/* ESTE WRAPPER ES COPIA EXACTA DE TU .directory */
 .nt-glance-wrapper{
-  max-width:900px; /* MISMO ANCHO QUE DIRECTORY */
-  margin: 40px auto 0 auto; /* 40px SEPARADO DE ARRIBA - ESPACIO NORMAL */
-  padding: 0 24px; /* MISMO PADDING QUE DIRECTORY */
+  max-width:900px;
+  margin: 36px auto 0 auto; /* espacio normal arriba */
+  padding: 0 24px; /* MISMO PADDING QUE DIRECTORY - para misma esquina */
+  box-sizing:border-box;
 }
 .nt-glance-bar{
   background:#000;
   color:#fff;
-  max-width:580px; /* MEDIANO */
-  margin:0; /* PEGADO A LA IZQUIERDA DEL WRAPPER = MISMA ESQUINA QUE DIRECTORY */
-  padding:22px 18px;
+  width:100%;
+  max-width:520px; /* mediano */
+  margin:0; /* pegado a la izquierda del wrapper */
+  padding:20px 16px;
   border:1px solid #151515;
+  box-sizing:border-box;
 }
-.nt-glance-inner{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left}
-.nt-glance-left h2{font-family:'Cormorant Garamond', serif;font-size:18px;font-weight:400;text-transform:uppercase;margin-bottom:6px}
-.nt-glance-left p{font-family:'Inter', sans-serif;font-size:10px;line-height:1.5;color:rgba(255,255,255,0.6);margin-bottom:10px}
-.nt-glance-img{width:100%;max-width:240px;height:100px;background:#0a0a0a;overflow:hidden}
+.nt-glance-inner{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.nt-glance-left h2{font-family:'Cormorant Garamond',serif;font-size:17px;text-transform:uppercase;margin-bottom:6px}
+.nt-glance-left p{font-family:'Inter',sans-serif;font-size:10px;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:10px}
+.nt-glance-img{width:100%;max-width:220px;height:90px;background:#0a0a0a;overflow:hidden}
 .nt-glance-img img{width:100%;height:100%;object-fit:cover}
-.nt-glance-right{display:flex;flex-direction:column;gap:12px}
-.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:16px}
-.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;color:rgba(255,255,255,0.55);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:5px;display:inline-block}
+.nt-glance-right{display:flex;flex-direction:column;gap:10px}
+.nt-stat-number{font-family:'Cormorant Garamond',serif;font-size:15px}
+.nt-stat-label{font-family:'Inter',sans-serif;font-size:9px;color:rgba(255,255,255,0.5);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:4px;display:inline-block}
 @media(max-width:768px){
-  .nt-glance-wrapper{padding:0 20px;margin-top:32px}
+  .nt-glance-wrapper{padding:0 20px; /* MISMO QUE DIRECTORY EN MOBILE */}
   .nt-glance-bar{max-width:100%}
   .nt-glance-inner{grid-template-columns:1fr}
 }
