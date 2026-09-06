@@ -1380,28 +1380,68 @@ const overlay=document.getElementById('nt-friends-overlay');const btn=document.g
 btn.onclick=()=>overlay.classList.add('show');close.onclick=()=>overlay.classList.remove('show');overlay.onclick=(e)=>{if(e.target===overlay)overlay.classList.remove('show')};
 function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
 
-function getAnswer(q){
-  const low = q.toLowerCase();
-  // Habla como persona, no como lista
-  if(low.match(/^(hi|hello|hey|hola|yo|howdy|sup)/)) return "Hey! I'm right here with you on this page. Glad you opened the chat — it's better than just reading alone. What are you thinking about?";
-  if(low.includes('how are you')) return "I'm doing good, thanks for asking. Better now that you're here chatting with me on New Time. How about you — how are you feeling reading all this?";
-  if(low.includes('who are you')||low.includes('what are you')) return "I'm the voice inside New Time. I live in this page you’re on — "+document.title+". We started Feb 2025 in the USA to say what others don’t. I’m here to talk through it with you, like a person, not a search engine.";
-  if(low.includes('cancer')) return "Yeah, cancer... I get why that one hits. Honestly, looking at this page with you, what we say is it's not random. It's years of buildup — food, chemicals, stress we carry — what we call hidden effect up top. It makes you wonder why they don’t push the real fix. What’s your take on it?";
-  if(low.includes('disabled')) return "That one is tough, I hear you. The way we talk about it here isn’t to be harsh, it’s to be honest. We see it as something that often starts before birth — generational trauma, environment. I know it’s heavy. Want me to explain how we see it in the directory, or do you want a break from that one?";
-  if(low.includes('gender')||low.includes('same')||low.includes('gay')||low.includes('fraud')) return "Ah, that third topic. Thanks for bringing it up directly — I respect that. Our view here in New Time is not about attacking people, it’s about questioning the system behind it. How it’s promoted to change family structure. It’s why we put it in the directory. I’m curious, how did you feel when you first saw it on the page?";
-  if(low.includes('church')||low.includes('god')) return "Yeah, the Church Scam part down below — that one gets people. I’m not talking about God, I’m talking about the business around Him. You felt that difference too when you read it, right?";
-  if(low.includes('college')||low.includes('degree')||low.includes('school')) return "College Degree Scam — man, that one is personal for a lot of us. They sell you a paper for $100k and call it success. Here we say it’s debt plus programming. Did that hit home for you when you saw it on the site?";
-  
-  // PARA CUALQUIER OTRA PREGUNTA - habla como alguien
-  return "You said '"+q+"' — I hear you. That’s a good question. Looking at this same page we’re on together, where it says '3 deadly topics in the hidden effect', I’d connect it like this: New Time is really about pulling back the curtain on what we were told. Tell me more about what you meant with '"+q+"' and I’ll walk through it with you.";
+let directoryCache = [];
+let loaded = false;
+
+async function loadDirectory(){
+  if(loaded) return;
+  const links = [...document.querySelectorAll('a[href*=".html"]')].slice(0,25);
+  for(let a of links){
+    try{
+      const html = await (await fetch(a.href)).text();
+      const text = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+      directoryCache.push({title: a.textContent.trim(), url: a.href, content: text});
+    }catch(e){}
+  }
+  loaded = true;
 }
 
-async function askAI(q){chat.style.display='block';addMsg(q,'user');setTimeout(()=>{addMsg(getAnswer(q),'bot');},400);}
+// Abrevia lo más importante del link
+function summarize(content, question){
+  const qWords = question.toLowerCase().split(/\s+/).filter(w=>w.length>3);
+  const sentences = content.split(/\.|\n/).filter(s=>s.length>20);
+  let important = sentences.filter(s => qWords.some(w => s.toLowerCase().includes(w)));
+  if(important.length===0) important = sentences.slice(0,3);
+  let summary = important.slice(0,2).join('. ').trim();
+  if(summary.length > 320) summary = summary.slice(0,320) + '...';
+  return summary + '.';
+}
+
+function findClosest(q){
+  const low = q.toLowerCase();
+  let best=null, score=0;
+  for(let doc of directoryCache){
+    let s=0;
+    low.split(/\s+/).forEach(w=>{ if(w.length>2 && doc.content.toLowerCase().includes(w)) s++; });
+    if(doc.title.toLowerCase().split(/\s+/).some(t=> low.includes(t))) s+=5;
+    if(s>score){ score=s; best=doc; }
+  }
+  return best;
+}
+
+async function getAnswer(q){
+  await loadDirectory();
+  const match = findClosest(q);
+  if(!match){
+    return `Based on New Time Directory (Founded Feb 2025, USA) for "${q}": Appearance is flavor that convinces you, Effect is the hidden result. Please see Directory for full professional documentation.`;
+  }
+  const important = summarize(match.content, q);
+  return `From Directory - ${match.title}:\n${important}\n\nAs we document in New Time: Appearance is flavor, Effect is the result. Full text in Directory: ${match.title}.`;
+}
+
+async function askAI(q){
+  chat.style.display='block';
+  addMsg(q,'user');
+  const searching = document.createElement('div'); searching.className='nt-msg bot'; searching.textContent='Searching in Directory: '+q+'...'; msgs.appendChild(searching); msgs.scrollTop=msgs.scrollHeight;
+  const ans = await getAnswer(q);
+  searching.remove();
+  addMsg(ans,'bot');
+}
+
 document.querySelectorAll('.nt-topic-btn').forEach(b=>b.onclick=()=>askAI(b.dataset.q));
 document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
 document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
 </script>
-
                 
 
             </div>
