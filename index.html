@@ -1325,13 +1325,13 @@ document.addEventListener('DOMContentLoaded', function(){
   const input = document.getElementById('nt-input');
   const send = document.getElementById('nt-send');
 
-  openBtn.addEventListener('click', function(){ overlay.style.display='flex'; });
-  closeBtn.addEventListener('click', function(){ overlay.style.display='none'; });
-  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.style.display='none'; });
+  openBtn.addEventListener('click', ()=> overlay.style.display='flex');
+  closeBtn.addEventListener('click', ()=> overlay.style.display='none');
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) overlay.style.display='none'; });
 
   function addMsg(text, who){
     const d=document.createElement('div');
-    d.style.cssText = who==='user' ? 'background:#000;color:#fff;padding:10px 14px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;' : 'background:#f2f2f2;padding:10px 14px;border-radius:18px;align-self:flex-start;max-width:85%;white-space:pre-wrap;';
+    d.style.cssText = who==='user' ? 'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;' : 'background:#f2f2f2;padding:12px 16px;border-radius:18px;align-self:flex-start;max-width:85%;white-space:pre-wrap;';
     d.textContent=text; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
   }
 
@@ -1340,29 +1340,49 @@ document.addEventListener('DOMContentLoaded', function(){
     if(loaded) return;
     const links=[...document.querySelectorAll('a[href$=".html"]')].filter(a=>{
       const t=a.textContent.trim().toLowerCase();
-      return t.length>3 && t.length<70 && !t.includes('explore') && !t.includes('→') && !t.includes('new time');
+      const h=a.getAttribute('href').toLowerCase();
+      // FILTRA - quita Magazine y basura con CSS
+      if(h.includes('magazine') || t.includes('magazine') || t.includes('about us')) return false;
+      return t.length>5 && t.length<70 && !t.includes('explore') && !t.includes('→') && !t.includes('new time');
     });
-    for(let a of links.slice(0,30)){
-      try{ const h=await(await fetch(a.href)).text(); const c=h.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,8000); if(c.length>100) cache.push({title:a.textContent.trim(),content:c}); }catch(e){}
+    for(let a of links.slice(0,15)){
+      try{
+        let html=await (await fetch(a.href)).text();
+        // QUITA <style> y <script> para no leer CSS como en tu foto
+        html=html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<script[^>]*>[\s\S]*?<\/script>/gi,' ');
+        const c=html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,8000);
+        if(c.length>200 && !c.includes('margin: 0;') && !c.includes('box-sizing')) cache.push({title:a.textContent.trim(), content:c});
+      }catch(e){}
     }
     loaded=true;
+  }
+
+  function answer(q){
+    const low=q.toLowerCase();
+    if(low==='hi' || low==='hello' || low==='hola'){
+      return "Hey! I'm your friend from New Time page. Founded Feb 2025, USA. This page is about Appearance vs Effect. We have 11 writings in the Directory as you saw. Ask me about any topic and I'll give you the most important bases from the closest Directory link, in English.";
+    }
+    let best=null, max=-1;
+    for(let d of cache){
+      let s=0; low.split(/\s+/).forEach(w=>{ if(w.length>3 && d.content.toLowerCase().includes(w)) s++; });
+      if(s>max){max=s; best=d;}
+    }
+    if(best){
+      const sentences = best.content.split('.').filter(s=>s.length>60 && s.length<350 && !s.includes('{') && !s.includes('}')).slice(0,2).join('. ').slice(0,450)+'.';
+      return `From Directory - ${best.title}:\n\nMost important bases based on your question "${q}":\n${sentences}\n\n— Full professional text is in the Directory on this page. This is New Time, Appearance vs Effect analysis.`;
+    }
+    return `Hey! Based on your question "${q}" — This is New Time, Founded Feb 2025. The Directory on this page has 11 writings: Origins of disabled people, Origins of cancer, Same-sex gender fraud mindset, The money and the effect, Origins of suicides, Human love, etc. Tell me which one you want and I'll give you the most important bases, in English, as your friend from the page.`;
   }
 
   async function ask(q){
     await loadDir();
     addMsg(q,'user');
-    let best=null, max=-1; const low=q.toLowerCase();
-    for(let doc of cache){ let s=0; low.split(/\s+/).forEach(w=>{ if(w.length>2 && doc.content.toLowerCase().includes(w)) s++; }); if(s>max){max=s; best=doc;} }
-    if(best){
-      const short=best.content.split('.').filter(s=>s.length>40).slice(0,2).join('. ').slice(0,380)+'.';
-      addMsg(`From Directory - ${best.title}:\n${short}\n\n— Most important bases based on your question. Full text in Directory.`,'bot');
-    } else {
-      addMsg(`New Time - Founded Feb 2025 USA. This page has 11 Directory writings. Your question "${q}" is covered. Appearance is flavor, Effect is result. Which Directory link do you want?`,'bot');
-    }
+    const resp=answer(q);
+    setTimeout(()=>addMsg(resp,'bot'),300);
   }
 
-  send.addEventListener('click', function(){ if(!input.value.trim()) return; ask(input.value.trim()); input.value=''; });
-  input.addEventListener('keydown', function(e){ if(e.key==='Enter') send.click(); });
+  send.addEventListener('click', ()=>{ if(!input.value.trim()) return; ask(input.value.trim()); input.value=''; });
+  input.addEventListener('keydown', e=>{ if(e.key==='Enter') send.click(); });
 });
 </script>
 
