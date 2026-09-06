@@ -1106,111 +1106,76 @@ opacity: 1;
             gap: 16px;
         }
         .nt-black-canton{
-  background:#000000;
-  color:#fff;
-  width:100vw;
-  margin-left:calc(-50vw + 50%);
-  padding:80px 24px;
-  border-top:1px solid #1a1a1a;
-  border-bottom:1px solid #1a1a1a;
+  background: #0b1226;
+  color: white;
+  padding: 70px 4%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 .nt-black-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:38% 58%;
-  gap:4%;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
 }
 .nt-black-left h2{
-  font-family:'Cormorant Garamond', serif;
-  font-size:48px;
-  font-weight:300;
-  line-height:0.9;
-  text-transform:uppercase;
-  margin-bottom:20px;
+  font-size: 56px;
+  line-height: 0.9;
+  font-weight: 300;
+  font-family: Georgia, serif;
 }
 .nt-black-left p{
-  font-family:'Inter', sans-serif;
-  font-size:15px;
-  line-height:1.7;
-  color:rgba(255,255,255,0.7);
-  margin-bottom:28px;
-  max-width:380px;
+  max-width: 440px;
+  margin-top: 20px;
+  opacity: 0.9;
+  line-height: 1.5;
 }
-.nt-black-link{ display:inline-flex; align-items:center; gap:12px; color:#fff; text-decoration:none; font-size:14px; }
-.nt-black-arrow{ width:32px; height:32px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; }
-.nt-black-right{ display:flex; flex-direction:column; gap:36px; }
-.nt-stat-number{ font-family:'Cormorant Garamond', serif; font-size:42px; margin-bottom:8px; }
-.nt-stat-label{ font-size:13px; color:rgba(255,255,255,0.65); border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:16px; max-width:420px; }
-@media(max-width:768px){
-  .nt-black-canton{ padding:50px 20px; }
-  .nt-black-inner{ grid-template-columns:1fr; gap:40px; }
+.nt-black-link{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  text-decoration: none;
+  margin: 25px 0 35px 0;
 }
-.footer-logo {
-        .mobile-nav-link {
-            font-size: 18px;
-        }
-
-        .cookie-inner {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .cookie-buttons {
-            width: 100%;
-            flex-direction: column;
-        }
-
-        .cookie-btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .young-modal, .bio-modal, .team-modal, .contacts-modal {
-            margin: 20px auto;
-            padding: 32px 20px;
-        }
-
-        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
-            font-size: 28px;
-            margin-bottom: 24px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .header-inner {
-            padding: 0 8px 0 10px;
-        }
-
-        .logo-wrapper {
-            gap: 8px;
-        }
-
-        .logo-icon {
-            height: 36px;
-            margin-left: 0;
-        }
-
-        .logo-text {
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
-
-        .hero {
-            padding: 16px 20px;
-        }
-
-        .hero-main-logo {
-            max-width: 320px;
-        }
-
-        .hero-text {
-            font-size: 15px;
-            margin: 0 auto 16px;
-        }
-
-        .hero-signature {
+.nt-black-arrow{
+  background: white;
+  color: black;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nt-black-img img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+.nt-stat{
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 26px 0;
+}
+.nt-stat:first-child{
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.nt-stat-number{
+  font-size: 42px;
+  font-family: Georgia, serif;
+}
+.nt-stat-label{
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+  text-decoration: underline;
+}
+@media(max-width: 800px){
+  .nt-black-inner{ grid-template-columns: 1fr; }
+}
+       .hero-signature {
             margin-top: 16px;
             margin-bottom: 0;
         }
