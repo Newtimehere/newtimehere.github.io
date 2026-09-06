@@ -1383,65 +1383,85 @@ function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg
 let directoryCache = [];
 let loaded = false;
 
+// Resúmenes profesionales base (si el fetch no carga, usa esto)
+const BASE_SUMMARIES = {
+  "origins of disabled people": "From Directory - Origins of disabled people: Core base - disability is not random birth defect. It is generational hidden effect from chemical exposure, chronic stress, and trauma transmitted before birth. Appearance: isolated medical case. Effect: generational pattern.",
+  "origins of cancer": "From Directory - Origins of cancer: Core base - cancer is long-term hidden effect accumulation. Appearance: legal food, pleasant flavor, normal lifestyle. Effect: cellular breakdown. Flavor convinces, effect is cancer. Full mechanism documented in Directory.",
+  "same-sex gender fraud mindset": "From Directory - Same-sex gender fraud mindset: Core base - mindset is engineered through media and education. Appearance: freedom and identity. Effect: confusion of family roles and population structure.",
+  "physical same-sex gender fraud: 21+ only": "From Directory - Physical same-sex gender fraud: 21+ only: Core base - physical aspect analyzed as appearance vs effect. Appearance: pleasure and consent narrative. Effect: physical and psychological long-term damage documented in Directory.",
+  "same-sex direct and summarized": "From Directory - Same-sex direct and summarized: Core base - summarized evidence: appearance is love narrative, effect is disruption of natural family building block. See full summary in Directory.",
+  "origins of infidelity": "From Directory - Origins of infidelity: Core base - infidelity is not moral failure alone. It is hidden effect of emotional starvation and financial fraud in relationship. Appearance: desire. Effect: family breakdown.",
+  "the money and the effect": "From Directory - The money and the effect: Core base - money is appearance of value. Effect is control system. Appearance: paper equals wealth. Effect: debt and obedience. Founded Feb 2025 analysis in Directory.",
+  "origins of suicides": "From Directory - Origins of suicides: Core base - suicide is final effect of long-term hidden effect of isolation and chemical imbalance from system. Appearance: personal decision. Effect: systemic result.",
+  "origins of being woman and men": "From Directory - Origins of being woman and men: Core base - woman and man have distinct biological and spiritual origins. Appearance: gender is social construct. Effect: confusion and conflict. Full truth in Directory.",
+  "origins of assassins": "From Directory - Origins of assassins: Core base - assassin is created by systemic trauma and programming. Appearance: evil individual. Effect: product of hidden system.",
+  "human love": "From Directory - Human love: Core base - true human love is based on truth and transparency, not flavor. Appearance: romantic flavor. Effect: long-term growth and truth."
+};
+
 async function loadDirectory(){
   if(loaded) return;
-  const links = [...document.querySelectorAll('a[href*=".html"]')].slice(0,25);
-  for(let a of links){
+  const links = [...document.querySelectorAll('a[href$=".html"]')].filter(a=>{
+    const t=a.textContent.trim().toLowerCase();
+    return t.length>3 && t.length<70 &&!t.includes('explore team') &&!t.includes('→') &&!t.includes('new time');
+  });
+  for(let a of links.slice(0,20)){
     try{
       const html = await (await fetch(a.href)).text();
-      const text = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
-      directoryCache.push({title: a.textContent.trim(), url: a.href, content: text});
+      const clean = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,10000);
+      if(clean.length>100) directoryCache.push({title: a.textContent.trim().toLowerCase(), url: a.href, content: clean});
     }catch(e){}
   }
   loaded = true;
 }
 
-// Abrevia lo más importante del link
-function summarize(content, question){
-  const qWords = question.toLowerCase().split(/\s+/).filter(w=>w.length>3);
-  const sentences = content.split(/\.|\n/).filter(s=>s.length>20);
-  let important = sentences.filter(s => qWords.some(w => s.toLowerCase().includes(w)));
-  if(important.length===0) important = sentences.slice(0,3);
-  let summary = important.slice(0,2).join('. ').trim();
-  if(summary.length > 320) summary = summary.slice(0,320) + '...';
-  return summary + '.';
-}
-
 function findClosest(q){
   const low = q.toLowerCase();
-  let best=null, score=0;
+  // primero busca en cache real
   for(let doc of directoryCache){
-    let s=0;
-    low.split(/\s+/).forEach(w=>{ if(w.length>2 && doc.content.toLowerCase().includes(w)) s++; });
-    if(doc.title.toLowerCase().split(/\s+/).some(t=> low.includes(t))) s+=5;
-    if(s>score){ score=s; best=doc; }
+    if(low.includes('cancer') && doc.title.includes('cancer')) return doc;
+    if(low.includes('disabled') && doc.title.includes('disabled')) return doc;
+    if(low.includes('infidelity') && doc.title.includes('infidelity')) return doc;
+    if(low.includes('money') && doc.title.includes('money')) return doc;
+    if(low.includes('suicide') && doc.title.includes('suicides')) return doc;
+    if(low.includes('assassin') && doc.title.includes('assassins')) return doc;
+    if(low.includes('human love') && doc.title.includes('human love')) return doc;
+    if(low.includes('woman') || low.includes('man')){ if(doc.title.includes('being woman')) return doc; }
   }
-  return best;
+  // si no hay cache, busca en BASE_SUMMARIES por titulo
+  for(let key in BASE_SUMMARIES){
+    if(low.split(/\s+/).some(w=> key.includes(w) && w.length>3)) return {title: key, isBase: true};
+    if(key.split(/\s+/).some(w=> low.includes(w) && w.length>3)) return {title: key, isBase: true};
+  }
+  return directoryCache[0] || {title: "origins of cancer", isBase: true};
 }
 
-async function getAnswer(q){
-  await loadDirectory();
-  const match = findClosest(q);
-  if(!match){
-    return `Based on New Time Directory (Founded Feb 2025, USA) for "${q}": Appearance is flavor that convinces you, Effect is the hidden result. Please see Directory for full professional documentation.`;
-  }
-  const important = summarize(match.content, q);
-  return `From Directory - ${match.title}:\n${important}\n\nAs we document in New Time: Appearance is flavor, Effect is the result. Full text in Directory: ${match.title}.`;
+function getImportantBase(doc, q){
+  if(doc.isBase) return BASE_SUMMARIES[doc.title];
+  // si es fetch real, resume a 2 bases importantes
+  const sentences = doc.content.split('.').filter(s=>s.length>30 && s.length<350).slice(0,6);
+  const qWords = q.toLowerCase().split(/\s+/).filter(w=>w.length>3);
+  let important = sentences.filter(s=> qWords.some(k=> s.toLowerCase().includes(k)));
+  if(important.length===0) important = sentences.slice(0,2);
+  const short = important.slice(0,2).join('. ') + '.';
+  return `From Directory - ${doc.title}:\n${short.slice(0,400)}\n— New Time, Founded Feb 2025 USA. Full text in Directory.`;
 }
 
 async function askAI(q){
+  await loadDirectory();
   chat.style.display='block';
   addMsg(q,'user');
-  const searching = document.createElement('div'); searching.className='nt-msg bot'; searching.textContent='Searching in Directory: '+q+'...'; msgs.appendChild(searching); msgs.scrollTop=msgs.scrollHeight;
-  const ans = await getAnswer(q);
-  searching.remove();
-  addMsg(ans,'bot');
+  const temp=document.createElement('div'); temp.className='nt-msg bot'; temp.textContent='Searching Directory...'; msgs.appendChild(temp);
+  const match = findClosest(q);
+  const answer = match.isBase ? BASE_SUMMARIES[match.title] : getImportantBase(match, q);
+  temp.remove();
+  addMsg(answer,'bot');
 }
 
 document.querySelectorAll('.nt-topic-btn').forEach(b=>b.onclick=()=>askAI(b.dataset.q));
 document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
 document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
 </script>
+
                 
 
             </div>
