@@ -1554,43 +1554,31 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <!-- BARRA NEW TIME DE UN VISTAZO - NEGRA ELEGANTE ESTILO HARVARD -->
+        <!-- NEW TIME AT A GLANCE - COMPACT BLACK INTRO -->
 <section class="nt-glance-bar">
   <div class="nt-glance-inner">
     
-    <!-- COLUMNA IZQUIERDA -->
     <div class="nt-glance-left">
-      <h2>New Time de un vistazo</h2>
-      <p>Desde febrero de este año, la gente ha acudido a New Time en busca de la verdad completa, la historia directa y el efecto oculto detrás del sistema.</p>
-      <a href="#" id="bioLink2" class="nt-glance-link">
-        <span class="nt-glance-arrow">→</span> Conozca más sobre nuestra historia.
-      </a>
-      <div class="nt-glance-img">
-        <img src="new.webp" alt="New Time">
-      </div>
+      <h2>New Time at a glance</h2>
+      <p>Founded in February 2025 in the United States. A direct look at the hidden effect behind the system.</p>
     </div>
 
-    <!-- COLUMNA DERECHA - STATS -->
     <div class="nt-glance-right">
       <div class="nt-stat">
         <div class="nt-stat-number">2025</div>
-        <div class="nt-stat-label">El año en que se fundó New Time en EE.UU.</div>
+        <div class="nt-stat-label">Founded in the U.S.</div>
       </div>
       <div class="nt-stat">
         <div class="nt-stat-number">11</div>
-        <div class="nt-stat-label">Investigaciones originales en el Directory este año</div>
+        <div class="nt-stat-label">Original researches this year</div>
       </div>
       <div class="nt-stat">
         <div class="nt-stat-number">100%</div>
-        <div class="nt-stat-label">Transparencia total. Sin filtros, sin censura corporativa.</div>
+        <div class="nt-stat-label">Full transparency</div>
       </div>
       <div class="nt-stat">
         <div class="nt-stat-number">6</div>
-        <div class="nt-stat-label">Categorías: Magazine, Youth, Team, Friends, All, Service</div>
-      </div>
-      <div class="nt-stat">
-        <div class="nt-stat-number">1</div>
-        <div class="nt-stat-label">Misión: Exponer la verdad detrás de las apariencias.</div>
+        <div class="nt-stat-label">Categories to explore</div>
       </div>
     </div>
 
@@ -1599,107 +1587,65 @@ opacity: 1;
 
 <style>
 .nt-glance-bar{
-  background:#000000; /* NEGRO PURO ELEGANTE */
+  background:#000;
   color:#fff;
   width:100vw;
   margin-left:calc(-50vw + 50%);
-  padding:72px 24px;
+  padding:36px 24px; /* MAS PEQUEÑO */
   border-top:1px solid #151515;
   border-bottom:1px solid #151515;
 }
 .nt-glance-inner{
-  max-width:1280px;
+  max-width:1100px;
   margin:0 auto;
   display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:80px;
-  align-items:start;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:40px;
+  align-items:center;
 }
 .nt-glance-left h2{
   font-family:'Cormorant Garamond', serif;
-  font-size:42px;
-  font-weight:300;
-  line-height:0.95;
+  font-size:28px;
+  font-weight:400;
   letter-spacing:0.5px;
-  margin-bottom:18px;
+  margin-bottom:10px;
   color:#fff;
+  text-transform:uppercase;
 }
 .nt-glance-left p{
   font-family:'Inter', sans-serif;
-  font-size:15px;
-  line-height:1.6;
-  color:rgba(255,255,255,0.75);
-  max-width:420px;
-  margin-bottom:24px;
-  font-weight:300;
-}
-.nt-glance-link{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  font-family:'Inter', sans-serif;
   font-size:13px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:500;
-  margin-bottom:32px;
-  transition:opacity .2s;
-}
-.nt-glance-link:hover{opacity:0.7;}
-.nt-glance-arrow{
-  width:28px;height:28px;
-  border-radius:50%;
-  background:#fff;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-}
-.nt-glance-img{
-  width:100%;
-  max-width:480px;
-  height:280px;
-  overflow:hidden;
-  background:#0a0a0a;
-}
-.nt-glance-img img{
-  width:100%;height:100%;object-fit:cover;
-  filter:grayscale(0.2) contrast(1.1);
+  line-height:1.6;
+  color:rgba(255,255,255,0.65);
+  max-width:320px;
+  font-weight:300;
+  margin:0;
 }
 .nt-glance-right{
-  display:flex;
-  flex-direction:column;
-  gap:36px;
-  padding-top:8px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:20px;
 }
 .nt-stat-number{
   font-family:'Cormorant Garamond', serif;
-  font-size:38px;
-  font-weight:300;
-  line-height:1;
+  font-size:26px;
+  font-weight:400;
   color:#fff;
-  margin-bottom:8px;
+  margin-bottom:4px;
 }
 .nt-stat-label{
   font-family:'Inter', sans-serif;
-  font-size:13px;
-  line-height:1.5;
-  color:rgba(255,255,255,0.85);
-  font-weight:400;
-  max-width:360px;
-  border-bottom:1px solid rgba(255,255,255,0.15);
-  padding-bottom:14px;
-  display:inline-block;
+  font-size:11px;
+  line-height:1.4;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.3px;
+  text-transform:uppercase;
 }
-
-/* MOBILE IGUAL QUE HARVARD */
 @media(max-width:900px){
-  .nt-glance-inner{grid-template-columns:1fr;gap:40px;}
-  .nt-glance-left h2{font-size:32px;}
-  .nt-glance-img{max-width:100%;height:240px;}
-  .nt-glance-bar{padding:48px 20px;}
-  .nt-stat-number{font-size:30px;}
+  .nt-glance-inner{grid-template-columns:1fr;gap:24px;}
+  .nt-glance-right{grid-template-columns: repeat(2, 1fr);gap:16px;}
+  .nt-glance-bar{padding:28px 20px;}
+  .nt-glance-left h2{font-size:24px;}
 }
 </style>
         <section class="directory" id="about">
@@ -2047,3 +1993,132 @@ opacity: 1;
 
         // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
+        const teamLink = document.getElementById('teamLink');
+        const teamModalClose = document.getElementById('teamModalClose');
+
+        function openTeamModal(e) {
+            if (e) e.preventDefault();
+            teamModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
+        function closeTeamModal() {
+            teamModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        teamLink.addEventListener('click', openTeamModal);
+        teamModalClose.addEventListener('click', closeTeamModal);
+        teamModal.addEventListener('click', (e) => {
+            if (e.target === teamModal) closeTeamModal();
+        });
+
+        // MODAL CONTACTS - NUEVO
+        const contactsModal = document.getElementById('contactsModal');
+        const contactsLink = document.getElementById('contactsLink');
+        const contactsModalClose = document.getElementById('contactsModalClose');
+
+        function openContactsModal(e) {
+            if (e) e.preventDefault();
+            contactsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMenu();
+        }
+
+        function closeContactsModal() {
+            contactsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        contactsLink.addEventListener('click', openContactsModal);
+        contactsModalClose.addEventListener('click', closeContactsModal);
+        contactsModal.addEventListener('click', (e) => {
+            if (e.target === contactsModal) closeContactsModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (isMenuOpen) closeMenu();
+                if (youngModal.classList.contains('active')) closeYoungModal();
+                if (bioModal.classList.contains('active')) closeBioModal();
+                if (teamModal.classList.contains('active')) closeTeamModal();
+                if (contactsModal.classList.contains('active')) closeContactsModal();
+            }
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptNecessary = document.getElementById('acceptNecessary');
+        const acceptAll = document.getElementById('acceptAll');
+
+        setTimeout(() => {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('visible');
+                document.body.classList.add('cookie-visible');
+            }
+        }, 800);
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-visible');
+        }
+
+        acceptNecessary.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'necessary');
+            hideCookieBanner();
+        });
+
+        acceptAll.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            hideCookieBanner();
+        });
+
+        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
+        let currentAudio = null;
+        let currentBtn = null;
+
+        document.querySelectorAll('.audio-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const audioSrc = this.getAttribute('data-audio');
+                
+                if (currentAudio && currentBtn === this) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    currentBtn.classList.remove('playing');
+                    currentAudio = null;
+                    currentBtn = null;
+                    return;
+                }
+                
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    if (currentBtn) currentBtn.classList.remove('playing');
+                }
+                
+                currentAudio = new Audio(audioSrc);
+                currentBtn = this;
+                
+                currentAudio.play().then(() => {
+                    this.classList.add('playing');
+                }).catch(err => {
+                    console.error('Error al reproducir:', audioSrc, err);
+                    alert('No se pudo cargar: ' + audioSrc + '\nVerifica que el archivo existe.');
+                    this.classList.remove('playing');
+                });
+                
+                currentAudio.addEventListener('ended', () => {
+                    if (currentBtn) currentBtn.classList.remove('playing');
+                    currentAudio = null;
+                    currentBtn = null;
+                });
+            });
+         });
+     </script>
+  </body>
+   </html>
+
+      
