@@ -1375,74 +1375,66 @@ opacity: 1;
   </div>
 </div>
 
+<div id="nt-friends-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; align-items:flex-end; justify-content:center; padding:10px;">
+  <div id="nt-friends-box" style="background:#fff; width:100%; max-width:480px; height:85vh; border-radius:16px 16px 0 0; display:flex; flex-direction:column; overflow:hidden;">
+    <div style="background:#000; color:#fff; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+      <b>NEW TIME</b><span id="nt-friends-close" style="cursor:pointer; font-size:22px;">✕</span>
+    </div>
+    <div id="nt-friends-msgs" style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px;">
+      <div class="nt-msg bot" style="background:#f0f0f0; padding:12px; border-radius:12px;">Welcome to Chat Friends. This is New Time - Founded February 2025, USA. We talk about hidden effects. Ask me about any topic in the Directory below. How can I help you navigate this page?</div>
+    </div>
+    <div id="nt-friends-chat" style="padding:10px; border-top:1px solid #ddd; display:flex; gap:8px;">
+      <input id="nt-friends-text" placeholder="Ask..." style="flex:1; padding:14px; border:1px solid #ddd; border-radius:24px; outline:none;">
+      <button id="nt-friends-send" style="background:#000; color:#fff; border:none; width:48px; height:48px; border-radius:50%; cursor:pointer;">→</button>
+    </div>
+  </div>
+</div>
+<button id="nt-friends-btn" style="position:fixed; bottom:20px; right:20px; background:#000; color:#fff; border:none; padding:14px 20px; border-radius:30px; z-index:9998; cursor:pointer;">Chat Friends</button>
+
 <script>
-const overlay=document.getElementById('nt-friends-overlay');const btn=document.getElementById('nt-friends-btn');const close=document.getElementById('nt-friends-close');const msgs=document.getElementById('nt-friends-msgs');const chat=document.getElementById('nt-friends-chat');
-btn.onclick=()=>overlay.classList.add('show');close.onclick=()=>overlay.classList.remove('show');overlay.onclick=(e)=>{if(e.target===overlay)overlay.classList.remove('show')};
-function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+const overlay=document.getElementById('nt-friends-overlay');const btn=document.getElementById('nt-friends-btn');const close=document.getElementById('nt-friends-close');const msgs=document.getElementById('nt-friends-msgs');
+btn.onclick=()=>{overlay.style.display='flex';}; close.onclick=()=>{overlay.style.display='none';}; overlay.onclick=(e)=>{if(e.target===overlay)overlay.style.display='none';};
+function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who; d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:85%;':'background:#f0f0f0;padding:12px;border-radius:18px 18px 18px 4px;align-self:flex-start;max-width:85%; white-space:pre-wrap;'; d.textContent=t; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;}
 
-// QUITA LOS 3 DEL CHAT
-document.querySelectorAll('.nt-topic-btn').forEach(b=> b.style.display='none');
-
-let directoryCache = [];
-let loaded = false;
-
+let directoryCache=[]; let loaded=false;
 async function loadDirectory(){
   if(loaded) return;
-  const links = [...document.querySelectorAll('a[href$=".html"]')].filter(a=>{
+  const links=[...document.querySelectorAll('a[href$=".html"]')].filter(a=>{
     const t=a.textContent.trim().toLowerCase();
     return t.length>3 && t.length<70 &&!t.includes('explore team') &&!t.includes('→') &&!t.includes('new time');
   });
   for(let a of links.slice(0,30)){
-    try{
-      const html = await (await fetch(a.href)).text();
-      const clean = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,10000);
-      if(clean.length>100) directoryCache.push({title: a.textContent.trim(), content: clean});
-    }catch(e){}
+    try{const html=await(await fetch(a.href)).text(); const clean=html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,10000); if(clean.length>100) directoryCache.push({title:a.textContent.trim(), content:clean});}catch(e){}
   }
-  loaded = true;
+  loaded=true;
 }
-
 function getAnswer(q){
-  const low = q.toLowerCase();
-  
-  // HABLA GENERAL COMO YO, DE LA PÁGINA, PROFESIONAL
-  if(low.includes('what is new time') || low.includes('que es new time')){
-    return "New Time is a research platform founded in February 2025 in the United States. As described at the top of this page, we focus on full transparency and direct answers. The Directory below contains all our professional writings. How can I help you navigate it?";
+  const low=q.toLowerCase();
+  if(low.includes('what is new time')||low.includes('que es')){
+    return "New Time is a research platform founded in February 2025 in the United States, as described at the top of this page. We focus on full transparency and direct answers. The Directory on this page contains 11 professional writings: Origins of disabled people, Origins of cancer, Same-sex gender fraud, The money and the effect, Origins of infidelity, Origins of suicides, Origins of being woman and men, Origins of assassins, Human love, and more. Which one would you like summarized?";
   }
-  if(low.includes('directory')){
-    return "The Directory on this page contains 11 professional writings as you saw: Origins of disabled people, Origins of cancer, Same-sex gender fraud mindset, Physical same-sex gender fraud, Same-sex direct and summarized, Origins of infidelity, The money and the effect, Origins of suicides, Origins of being woman and men, Origins of assassins, and Human love. Each page explains Appearance vs Effect. Which one would you like a summary of?";
-  }
-  // Busca en todos los links
-  let best = null; let max = -1;
+  let best=null, max=-1;
   for(let doc of directoryCache){
-    let score=0;
-    low.split(/\s+/).forEach(w=>{ if(w.length>2 && doc.content.toLowerCase().includes(w)) score++; });
-    if(score>max){max=score; best=doc;}
+    let s=0; low.split(/\s+/).forEach(w=>{ if(w.length>2 && doc.content.toLowerCase().includes(w)) s++; });
+    if(s>max){max=s; best=doc;}
   }
   if(best){
-    const sentences = best.content.split('.').filter(s=>s.length>40 && s.length<400).slice(0,2).join('. ') + '.';
-    return `Based on this page and Directory - ${best.title}: ${sentences.slice(0,380)} Full professional analysis is available in the Directory section on this page.`;
+    const short=best.content.split('.').filter(s=>s.length>40 && s.length<400).slice(0,2).join('. ').slice(0,400)+'.';
+    return `From Directory - ${best.title}:\n${short}\n\n— New Time (Founded Feb 2025). Based on the most important bases of this writing. Full text available in Directory on this page.`;
   }
-  return `This is New Time - Founded February 2025, USA. This page is dedicated to explaining hidden effects behind common narratives. As stated: "With New Times, you get the full story and direct answers." Your question "${q}" is addressed in our Directory writings. Could you specify which Directory topic you want me to summarize for you?`;
+  return `This is New Time. Founded February 2025, USA. This page documents Appearance vs Effect. Your question "${q}" is covered in our Directory with 11 writings. Please specify which topic you want, and I will provide the most important bases from that Directory link, in English.`;
 }
-
 async function askAI(q){
   await loadDirectory();
-  chat.style.display='block';
   addMsg(q,'user');
-  setTimeout(()=>{ addMsg(getAnswer(q),'bot'); }, 300);
+  const temp=document.createElement('div'); temp.textContent='Searching all Directory links...'; temp.style.cssText='background:#f0f0f0;padding:12px;border-radius:12px;align-self:flex-start;'; msgs.appendChild(temp);
+  const ans=getAnswer(q);
+  temp.remove();
+  addMsg(ans,'bot');
 }
-
-document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
-document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
+document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text'); if(!i.value.trim())return; askAI(i.value.trim()); i.value='';};
+document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click();});
 </script>
-
-<style>
-/* Asegura que los 3 botones no aparezcan */
-.nt-topic-btn{ display:none !important; }
-</style>              
-
-
                 
 
             </div>
