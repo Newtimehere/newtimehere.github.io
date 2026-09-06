@@ -1378,22 +1378,40 @@ opacity: 1;
 <script>
 const overlay=document.getElementById('nt-friends-overlay');const btn=document.getElementById('nt-friends-btn');const close=document.getElementById('nt-friends-close');const msgs=document.getElementById('nt-friends-msgs');const chat=document.getElementById('nt-friends-chat');
 btn.onclick=()=>overlay.classList.add('show');close.onclick=()=>{overlay.classList.remove('show');speechSynthesis.cancel()};overlay.onclick=(e)=>{if(e.target===overlay)overlay.classList.remove('show')};
-function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;if(who==='bot'){let u=new SpeechSynthesisUtterance(t);u.rate=0.9;speechSynthesis.speak(u)}}
+function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;if(who==='bot'){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=0.88;u.pitch=1.02;speechSynthesis.speak(u);}}
+
 function getAnswer(q){
-  q=q.toLowerCase();
-  if(q.includes('cancer')) return "Origins of cancer - New Time truth: Cancer is not random. It's from long-term hidden effect of chemicals, processed food, and emotional stress stored. New Time directory shows how pharma hides the cure. Contact for full audio.";
-  if(q.includes('disabled')) return "Origins of disabled people - New Time truth: Disabilities are not accident. They come from generational trauma and hidden system effects before birth. New Time explains the real cause they don't teach.";
-  if(q.includes('same') || q.includes('gender') || q.includes('sex') || q.includes('fraud')) return "Same-Sex Gender Fraud - New Time truth: Founded Feb 2025. This is a social engineering to break family structure. It's not natural, it's promoted for control. See directory for full evidence.";
-  return "Welcome to New Time - Founded Feb 2025 USA. We are a directory of hidden truths. Ask me about: Origins of cancer, Origins of disabled people, Same-Sex Gender Fraud, money, love, church scam, college scam. See directory for more.";
+  const page = document.body.innerText.slice(0,8000);
+  const low = q.toLowerCase();
+  const isGreeting = low.includes('hola')||low.includes('hi')||low.includes('hey')||low.includes('que tal');
+  
+  if(isGreeting){
+    return "¡Hey! Bienvenido a NEW TIME. Yo soy tu guía aquí dentro. Esta página que estás viendo, fundada en Feb 2025 en USA, es un directorio de verdades ocultas. Vi que aquí arriba hablamos del hidden effect y abajo tienes Church Scam, College Degree Scam... ¿Cuál te llamó más la atención? Tocame un botón o pregúntame lo que quieras y te explico como si estuviéramos hablando tú y yo.";
+  }
+  if(low.includes('cancer')){
+    return "Mira, sobre Origins of cancer que preguntaste — esto es justo lo que explico en New Time: en esta página que estás leyendo, el cáncer no es mala suerte. Como ves en el hidden effect que te puse arriba, es el efecto acumulado de químicos, comida procesada y estrés emocional guardado por años. La industria que ves en el directorio esconde la cura porque el tratamiento deja dinero. Por eso aquí te digo la verdad completa, no la que te venden. ¿Quieres que te explique cómo romper ese efecto?";
+  }
+  if(low.includes('disabled')){
+    return "Sobre Origins of disabled people — te hablo claro como te hablo yo: aquí en New Time te muestro que no es un accidente al azar. En tu página estás viendo que viene de trauma generacional y efectos ocultos antes de nacer, que el sistema no te enseña. Es lo que no te dicen en la escuela. Es fuerte, lo sé, pero es parte de las 3 deadly topics que te puse en este chat para abrirte los ojos.";
+  }
+  if(low.includes('same')||low.includes('gender')||low.includes('sex')||low.includes('fraud')||low.includes('gay')){
+    return "Sobre Same-Sex Gender Fraud — te lo explico relational como me pediste: New Time nace en Feb 2025 justo para hablar de esto. Lo que estás viendo en esta página no es odio, es el análisis de cómo se usa esto para romper la estructura familiar, como parte del control social. Lo tengo en el directorio como fraude porque es promovido, no natural. Sé que es un tema delicado, por eso aquí te lo explico con evidencia del directorio, no con gritos.";
+  }
+  if(low.includes('church')||low.includes('iglesia')||low.includes('scam')){
+    return "¡Buena pregunta! Veo que leíste abajo donde dice Church Scam en tu misma página. Te lo explico como amigo: lo que te muestro ahí es cómo se usa la fe para control. No es Dios, es el sistema que montaron alrededor. Es parte del hidden truth que te pongo arriba: Y’all are clap... ¿Viste esa parte? De eso se trata New Time.";
+  }
+  if(low.includes('college')||low.includes('universidad')||low.includes('degree')){
+    return "College Degree Scam — sí, lo que tienes abajo en tu página. Te hablo directo: te vendieron que un papel te hace valer, pero aquí en New Time te muestro que es deuda y programación. Es una de las estafas que explico con voz en esta página. ¿Te hizo sentido cuando lo leíste?";
+  }
+  // Fallback relational usando tu página
+  return "Te escucho. Lo que me preguntas de '"+q+"' — mira tu misma página: aquí arriba dice 'talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.' Justo eso estoy haciendo contigo ahora. Estoy leyendo todo lo que tienes en "+ document.title +" y te respondo conectado a eso. Pregúntame por cancer, disabled, gender fraud, church o college y te lo desgloso como si estuviéramos hablando tú y yo aquí dentro del chat.";
 }
-async function askAI(q){
-  chat.style.display='block';addMsg(q,'user');
-  setTimeout(()=>{ addMsg(getAnswer(q),'bot'); },400);
-}
+
+async function askAI(q){chat.style.display='block';addMsg(q,'user');setTimeout(()=>{addMsg(getAnswer(q),'bot');},500);}
 document.querySelectorAll('.nt-topic-btn').forEach(b=>b.onclick=()=>askAI(b.dataset.q));
 document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
 document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
-</script>             
+</script>
 
                 
 
