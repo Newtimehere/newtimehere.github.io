@@ -1105,77 +1105,71 @@ opacity: 1;
             padding: 22px 0;
             gap: 16px;
         }
-        .nt-black-canton{
-  background: #0b1226;
-  color: white;
-  padding: 70px 4%;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-.nt-black-inner{
-  max-width: 1350px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
-}
-.nt-black-left h2{
-  font-size: 56px;
-  line-height: 0.9;
-  font-weight: 300;
-  font-family: Georgia, serif;
-}
-.nt-black-left p{
-  max-width: 440px;
-  margin-top: 20px;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-.nt-black-link{
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: white;
-  text-decoration: none;
-  margin: 25px 0 35px 0;
-}
-.nt-black-arrow{
-  background: white;
-  color: black;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nt-black-img img{
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-.nt-stat{
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding: 26px 0;
-}
-.nt-stat:first-child{
-  border-top: 1px solid rgba(255,255,255,0.15);
-}
-.nt-stat-number{
-  font-size: 42px;
-  font-family: Georgia, serif;
-}
-.nt-stat-label{
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: 8px;
-  text-decoration: underline;
-}
-@media(max-width: 800px){
-  .nt-black-inner{ grid-template-columns: 1fr; }
-}
-       .hero-signature {
+
+        .mobile-nav-link {
+            font-size: 18px;
+        }
+
+        .cookie-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .cookie-buttons {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .young-modal, .bio-modal, .team-modal, .contacts-modal {
+            margin: 20px auto;
+            padding: 32px 20px;
+        }
+
+        .young-modal-title, .bio-modal-title, .team-modal-title, .contacts-modal-title {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-inner {
+            padding: 0 8px 0 10px;
+        }
+
+        .logo-wrapper {
+            gap: 8px;
+        }
+
+        .logo-icon {
+            height: 36px;
+            margin-left: 0;
+        }
+
+        .logo-text {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            padding: 16px 20px;
+        }
+
+        .hero-main-logo {
+            max-width: 320px;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-signature {
             margin-top: 16px;
             margin-bottom: 0;
         }
@@ -1560,21 +1554,6 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <section class="nt-black-canton">
-  <div class="nt-black-inner">
-    <div class="nt-black-left">
-      <h2>NEW TIME<br>de un vistazo</h2>
-      <p>Durante siglos, la gente ha buscado la verdad en instituciones. En New Time, la buscamos debajo de la superficie, en el efecto oculto de las cosas.</p>
-      <a href="#" class="nt-black-link"><span class="nt-black-arrow">→</span> Conoce más sobre nuestra historia.</a>
-    </div>
-    <div class="nt-black-right">
-      <div class="nt-stat"><div class="nt-stat-number">Feb 2025</div><div class="nt-stat-label">El año en que se fundó New Time en EE.UU.</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">11</div><div class="nt-stat-label">Investigaciones directas en el Directorio 2025-2026</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">100%</div><div class="nt-stat-label">Transparencia total. La historia completa sin filtros.</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">0</div><div class="nt-stat-label">Rostros expuestos. Seguridad total para nuestro equipo.</div></div>
-    </div>
-  </div>
-</section>
 
         <section class="directory" id="about">
             <div class="directory-header">
@@ -1921,130 +1900,3 @@ opacity: 1;
 
         // MODAL TEAM
         const teamModal = document.getElementById('teamModal');
-        const teamLink = document.getElementById('teamLink');
-        const teamModalClose = document.getElementById('teamModalClose');
-
-        function openTeamModal(e) {
-            if (e) e.preventDefault();
-            teamModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
-
-        function closeTeamModal() {
-            teamModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        teamLink.addEventListener('click', openTeamModal);
-        teamModalClose.addEventListener('click', closeTeamModal);
-        teamModal.addEventListener('click', (e) => {
-            if (e.target === teamModal) closeTeamModal();
-        });
-
-        // MODAL CONTACTS - NUEVO
-        const contactsModal = document.getElementById('contactsModal');
-        const contactsLink = document.getElementById('contactsLink');
-        const contactsModalClose = document.getElementById('contactsModalClose');
-
-        function openContactsModal(e) {
-            if (e) e.preventDefault();
-            contactsModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeMenu();
-        }
-
-        function closeContactsModal() {
-            contactsModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        contactsLink.addEventListener('click', openContactsModal);
-        contactsModalClose.addEventListener('click', closeContactsModal);
-        contactsModal.addEventListener('click', (e) => {
-            if (e.target === contactsModal) closeContactsModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (isMenuOpen) closeMenu();
-                if (youngModal.classList.contains('active')) closeYoungModal();
-                if (bioModal.classList.contains('active')) closeBioModal();
-                if (teamModal.classList.contains('active')) closeTeamModal();
-                if (contactsModal.classList.contains('active')) closeContactsModal();
-            }
-        });
-
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptNecessary = document.getElementById('acceptNecessary');
-        const acceptAll = document.getElementById('acceptAll');
-
-        setTimeout(() => {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
-
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
-
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
-
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
-
-        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
-        let currentAudio = null;
-        let currentBtn = null;
-
-        document.querySelectorAll('.audio-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const audioSrc = this.getAttribute('data-audio');
-                
-                if (currentAudio && currentBtn === this) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-                    currentBtn.classList.remove('playing');
-                    currentAudio = null;
-                    currentBtn = null;
-                    return;
-                }
-                
-                if (currentAudio) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-                    if (currentBtn) currentBtn.classList.remove('playing');
-                }
-                
-                currentAudio = new Audio(audioSrc);
-                currentBtn = this;
-                
-                currentAudio.play().then(() => {
-                    this.classList.add('playing');
-                }).catch(err => {
-                    console.error('Error al reproducir:', audioSrc, err);
-                    alert('No se pudo cargar: ' + audioSrc + '\nVerifica que el archivo existe.');
-                    this.classList.remove('playing');
-                });
-                
-                currentAudio.addEventListener('ended', () => {
-                    if (currentBtn) currentBtn.classList.remove('playing');
-                    currentAudio = null;
-                    currentBtn = null;
-                });
-            });
-         });
-     </script>
-  </body>
-   </html>
