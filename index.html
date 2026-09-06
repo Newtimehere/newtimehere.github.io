@@ -1554,7 +1554,7 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <div class="nt-glance-wrapper">
+        <!-- NEW TIME AT A GLANCE - COMPLETO COMO LA FOTO -->
 <section class="nt-glance-bar">
   <div class="nt-glance-inner">
     <div class="nt-glance-left">
@@ -1571,53 +1571,61 @@ opacity: 1;
     </div>
   </div>
 </section>
-</div>
 
 <style>
-.nt-glance-wrapper{
-  max-width:900px;
-  margin: 36px auto 0 auto;
-  padding: 0 24px;
-  box-sizing:border-box;
-}
 .nt-glance-bar{
   background:#000;
   color:#fff;
-  width:100%;
-  max-width:520px;
-  margin:0;
-  padding:20px 16px;
-  border:1px solid #151515;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  margin-top:32px;
+  padding:32px 24px;
+  border-top:1px solid #111;
+  border-bottom:1px solid #111;
   box-sizing:border-box;
 }
-.nt-glance-inner{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
+.nt-glance-inner{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:40px;
+  text-align:left;
+}
 .nt-glance-left h2{
   font-family:'Cormorant Garamond', serif;
   font-size:14px;
   font-weight:500;
-  letter-spacing:1px;
+  letter-spacing:1.2px;
   text-transform:uppercase;
   color:#fff;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 .nt-glance-left p{
   font-family:'Inter', sans-serif;
-  font-size:9px;
-  line-height:1.6;
-  color:rgba(255,255,255,0.6);
+  font-size:10px;
+  line-height:1.7;
+  color:rgba(255,255,255,0.55);
   font-weight:300;
-  margin-bottom:12px;
-  max-width:260px;
+  max-width:280px;
+  margin-bottom:16px;
 }
-.nt-glance-img{width:100%;max-width:240px;height:95px;background:#0a0a0a;overflow:hidden}
+.nt-glance-img{
+  width:100%;
+  max-width:300px;
+  height:130px;
+  background:#0a0a0a;
+  overflow:hidden;
+}
 .nt-glance-img img{width:100%;height:100%;object-fit:cover}
-.nt-glance-right{display:flex;flex-direction:column;gap:12px}
-.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:14px;font-weight:400;color:#fff}
-.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;line-height:1.4;color:rgba(255,255,255,0.5);font-weight:300;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:5px;display:inline-block;max-width:240px}
+.nt-glance-right{display:flex;flex-direction:column;gap:18px;padding-top:4px}
+.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:14px;font-weight:400;color:#fff;margin-bottom:3px}
+.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;line-height:1.5;color:rgba(255,255,255,0.5);font-weight:300;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:6px;display:inline-block;max-width:260px}
+
 @media(max-width:768px){
-  .nt-glance-wrapper{padding:0 20px}
-  .nt-glance-bar{max-width:100%}
-  .nt-glance-inner{grid-template-columns:1fr}
+  .nt-glance-bar{padding:24px 20px}
+  .nt-glance-inner{grid-template-columns:1fr;gap:24px}
+  .nt-glance-img{max-width:100%;height:160px}
 }
 </style>
         <section class="directory" id="about">
