@@ -1554,7 +1554,7 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
-        <!-- NEW TIME AT A GLANCE - ESQUINAS 100% EXACTAS CON DIRECTORY -->
+        <!-- NEW TIME AT A GLANCE - COMPLETO COMO LA FOTO -->
 <section class="nt-glance-bar">
   <div class="nt-glance-inner">
     <div class="nt-glance-left">
@@ -1563,72 +1563,72 @@ opacity: 1;
       <div class="nt-glance-img"><img src="new.webp" alt="New Time"></div>
     </div>
     <div class="nt-glance-right">
-      <div class="nt-stat"><div class="nt-stat-number"></div><div class="nt-stat-label">Founded in the U.S.</div></div>
-      <div class="nt-stat"><div class="nt-stat-number"></div><div class="nt-stat-label">Original researches in the Directory</div></div>
-      <div class="nt-stat"><div class="nt-stat-number">1</div><div class="nt-stat-label">Full transparency, no corporate filter</div></div>
-      <div class="nt-stat"><div class="nt-stat-number"></div><div class="nt-stat-label">Magazine, Youth, Team, Friends, All, Service</div></div>
-      <div class="nt-stat"><div class="nt-stat-number"></div><div class="nt-stat-label">Mission: Expose the truth behind appearances</div></div>
+      <div class="nt-stat"><div class="nt-stat-number">2025</div><div class="nt-stat-label">Founded in the U.S.</div></div>
+      <div class="nt-stat"><div class="nt-stat-number">11</div><div class="nt-stat-label">Original researches in the Directory</div></div>
+      <div class="nt-stat"><div class="nt-stat-number">100%</div><div class="nt-stat-label">Full transparency, no corporate filter</div></div>
+      <div class="nt-stat"><div class="nt-stat-number">6</div><div class="nt-stat-label">Magazine, Youth, Team, Friends, All, Service</div></div>
+      <div class="nt-stat"><div class="nt-stat-number">1</div><div class="nt-stat-label">Mission: Expose the truth behind appearances</div></div>
     </div>
   </div>
 </section>
 
 <style>
-/* ESTE ES EL TRUCO - TRANSPARENTE AFUERA, NEGRO ADENTRO */
 .nt-glance-bar{
-  max-width:900px;
-  margin:32px auto 0 auto;
-  padding:0 24px; /* MISMO PADDING QUE TU DIRECTORY */
-  background:transparent;
+  background:#000;
+  color:#fff;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  margin-top:32px;
+  padding:32px 24px;
+  border-top:1px solid #111;
+  border-bottom:1px solid #111;
   box-sizing:border-box;
 }
 .nt-glance-inner{
-  background:#000000;
-  padding:20px 24px 24px 24px;
+  max-width:900px;
+  margin:0 auto;
   display:grid;
-  grid-template-columns: 310px 1fr;
-  gap:32px;
-  align-items:start;
-  box-sizing:border-box;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:40px;
+  text-align:left;
 }
 .nt-glance-left h2{
   font-family:'Cormorant Garamond', serif;
-  font-size:13px;
+  font-size:14px;
+  font-weight:500;
   letter-spacing:1.2px;
   text-transform:uppercase;
-  font-weight:500;
-  margin-bottom:10px;
   color:#fff;
+  margin-bottom:12px;
 }
 .nt-glance-left p{
   font-family:'Inter', sans-serif;
-  font-size:9.5px;
-  line-height:1.6;
+  font-size:10px;
+  line-height:1.7;
   color:rgba(255,255,255,0.55);
-  margin-bottom:14px;
+  font-weight:300;
+  max-width:280px;
+  margin-bottom:16px;
 }
 .nt-glance-img{
   width:100%;
-  height:110px;
+  max-width:300px;
+  height:130px;
   background:#0a0a0a;
   overflow:hidden;
 }
-.nt-glance-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
-.nt-glance-right{display:flex;flex-direction:column;gap:14px}
-.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:14px;color:#fff}
-.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;color:rgba(255,255,255,0.5);border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:5px;display:block}
+.nt-glance-img img{width:100%;height:100%;object-fit:cover}
+.nt-glance-right{display:flex;flex-direction:column;gap:18px;padding-top:4px}
+.nt-stat-number{font-family:'Cormorant Garamond', serif;font-size:14px;font-weight:400;color:#fff;margin-bottom:3px}
+.nt-stat-label{font-family:'Inter', sans-serif;font-size:9px;line-height:1.5;color:rgba(255,255,255,0.5);font-weight:300;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:6px;display:inline-block;max-width:260px}
+
 @media(max-width:768px){
-  .nt-glance-bar{padding:0 20px; margin-top:24px}
-  .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:18px 20px}
-  .nt-glance-img{height:140px}
+  .nt-glance-bar{padding:24px 20px}
+  .nt-glance-inner{grid-template-columns:1fr;gap:24px}
+  .nt-glance-img{max-width:100%;height:160px}
 }
 </style>
-      <section class="directory" id="about">
+        <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
             </div>
