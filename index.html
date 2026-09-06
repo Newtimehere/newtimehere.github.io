@@ -1554,7 +1554,154 @@ opacity: 1;
             </p>
             <div class="hero-signature">NEW TIMES</div>
         </section>
+        <!-- BARRA NEW TIME DE UN VISTAZO - NEGRA ELEGANTE ESTILO HARVARD -->
+<section class="nt-glance-bar">
+  <div class="nt-glance-inner">
+    
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="nt-glance-left">
+      <h2>New Time de un vistazo</h2>
+      <p>Desde febrero de este año, la gente ha acudido a New Time en busca de la verdad completa, la historia directa y el efecto oculto detrás del sistema.</p>
+      <a href="#" id="bioLink2" class="nt-glance-link">
+        <span class="nt-glance-arrow">→</span> Conozca más sobre nuestra historia.
+      </a>
+      <div class="nt-glance-img">
+        <img src="new.webp" alt="New Time">
+      </div>
+    </div>
 
+    <!-- COLUMNA DERECHA - STATS -->
+    <div class="nt-glance-right">
+      <div class="nt-stat">
+        <div class="nt-stat-number">2025</div>
+        <div class="nt-stat-label">El año en que se fundó New Time en EE.UU.</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">11</div>
+        <div class="nt-stat-label">Investigaciones originales en el Directory este año</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">100%</div>
+        <div class="nt-stat-label">Transparencia total. Sin filtros, sin censura corporativa.</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">6</div>
+        <div class="nt-stat-label">Categorías: Magazine, Youth, Team, Friends, All, Service</div>
+      </div>
+      <div class="nt-stat">
+        <div class="nt-stat-number">1</div>
+        <div class="nt-stat-label">Misión: Exponer la verdad detrás de las apariencias.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.nt-glance-bar{
+  background:#000000; /* NEGRO PURO ELEGANTE */
+  color:#fff;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  padding:72px 24px;
+  border-top:1px solid #151515;
+  border-bottom:1px solid #151515;
+}
+.nt-glance-inner{
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:80px;
+  align-items:start;
+}
+.nt-glance-left h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:42px;
+  font-weight:300;
+  line-height:0.95;
+  letter-spacing:0.5px;
+  margin-bottom:18px;
+  color:#fff;
+}
+.nt-glance-left p{
+  font-family:'Inter', sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.75);
+  max-width:420px;
+  margin-bottom:24px;
+  font-weight:300;
+}
+.nt-glance-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  margin-bottom:32px;
+  transition:opacity .2s;
+}
+.nt-glance-link:hover{opacity:0.7;}
+.nt-glance-arrow{
+  width:28px;height:28px;
+  border-radius:50%;
+  background:#fff;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+.nt-glance-img{
+  width:100%;
+  max-width:480px;
+  height:280px;
+  overflow:hidden;
+  background:#0a0a0a;
+}
+.nt-glance-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(0.2) contrast(1.1);
+}
+.nt-glance-right{
+  display:flex;
+  flex-direction:column;
+  gap:36px;
+  padding-top:8px;
+}
+.nt-stat-number{
+  font-family:'Cormorant Garamond', serif;
+  font-size:38px;
+  font-weight:300;
+  line-height:1;
+  color:#fff;
+  margin-bottom:8px;
+}
+.nt-stat-label{
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  line-height:1.5;
+  color:rgba(255,255,255,0.85);
+  font-weight:400;
+  max-width:360px;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  padding-bottom:14px;
+  display:inline-block;
+}
+
+/* MOBILE IGUAL QUE HARVARD */
+@media(max-width:900px){
+  .nt-glance-inner{grid-template-columns:1fr;gap:40px;}
+  .nt-glance-left h2{font-size:32px;}
+  .nt-glance-img{max-width:100%;height:240px;}
+  .nt-glance-bar{padding:48px 20px;}
+  .nt-stat-number{font-size:30px;}
+}
+</style>
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
