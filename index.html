@@ -1376,45 +1376,25 @@ opacity: 1;
 </div>
 
 <script>
-const overlay = document.getElementById('nt-friends-overlay');
-const btn = document.getElementById('nt-friends-btn');
-const close = document.getElementById('nt-friends-close');
-const msgs = document.getElementById('nt-friends-msgs');
-const chat = document.getElementById('nt-friends-chat');
-
-btn.onclick = () => overlay.classList.add('show');
-close.onclick = () => { overlay.classList.remove('show'); speechSynthesis.cancel(); };
-overlay.onclick = (e)=>{ if(e.target===overlay) overlay.classList.remove('show'); };
-
-function addMsg(t,who){
-  const d=document.createElement('div'); d.className='nt-msg '+who; d.textContent=t;
-  msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
-  if(who==='bot'){ let u=new SpeechSynthesisUtterance(t); u.rate=0.9; speechSynthesis.speak(u); }
+const overlay=document.getElementById('nt-friends-overlay');const btn=document.getElementById('nt-friends-btn');const close=document.getElementById('nt-friends-close');const msgs=document.getElementById('nt-friends-msgs');const chat=document.getElementById('nt-friends-chat');
+btn.onclick=()=>overlay.classList.add('show');close.onclick=()=>{overlay.classList.remove('show');speechSynthesis.cancel()};overlay.onclick=(e)=>{if(e.target===overlay)overlay.classList.remove('show')};
+function addMsg(t,who){const d=document.createElement('div');d.className='nt-msg '+who;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;if(who==='bot'){let u=new SpeechSynthesisUtterance(t);u.rate=0.9;speechSynthesis.speak(u)}}
+function getAnswer(q){
+  q=q.toLowerCase();
+  if(q.includes('cancer')) return "Origins of cancer - New Time truth: Cancer is not random. It's from long-term hidden effect of chemicals, processed food, and emotional stress stored. New Time directory shows how pharma hides the cure. Contact for full audio.";
+  if(q.includes('disabled')) return "Origins of disabled people - New Time truth: Disabilities are not accident. They come from generational trauma and hidden system effects before birth. New Time explains the real cause they don't teach.";
+  if(q.includes('same') || q.includes('gender') || q.includes('sex') || q.includes('fraud')) return "Same-Sex Gender Fraud - New Time truth: Founded Feb 2025. This is a social engineering to break family structure. It's not natural, it's promoted for control. See directory for full evidence.";
+  return "Welcome to New Time - Founded Feb 2025 USA. We are a directory of hidden truths. Ask me about: Origins of cancer, Origins of disabled people, Same-Sex Gender Fraud, money, love, church scam, college scam. See directory for more.";
 }
 async function askAI(q){
-  chat.style.display='block';
-  addMsg(q,'user');
-  addMsg('...','bot');
-  let dir = document.body.innerText.slice(0,7000);
-  let prompt = `You are NEW TIME assistant founded Feb 2025 US. Only talk about New Time. Directory: ${dir}. User asks: ${q}. Answer human, short, direct.`;
-  try{
-    let r = await fetch('https://text.pollinations.ai/'+encodeURIComponent(prompt));
-    let t = await r.text();
-    msgs.lastChild.remove();
-    addMsg(t,'bot');
-  }catch{
-    msgs.lastChild.remove();
-    addMsg('New Time is founded Feb 2025. We are a directory of truths. Ask me about cancer, disabled, fraud, money, love, etc.','bot');
-  }
+  chat.style.display='block';addMsg(q,'user');
+  setTimeout(()=>{ addMsg(getAnswer(q),'bot'); },400);
 }
-document.querySelectorAll('.nt-topic-btn').forEach(b=> b.onclick = ()=> askAI(b.dataset.q));
-document.getElementById('nt-friends-send').onclick = ()=>{
-  let i=document.getElementById('nt-friends-text'); if(!i.value.trim()) return;
-  askAI(i.value.trim()); i.value='';
-};
-document.getElementById('nt-friends-text').addEventListener('keydown',e=>{ if(e.key==='Enter') document.getElementById('nt-friends-send').click(); });
-</script>
-<!-- END CHAT FRIENDS --> 
+document.querySelectorAll('.nt-topic-btn').forEach(b=>b.onclick=()=>askAI(b.dataset.q));
+document.getElementById('nt-friends-send').onclick=()=>{let i=document.getElementById('nt-friends-text');if(!i.value.trim())return;askAI(i.value.trim());i.value='';};
+document.getElementById('nt-friends-text').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('nt-friends-send').click()});
+</script>             
+
                 
 
             </div>
