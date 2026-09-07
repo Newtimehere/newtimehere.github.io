@@ -74,7 +74,7 @@ const answers = {
   "Human love": `As your direct friend to YOU: Human love is decision not emotion.`
 };
 function makeDir(){ return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join(''); }
-function greeting(){ return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`; }
+function greeting(){ return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>
 function showAnswer(title){ return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`; }
 add(greeting(),'bot');
 msgs.addEventListener('click', e=>{
