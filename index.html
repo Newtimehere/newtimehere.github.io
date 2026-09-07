@@ -1297,69 +1297,76 @@ opacity: 1;
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
-                <style>
-#nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
-#nt-friends-btn svg{width:28px;height:28px;}
-.nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left;}
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:sans-serif}
+.nt-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:#fff;border-bottom:1px solid #eee}
+.nt-header h1{font-family:serif;letter-spacing:6px;font-weight:300;font-size:22px}
+.nt-header span{font-size:32px;cursor:pointer}
+.nt-chat-box{max-width:600px;margin:0 auto;padding:20px}
+.nt-msg{font-size:16px;line-height:1.5;margin-bottom:20px}
+.nt-dir-item{display:block;width:100%;padding:16px 20px;margin:12px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:15px;text-align:left;border:none}
+#nt-msgs{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.bubble-user{background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%}
+.bubble-bot{background:#f5f5f5;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #eee;align-self:flex-start;max-width:92%;line-height:1.6}
+.nt-input-area{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;padding:10px;display:flex;gap:8px;max-width:600px;margin:0 auto}
+.nt-input-area input{flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px}
+.nt-input-area button{background:#000;color:#fff;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer}
 </style>
+</head>
+<body>
+<div class="nt-header"><h1>NEW TIME</h1><span onclick="window.location.href='index.html'">✕</span></div>
 
-<button id="nt-friends-btn">
-<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg>
-</button>
+<div class="nt-chat-box">
+<div class="nt-msg">Before starting, do you like cold or heat more hahaha 😉.</div>
 
-<div id="nt-chat-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999998;align-items:flex-end;justify-content:center;">
-<div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;">
-<div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;"><b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
-<div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;"></div>
-<div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
-<input id="nt-input" placeholder="Say hi..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
-<button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;">→</button>
+<div id="directory">
+<button class="nt-dir-item" data-t="Origins of disabled people">👉 Origins of disabled people</button>
+<button class="nt-dir-item" data-t="Origins of cancer">👉 Origins of cancer</button>
+<button class="nt-dir-item" data-t="Same-sex gender fraud mindset">👉 Same-sex gender fraud mindset</button>
+<button class="nt-dir-item" data-t="Origins of infidelity">👉 Origins of infidelity</button>
+<button class="nt-dir-item" data-t="Origins of suicides">👉 Origins of suicides</button>
+<button class="nt-dir-item" data-t="Origins of being woman and men">👉 Origins of being woman and men</button>
+<button class="nt-dir-item" data-t="Origins of assassins">👉 Origins of assassins</button>
+<button class="nt-dir-item" data-t="The money and the effect">👉 The money and the effect</button>
+<button class="nt-dir-item" data-t="Human love">👉 Human love</button>
 </div>
+
+<div id="nt-msgs"></div>
 </div>
+
+<div class="nt-input-area">
+<input id="nt-input" placeholder="Say hi...">
+<button id="nt-send">→</button>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-const ov=document.getElementById('nt-chat-overlay'),openBtn=document.getElementById('nt-friends-btn'),closeBtn=document.getElementById('nt-close'),msgs=document.getElementById('nt-msgs'),inp=document.getElementById('nt-input'),send=document.getElementById('nt-send');
-openBtn.onclick=()=>ov.style.display='flex';closeBtn.onclick=()=>ov.style.display='none';ov.onclick=e=>{if(e.target===ov) ov.style.display='none';};
-
-function add(text,who){
- const d=document.createElement('div');
- d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;font-size:15px;':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.08);';
- if(who==='bot') d.innerHTML=text; else d.textContent=text;
- msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+const msgs=document.getElementById('nt-msgs'),inp=document.getElementById('nt-input'),send=document.getElementById('nt-send');
+function add(t,w){const d=document.createElement('div');d.className=w==='user'?'bubble-user':'bubble-bot';d.innerHTML=t;msgs.appendChild(d);window.scrollTo(0,document.body.scrollHeight);}
+const used={};function pick(k,l){if(!used[k]) used[k]=[];let a=l.map((v,i)=>({v,i})).filter(o=>!used[k].includes(o.i));if(a.length===0){used[k]=[];a=l.map((v,i)=>({v,i}));}const c=a[Math.floor(Math.random()*a.length)];used[k].push(c.i);return c.v;}
+function comedianReply(topic){
+ const r={
+"Origins of disabled people":"That one is for Adults chat bro, here we joke relaxed 😂 but real talk: nobody chooses that.",
+"Origins of cancer":"That one is for Adults chat, we keep it light here so you feel good 🙏",
+"Same-sex gender fraud mindset":"Yo that topic is heavy debate for Adults chat 😅 here we stay comedian vibes",
+"Origins of infidelity":"Infidelity is saying you're on a diet and eating whole pizza at 2am alone 🍕😂 you cheated on yourself",
+"Origins of suicides":"That one is serious bro ❤️ if you feel bad talk to someone real who loves you, I'm here to make you feel attended",
+"Origins of being woman and men":"One can't find stuff in fridge, the other is always right. Perfect balance 😂",
+"Origins of assassins":"They come from watching John Wick and thinking you can dodge bullets 🤣",
+"The money and the effect":"Money is like WiFi, everybody wants it but nobody knows where it comes from 💸😂",
+"Human love":"True love is when they return your charger. That's REAL love 😂❤️"
+ }; return `<b>${topic}</b><br><br>${r[topic]||"That one is for Adults chat, here we are comedian 😂"}`;
 }
-const used={};
-function pick(k,l){if(!used[k]) used[k]=[];let a=l.map((v,i)=>({v,i})).filter(o=>!used[k].includes(o.i));if(a.length===0){used[k]=[];a=l.map((v,i)=>({v,i}));}const c=a[Math.floor(Math.random()*a.length)];used[k].push(c.i);return c.v;}
-let hi=0;
-function reply(q){
- const low=q.toLowerCase().trim(); const safe=q.substring(0,70);
- if(/^(hi|hey|hello|yo|hola)$/i.test(low) || (low.includes('hi') && low.length<12)){
-   hi++; if(hi===1) return pick('h1',["Yo hi! 👋 finally you showed up, I was bored alone here 😂","Heyyy! 🔥 you came with good energy, I'm attending you now","Hi! You good? I'm listening fr 😉"]);
-   if(hi===2) return "You said hi again? 😏 okay you like me. I'm here, relaxed, attending you. What's up?";
-   return "Third hi? 😂 okay you win, I'm fully here for you now. What you wanna talk about?";
- }
- if(low.includes('false')||low.includes('bot')||low.includes('real')) return "I'm not false bro, I'm here for real 😂 attending you 100%";
- if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤️<br>And I'm here giving you attention like that.";
- if(low.includes('bored')||low.includes('sad')||low.includes('tired')||low.includes('alone')) return `You said "${safe}"? I got you. That's why I'm here — to make you feel attended and relaxed, no judgment. Tell me more`;
- return pick('g',[
-   `You said "${safe}" — haha I feel that 😂 tell me more, I'm here attending you`,
-   `"${safe}"? Same bro 😆 that's so young energy. Keep going, I'm listening`,
-   `Okay "${safe}" — I'm here relaxed, attending you fr, not a boring bot`,
-   `Yo "${safe}" got me laughing but I get you. This chat is to feel attended, keep talking 😉`
- ]);
-}
-
-};
-function makeDir(){return Object.keys(topics).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');}
-add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Say hi and I'll follow your vibe 😉<br><br>${makeDir()}`,'bot');
-msgs.addEventListener('click',e=>{const it=e.target.closest('.nt-dir-item');if(!it) return;const t=it.getAttribute('data-title');add(t,'user');add(`<b>${t}</b><br><br>${topics[t]}`,'bot');});
+document.getElementById('directory').addEventListener('click',e=>{
+ const b=e.target.closest('.nt-dir-item'); if(!b) return;
+ const t=b.dataset.t; add(t,'user'); add(comedianReply(t),'bot');
+});
+function reply(q){const s=q.substring(0,70); return pick('g',[`You said "${s}" — hahaha same bro 😂 keep going`,`"${s}"? That's young energy 🔥 I'm attending you`,`Okay "${s}" — comedian mode on, relaxed vibes 😉`]);}
 function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';add(reply(q),'bot');}
 send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
-});
-</script>     
-          
-
+</script>
+</body>
+</html>
             </div>
         </div>
     </div>
