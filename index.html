@@ -1297,30 +1297,18 @@ opacity: 1;
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
-                <!-- CHAT FRIENDS - BOLITA ELEGANTE Y FINA - ABAJO INFERIOR -->
+                <!-- CHAT FRIENDS - COMPLETO FINAL - BOLITA ROJA TRANSPARENTE -->
 <style>
+/* BOLITA ROJA TRANSPARENTE */
 #nt-friends-btn{
-  position: fixed; 
-  bottom: 18px; 
-  right: 14px; 
-  width: 46px; 
-  height: 46px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 0.6px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%; 
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 99999; 
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
-  transition: all 0.25s ease; 
+  position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px;
+  background: rgba(20,0,0,0.35); 
+  border: 1.5px solid rgba(255,42,42,0.65);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 99999; backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(255,42,42,0.3);
 }
-#nt-friends-btn:hover{
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.28);
-  transform: scale(1.05);
-}
-#nt-friends-btn svg{ width: 20px; height: 20px; }
+#nt-friends-btn svg{ width:28px; height:28px; }
 .nt-dir-item{
   display:block; padding:12px 16px; margin:8px 0; background:#000; color:#fff; border-radius:30px; 
   cursor:pointer; font-size:14px; text-align:left; font-weight:500;
@@ -1328,15 +1316,12 @@ opacity: 1;
 .nt-dir-item:hover{ background:#222; }
 </style>
 
+<!-- BOLITA -->
 <button id="nt-friends-btn">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M5 7.5C5 6 6 5 7.5 5H16.5C18 5 19 6 19 7.5V13C19 14.5 18 15.5 16.5 15.5H10.5L5 21V7.5Z" stroke="#8B0000" stroke-width="1.3" fill="rgba(139,0,0,0.14)"/>
-    <circle cx="9" cy="10.2" r="1.1" fill="#8B0000"/>
-    <circle cx="12" cy="10.2" r="1.1" fill="#8B0000"/>
-    <circle cx="15" cy="10.2" r="1.1" fill="#8B0000"/>
-  </svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
 </button>
 
+<!-- CHAT -->
 <div id="nt-chat-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999998; align-items:flex-end; justify-content:center;">
   <div style="background:#fff; width:100%; max-width:500px; height:85vh; border-radius:20px 20px 0 0; display:flex; flex-direction:column; font-family:sans-serif;">
     <div style="background:#000; color:#fff; padding:16px; display:flex; justify-content:space-between; align-items:center;">
@@ -1359,33 +1344,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const d=document.createElement('div');
     d.style.cssText = who==='user'
      ? 'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;font-size:15px;'
-      : 'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;';
+      : 'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.08);';
     if(who==='bot') d.innerHTML=html; else d.textContent=html;
     msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
   }
 
   const answers = {
-    "Origins of cancer": `Your custom summary for Origins of cancer - talking to YOU directly as a friend.`,
-    "Origins of disabled people": `Your custom summary for Origins of disabled people.`,
-    "Same-Sex Gender Fraud": `Your custom summary for Same-Sex Gender Fraud.`,
-    "Origins of infidelity": `Your custom summary for infidelity.`,
-    "Origins of suicides": `Your custom summary for suicides.`,
-    "Origins of being woman and men": `Your custom summary for being woman and men.`,
-    "Origins of assassins": `Your custom summary for assassins.`,
-    "The money and the effect": `Your custom summary for money and the effect.`,
-    "Human love": `Your custom summary for human love.`
+    "Origins of disabled people": `As your friend talking to YOU directly: Everything has its origin, nothing can exist if an origin does not exist. Physically disabled people missing an arm and mentally with sexual retardation of same sex and mindset retardation to kill etc. Its origin is semen of the awake man, with semen of the man that comes from a dream your son or daughter will be born safe, by awake semen you take a risk.`,
+    "Origins of cancer": `Talking to YOU directly as your friend: Food with fat has a good taste, but the taste is to convince you and the hidden effect is cancer and diseases, its legality is to move money, not to take care of your life.`,
+    "Same-sex gender fraud mindset": `Look at me as your honest friend with the truth, talking to YOU: Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. The retarded mindset is only in sex not in other things.`,
+    "Origins of infidelity": `I tell you again as your friend that I am direct and with the truth, to YOU: Infidelity is not a mistake it is committed consciously so consciously that it is even planned how to do it. The pain, the damages do not go to who commits the infidelity, they go to the victim who was cheated on.`,
+    "Origins of suicides": `As I have always been your friend and as your friend I speak to YOU directly: Suicides mostly are because of love infidelity, but mostly it is because of the past of all the bad.`,
+    "Origins of being woman and men": `As your friend to YOU directly: Pleas are always because of fear of infidelity, the man trusts the woman when the woman tells the truth.`,
+    "Origins of assassins": `As your friend to YOU directly: Movies of violence, music are animations to excite your feelings to use your physical body and kill other physical lives.`,
+    "The money and the effect": `As your friend to YOU directly: Money is a scam the worldwide circus, mental cornering, slow death, trapped with minimal freedom.`,
+    "Human love": `As your direct friend to YOU: Human love is decision not emotion.`,
+    "Physical same-sex gender fraud: 21+ only": `As your honest friend to YOU: The physical body with same-sex fraud is a scam to human sex.`,
+    "Same-sex direct and summarized": `Direct to YOU as a friend: The summary of same-sex fraud is a fraudulent body selling human sex with the same body.`
   };
 
   function makeDir(){
     return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');
   }
+
   function greeting(){
     return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`;
   }
+
   function showAnswer(title){
-    return `<b>${title}</b><br><br>${answers[title]}`;
+    return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`;
   }
+
   add(greeting(),'bot');
+
   msgs.addEventListener('click', e=>{
     const it=e.target.closest('.nt-dir-item');
     if(!it) return;
@@ -1393,17 +1384,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
     add(t,'user');
     setTimeout(()=> add(showAnswer(t),'bot'), 200);
   });
+
   function ask(){
     if(!inp.value.trim()) return;
     const q=inp.value.trim(); add(q,'user'); inp.value='';
-    const l=q.toLowerCase(); let f=null;
+    const l=q.toLowerCase();
+    let f=null;
     if(l.includes('cancer')) f="Origins of cancer";
     else if(l.includes('disab')) f="Origins of disabled people";
-    else if(l.includes('same')||l.includes('gender')) f="Same-Sex Gender Fraud";
-    if(f) setTimeout(()=> add(showAnswer(f),'bot'), 200);
-    else setTimeout(()=> add(greeting(),'bot'), 200);
+    else if(l.includes('infidel')) f="Origins of infidelity";
+    else if(l.includes('suicid')) f="Origins of suicides";
+    else if(l.includes('woman')) f="Origins of being woman and men";
+    else if(l.includes('assassin')) f="Origins of assassins";
+    else if(l.includes('money')) f="The money and the effect";
+    else if(l.includes('same')||l.includes('gender')) f="Same-sex gender fraud mindset";
+    else if(l.includes('love')) f="Human love";
+    setTimeout(()=>{ if(f) add(showAnswer(f),'bot'); else add(greeting(),'bot'); }, 200);
   }
-  send.onclick=ask; inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
+  send.onclick=ask; 
+  inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
 });
 </script>
             </div>
