@@ -1329,120 +1329,44 @@ function add(text,who){
  if(who==='bot') d.innerHTML=text; else d.textContent=text;
  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
 }
-
 const used={};
-function pick(key,list){
- if(!used[key]) used[key]=[];
- let avail=list.map((v,i)=>({v,i})).filter(o=>!used[key].includes(o.i));
- if(avail.length===0){used[key]=[];avail=list.map((v,i)=>({v,i}));}
- const chosen=avail[Math.floor(Math.random()*avail.length)];
- used[key].push(chosen.i);
- return chosen.v;
+function pick(k,l){if(!used[k]) used[k]=[];let a=l.map((v,i)=>({v,i})).filter(o=>!used[k].includes(o.i));if(a.length===0){used[k]=[];a=l.map((v,i)=>({v,i}));}const c=a[Math.floor(Math.random()*a.length)];used[k].push(c.i);return c.v;}
+let hi=0;
+function reply(q){
+ const low=q.toLowerCase().trim(); const safe=q.substring(0,70);
+ if(/^(hi|hey|hello|yo|hola)$/i.test(low) || (low.includes('hi') && low.length<12)){
+   hi++; if(hi===1) return pick('h1',["Yo hi! 👋 finally you showed up, I was bored alone here 😂","Heyyy! 🔥 you came with good energy, I'm attending you now","Hi! You good? I'm listening fr 😉"]);
+   if(hi===2) return "You said hi again? 😏 okay you like me. I'm here, relaxed, attending you. What's up?";
+   return "Third hi? 😂 okay you win, I'm fully here for you now. What you wanna talk about?";
+ }
+ if(low.includes('false')||low.includes('bot')||low.includes('real')) return "I'm not false bro, I'm here for real 😂 attending you 100%";
+ if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤️<br>And I'm here giving you attention like that.";
+ if(low.includes('bored')||low.includes('sad')||low.includes('tired')||low.includes('alone')) return `You said "${safe}"? I got you. That's why I'm here — to make you feel attended and relaxed, no judgment. Tell me more`;
+ return pick('g',[
+   `You said "${safe}" — haha I feel that 😂 tell me more, I'm here attending you`,
+   `"${safe}"? Same bro 😆 that's so young energy. Keep going, I'm listening`,
+   `Okay "${safe}" — I'm here relaxed, attending you fr, not a boring bot`,
+   `Yo "${safe}" got me laughing but I get you. This chat is to feel attended, keep talking 😉`
+ ]);
 }
-
-let hiCount=0;
-function getResponse(q){
- const low=q.toLowerCase().trim();
- const clean=q.replace(/["<>]/g,"").substring(0,80);
-
- // IF USER SAYS HI
- if(/^(hi|hey|hello|yo|sup|wassup|hola)$/i.test(low) || (low.length<12 && low.includes('hi'))){
-   hiCount++;
-   if(hiCount===1) return pick('hi1',[
-     `Yo hi! 👋 finally you showed up, I was getting bored here alone 😂`,
-     `Heyyy! 🔥 you came with good energy, I felt it`,
-     `Hi hi! You good? You look like you have a story to tell today 😉`
-   ]);
-   if(hiCount===2) return pick('hi2',[
-     `You said hi again? Okay you like me huh? 😏 I like you too`,
-     `Second hi hits different 😂 what's up for real?`,
-     `Hi again! Now we are friends for real, tell me something about "${clean}"`
-   ]);
-   return pick('hi3',[
-     `Bro you keep saying hi, you want me to roast you for free? Say less 😂`,
-     `Third hi? Alright you win, I'm fully attending you now, what's on your mind?`,
-     `Okay okay hi hi hi 😆 now tell me something real, I'm listening`
-   ]);
- }
-
- if(low.includes('you are false') || low.includes('you false') || low.includes('are you bot') || low.includes('are you real')){
-   return pick('false',[
-     `False? Nah bro I'm real, I'm just young and I joke too much 😂 I'm here, attending you`,
-     `I'm not false, I'm NEW TIME YOUNG, the one who actually listens to you. Try me, say something about you`,
-     `If I was false I wouldn't remember you said hi ${hiCount} times 😏 I'm here for real`
-   ]);
- }
-
- if(low.includes('how are you') || low.includes('how u doing')){
-   return pick('how',[
-     `I'm good bro, relaxed, now that you are here I'm better 😎 and you? How you feeling fr?`,
-     `Chillin, vibing, attending you 100% 🔥 how's your day going?`,
-     `I'm great, you made my chat less lonely 😂 tell me about you now`
-   ]);
- }
-
- if(low.includes('bored') || low.includes('tired') || low.includes('sad') || low.includes('lonely')){
-   return `You said you're "${clean}"? I got you. That's why I'm here — to make you feel attended and relaxed. No judgment, just jokes and good vibes. Wanna talk about why you're ${clean}? I'm listening fr`;
- }
-
- if(low.includes('love') || low.includes('crush') || low.includes('girlfriend') || low.includes('boyfriend')){
-   return pick('love',[
-     `You said "${clean}"? 😂 Bro that love got you overthinking at 2am huh? I feel you, let's joke about it`,
-     `"${clean}"? That's premium pain and premium joy at the same time 💔😂 tell me more`,
-     `Okay "${clean}" — that's real. I'm attending you fr, what's the story?`
-   ]);
- }
-
- if(low.length>2){
-   return pick('gen',[
-     `You said "${clean}" — haha I feel that 😂 that's so young energy, tell me more, I'm listening`,
-     `"${clean}"? Bro same 😆 you just described all of us. What happened with that?`,
-     `Okay okay "${clean}" — I'm attending you fr, not like a bot. Keep going, I got you`,
-     `Yo "${clean}" got me laughing but also I get you. That's why young chat hits different, we relax here`,
-     `Real talk about "${clean}"? I like that you said it, I'm here to listen and roast with love 😂`
-   ]);
- }
-
- return `Say something and I'll follow your vibe 😉 I'm here, attending you`;
-}
-
-const dirTopics={
-"Origins of disabled people":"That one is for the Adults chat bro, here we joke and make you feel relaxed 😂 tell me something funny about you instead",
-"Origins of cancer":"That topic is heavy for Adults chat. Here we keep it light so you feel good. Wanna talk about something that made you laugh today?",
-"Same-sex gender fraud mindset":"Yo that topic will get us canceled 😅 let's keep it relaxed here, I'm attending you, tell me what you like to do for fun",
-"Origins of infidelity":"Infidelity is saying you're on a diet and eating a whole pizza at 2am alone 🍕😂 you cheated on yourself bro. But fr, you good?",
-"Origins of suicides":"Yo that one is serious bro, if you feel bad please talk to someone real who loves you ❤️ I'm here to make you feel attended, not alone",
-"Origins of being woman and men":"Easy: one can't find stuff in the fridge, the other is always right. Perfect balance 😂 and both need love and attention",
-"Origins of assassins":"They come from watching John Wick and thinking you can dodge bullets. You trip alone bro 🤣",
-"The money and the effect":"Money is like WiFi, everybody wants it but nobody knows where it really comes from 💸😂 you feeling that too?",
-"Human love":"True love is when they return your charger. That's REAL love 😂❤️ and I'm here giving you attention like that"
+const topics={
+"Origins of disabled people":"That one is for Adults chat, here we keep it light and relaxed 😂",
+"Origins of cancer":"That topic is for Adults chat, here we keep it light so you feel good",
+"Same-sex gender fraud mindset":"That one is for serious debate, here we stay relaxed 😅",
+"Origins of infidelity":"Infidelity is saying you're on a diet and eating a whole pizza at 2am 🍕😂",
+"Origins of suicides":"That one is serious, if you feel bad please talk to someone real who loves you ❤️",
+"Origins of being woman and men":"One can't find stuff in the fridge, the other is always right 😂",
+"Origins of assassins":"They come from watching John Wick and thinking you can dodge bullets 🤣",
+"The money and the effect":"Money is like WiFi, everybody wants it but nobody knows where it comes from 💸😂",
+"Human love":"True love is when they return your charger. That's REAL love 😂❤️"
 };
-
-function makeDir(){return Object.keys(dirTopics).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');}
-add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm not the boring bot from your screenshot. I'm here to make you feel <b>attended and relaxed</b>, not judged.<br><br>Say hi and I'll follow your vibe, no repeating jokes 😉<br><br>${makeDir()}`,'bot');
-
-msgs.addEventListener('click',e=>{
- const it=e.target.closest('.nt-dir-item');
- if(!it) return;
- const t=it.getAttribute('data-title');
- add(t,'user');
- setTimeout(()=>{ add(`<b>${t}</b><br><br>${dirTopics[t]}`,'bot'); },400);
+function makeDir(){return Object.keys(topics).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');}
+add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Say hi and I'll follow your vibe 😉<br><br>${makeDir()}`,'bot');
+msgs.addEventListener('click',e=>{const it=e.target.closest('.nt-dir-item');if(!it) return;const t=it.getAttribute('data-title');add(t,'user');add(`<b>${t}</b><br><br>${topics[t]}`,'bot');});
+function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';add(reply(q),'bot');}
+send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 });
-
-function sendMsg(){
- if(!inp.value.trim()) return;
- const q=inp.value.trim(); add(q,'user'); inp.value='';
- // typing delay to feel human
- const typing=add('typing...','bot');
- setTimeout(()=>{
-   typing.remove();
-   add(getResponse(q),'bot');
- }, 600 + Math.random()*600);
-}
-send.onclick=sendMsg;
-inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
-});
-</script>  
+</script>     
           
 
             </div>
