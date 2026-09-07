@@ -1297,7 +1297,7 @@ opacity: 1;
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
-                 <!-- CHAT FRIENDS - ENGLISH + YOUR 11 PDF DIRECTORY -->
+                <!-- CHAT FRIENDS - 100% ENGLISH FINAL -->
 <style>
 #nt-friends-btn{
   position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px;
@@ -1318,11 +1318,7 @@ opacity: 1;
     <div style="background:#000; color:#fff; padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
       <b>NEW TIME - Chat Friends</b><span id="nt-close" style="cursor:pointer; font-size:28px;">✕</span>
     </div>
-    <div id="nt-msgs" style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; background:#fafafa;">
-      <div style="background:#fff; color:#111; padding:14px 16px; border-radius:18px; border:1px solid #e5e5e5; line-height:1.5;">
-        Hey! I'm your friend from New Time 👋 Founded Feb 2025, USA. I have your 11 Directory writings loaded. Ask me anything and I'll find the closest one and give you the most important bases, in English, like a friend.
-      </div>
-    </div>
+    <div id="nt-msgs" style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; background:#fafafa;"></div>
     <div style="padding:12px; border-top:1px solid #e5e5e5; display:flex; gap:10px; background:#fff;">
       <input id="nt-input" placeholder="Ask..." style="flex:1; padding:14px 18px; border:1px solid #ddd; border-radius:30px; outline:none; font-size:16px; color:#000;">
       <button id="nt-send" style="background:#000; color:#fff; border:none; width:54px; height:54px; border-radius:50%; cursor:pointer;">→</button>
@@ -1344,68 +1340,78 @@ document.addEventListener('DOMContentLoaded', ()=>{
     msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
   }
 
-  // YOUR REAL 11 PDFS FROM YOUR CODE
   const directory = [
-    { title: "Origins of disabled people", href: "people-disabilities.pdf", keys: ["disabl","disability"] },
+    { title: "Origins of disabled people", href: "people-disabilities.pdf", keys: ["disabl"] },
     { title: "Origins of cancer", href: "cancer-food-6.pdf", keys: ["cancer"] },
-    { title: "Same-sex gender fraud mindset", href: "sexually-vomit-666.pdf", keys: ["same sex","same-sex","gender","fraud","lgbt"] },
-    { title: "Physical same-sex gender fraud: 21+ only", href: "physical-sex-fraud.pdf", keys: ["physical","21"] },
+    { title: "Same-sex gender fraud mindset", href: "sexually-vomit-666.pdf", keys: ["same sex","same-sex","gender fraud","lgbt"] },
+    { title: "Physical same-sex gender fraud: 21+ only", href: "physical-sex-fraud.pdf", keys: ["physical"] },
     { title: "Same-sex direct and summarized", href: "same-sex-sexual-and-summarized%5E666.PDF", keys: ["direct","summarized"] },
-    { title: "Origins of infidelity", href: "infidelity-vomit.pdf", keys: ["infidel","cheat","affair"] },
-    { title: "The money and the effect", href: "the-money.pdf", keys: ["money","poverty","wealth"] },
+    { title: "Origins of infidelity", href: "infidelity-vomit.pdf", keys: ["infidel"] },
+    { title: "The money and the effect", href: "the-money.pdf", keys: ["money"] },
     { title: "Origins of suicides", href: "suicides-6.pdf", keys: ["suicid"] },
-    { title: "Origins of being woman and men", href: "origins-of-being-woman-and-men666.pdf", keys: ["woman","men","gender"] },
+    { title: "Origins of being woman and men", href: "origins-of-being-woman-and-men666.pdf", keys: ["woman and men","being woman"] },
     { title: "Origins of assassins", href: "assassins-6.pdf", keys: ["assassin"] },
     { title: "Human love", href: "human-love%5E1.pdf", keys: ["love"] }
   ];
 
-  function findClosest(q){
-    const low=q.toLowerCase(); let best=null, max=0;
-    directory.forEach(doc=>{
-      let score=0;
-      doc.keys.forEach(k=>{ if(low.includes(k)) score+=5; });
-      doc.title.toLowerCase().split(' ').forEach(w=>{ if(w.length>3 && low.includes(w)) score+=3; });
-      if(score>max){ max=score; best=doc; }
-    });
-    return best;
-  }
+  const dirLinks = directory.map(d=>`• <a href="${d.href}" target="_blank" style="color:#7A1F1F;text-decoration:underline;">${d.title}</a>`).join('<br>');
 
-  function replyFriend(q){
-    const doc=findClosest(q);
-    if(!doc){
-      return `Hey, good question — "<b>${q}</b>"<br><br>As your friend from New Time (Founded Feb 2025, Appearance vs Effect, full transparency), I have 11 writings. Tell me which one is closest and I'll give you the key bases.<br><br>` +
-      directory.map(d=>`• <a href="${d.href}" target="_blank" style="color:#7A1F1F;text-decoration:underline;">${d.title}</a>`).join('<br>');
-    }
-
-    const bases = {
-      "Origins of cancer": "1. Appearance: intense flavor = tasty.<br>2. Effect: chemicals + grease = chronic inflammation = cancer.<br>3. New Time base: It's not bad luck, it's accumulated effect from what we eat.",
-      "The money and the effect": "1. Appearance: money = happiness.<br>2. Effect: money moves decisions, it's not the root of poverty, the system chokes the flow.<br>3. Base: who controls the flow creates scarcity.",
-      "Origins of infidelity": "1. Appearance: forever love.<br>2. Effect: no real effect = search outside.<br>3. Base: infidelity is a symptom, not the cause.",
-      "Origins of suicides": "1. Appearance: everything looks fine outside.<br>2. Effect: mind overloaded with no real way out.<br>3. Base: system sells slavery as success.",
-      "Origins of disabled people": "1. Appearance: disability = birth.<br>2. Effect: hidden effect of environment, food, stress.",
-      "Human love": "1. Appearance: love = emotion.<br>2. Effect: love = daily decision + effect.",
-      "Origins of being woman and men": "1. Appearance: roles are the same.<br>2. Effect: biology + different effect, denying it = fraud."
-    };
-    const text = bases[doc.title] || "1. Appearance vs Effect is the key.<br>2. What you see is not what it does.<br>3. The hidden effect is what New Time reveals.";
-
+  function greeting(){
     return `
-      Found it! 🙌 Your question "<b>${q}</b>" is closest to:<br><br>
-      👉 <b>${doc.title}</b><br>
-      <a href="${doc.href}" target="_blank" style="display:inline-block;margin-top:8px;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;font-size:13px;">📄 Open original PDF</a><br><br>
-      Let me tell you as your friend here, the most important bases from our Appearance vs Effect analysis are:<br><br>
-      ${text}<br><br>
-      <i>— Full professional text is in the Directory PDF on this page.</i>
+      Hey! I'm your friend from New Time here 👋<br><br>
+      Here is the Directory, if you tap the one that interests YOU I will answer you abbreviated dedicated to YOU as a friend, not plural. It's always good to read it complete in a professional way in the Directory, the difference between the Directory and me is here I answer to YOU not plural.<br><br>
+      ${dirLinks}<br><br>
+      Which do you like more, heat or cold hahaha, tell me which one interests YOU?
     `;
   }
 
+  function reply(q){
+    const low=q.toLowerCase();
+    if(low.length<5 || low.includes('hi') || low.includes('hello') || low.includes('hey')) return greeting();
+
+    if(low.includes('cancer')){
+      return `Talking to YOU directly as your friend:<br><br>Food with fat has a good taste, but the taste is to convince you and the hidden effect is cancer and diseases, its legality is to move money, not to take care of your life.<br><br><a href="cancer-food-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of cancer</a><br><br><i>Read it complete professional in Directory, here I answer to YOU.</i>`;
+    }
+    if(low.includes('disab')){
+      return `Talking to YOU:<br><br>Everything has its origin, nothing can exist if an origin does not exist. Physically disabled people, missing an arm and mentally with sexual retardation of same sex and mindset retardation to kill etcetera. Its origin is semen of the awake man, with semen of the man that comes from a dream your son or daughter will be born safe, by awake semen you take a risk.<br><br><a href="people-disabilities.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of disabled people</a>`;
+    }
+    if(low.includes('same')||low.includes('gender fraud')||low.includes('lgbt')){
+      return `Look at me as your honest friend and with the truth, talking to YOU:<br><br>Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. The retarded mindset is only in sex not in other things.<br><br><a href="sexually-vomit-666.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Same-sex gender fraud mindset</a>`;
+    }
+    if(low.includes('infidel')){
+      return `I tell you again as your friend that I am direct and with the truth, to YOU:<br><br>Infidelity is not a mistake it is committed consciously so consciously that it is even planned how to do it. Infidelity the pain, or even the dirtiness that is to say the damages do not go to who commits the infidelity, they go to the victim to whom was cheated on. And as a friend as a hidden effect that infidelity leads the victim to not trust anyone, to kill your feelings, to revenge you, to block your happiness with another who maybe that other does not lie is the one who pays for the acts of others in revenge that's why not all men and women are the same.<br><br><a href="infidelity-vomit.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of infidelity</a>`;
+    }
+    if(low.includes('suicid')){
+      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Suicides mostly are because of love infidelity, but mostly it is because of the past of all the bad, I explain example, if someone raped someone or abused in childhood, that memory does not affect at that age it starts to affect in the future of a present later when the mind matures when the person gets tired of changing thoughts to evade that memory and cannot anymore unfortunately they commit suicide.<br><br><a href="suicides-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of suicides</a>`;
+    }
+    if(low.includes('woman and men')||low.includes('being woman')){
+      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Look please are always because of fear of infidelity, the man trusts the woman when the woman tells the truth, for example, look it's not that I love you for your money or to live off you, but you are the man my guide who I depend on, and I know that thoughts of infidelity attack you because all the ways that exist to do it, I am not like that they are fraudulent thoughts to separate us. By being a direct truth the woman releases burdens to the man in the mind. The part of the man if you really love that woman say always you are beautiful, notice the things that she wears to feel beautiful, for example: that makeup and that eyeshadow and that dress looks amazing on you and tell her the truth about those arrangements don't lie because she knows it looked good and if you lie the truth does not reach the feelings.<br><br><a href="origins-of-being-woman-and-men666.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of being woman and men</a>`;
+    }
+    if(low.includes('assassin')){
+      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Movies of violence, music are animations to excite your feelings to use your physical body and kill other physical lives making you feel that you are looking like the actor of the movie and giving you ideals of being able to do it better in real life. All is a scam that is I convince you with imaginations, the thoughts convinced of the thoughts I use the body, everything is to use your body because thoughts are not physical, but the body is.<br><br><a href="assassins-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of assassins</a>`;
+    }
+    if(low.includes('money')){
+      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Money is a scam the worldwide circus, believing in money legalizing everything with money and money not being for everyone stops being equality, mental cornering, to have I must work, with slow death, trapped with minimal freedom, enslaved, little rest more work, worries, fears that is slow death is the success. Governments is a fraud with halloween costume of tie and suits, because the effect it causes to YOU not the one they sell you of normal appearances, is an access to your mind to force you to deprive of freedom having other options, all an internal fraud.<br><br><a href="the-money.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open The money and the effect</a>`;
+    }
+
+    let best=null, max=0;
+    directory.forEach(d=>{ let s=0; d.keys.forEach(k=>{ if(low.includes(k)) s++; }); if(s>max){max=s; best=d;} });
+    if(best){
+      return `For YOU as your friend, closest is: <b>${best.title}</b><br><br><a href="${best.href}" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open ${best.title}</a><br><br>Ask me about it and I answer abbreviated dedicated to YOU. Full professional read in Directory.`;
+    }
+    return greeting();
+  }
+
+  add(greeting(),'bot');
   function ask(){
     if(!inp.value.trim()) return;
     const q=inp.value.trim(); add(q,'user'); inp.value='';
-    setTimeout(()=> add(replyFriend(q), 'bot'), 250);
+    setTimeout(()=> add(reply(q), 'bot'), 300);
   }
   send.onclick=ask; inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
 });
-</script>        
+</script> 
+      
             
 
             </div>
