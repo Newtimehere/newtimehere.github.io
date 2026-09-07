@@ -1300,19 +1300,17 @@ opacity: 1;
                 <!-- CHAT FRIENDS - ESTILO EXACTO DE TU FOTO -->
 <style>
 #nt-friends-btn{
-  position: fixed; 
-  bottom: 18px; /* AQUÍ ESTABA MUY ARRIBA */
-  right: 14px; 
-  width: 54px; 
-  height: 54px;
-  background: rgba(18, 18, 18, 0.76);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  position: fixed; bottom: 18px; right: 14px; 
+  width: 52px; height: 52px;
+  background: rgba(18, 18, 18, 0.32);
+  border: 0.8px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%; 
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; z-index: 99999; 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: 0 4px 17px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: all 0.2s ease;
 }
 }
 #nt-friends-btn svg{ width: 28px; height: 28px; }
