@@ -3,32 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIME - Chat Friends</title>
+<title>NEW TIME</title>
 <style>
-#nt-friends-btn{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  width:58px;
-  height:58px;
-  background:rgba(12,12,12,0.96);
-  border:1.5px solid rgba(255,255,255,0.14);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:99999;
-  backdrop-filter: blur(4px);
-  box-shadow:0 4px 12px rgba(0,0,0,0.3);
-}
-#nt-friends-btn svg{ width:28px; height:28px; }
-.nt-dir-item{
-  display:block; padding:12px 16px; margin:8px 0; background:#000; color:#fff; border-radius:30px; 
-  cursor:pointer; font-size:14px; text-align:left; font-weight:500;
-}
-.nt-dir-item:hover{ background:#222; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0a0a0a;color:#fff;font-family: serif;}
+  header{background:#fff;color:#000;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;position:fixed;top:0;left:0;right:0;z-index:100}
+  header b{letter-spacing:4px;font-weight:400}
+  .hero{margin-top:60px;position:relative;height:85vh;background:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800') center/cover}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, #000 10%, rgba(0,0,0,0.4) 100%)}
+  .hero-content{position:absolute;bottom:60px;left:20px;right:20px;z-index:2}
+  .hero-content h1{font-size:42px;letter-spacing:8px;font-weight:300;margin-bottom:16px}
+  .hero-content p{font-family:sans-serif;font-size:15px;line-height:1.5;opacity:0.8;max-width:340px;margin-bottom:24px}
+  .explore-btn{display:flex;align-items:center;gap:16px;cursor:pointer}
+  .explore-btn .circle{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:20px}
+  .explore-btn span{letter-spacing:3px;font-family:sans-serif;font-size:13px}
+  
+  /* TU BOLITA - INFERIOR */
+  #nt-friends-btn{
+    position:fixed;
+    bottom:14px;
+    right:14px;
+    width:58px;
+    height:58px;
+    background:rgba(12,12,12,0.96);
+    border:1.5px solid rgba(255,255,255,0.14);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:99999;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  #nt-friends-btn svg{ width:28px; height:28px; }
+  .nt-dir-item{
+    display:block; padding:12px 16px; margin:8px 0; background:#000; color:#fff; border-radius:30px; 
+    cursor:pointer; font-size:14px; text-align:left; font-weight:500;
+  }
+  .nt-dir-item:hover{ background:#222; }
 </style>
+</head>
+<body>
+
+<header><b>NEW TIME</b><span>☰</span></header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>FRIENDS</h1>
+    <p>At New Time we are not only high-class, high-level. We are day by day, hand in hand with you.</p>
+    <div class="explore-btn" id="nt-explore-friends">
+      <div class="circle">→</div>
+      <span>EXPLORE FRIENDS</span>
+    </div>
+  </div>
+</div>
 
 <!-- BOLITA COMO EN TU FOTO -->
 <button id="nt-friends-btn">
@@ -56,8 +84,13 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
-  const ov=document.getElementById('nt-chat-overlay'), openBtn=document.getElementById('nt-friends-btn'), closeBtn=document.getElementById('nt-close'), msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send');
-  openBtn.onclick=()=>ov.style.display='flex'; closeBtn.onclick=()=>ov.style.display='none'; ov.onclick=e=>{ if(e.target===ov) ov.style.display='none'; };
+  const ov=document.getElementById('nt-chat-overlay'), openBtn=document.getElementById('nt-friends-btn'), closeBtn=document.getElementById('nt-close'), msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send'), exploreBtn=document.getElementById('nt-explore-friends');
+  
+  function openChat(){ ov.style.display='flex'; }
+  openBtn.onclick=openChat;
+  exploreBtn.onclick=openChat; // ESTO HACE QUE EXPLORE FRIENDS ABRA EL LINK
+  closeBtn.onclick=()=>ov.style.display='none'; 
+  ov.onclick=e=>{ if(e.target===ov) ov.style.display='none'; };
 
   function add(html, who){
     const d=document.createElement('div');
@@ -69,29 +102,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   const answers = {
-    "Origins of disabled people": `As your friend talking to YOU directly: Everything has its origin, nothing can exist if an origin does not exist. Physically disabled people missing an arm and mentally with sexual retardation of same sex and mindset retardation to kill etc. Its origin is semen of the awake man, with semen of the man that comes from a dream your son or daughter will be born safe, by awake semen you take a risk.`,
-    "Origins of cancer": `Talking to YOU directly as your friend: Food with fat has a good taste, but the taste is to convince you and the hidden effect is cancer and diseases, its legality is to move money, not to take care of your life.`,
-    "Same-sex gender fraud mindset": `Look at me as your honest friend with the truth, talking to YOU: Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. The retarded mindset is only in sex not in other things.`,
-    "Origins of infidelity": `I tell you again as your friend that I am direct and with the truth, to YOU: Infidelity is not a mistake it is committed consciously so consciously that it is even planned how to do it. The pain, the damages do not go to who commits the infidelity, they go to the victim who was cheated on.`,
-    "Origins of suicides": `As I have always been your friend and as your friend I speak to YOU directly: Suicides mostly are because of love infidelity, but mostly it is because of the past of all the bad.`,
-    "Origins of being woman and men": `As your friend to YOU directly: Pleas are always because of fear of infidelity, the man trusts the woman when the woman tells the truth.`,
-    "Origins of assassins": `As your friend to YOU directly: Movies of violence, music are animations to excite your feelings to use your physical body and kill other physical lives.`,
-    "The money and the effect": `As your friend to YOU directly: Money is a scam the worldwide circus, mental cornering, slow death, trapped with minimal freedom.`, "Human love": `As your direct friend to YOU: Human love is decision not emotion.`,   };
+    "Origins of disabled people": `As your friend talking to YOU directly: Everything has its origin...`,
+    "Origins of cancer": `Talking to YOU directly as your friend: Food with fat has a good taste...`,
+    "Same-sex gender fraud mindset": `Look at me as your honest friend with the truth, talking to YOU...`,
+    "Origins of infidelity": `I tell you again as your friend...`,
+    "Origins of suicides": `As I have always been your friend...`,
+    "Origins of being woman and men": `As your friend to YOU directly...`,
+    "Origins of assassins": `As your friend to YOU directly...`,
+    "The money and the effect": `As your friend to YOU directly: Money is a scam...`,
+    "Human love": `As your direct friend to YOU: Human love is decision not emotion.`,
+  };
 
   function makeDir(){
     return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');
   }
-
   function greeting(){
     return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`;
   }
-
   function showAnswer(title){
     return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`;
   }
-
   add(greeting(),'bot');
-
   msgs.addEventListener('click', e=>{
     const it=e.target.closest('.nt-dir-item');
     if(!it) return;
@@ -99,12 +130,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     add(t,'user');
     setTimeout(()=> add(showAnswer(t),'bot'), 200);
   });
-
   function ask(){
     if(!inp.value.trim()) return;
     const q=inp.value.trim(); add(q,'user'); inp.value='';
-    const l=q.toLowerCase();
-    let f=null;
+    const l=q.toLowerCase(); let f=null;
     if(l.includes('cancer')) f="Origins of cancer";
     else if(l.includes('disab')) f="Origins of disabled people";
     else if(l.includes('infidel')) f="Origins of infidelity";
@@ -120,3 +149,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
 });
 </script>
+</body>
+</html>
