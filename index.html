@@ -1301,7 +1301,7 @@ opacity: 1;
 <style>
 #nt-friends-btn{
   position: fixed; 
-  bottom: 18px; /* ANTES 110px - AHORA ABAJO */
+  bottom: 18px;  /* <-- ESTO ERA 110px, AHORA 18px ABAJO */
   right: 14px; 
   width: 66px; height: 66px;
   background: rgba(0,0,0,0.78);
@@ -1312,6 +1312,8 @@ opacity: 1;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
 }
 }
 #nt-friends-btn svg{ width:36px; height:36px; }
