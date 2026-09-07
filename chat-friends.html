@@ -6,25 +6,36 @@
 <title>NEW TIME - Chat Friends</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#000;font-family:sans-serif;display:flex;flex-direction:column;height:100vh}
+body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direction:column;height:100vh}
 #nt-top{
   background:#fff;
   color:#000;
-  padding:18px 20px;
+  padding:16px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #e9e9e9;
 }
 #nt-top .nt-brand{
   font-family:'Cormorant Garamond', serif;
-  font-weight:300;
-  font-size:24px;
-  letter-spacing:7px;
+  font-weight:400;
+  font-size:20px;
+  letter-spacing:3px; /* ESPACIO NORMAL */
   text-transform:uppercase;
   color:#000;
 }
-#nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff}
+#nt-msgs{
+  flex:1;
+  overflow-y:auto;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  background:#fff;
+  margin:12px;
+  border:1px solid #e5e5e5;
+  border-radius:18px;
+}
 .nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left}
 #nt-friends-btn{display:none}
 </style>
@@ -62,7 +73,7 @@ const answers = {
   "The money and the effect": `As your friend to YOU directly: Money is a scam the worldwide circus, mental cornering, slow death, trapped with minimal freedom.`, "Human love": `As your direct friend to YOU: Human love is decision not emotion.`,
 };
 function makeDir(){ return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join(''); }
-function greeting(){ return `Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`; }
+function greeting(){ return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`; }
 function showAnswer(title){ return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`; }
 add(greeting(),'bot');
 msgs.addEventListener('click', e=>{
