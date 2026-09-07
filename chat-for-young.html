@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEW TIME FOR YOUNG - Chat Friends</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:'Inter', sans-serif; display:flex; flex-direction:column; min-height:100vh;}
+#top{
+  background:#000;
+  color:#fff;
+  padding:18px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:2px;
+  font-size:18px;
+  font-weight:600;
+}
+#top a{color:#fff;text-decoration:none;font-size:26px;font-weight:300}
+#black-card{
+  background:#000;
+  width:92%;
+  max-width:500px;
+  height:240px;
+  margin:18px auto;
+  border-radius:24px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#black-card span{
+  color:#fff;
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;
+  letter-spacing:2px;
+  opacity:0.9;
+  border:1px solid #5a2a2a;
+  padding:6px 14px;
+}
+#content{
+  padding:0 22px;
+  flex:1;
+}
+#content h1{
+  font-size:22px;
+  line-height:1.3;
+  font-weight:700;
+  color:#000;
+  margin-bottom:20px;
+}
+.topic-btn{
+  width:100%;
+  padding:18px 20px;
+  margin-bottom:14px;
+  border-radius:14px;
+  background:#fff;
+  border:2px solid #000;
+  font-size:16px;
+  font-weight:500;
+  text-align:left;
+  cursor:pointer;
+  transition:0.2s;
+}
+.topic-btn:nth-child(n+2){
+  border:1.5px solid #ccc;
+}
+.topic-btn:active{transform:scale(0.98)}
+#answer-box{
+  display:none;
+  margin-top:20px;
+  padding:18px;
+  border:1.5px solid #000;
+  border-radius:14px;
+  background:#f9f9f9;
+  line-height:1.6;
+  font-size:15px;
+}
+#answer-box b{font-size:16px}
+</style>
+</head>
+<body>
+
+<div id="top">
+  <span>NEW TIME</span>
+  <a href="for-young.html">✕</a>
+</div>
+
+<div id="black-card">
+  <span>♛ NEW TIME</span>
+</div>
+
+<div id="content">
+  <h1>Welcome to Chat Friends, we're going to talk about 3 deadly topics in the hidden effect. You'll hear my voice explaining the truth to you. For more, see the directory.</h1>
+
+  <div class="topic-btn" data-t="Origins of cancer">Origins of cancer</div>
+  <div class="topic-btn" data-t="Origins of disabled people">Origins of disabled people</div>
+  <div class="topic-btn" data-t="Same-Sex Gender Fraud">Same-Sex Gender Fraud</div>
+
+  <div id="answer-box"></div>
+</div>
+
+<script>
+const answers = {
+  "Origins of cancer": `Universities are for profit, not for your intimate personal growth. Food with fat has a good taste, that is the appearance, but the hidden effect is cancer and diseases. Its legality is to move money, not to take care of your life.`,
+  "Origins of disabled people": `Everything has its origin. People physically disabled, missing a leg, an arm, and mentally. Its origin is your semen as a man when you ejaculate inside the vagina having awake sex. With your semen that comes from a dream known as wet dreams it is a warning telling you, here you have the security of the birth of your son or daughter.`,
+  "Same-Sex Gender Fraud": `Since sex is with humans, there's no way to scam them with material things. The feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body. The reality is that there are 3 conditions, to prevent births because from the same body no one is born.`
+};
+
+const box = document.getElementById('answer-box');
+document.querySelectorAll('.topic-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const t = btn.getAttribute('data-t');
+    box.style.display='block';
+    box.innerHTML = `<b>${t}</b><br><br>${answers[t]}<br><br><i>🔊 Tap to hear my voice</i>`;
+    box.scrollIntoView({behavior:'smooth'});
+    // voz juvenil
+    if('speechSynthesis' in window){
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(answers[t]);
+      u.rate=0.95;
+      speechSynthesis.speak(u);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
