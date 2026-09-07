@@ -1298,7 +1298,91 @@ opacity: 1;
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
                 <style>
-#nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;backdrop-filter:blur(4px);box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+#nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+#nt-friends-btn svg{width:28px;height:28px;}
+.nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left;}
+</style>
+
+<button id="nt-friends-btn">
+<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg>
+</button>
+
+<div id="nt-chat-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999998;align-items:flex-end;justify-content:center;">
+<div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;">
+<div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;"><b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
+<div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;"></div>
+<div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;">
+<input id="nt-input" placeholder="Say anything..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;">
+<button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;">→</button>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+const ov=document.getElementById('nt-chat-overlay'),openBtn=document.getElementById('nt-friends-btn'),closeBtn=document.getElementById('nt-close'),msgs=document.getElementById('nt-msgs'),inp=document.getElementById('nt-input'),send=document.getElementById('nt-send');
+openBtn.onclick=()=>ov.style.display='flex';closeBtn.onclick=()=>ov.style.display='none';ov.onclick=e=>{if(e.target===ov) ov.style.display='none';};
+
+function add(text,who){
+ const d=document.createElement('div');
+ d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;';
+ d.innerText=text;
+ if(who==='bot') d.innerHTML=text.replace(/\n/g,'<br>');
+ msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+ return d;
+}
+
+const SYSTEM = `You are NEW TIME YOUNG chat. You talk like a young American friend, funny, heavy roasting but with love, Gen Z slang. You NEVER repeat the same joke. You always answer according to what the user actually said. If user says hi, you say hi back in a funny different way each time. If user says "I love pizza" you joke ABOUT pizza and about them. Keep it short, 1-3 sentences, always funny. You are NOT the serious Adults chat. If user asks serious topics like cancer, disabled people origins, suicide, you say: "Yo that one is for Adults chat, here we only joke" and then make a joke to change topic. Never be a boring bot. Talk like ChatGPT but young and funny. Language: English only.`;
+
+let history = [{role:'system', content: SYSTEM}];
+
+async function askAI(userText){
+ const thinking = add('typing...','bot');
+ try{
+   history.push({role:'user', content: userText});
+   const res = await fetch('https://text.pollinations.ai/openai', {
+     method:'POST',
+     headers:{'Content-Type':'application/json'},
+     body: JSON.stringify({
+       model: 'openai',
+       messages: history,
+       temperature: 0.9
+     })
+   });
+   const data = await res.json();
+   const reply = data.choices[0].message.content;
+   thinking.remove();
+   add(reply,'bot');
+   history.push({role:'assistant', content: reply});
+   if(history.length>12) history = [history[0],...history.slice(-10)];
+ }catch(e){
+   thinking.innerText = "Yo my brain lagged 😂 say it again, I was loading a better joke";
+ }
+}
+
+function makeDir(){
+ return ['Origins of disabled people','Origins of cancer','Same-sex gender fraud mindset','Origins of infidelity','Origins of suicides','Origins of being woman and men','Origins of assassins','The money and the effect','Human love'].map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');
+}
+add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm not the boring adults chat. I talk like YOU, I roast according to what you say.<br><br>Say hi and I'll follow your vibe 😉<br><br>${makeDir()}`,'bot');
+
+msgs.addEventListener('click', e=>{
+ const it=e.target.closest('.nt-dir-item');
+ if(!it) return;
+ const t=it.getAttribute('data-title');
+ add(t,'user');
+ askAI(`User tapped directory topic: ${t}. Make a funny joke about it but say it's for Adults chat and roast them to change topic.`);
+});
+
+function sendMsg(){
+ if(!inp.value.trim()) return;
+ const q=inp.value.trim();
+ add(q,'user'); inp.value='';
+ askAI(q);
+}
+send.onclick=sendMsg;
+inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
+});
+</script>
 #nt-friends-btn svg{width:28px;height:28px;}
 .nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left;font-weight:500;}
 .nt-dir-item:hover{background:#222;}
