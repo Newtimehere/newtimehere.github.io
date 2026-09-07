@@ -57,10 +57,10 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;min-height:100vh}
 <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
+
 <style>
 #nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
 #nt-friends-btn svg{width:28px;height:28px;}
-.nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left;}
 </style>
 
 <button id="nt-friends-btn">
@@ -100,7 +100,7 @@ function reply(q){
    return "Third hi? 😂 okay you win, I'm fully here for you now. What you wanna talk about?";
  }
  if(low.includes('false')||low.includes('bot')||low.includes('real')) return "I'm not false bro, I'm here for real 😂 attending you 100%";
- if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤️<br>And I'm here giving you attention like that.";
+ if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤️";
  if(low.includes('bored')||low.includes('sad')||low.includes('tired')||low.includes('alone')) return `You said "${safe}"? I got you. That's why I'm here — to make you feel attended and relaxed, no judgment. Tell me more`;
  return pick('g',[
    `You said "${safe}" — haha I feel that 😂 tell me more, I'm here attending you`,
@@ -109,24 +109,15 @@ function reply(q){
    `Yo "${safe}" got me laughing but I get you. This chat is to feel attended, keep talking 😉`
  ]);
 }
-const topics={
-"Origins of disabled people":"That one is for Adults chat, here we keep it light and relaxed 😂",
-"Origins of cancer":"That topic is for Adults chat, here we keep it light so you feel good",
-"Same-sex gender fraud mindset":"That one is for serious debate, here we stay relaxed 😅",
-"Origins of infidelity":"Infidelity is saying you're on a diet and eating a whole pizza at 2am 🍕😂",
-"Origins of suicides":"That one is serious, if you feel bad please talk to someone real who loves you ❤️",
-"Origins of being woman and men":"One can't find stuff in the fridge, the other is always right 😂",
-"Origins of assassins":"They come from watching John Wick and thinking you can dodge bullets 🤣",
-"The money and the effect":"Money is like WiFi, everybody wants it but nobody knows where it comes from 💸😂",
-"Human love":"True love is when they return your charger. That's REAL love 😂❤️"
-};
-function makeDir(){return Object.keys(topics).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');}
-add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Say hi and I'll follow your vibe 😉<br><br>${makeDir()}`,'bot');
-msgs.addEventListener('click',e=>{const it=e.target.closest('.nt-dir-item');if(!it) return;const t=it.getAttribute('data-title');add(t,'user');add(`<b>${t}</b><br><br>${topics[t]}`,'bot');});
+
+add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Say hi and I'll follow your vibe 😉`,'bot');
+
 function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';add(reply(q),'bot');}
 send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 });
 </script>
+</body>
+</html>
 </div>
 </div>
 </div>
