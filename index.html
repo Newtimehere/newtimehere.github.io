@@ -1297,7 +1297,7 @@ opacity: 1;
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
-                <!-- CHAT FRIENDS - 100% ENGLISH FINAL -->
+                 <!-- CHAT FRIENDS - SOLO NOMBRES CLICKABLES + TUS ABREVIATURAS -->
 <style>
 #nt-friends-btn{
   position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px;
@@ -1307,6 +1307,11 @@ opacity: 1;
 }
 #nt-friends-btn svg{ width:26px; height:26px; }
 #nt-chat-overlay{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.82); z-index:99998; align-items:flex-end; justify-content:center; }
+.nt-dir-item{
+  display:block; padding:10px 14px; margin:6px 0; background:#000; color:#fff; border-radius:20px; 
+  cursor:pointer; font-size:14px; text-align:left; transition:0.2s;
+}
+.nt-dir-item:hover{ background:#222; transform:translateX(4px); }
 </style>
 
 <button id="nt-friends-btn">
@@ -1340,80 +1345,82 @@ document.addEventListener('DOMContentLoaded', ()=>{
     msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
   }
 
-  const directory = [
-    { title: "Origins of disabled people", href: "people-disabilities.pdf", keys: ["disabl"] },
-    { title: "Origins of cancer", href: "cancer-food-6.pdf", keys: ["cancer"] },
-    { title: "Same-sex gender fraud mindset", href: "sexually-vomit-666.pdf", keys: ["same sex","same-sex","gender fraud","lgbt"] },
-    { title: "Physical same-sex gender fraud: 21+ only", href: "physical-sex-fraud.pdf", keys: ["physical"] },
-    { title: "Same-sex direct and summarized", href: "same-sex-sexual-and-summarized%5E666.PDF", keys: ["direct","summarized"] },
-    { title: "Origins of infidelity", href: "infidelity-vomit.pdf", keys: ["infidel"] },
-    { title: "The money and the effect", href: "the-money.pdf", keys: ["money"] },
-    { title: "Origins of suicides", href: "suicides-6.pdf", keys: ["suicid"] },
-    { title: "Origins of being woman and men", href: "origins-of-being-woman-and-men666.pdf", keys: ["woman and men","being woman"] },
-    { title: "Origins of assassins", href: "assassins-6.pdf", keys: ["assassin"] },
-    { title: "Human love", href: "human-love%5E1.pdf", keys: ["love"] }
-  ];
+  // TUS RESPUESTAS DIVIDIDAS EXACTAS COMO ME LAS DISTE
+  const answers = {
+    "Origins of disabled people": `Todo tiene sú origen, nada puede existir sí no existe un origen. Personas impedida fisicas, faltadole un brazo y mental con retardo de sexual del mismo sexo y mentalidad de retardo matar etcetera. Su origen es semen del hombre despierto, con semen del hombre que proviene de un sueño tu hijo o hija naceran seguros, por semen despierto te arriegas.`,
+    "Origins of cancer": `Comida con grasa tiene un buen sabor, but el sabor es para convencerte y el efecto oculto es cancer y enfermedades, sú legadidad es para mover money, no para cuidar tu vida.`,
+    "Same-sex gender fraud mindset": `Miras como tu amigo honesto y con la verdad, Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. La mentalidad retardad solo es in el sexo no in otras cosas.`,
+    "Origins of infidelity": `Vuelvo y te repito como tu amigo que soy directo y con la la verdad. La infidelidad no es un error se compete consciente tan conciente que hasta se planea como hacer. La infidelidad el dolor, o hasta el sucio es decir los daños no van a quien comete la infidelidad, van la victima a quien le fue infiel. Y de amigo como efecto oculto esas infidelidad dirige a la victima a no confiar in nadie, matarte los sentimentos, vergarte, impedirte la felicidad con otro que quizas ese otra no miente es quien paga los actos de otros in vengazas por eso no todos los hombres y mujeres son iguales.`,
+    "Origins of suicides": `Como he sido siempre tu amigo y como tú amigo te hablo a tí directo. Los suicidio mayor mente son por infidelidad amorosa, but mayormente es por el pasado de todo lo malo, te explico ejemplo, sí alguien violó a alguien o maltrato in la niñes, ese recuerdo no le afecta a esa edad le comienza afectar in el future de un presente más adelante cuando la mente  madura cuando la persona se cansa de cambiar los pensamientos para evadir ese recuerdo y no puede mas la mentablemente se suicida.`,
+    "Origins of being woman and men": `Como he sido siempre tu amigo y como tú amigo te hablo a tí directo. Mira las please siempre son por miedo a la infidelidad, el hombre confia in la mujer cuando la mujer dice la verdad, como por ejemplo, mira no es que yo te quiera por tú money o vivir de tí, but tu eres el hombre mi guia de quien yo depends, y se que los pensamientos de infidelidad te atacan porque todas las formas que existen de hacerlo, yo no soy así son pensamientos fraudulentos para separnos. Al ser una verdad directa la mujer libera cargas al hombre in la mente. La parte del hombre si de verdad amas a esa mujer decir siempre estas hermisa,  fijarte in las cosas que esa se pone para sentirse bella, como por ejemplo: ese maquillaje y esa sombra y ese vestido te queda brutal y decirle la verdad sobre esos arreglos no mentir porque ella sabe que le quedo bien y si mientes no llega la vetdad a los sentimentos.`,
+    "Origins of assassins": `Como he sido siempre tu amigo y como tú amigo te hablo a tí directo. Las peliculas de violencias, musica son animaciones para emocionarte los sentimentos para utilizar tú cuerpo fisico y matar otras vidas fisicas haciendote sentir que estas luciendo como el actor de la pelicula y la darte ideales de podelo hacer mejor in vida real. Toda es una estafa es decir te convenzo con imaginaciones, los pensamientos convencido de los pensamientos utilizo el cuerpo, todo es para usarte el cuerpo porque los pensamientos no son fisicos, but el cuerpo si.`,
+    "The money and the effect": `Como he sido siempre tu amigo y como tú amigo te hablo a tí directo. Money es una estafa el circus mundial, creer in el money al legalization todo con money y el money no ser para todos deja de ser iguadad, acorralamiento mental, para tener debo trabajar, con muerte lenta, atrapado con una minima libertad, esclavido, poco descanzo mas trabajo, procupaciones, miedos es decir muerte lenta es el exito. Los gobiernos es un fraude con disfraz de halloween de corbata, y trajes, porque el efecto que causa a tí no el que te venden de apariencias normales, es un access a tu mente a obligarte a private de la libertad habiendo otras opciones, todo un fraude interno.`,
+    "Human love": `Como tu amigo directo a tí: Human love es decisión no emoción, el efecto es cuidarte los sentimientos con verdad, no con apariencia de amor.`,
+    "Physical same-sex gender fraud: 21+ only": `Como tu amigo honesto: el cuerpo físico con fraude del mismo sexo es estafa al sexo humano, porque el sexo es humano, no material.`,
+    "Same-sex direct and summarized": `Directo a tí como amigo: resumen del fraude de mismo sexo es cuerpo fraudulento vendiendo sexo humano con mismo cuerpo.`
+  };
 
-  const dirLinks = directory.map(d=>`• <a href="${d.href}" target="_blank" style="color:#7A1F1F;text-decoration:underline;">${d.title}</a>`).join('<br>');
+  const directoryNames = Object.keys(answers);
 
-  function greeting(){
+  function makeDirHtml(){
+    return directoryNames.map(name=>`<div class="nt-dir-item" data-title="${name}">👉 ${name}</div>`).join('');
+  }
+
+  function greetingHtml(){
     return `
-      Hey! I'm your friend from New Time here 👋<br><br>
-      Here is the Directory, if you tap the one that interests YOU I will answer you abbreviated dedicated to YOU as a friend, not plural. It's always good to read it complete in a professional way in the Directory, the difference between the Directory and me is here I answer to YOU not plural.<br><br>
-      ${dirLinks}<br><br>
-      Which do you like more, heat or cold hahaha, tell me which one interests YOU?
+      Cuando salude y eso le vas a poner el directorio que le diga a la persona aqui tiene el directorio si apritas el que te interest te lo respondo abreviado diguido a ti como amigo, siempre es bueno que lo leas completo de formas profecional in el directorio, la diferencia del directory y yo es a quí te contesto a tí no plural.<br><br>
+      ${makeDirHtml()}<br>
+      Vamos cual te gusta mas el calor o el frio hahaha, dime cual te interesa?
     `;
   }
 
-  function reply(q){
-    const low=q.toLowerCase();
-    if(low.length<5 || low.includes('hi') || low.includes('hello') || low.includes('hey')) return greeting();
-
-    if(low.includes('cancer')){
-      return `Talking to YOU directly as your friend:<br><br>Food with fat has a good taste, but the taste is to convince you and the hidden effect is cancer and diseases, its legality is to move money, not to take care of your life.<br><br><a href="cancer-food-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of cancer</a><br><br><i>Read it complete professional in Directory, here I answer to YOU.</i>`;
-    }
-    if(low.includes('disab')){
-      return `Talking to YOU:<br><br>Everything has its origin, nothing can exist if an origin does not exist. Physically disabled people, missing an arm and mentally with sexual retardation of same sex and mindset retardation to kill etcetera. Its origin is semen of the awake man, with semen of the man that comes from a dream your son or daughter will be born safe, by awake semen you take a risk.<br><br><a href="people-disabilities.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of disabled people</a>`;
-    }
-    if(low.includes('same')||low.includes('gender fraud')||low.includes('lgbt')){
-      return `Look at me as your honest friend and with the truth, talking to YOU:<br><br>Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. The retarded mindset is only in sex not in other things.<br><br><a href="sexually-vomit-666.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Same-sex gender fraud mindset</a>`;
-    }
-    if(low.includes('infidel')){
-      return `I tell you again as your friend that I am direct and with the truth, to YOU:<br><br>Infidelity is not a mistake it is committed consciously so consciously that it is even planned how to do it. Infidelity the pain, or even the dirtiness that is to say the damages do not go to who commits the infidelity, they go to the victim to whom was cheated on. And as a friend as a hidden effect that infidelity leads the victim to not trust anyone, to kill your feelings, to revenge you, to block your happiness with another who maybe that other does not lie is the one who pays for the acts of others in revenge that's why not all men and women are the same.<br><br><a href="infidelity-vomit.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of infidelity</a>`;
-    }
-    if(low.includes('suicid')){
-      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Suicides mostly are because of love infidelity, but mostly it is because of the past of all the bad, I explain example, if someone raped someone or abused in childhood, that memory does not affect at that age it starts to affect in the future of a present later when the mind matures when the person gets tired of changing thoughts to evade that memory and cannot anymore unfortunately they commit suicide.<br><br><a href="suicides-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of suicides</a>`;
-    }
-    if(low.includes('woman and men')||low.includes('being woman')){
-      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Look please are always because of fear of infidelity, the man trusts the woman when the woman tells the truth, for example, look it's not that I love you for your money or to live off you, but you are the man my guide who I depend on, and I know that thoughts of infidelity attack you because all the ways that exist to do it, I am not like that they are fraudulent thoughts to separate us. By being a direct truth the woman releases burdens to the man in the mind. The part of the man if you really love that woman say always you are beautiful, notice the things that she wears to feel beautiful, for example: that makeup and that eyeshadow and that dress looks amazing on you and tell her the truth about those arrangements don't lie because she knows it looked good and if you lie the truth does not reach the feelings.<br><br><a href="origins-of-being-woman-and-men666.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of being woman and men</a>`;
-    }
-    if(low.includes('assassin')){
-      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Movies of violence, music are animations to excite your feelings to use your physical body and kill other physical lives making you feel that you are looking like the actor of the movie and giving you ideals of being able to do it better in real life. All is a scam that is I convince you with imaginations, the thoughts convinced of the thoughts I use the body, everything is to use your body because thoughts are not physical, but the body is.<br><br><a href="assassins-6.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open Origins of assassins</a>`;
-    }
-    if(low.includes('money')){
-      return `As I have always been your friend and as your friend I speak to YOU directly:<br><br>Money is a scam the worldwide circus, believing in money legalizing everything with money and money not being for everyone stops being equality, mental cornering, to have I must work, with slow death, trapped with minimal freedom, enslaved, little rest more work, worries, fears that is slow death is the success. Governments is a fraud with halloween costume of tie and suits, because the effect it causes to YOU not the one they sell you of normal appearances, is an access to your mind to force you to deprive of freedom having other options, all an internal fraud.<br><br><a href="the-money.pdf" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open The money and the effect</a>`;
-    }
-
-    let best=null, max=0;
-    directory.forEach(d=>{ let s=0; d.keys.forEach(k=>{ if(low.includes(k)) s++; }); if(s>max){max=s; best=d;} });
-    if(best){
-      return `For YOU as your friend, closest is: <b>${best.title}</b><br><br><a href="${best.href}" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;">📄 Open ${best.title}</a><br><br>Ask me about it and I answer abbreviated dedicated to YOU. Full professional read in Directory.`;
-    }
-    return greeting();
+  function showAnswerFor(title){
+    const txt = answers[title] || "No encontré ese, dime cual del directorio te interesa.";
+    return `<b>${title}</b><br><br>${txt}<br><br><i>Siempre es bueno que lo leas completo de forma profesional in el directorio, aquí te contesto a tí directo como amigo.</i>`;
   }
 
-  add(greeting(),'bot');
+  function findByQuestion(q){
+    const low=q.toLowerCase();
+    if(low.includes('cancer')) return "Origins of cancer";
+    if(low.includes('disab')) return "Origins of disabled people";
+    if(low.includes('infidel')) return "Origins of infidelity";
+    if(low.includes('suicid')) return "Origins of suicides";
+    if(low.includes('woman and men')||low.includes('being woman')) return "Origins of being woman and men";
+    if(low.includes('assassin')) return "Origins of assassins";
+    if(low.includes('money')) return "The money and the effect";
+    if(low.includes('same')||low.includes('gender fraud')||low.includes('lgbt')) return "Same-sex gender fraud mindset";
+    if(low.includes('love')) return "Human love";
+    if(low.includes('calor')||low.includes('frio')||low.includes('heat')||low.includes('cold')) return null;
+    return null;
+  }
+
+  // INIT
+  add(greetingHtml(),'bot');
+
+  // Click en nombres del directory
+  msgs.addEventListener('click', (e)=>{
+    const item = e.target.closest('.nt-dir-item');
+    if(!item) return;
+    const title=item.getAttribute('data-title');
+    add(title,'user');
+    setTimeout(()=> add(showAnswerFor(title),'bot'), 250);
+  });
+
   function ask(){
     if(!inp.value.trim()) return;
     const q=inp.value.trim(); add(q,'user'); inp.value='';
-    setTimeout(()=> add(reply(q), 'bot'), 300);
+    const found=findByQuestion(q);
+    setTimeout(()=>{
+      if(found) add(showAnswerFor(found),'bot');
+      else if(q.toLowerCase().includes('calor')) add(`¡A mi me gusta más el frío haha! Pero dime, ¿cuál del directorio te interesa a tí? ${makeDirHtml()}`,'bot');
+      else if(q.toLowerCase().includes('frio')||q.toLowerCase().includes('frío')) add(`¡Yo soy team calor hahaha! ¿Y tú? Dime cuál del directorio quieres que te responda abreviado a tí. ${makeDirHtml()}`,'bot');
+      else add(greetingHtml(),'bot');
+    }, 300);
   }
+
   send.onclick=ask; inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
 });
-</script> 
-      
-            
-
+</script>
             </div>
         </div>
     </div>
