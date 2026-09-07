@@ -1298,135 +1298,75 @@ opacity: 1;
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
                 <style>
-#nt-friends-btn{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  width:58px;
-  height:58px;
-  background:rgba(12,12,12,0.96);
-  border:1.5px solid rgba(255,255,255,0.14);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:99999;
-  backdrop-filter: blur(4px);
-  box-shadow:0 4px 12px rgba(0,0,0,0.3);
-}
-#nt-friends-btn svg{ width:28px; height:28px; }
-.nt-dir-item{
-  display:block; padding:12px 16px; margin:8px 0; background:#000; color:#fff; border-radius:30px; 
-  cursor:pointer; font-size:14px; text-align:left; font-weight:500;
-}
-.nt-dir-item:hover{ background:#222; }
+#nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;backdrop-filter:blur(4px);box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+#nt-friends-btn svg{width:28px;height:28px;}
+.nt-dir-item{display:block;padding:12px 16px;margin:8px 0;background:#000;color:#fff;border-radius:30px;cursor:pointer;font-size:14px;text-align:left;font-weight:500;}
+.nt-dir-item:hover{background:#222;}
 </style>
 
 <button id="nt-friends-btn">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/>
-    <circle cx="8.2" cy="9" r="1.4" fill="#B00000"/>
-    <circle cx="12" cy="9" r="1.4" fill="#B00000"/>
-    <circle cx="15.8" cy="9" r="1.4" fill="#B00000"/>
-  </svg>
+<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg>
 </button>
 
-<div id="nt-chat-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999998; align-items:flex-end; justify-content:center;">
-  <div style="background:#fff; width:100%; max-width:500px; height:85vh; border-radius:20px 20px 0 0; display:flex; flex-direction:column; font-family:sans-serif;">
-    <div style="background:#000; color:#fff; padding:16px; display:flex; justify-content:space-between; align-items:center;">
-      <b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer; font-size:24px;">✕</span>
-    </div>
-    <div id="nt-msgs" style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:10px; background:#fff;"></div>
-    <div style="padding:12px; border-top:1px solid #ddd; display:flex; gap:8px; background:#fff;">
-      <input id="nt-input" placeholder="Say hi..." style="flex:1; padding:14px 18px; border:1px solid #ddd; border-radius:30px; outline:none; font-size:16px; color:#000;">
-      <button id="nt-send" style="background:#000; color:#fff; border:none; width:52px; height:52px; border-radius:50%; cursor:pointer; font-size:20px;">→</button>
-    </div>
-  </div>
+<div id="nt-chat-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999998;align-items:flex-end;justify-content:center;">
+<div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;">
+<div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;"><b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
+<div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;"></div>
+<div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
+<input id="nt-input" placeholder="Say hi..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
+<button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;">→</button>
+</div>
+</div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
-  const ov=document.getElementById('nt-chat-overlay'), openBtn=document.getElementById('nt-friends-btn'), closeBtn=document.getElementById('nt-close'), msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send');
-  openBtn.onclick=()=>ov.style.display='flex'; closeBtn.onclick=()=>ov.style.display='none'; ov.onclick=e=>{ if(e.target===ov) ov.style.display='none'; };
+const ov=document.getElementById('nt-chat-overlay'),openBtn=document.getElementById('nt-friends-btn'),closeBtn=document.getElementById('nt-close'),msgs=document.getElementById('nt-msgs'),inp=document.getElementById('nt-input'),send=document.getElementById('nt-send');
+openBtn.onclick=()=>ov.style.display='flex';closeBtn.onclick=()=>ov.style.display='none';ov.onclick=e=>{if(e.target===ov) ov.style.display='none';};
 
-  function add(html, who){
-    const d=document.createElement('div');
-    d.style.cssText = who==='user' ? 'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;font-size:15px;' : 'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.08);';
-    if(who==='bot') d.innerHTML=html; else d.textContent=html;
-    msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
-  }
+function add(html,who){const d=document.createElement('div');d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;box-shadow:0 1px 3px rgba(0,0,0,0.08);';if(who==='bot') d.innerHTML=html; else d.textContent=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
 
-  const answers = {
-    "Origins of disabled people": `Bro that topic is for the adults chat 😂 I'm the young one, I only roast. Ask me something fun.`,
-    "Origins of cancer": `Cancer? Bro the only cancer here is when your phone dies at 1% and you need it most 💀😂`,
-    "Same-sex gender fraud mindset": `Hahaha you trying to get me canceled? I'm just here to joke, not to debate on Twitter 😎`,
-    "Origins of infidelity": `Infidelity is when you say "I'm on a diet" and then you eat a whole pizza alone at 2am. You cheated on yourself bro 🍕💔`,
-    "Origins of suicides": `Yo that one is heavy bro, if you feel bad fr talk to someone who loves you ❤️ we can joke after but I want you good.`,
-    "Origins of being woman and men": `Easy: One can't find stuff in the fridge, the other is always right. Perfect balance 😂`,
-    "Origins of assassins": `They come from watching too much John Wick and thinking you can dodge bullets. Spoiler: you can't 🤣`,
-    "The money and the effect": `Money is like WiFi, everybody wants it but nobody knows where it really comes from. One day you have it, next day you're broke 💸😂`,
-    "Human love": `True love is when you lend your charger and they actually return it. That's real love 😂❤️`
-  };
+const used={};
+function pick(key,list){if(!used[key]) used[key]=[];let avail=list.map((v,i)=>({v,i})).filter(o=>!used[key].includes(o.i));if(avail.length===0){used[key]=[];avail=list.map((v,i)=>({v,i}));}const chosen=avail[Math.floor(Math.random()*avail.length)];used[key].push(chosen.i);return chosen.v;}
 
-  function makeDir(){ return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join(''); }
-  
-  function chatJoke(q){
-    const low = q.toLowerCase();
-    if(/^(hi|hey|hello|yo|sup|wassup|hola)$/i.test(low.trim()) || (low.includes('hi') && low.length<12)){
-      const arr = [`Yo hi! 👋 finally you showed up, I thought you left me on read 😂`,`Wassup! 🔥 you look like you came to get roasted`,`Heyyy 😆 I was bored without you, let's joke`];
-      return arr[Math.floor(Math.random()*arr.length)];
-    }
-    if(low.includes('how are you') || low.includes('how u doing')){
-      return `I'm good bro, better than your phone battery at 2% 😂 and you? Alive or just surviving?`;
-    }
-    if(low.includes('who are you')){
-      return `I'm NEW TIME YOUNG — the fun chat, not the boring adults one. I don't do serious, I only do heavy jokes 😎`;
-    }
-    if(low.includes('love') || low.includes('crush') || low.includes('girlfriend') || low.includes('boyfriend')){
-      return `You said "${q}"? 😂 Bro your crush leaves you on read and you call it love? That's premium pain 💔😂`;
-    }
-    if(low.includes('bored') || low.includes('tired')){
-      return `You said you're "${q}"? That's why I'm here bro, I'm free entertainment with no ads 😂`;
-    }
-    if(low.includes('money') || low.includes('job') || low.includes('broke')){
-      return `You talking about "${q}"? Same bro, we all working to be broke with style 💸😂`;
-    }
-    return `Hahaha you said "${q}" 😂 that's like saying you'll sleep early and then you're on TikTok at 3am. No logic but we all do it 🤣<br><br>Wanna get roasted more about that or we switch topic?`;
-  }
+const DB={
+"Origins of disabled people":["That topic is for the Adults chat bro, here we only joke 😂","Bro that's heavy, I'm Young mode - I only know how to roast about TikTok, not that 😅","Nah too serious for Young, tell me your crush name and I roast you better 😂"],
+"Origins of cancer":["Cancer? The only cancer here is your phone at 1% when you need it most 💀","Origin of cancer here is staying up till 3am saying 'one more reel' 😂","Young people's cancer is falling in love with someone who leaves you on read"],
+"Same-sex gender fraud mindset":["You trying to get me canceled on X? 😎 I'm just here to joke","That question will get us both banned, let's talk about something funnier 😂","That one is for the serious directory, here we roast about life"],
+"Origins of infidelity":["Infidelity is saying 'I'm on a diet' and eating a whole pizza alone at 2am 🍕","Infidelity is saying 'I won't text my ex' and Friday night you are there again 💔","Infidelity is like WiFi, you say you have one but you always looking for another 😂"],
+"Origins of suicides":["Yo that one is heavy fr, if you feel bad talk to someone real who loves you ❤️","That topic deserves respect not jokes. If you need help please reach out to someone close 🙏","Let's switch to something lighter bro, that one is serious"],
+"Origins of being woman and men":["Easy: one can't find stuff in the fridge, the other is always right. Perfect balance 😂","Men: 'Ready in 5 min' = 5 min. Women: '5 min' = 45 min and worth it 😂","He forgets everything, she remembers everything, especially 2019 😂"],
+"Origins of assassins":["They come from watching John Wick and thinking you can dodge bullets. You trip alone 🤣","Assassins start when someone eats your leftovers from the fridge without permission 💀","Origin is rage + too many violent movies, go touch grass bro 😂"],
+"The money and the effect":["Money is like your ex, when you need it it's gone 💸","Money is like WiFi, everybody wants it but nobody knows where it comes from 😂","You work all month to be broke with style, that's the effect 💀"],
+"Human love":["True love is when they return your charger. That's REAL love 😂❤️","Love is when you share your fries. If they share fries, marry them 🍟","Love is staying even when they snore like a tractor 🚜😂"]
+};
 
-  function greeting(){ return `Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>Difference? Here I talk to YOU directly as a friend and I only joke. No serious stuff, just roasting with love.<br><br>Say hi and I'll follow your vibe 😉<br><br>${makeDir()}`; }
-  function showAnswer(title){ return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Young version - only jokes. For serious check Adults chat.</i>`; }
+const POOLS={
+hi:["Yo hi! 👋 finally you showed up, I thought you left me on read 😂","Wassup! 🔥 I was bored without you","Heyyy 😆 you came with roast-me energy today?","Yo! Look who decided to text after 3 business days 😂","Hi hi! You good? You look like you have a story"],
+how:["I'm good bro, better than your phone at 1% 😂 you? Alive or surviving?","I'm chillin, living rent-free in this chat 😎 how about you?","Better now that you texted, I was talking to myself like crazy 😂"],
+love:["You said '{q}'? Bro your crush leaves you on read and you call it love? Premium pain 💔😂","'{q}' huh? That's like saying you'll move on but you stalk their story at 2am 😂","Love with '{q}'? That's like sharing your fries, rare and beautiful 🍟😂"],
+money:["You talking about '{q}'? Same bro, we all working to be broke with style 💸😂","'{q}'? Bro money comes and goes, mostly goes 💀","You said '{q}' - that's why we laugh, to not cry about the bank account 😂"],
+bored:["You said you're '{q}'? That's why I'm here, free entertainment with no ads 😂","'{q}'? Perfect, let's make it less boring. Roast me and I roast you back 🔥"],
+generic:["Hahaha you said '{q}' 😂 that's like saying you'll sleep early and ending on TikTok at 3am","Bro '{q}'? That sounds like you at 2am overthinking everything 😂","You: '{q}' - Me: same bro, same. But funnier 😆","'{q}' - most young thing I've heard today, you need a medal 🏅😂","Yo with '{q}' you just described my whole 2024 💀","'{q}'?? Bro you got me laughing, that's premium young problems 😂"]
+};
 
-  add(greeting(),'bot');
+function makeDir(){return Object.keys(DB).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');}
+function greeting(){return `Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm not the boring adults chat. I joke, I roast, and I never repeat the same joke twice.<br><br>Say hi and let's vibe 😉<br><br>${makeDir()}`;}
+function showAnswer(t){return `<b>${t}</b><br><br>${pick(t,DB[t])}`;}
+function chatJoke(q){
+ const low=q.toLowerCase().trim();
+ if(/^(hi|hey|hello|yo|sup|wassup)$/i.test(low) || (low.includes('hi') && low.length<15)) return pick('hi',POOLS.hi);
+ if(low.includes('how are you') || low.includes('how u doing')) return pick('how',POOLS.how);
+ if(low.includes('love') || low.includes('crush') || low.includes('girlfriend') || low.includes('boyfriend')) return pick('love',POOLS.love).replace(/{q}/g,q);
+ if(low.includes('money') || low.includes('job') || low.includes('broke')) return pick('money',POOLS.money).replace(/{q}/g,q);
+ if(low.includes('bored') || low.includes('tired')) return pick('bored',POOLS.bored).replace(/{q}/g,q);
+ return pick('generic',POOLS.generic).replace(/{q}/g,q);
+}
 
-  msgs.addEventListener('click', e=>{
-    const it=e.target.closest('.nt-dir-item');
-    if(!it) return;
-    const t=it.getAttribute('data-title');
-    add(t,'user');
-    setTimeout(()=> add(showAnswer(t),'bot'), 250);
-  });
-
-  function ask(){
-    if(!inp.value.trim()) return;
-    const q=inp.value.trim(); add(q,'user'); inp.value='';
-    const l=q.toLowerCase();
-    let f=null;
-    if(l.includes('cancer')) f="Origins of cancer";
-    else if(l.includes('disab')) f="Origins of disabled people";
-    else if(l.includes('infidel')) f="Origins of infidelity";
-    else if(l.includes('suicid')) f="Origins of suicides";
-    else if(l.includes('assassin')) f="Origins of assassins";
-    else if(l.includes('same')||l.includes('gender')) f="Same-sex gender fraud mindset";
-
-    setTimeout(()=>{
-      if(f) add(showAnswer(f),'bot');
-      else add(chatJoke(q),'bot');
-    }, 350);
-  }
-  send.onclick=ask;
-  inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
+add(greeting(),'bot');
+msgs.addEventListener('click',e=>{const it=e.target.closest('.nt-dir-item');if(!it) return;const t=it.getAttribute('data-title');add(t,'user');setTimeout(()=>add(showAnswer(t),'bot'),250);});
+function ask(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';const l=q.toLowerCase();let f=null;if(l.includes('cancer')) f="Origins of cancer";else if(l.includes('disab')) f="Origins of disabled people";else if(l.includes('infidel')) f="Origins of infidelity";else if(l.includes('suicid')) f="Origins of suicides";else if(l.includes('assassin')) f="Origins of assassins";else if(l.includes('same')||l.includes('gender')) f="Same-sex gender fraud mindset";setTimeout(()=>{if(f) add(showAnswer(f),'bot'); else add(chatJoke(q),'bot');},350);}
+send.onclick=ask;inp.onkeydown=e=>{if(e.key==='Enter') ask();};
 });
 </script>
           
