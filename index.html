@@ -1300,13 +1300,19 @@ opacity: 1;
                 <!-- CHAT FRIENDS - CON BOLITA DE TU FOTO - NEGRA TRANSPARENTE + ICONO ROJO -->
 <style>
 #nt-friends-btn{
-  position: fixed; bottom: 110px; right: 14px; width: 66px; height: 66px;
+  position: fixed; 
+  bottom: 18px; /* ANTES 110px - AHORA ABAJO */
+  right: 14px; 
+  width: 66px; height: 66px;
   background: rgba(0,0,0,0.78);
   border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 99999; backdrop-filter: blur(6px);
+  border-radius: 50%; 
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 99999; 
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
 }
 #nt-friends-btn svg{ width:36px; height:36px; }
 .nt-dir-item{
