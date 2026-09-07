@@ -1297,12 +1297,11 @@ opacity: 1;
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
                 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
                 <!-- CHAT FRIENDS - CODIGO COMPLETO FINAL -->
-                <style>
-/* BOLITA IGUAL A TU FOTO - NEGRA CON ICONO ROJO - INFERIOR */
+<style>
 #nt-friends-btn{
   position:fixed;
-  bottom:14px;
-  right:14px;
+  bottom:22px;
+  right:22px;
   width:58px;
   height:58px;
   background:rgba(12,12,12,0.96);
@@ -1351,23 +1350,7 @@ opacity: 1;
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
   const ov=document.getElementById('nt-chat-overlay'), openBtn=document.getElementById('nt-friends-btn'), closeBtn=document.getElementById('nt-close'), msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send');
-  
-  function openChat(){ ov.style.display='flex'; }
-  openBtn.onclick=openChat; 
-  closeBtn.onclick=()=>ov.style.display='none'; 
-  ov.onclick=e=>{ if(e.target===ov) ov.style.display='none'; };
-
-  // === ESTO ES LO NUEVO PARA EXPLORE FRIENDS ===
-  // Detecta automáticamente tu botón EXPLORE FRIENDS de la foto
-  document.querySelectorAll('a, button, div').forEach(el=>{
-    if(el.textContent && el.textContent.trim().toUpperCase().includes('EXPLORE FRIENDS')){
-      el.style.cursor='pointer';
-      el.addEventListener('click', (e)=>{
-        e.preventDefault();
-        openChat();
-      });
-    }
-  });
+  openBtn.onclick=()=>ov.style.display='flex'; closeBtn.onclick=()=>ov.style.display='none'; ov.onclick=e=>{ if(e.target===ov) ov.style.display='none'; };
 
   function add(html, who){
     const d=document.createElement('div');
@@ -1391,13 +1374,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
   function makeDir(){
     return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">👉 ${n}</div>`).join('');
   }
+
   function greeting(){
     return `Hey here I am I am Chat Friends from New Time, here the differences of me with the Directory is that I talk to you here directly as your friend 100%. It's always good that you read the Directory in a professional and complete way.<br><br>Before starting, do you like cold or heat more hahaha 😉.<br><br>${makeDir()}`;
   }
+
   function showAnswer(title){
     return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`;
   }
+
   add(greeting(),'bot');
+
   msgs.addEventListener('click', e=>{
     const it=e.target.closest('.nt-dir-item');
     if(!it) return;
@@ -1405,6 +1392,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     add(t,'user');
     setTimeout(()=> add(showAnswer(t),'bot'), 200);
   });
+
   function ask(){
     if(!inp.value.trim()) return;
     const q=inp.value.trim(); add(q,'user'); inp.value='';
@@ -1425,6 +1413,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
 });
 </script>
+
 
             </div>
         </div>
