@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- AVISO V6 FINAL - LOGO ARRIBA INFO ABAJITO - NEGRO PURO COMO TU FOTO -->
 <div id="nt-overlay">
   <div id="nt-box">
     <div class="nt-logo-row">
@@ -24,6 +22,11 @@
     </div>
   </div>
 </div>
+
+<audio id="newTimeAudio" preload="auto">
+  <source src="welcome-new-time-mastered.mp3" type="audio/mpeg">
+</audio>
+
 <style>
   #nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
   #nt-overlay.hide{opacity:0;pointer-events:none}
@@ -45,10 +48,18 @@
     const ov=document.getElementById('nt-overlay');
     const yes=document.getElementById('nt-yes');
     const no=document.getElementById('nt-no');
+    const audio=document.getElementById('newTimeAudio');
     if(localStorage.getItem('newtime_legal_ok')==='1'){ov.remove();return;}
-    yes.onclick=()=>{localStorage.setItem('newtime_legal_ok','1');ov.classList.add('hide');setTimeout(()=>ov.remove(),400);};
+    yes.onclick=()=>{
+      if(audio){ audio.volume=0.7; audio.currentTime=0; audio.play().catch(()=>{}); }
+      localStorage.setItem('newtime_legal_ok','1');
+      ov.classList.add('hide');
+      setTimeout(()=>ov.remove(),400);
+    };
     no.onclick=()=>{window.location.href='https://www.google.com';};
   })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEW TIMES - Full transparency. The full story.</title>
@@ -61,7 +72,6 @@
 <link rel="shortcut icon" href="/favicon.ico?v=8" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=8" />
 <link rel="manifest" href="/site.webmanifest?v=8" />
-<!-- PORTADA GRANDE PARA WHATSAPP/FACEBOOK -->
 <meta property="og:site_name" content="NEW TIME">
 <meta property="og:title" content="NEW TIME">
 <meta property="og:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
