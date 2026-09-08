@@ -1756,27 +1756,25 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 
 <div class="nt-wrap"><div class="nt-grid">
 
-<!-- 1 - NEW TIME MAGAZINE -->
+
 <div class="nt-hero"><img src="magazine-here.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">NEW TIME<br>MAGAZINE</h2><p class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</p><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE NEW TIME</span></a></div></div>
 
-<!-- 2 - FOR THE YOUNG -->
-<div class="nt-hero"><img src="for-young.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">FOR THE<br>YOUNG</h2><p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p><a class="nt-explore" href="for-young.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FOR THE YOUNG</span></a></div></div>
-<!-- BOLITA DE CHAT - FOR THE YOUNG -->
 
-<!-- 3 - TEAM con team-new-time.jpg -->
+<div class="nt-hero"><img src="for-young.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">FOR THE<br>YOUNG</h2><p class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</p><a class="nt-explore" href="for-young.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FOR THE YOUNG</span></a></div></div>
+
+
 <div class="nt-hero"><img src="team-new-time.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">TEAM</h2><p class="nt-paragraph">A fully professional team of world-class premium investigations. That's why New Time investigates today, your present.</p><a class="nt-explore" href="team.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE TEAM</span></a></div></div>
 
-<!-- 4 - FRIENDS -->
+
 <div class="nt-hero"><img src="time-time.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">FRIENDS</h2><p class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you.</p><a class="nt-explore" href="chat-friends.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FRIENDS</span></a></div></div>
 
-<!-- 5 - ALL NEW TIME - último negro -->
+
 <div class="nt-hero"><img src="all-new-time.jpg"><div class="nt-content"><h2 class="nt-title">ALL NEW<br>TIME</h2><p class="nt-paragraph">We are who you truly wait for every second to identify yourself.</p><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE ALL</span></a></div></div>
 
-<!-- 6 - SERVICE -->
+
 <div class="nt-hero"><img src="services-service.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">SERVICE</h2><p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth.</p><a class="nt-explore" href="service.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE SERVICE</span></a></div></div>
 
 </div></div>
-<!-- FIN -->
 
 <div class="video-wrapper" style="margin-top:17px !important;">
                 <video controls playsinline preload="metadata" poster="new.webp">
@@ -1787,18 +1785,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
             </div>
         </div>
     </main>   
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-inner">
-            <p class="cookie-text">
-                We use cookies to enable the proper functioning and security of our website, and to offer you the best possible user experience.
-            </p>
-            <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-secondary" id="acceptNecessary">Accept only necessary</button>
-                <button class="cookie-btn cookie-btn-primary" id="acceptAll">Accept all</button>
-            </div>
-        </div>
-    </div>
-
+    
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1944,33 +1931,6 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
             }
         });
 
-        const cookieBanner = document.getElementById('cookieBanner');
-        const acceptNecessary = document.getElementById('acceptNecessary');
-        const acceptAll = document.getElementById('acceptAll');
-
-        setTimeout(() => {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('visible');
-                document.body.classList.add('cookie-visible');
-            }
-        }, 800);
-
-        function hideCookieBanner() {
-            cookieBanner.classList.remove('visible');
-            document.body.classList.remove('cookie-visible');
-        }
-
-        acceptNecessary.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'necessary');
-            hideCookieBanner();
-        });
-
-        acceptAll.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'all');
-            hideCookieBanner();
-        });
-
-        // AUDIO LOGIC - Tocas bocina suena audio, tocas nombre abre PDF
         let currentAudio = null;
         let currentBtn = null;
 
