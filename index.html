@@ -1606,11 +1606,11 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                                 <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                          </div>
-                      </div>
-                   </li>
+                       </div>
+                    </li>
                  <li class="directory-item">
               <div class="directory-row">
-           <a id="link21" href="physical-sex-fraud.pdf" onclick="document.getElementById('gate21').style.display='flex';return false;" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud</a>
+           <a id="link21" href="physical-sex-fraud.pdf">Physical same-sex gender fraud</a>
         <div class="directory-actions">
             <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2025,8 +2025,27 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 </div>
 <script>
 var g=document.getElementById('gate21');
-document.getElementById('btnNo').onclick=function(){g.style.display='none';};
-document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
+function closeGate21(){
+  g.style.display='none';
+  var dir=document.querySelector('.directory, #directory, [id*="director"]');
+  if(dir) dir.scrollIntoView({behavior:'smooth'});
+  if(history.state && history.state.gate21) history.back();
+}
+document.getElementById('btnNo').onclick=closeGate21;
+document.getElementById('btnYes').onclick=function(){
+  window.location.href='physical-sex-fraud.pdf';
+};
+window.addEventListener('popstate', function(){
+  g.style.display='none';
+});
+var link21=document.getElementById('link21');
+if(link21){
+  link21.addEventListener('click', function(e){
+    e.preventDefault();
+    g.style.display='flex';
+    history.pushState({gate21:true}, '');
+  });
+}
 </script>
 </body>
 
