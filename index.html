@@ -1997,10 +1997,13 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
+<div id="gate21" style="position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:1000000;padding:24px;text-align:center"><div style="width:100%;max-width:320px;text-align:center"><span style="font-family:'Inter',sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase">NEW TIME</span><p style="color:rgba(255,255,255,0.65);font-size:10px;line-height:1.5;margin:16px 0">New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>No sexual fraud deserves equal respect or legal protection.<br><br>With New Time — 21+ only.</p><div style="display:flex;gap:8px;justify-content:center"><button id="btnNo" style="padding:8px 18px;border-radius:6px;font-size:9px;background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6)">No Accept</button><button id="btnYes" style="padding:8px 18px;border-radius:6px;font-size:9px;background:#fff;color:#000;font-weight:600">Accept</button></div></div></div>
+<script>
 var gate=document.getElementById('gate21');
 var link=document.getElementById('link21');
-if(link){link.addEventListener('click',function(e){e.preventDefault();gate.classList.add('show');});}
-document.getElementById('btnNo').onclick=function(){gate.classList.remove('show');};
+if(link){link.addEventListener('click',function(e){e.preventDefault();gate.style.display='flex';});}
+document.getElementById('btnNo').onclick=function(){gate.style.display='none';};
 document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
-  </script>
+</script>
+
 </body>
