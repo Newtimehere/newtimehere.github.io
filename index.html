@@ -1543,21 +1543,6 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:22px 20px}
   .nt-glance-img{height:160px}
 }
-<!-- WARNING MODAL NEW TIME -->
-<div id="nt-warning" style="display:none; position:fixed; inset:0; z-index:9999; background:#000; color:#fff; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px;">
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
-    <svg width="40" height="45" viewBox="0 0 40 45" fill="none"><path d="M5 5 L35 5 L35 35 L20 42 L5 35 Z" stroke="#ff2a2a" stroke-width="1" fill="none"/></svg>
-    <span style="font-size:32px; letter-spacing:6px;">NEW TIME</span>
-  </div>
-  <p id="nt-warning-text" style="max-width:700px; color:#aaa; line-height:1.6; font-size:14px; margin-bottom:25px;">
-    All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.
-  </p>
-  <div style="display:flex; gap:15px;">
-    <button id="nt-no" style="background:transparent; border:1px solid #555; color:#999; padding:10px 20px; border-radius:8px; cursor:pointer;">NO ACCEPT</button>
-    <button id="nt-yes" style="background:#fff; color:#000; padding:10px 25px; border-radius:8px; border:none; cursor:pointer; font-weight:bold;">ACCEPT</button>
-  </div>
-</div>
-
 <!-- AVISO SOLO PARA 21+ - MISMO DISEÑO -->
 <div id="nt-21-overlay" style="display:none; position:fixed; inset:0; background:#000; z-index:1000000; align-items:center; justify-content:center; padding:24px;">
   <div style="width:100%; max-width:320px; text-align:center;">
@@ -1572,20 +1557,19 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
       With New Time, you must be 21+ to continue.
     </p>
     <div style="display:flex; gap:8px; justify-content:center;">
-      <button id="nt-21-no" style="padding:8px 18px; border-radius:6px; font-size:9px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6);">No Accept</button>
-      <button id="nt-21-yes" style="padding:8px 18px; border-radius:6px; font-size:9px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:#fff; border:1px solid #fff; color:#000; font-weight:600; min-width:78px;">Accept</button>
+      <button id="nt-21-no" style="padding:8px 18px; border-radius:6px; font-size:9px; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6);">No Accept</button>
+      <button id="nt-21-yes" style="padding:8px 18px; border-radius:6px; font-size:9px; cursor:pointer; background:#fff; border:1px solid #fff; color:#000; font-weight:600;">Accept</button>
     </div>
   </div>
 </div>
 
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   const overlay21 = document.getElementById('nt-21-overlay');
   const yes21 = document.getElementById('nt-21-yes');
   const no21 = document.getElementById('nt-21-no');
   let pdfUrl = null;
 
-  // Busca SOLO ese link
   document.querySelectorAll('a[href*="physical-sex-fraud.pdf"]').forEach(link => {
     link.addEventListener('click', function(e){
       e.preventDefault();
@@ -1596,16 +1580,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 
   yes21.onclick = () => {
     overlay21.style.display = 'none';
-    if(pdfUrl){
-      window.open(pdfUrl, '_blank');
-      pdfUrl = null;
-    }
+    if(pdfUrl) window.open(pdfUrl, '_blank');
   };
-  no21.onclick = () => {
-    window.location.href = 'https://www.google.com';
-  };
-})();
+  no21.onclick = () => { window.location.href = 'https://www.google.com'; };
+});
 </script>
+</style>
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
