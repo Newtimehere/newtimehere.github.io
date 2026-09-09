@@ -1543,46 +1543,48 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:22px 20px}
   .nt-glance-img{height:160px}
 }
-<!-- WARNING 21+ - Physical same-sex gender fraud -->
-<div id="gate21" style="display:none;position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center">
-  <div style="display:flex;align-items:center;gap:14px;margin-bottom:32px">
-    <div style="width:48px;height:52px;border:1px solid #8B1E1E;clip-path:polygon(0 0,100% 0,100% 15%,92% 20%,92% 85%,50% 100%,8% 85%,8% 20%,0 15%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
-      <div style="display:flex;gap:3px"><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span></div>
-      <div style="display:flex;gap:3px;margin-top:8px"><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span></div>
+</style>
+
+<!-- AVISO 21+ - EXACTO A TU FOTO 1:04 - MISMO DISEÑO, TEXTO EN INGLES -->
+<div id="gate21" style="position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:9999999;padding:24px;text-align:center">
+  <div style="width:100%;max-width:320px;text-align:center">
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
+      <svg style="width:32px;height:38px;flex-shrink:0" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span style="font-family:'Inter',sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase">NEW TIME</span>
     </div>
-    <span style="color:#fff;font-family:'Times New Roman',serif;letter-spacing:0.35em;font-size:28px;font-weight:300">NEW TIME</span>
-  </div>
-
-  <p style="color:#9a9a9a;max-width:620px;font-family:Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.7;letter-spacing:0.02em">
-    New Time exposes the direct truth that is covered up with discrimination, hate, intolerance, homophobia, etc.<br><br>
-    No sexual fraud deserves equal respect nor legal protections.<br><br>
-    With New Time - 21+ minimum required.<br><br>
-    <span style="font-size:12px;color:#777">All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</span>
-  </p>
-
-  <div style="display:flex;gap:16px;margin-top:32px">
-    <button id="btnNo" style="background:transparent;border:1px solid #2a2a2a;color:#777;padding:13px 30px;border-radius:10px;font-size:12px;letter-spacing:0.2em;cursor:pointer">NO ACCEPT</button>
-    <button id="btnYes" style="background:#fff;color:#000;border:none;padding:13px 34px;border-radius:10px;font-size:12px;letter-spacing:0.2em;font-weight:700;cursor:pointer">ACCEPT</button>
+    <div style="margin-top:6px">
+      <p style="color:rgba(255,255,255,0.65);font-family:'Inter',sans-serif;font-size:10px;line-height:1.5;font-weight:300;margin:0 0 16px;padding:0 8px">
+        New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>
+        No sexual fraud deserves equal respect or legal protection.<br><br>
+        With New Time — 21+ only.
+      </p>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <button id="btnNo" style="padding:8px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);cursor:pointer">NO ACCEPT</button>
+        <button id="btnYes" style="padding:8px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px;cursor:pointer">ACCEPT</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <script>
-// Solo para el directorio especifico
-const targetText = "Physical same-sex gender fraud: 21+ only";
-document.querySelectorAll('*').forEach(el=>{
-  if(el.textContent.trim() === targetText){
-    el.style.cursor='pointer';
-    el.addEventListener('click', (e)=>{
-      e.preventDefault();
-      document.getElementById('gate21').style.display='flex';
-    });
-  }
-});
-document.getElementById('btnNo').onclick = ()=> { window.location.href = '/'; };
-document.getElementById('btnYes').onclick = ()=> { 
-  document.getElementById('gate21').style.display='none';
-  // AQUI PON TU LINK REAL DE ESA SECCION
-  window.location.href = '/physical-same-sex-gender-fraud.html'; 
+// ESTE ES EL QUE TE FALTA - EXACTO PARA TU LINK SIN CAMBIAR COLOR
+var gate=document.getElementById('gate21');
+var link=document.getElementById('link21');
+if(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    gate.style.display='flex';
+  });
+}
+document.getElementById('btnNo').onclick = function(){ gate.style.display='none'; };
+document.getElementById('btnYes').onclick = function(){ 
+  gate.style.display='none';
+  window.location.href = 'physical-sex-fraud.pdf'; 
 };
 </script>
 </style>
@@ -1639,24 +1641,25 @@ document.getElementById('btnYes').onclick = ()=> {
                         </div>
                     </div>
                 </li>
-                <li class="directory-item">
-  <div class="directory-row">
-    <a id="link21" href="physical-sex-fraud.pdf" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud</a>
-    <div class="directory-actions">
-      <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </div>
-</li>
+                
                 <li class="directory-item">
                     <div class="directory-row">
+                        <a id="link21" href="physical-sex-fraud.pdf" class="directory-link">Physical same-sex gender fraud</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </li>
+                
+                <div class="directory-row">
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-questions-answers.mp3" aria-label="Play audio">
