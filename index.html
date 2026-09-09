@@ -2007,7 +2007,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     </div>
   </div>
 </div>
-<div id="gateFINAL" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:99999;align-items:center;justify-content:center">
+<div id="gateFINAL" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999999;align-items:center;justify-content:center">
   <div style="background:#111;color:#fff;padding:24px;border-radius:12px;max-width:320px;text-align:center">
     <p style="font-size:14px">This content is 21+<br>Do you accept?</p>
     <button id="btnNo21" style="margin:8px;padding:8px 16px">No Accept</button>
@@ -2016,42 +2016,28 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 </div>
 
 <script>
-// borra cualquier gate viejo duplicado que tengas
-var old1=document.getElementById('gate21');
-if(old1) old1.remove();
+// borra gates viejos que te estaban duplicando
+document.querySelectorAll('#gate21').forEach(function(e){e.remove()});
 
 var g=document.getElementById('gateFINAL');
 var l=document.getElementById('link21');
 
-function openFinal(e){
-  if(e) e.preventDefault();
-  g.style.display='flex';
-  history.pushState({final:1},'');
+if(l){
+  l.onclick = function(e){
+    e.preventDefault();
+    g.style.display='flex'; // solo avisa al entrar
+  };
 }
-function closeFinal(){
-  g.style.display='none';
+
+document.getElementById('btnNo21').onclick = function(){
+  g.style.display='none'; // sale sin avisar de nuevo
   var dir=document.querySelector('.directory');
-  if(dir) dir.scrollIntoView({behavior:'smooth'});
-}
+  if(dir) dir.scrollIntoView();
+};
 
-if(l) l.addEventListener('click',openFinal);
-
-document.getElementById('btnNo21').addEventListener('click',function(){
-  if(history.state && history.state.final){
-    history.back();
-  } else {
-    closeFinal();
-  }
-});
-
-document.getElementById('btnYes21').addEventListener('click',function(){
+document.getElementById('btnYes21').onclick = function(){
   location.href='physical-sex-fraud.pdf';
-});
-
-window.addEventListener('popstate',function(){
-  closeFinal();
-});
+};
 </script>
 </body>
 </html>
-
