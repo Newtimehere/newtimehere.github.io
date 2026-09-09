@@ -1560,29 +1560,37 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     </div>
   </div>
 </div>
+<div id="nt-21-overlay" style="display:none; position:fixed; inset:0; background:#000; z-index:9999999; align-items:center; justify-content:center; padding:24px;">
+  <div style="width:100%; max-width:320px; text-align:center;">
+    <div style="margin-bottom:15px; color:#fff; font-size:26px; letter-spacing:2px; font-family:'Inter',sans-serif;">NEW TIME</div>
+    <p style="color:#aaa; font-size:11px; line-height:1.6; margin-bottom:20px; font-family:'Inter',sans-serif;">
+      <strong style="color:#fff; display:block; margin-bottom:10px; font-size:13px;">WARNING - 21+ ONLY</strong>
+      New Time evidences the direct truth that is covered up with claims of discrimination, hate, intolerance, homophobia, etc.<br><br>
+      No sexual fraud deserves equal respect nor legal protections.<br><br>
+      With New Time, you must be 21+ to continue.
+    </p>
+    <div style="display:flex; gap:10px; justify-content:center;">
+      <button onclick="document.getElementById('nt-21-overlay').style.display='none'" style="padding:10px 20px; background:transparent; border:1px solid #555; color:#999; border-radius:6px; cursor:pointer;">NO ACCEPT</button>
+      <button id="nt-21-yes-btn" style="padding:10px 20px; background:#fff; color:#000; border-radius:6px; cursor:pointer; font-weight:bold;">ACCEPT</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  const link21 = document.getElementById('link-21');
-  const over21 = document.getElementById('nt-21-overlay');
-  if(link21 && over21){
-    link21.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      over21.style.display = 'flex';
-      return false;
-    });
-    document.getElementById('nt-21-yes').onclick = function(){
-      over21.style.display = 'none';
-      window.open(link21.href, '_blank');
-    };
-    document.getElementById('nt-21-no').onclick = function(){
-      window.location.href = 'https://www.google.com';
-    };
-  } else {
-    console.log('No se encontró link-21 o overlay');
+  let currentPdf = null;
+  function show21(e, url){
+    e.preventDefault();
+    e.stopPropagation();
+    currentPdf = url;
+    document.getElementById('nt-21-overlay').style.display = 'flex';
+    return false;
   }
+  document.getElementById('nt-21-yes-btn').onclick = function(){
+    document.getElementById('nt-21-overlay').style.display = 'none';
+    if(currentPdf) window.open(currentPdf, '_blank');
+  };
 </script>
-</style>
+
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
@@ -1637,21 +1645,21 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                     </div>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-row">
-                        <a id="link-21" href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud: 21+ only</a>
-                        <div class="directory-actions">
-                            <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </li>
+  <div class="directory-row">
+    <a id="link-21" href="physical-sex-fraud.pdf" onclick="return show21(event, this.href)" class="directory-link">Physical same-sex gender fraud: 21+ only</a>
+    <div class="directory-actions">
+      <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</li>
                 <li class="directory-item">
                     <div class="directory-row">
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
