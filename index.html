@@ -1992,11 +1992,30 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-var g=document.getElementById('gate21');
-var l=document.getElementById('link21');
-if(l){l.addEventListener('click',function(e){e.preventDefault();g.style.display='flex';});}
-document.getElementById('btnNo').onclick=function(){g.style.display='none';};
-document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
+<div id="gate21" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:none;align-items:center;justify-content:center;z-index:99999999;padding:24px;box-sizing:border-box">
+  <div style="text-align:center;max-width:360px;width:100%">
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px">
+      <svg width="30" height="36" viewBox="0 0 80 95" fill="none"><path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="2" fill="none"/></svg>
+      <span style="color:#fff;font-size:22px;letter-spacing:3px">NEW TIME</span>
+    </div>
+    <p style="color:rgba(255,255,255,.7);font-size:11px;line-height:1.6;margin-bottom:20px">New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>No sexual fraud deserves equal respect or legal protection.<br><br>With New Time — 21+ only.</p>
+    <div style="display:flex;gap:10px;justify-content:center">
+      <button id="btnNo" style="padding:10px 20px;border-radius:6px;background:transparent;border:1px solid #333;color:#888;font-size:10px">No Accept</button>
+      <button id="btnYes" style="padding:10px 20px;border-radius:6px;background:#fff;color:#000;font-weight:700;font-size:10px">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var gate = document.getElementById('gate21');
+  var link = document.getElementById('link21');
+  if(!gate || !link){console.log('falta gate o link'); return;}
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    gate.style.display = 'flex';
+  });
+  document.getElementById('btnNo').onclick = function(){ gate.style.display='none'; };
+  document.getElementById('btnYes').onclick = function(){ window.location.href='physical-sex-fraud.pdf'; };
+})();
 </script>
-</body>
 </body>
