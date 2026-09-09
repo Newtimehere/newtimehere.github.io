@@ -1543,45 +1543,59 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:22px 20px}
   .nt-glance-img{height:160px}
 }
-<!-- ANUNCIO 21+ SOLO PARA PHYSICAL SAME-SEX GENDER FRAUD - MISMO DISEÑO QUE TU FOTO -->
-<div id="gate21">
-  <div>
-    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:20px">
-      <svg width="38" height="44" viewBox="0 0 42 48" fill="none"><path d="M21 2 L40 9 L40 28 C40 37 27 45 21 47 C15 45 2 37 2 28 L2 9 L21 2Z" stroke="#ff0000" stroke-opacity="0.4" stroke-width="0.8" fill="none"/><circle cx="15" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="21" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="27" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="15" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="21" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="27" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/></svg>
-      <span style="font-weight:300;font-size:32px;letter-spacing:0.35em;color:#fff">NEW TIME</span>
-    </div>
-    <p style="color:#888;font-size:13px;line-height:1.6;max-width:520px;margin:0 auto 24px;text-align:center">
-      New Time exposes the direct truth that is covered up with discrimination, hate, intolerance, homophobia, etc.<br><br>
-      No sexual fraud deserves equal respect nor legal protections.<br><br>
-      With New Time - 21+ minimum required.
-    </p>
-    <div style="display:flex;gap:12px;justify-content:center">
-      <button id="btnNo" style="background:transparent;border:1px solid #333;color:#888;padding:12px 28px;border-radius:10px;font-size:11px;letter-spacing:0.2em;cursor:pointer">NO ACCEPT</button>
-      <button id="btnYes" style="background:#fff;border:1px solid #fff;color:#000;font-weight:700;padding:12px 28px;border-radius:10px;font-size:11px;letter-spacing:0.2em;cursor:pointer">ACCEPT</button>
-    </div>
+<!-- WARNING MODAL NEW TIME -->
+<div id="nt-warning" style="display:none; position:fixed; inset:0; z-index:9999; background:#000; color:#fff; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px;">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+    <svg width="40" height="45" viewBox="0 0 40 45" fill="none"><path d="M5 5 L35 5 L35 35 L20 42 L5 35 Z" stroke="#ff2a2a" stroke-width="1" fill="none"/></svg>
+    <span style="font-size:32px; letter-spacing:6px;">NEW TIME</span>
+  </div>
+  <p id="nt-warning-text" style="max-width:700px; color:#aaa; line-height:1.6; font-size:14px; margin-bottom:25px;">
+    All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.
+  </p>
+  <div style="display:flex; gap:15px;">
+    <button id="nt-no" style="background:transparent; border:1px solid #555; color:#999; padding:10px 20px; border-radius:8px; cursor:pointer;">NO ACCEPT</button>
+    <button id="nt-yes" style="background:#fff; color:#000; padding:10px 25px; border-radius:8px; border:none; cursor:pointer; font-weight:bold;">ACCEPT</button>
   </div>
 </div>
 
-<style>
-#gate21{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:1000000;padding:24px;text-align:center}
-</style>
-
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  var gate=document.getElementById('gate21');
-  var link=document.getElementById('link21');
-  if(!gate) return;
-  if(link){
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-      gate.style.display='flex';
-    });
-  }
-  document.getElementById('btnNo').onclick=function(){gate.style.display='none';};
-  document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
-});
-</script>
+(function(){
+  const path = window.location.pathname + window.location.href;
+  const isTarget = path.toLowerCase().includes("physical same-sex gender fraud") || 
+                   path.toLowerCase().includes("physical-same-sex-gender-fraud") ||
+                   path.toLowerCase().includes("physical%20same-sex");
 
+  const modal = document.getElementById("nt-warning");
+  const textEl = document.getElementById("nt-warning-text");
+  const defaultText = textEl.innerHTML;
+  
+  // Texto especial solo para ese directorio
+  const specialText = `
+    <strong style="color:#fff; display:block; margin-bottom:10px; font-size:16px; letter-spacing:2px;">WARNING - 21+ ONLY</strong>
+    New Time evidences the direct truth that is covered up with claims of discrimination, hate, intolerance, homophobia, etc.<br><br>
+    No sexual fraud deserves equal respect nor legal protections.<br><br>
+    With New Time, you must be 21+ to continue.
+  `;
+
+  if(isTarget){
+    textEl.innerHTML = specialText;
+  }
+
+  // Mostrar modal si no ha aceptado
+  if(!localStorage.getItem("nt_accept_" + (isTarget ? "21" : "general"))){
+    modal.style.display = "flex";
+  }
+
+  document.getElementById("nt-yes").onclick = () => {
+    localStorage.setItem("nt_accept_" + (isTarget ? "21" : "general"), "1");
+    modal.style.display = "none";
+  };
+  document.getElementById("nt-no").onclick = () => {
+    window.location.href = "https://google.com";
+  };
+})();
+</script>
+</style>
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
@@ -1636,15 +1650,22 @@ document.addEventListener('DOMContentLoaded', function(){
                     </div>
                 </li>
                 <li class="directory-item">
-                <div class="directory-row">
-    <a id="link21" href="physical-sex-fraud.pdf" target="_blank" style="color:inherit !important; text-decoration:none !important;">Physical same-sex gender fraud</a>
-    <div class="directory-actions">
-      <button class="audio-btn" data-audio="">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2V15H6L11 19V5Z"></path><path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53"></path></svg>
-      </button>
-      <svg class="directory-arrow" viewBox="0 0 24 24"><path d="M9 6L15 12L9 18" stroke-width="1.5"></path></svg>
-    </div>
-  </div>
+                    <div class="directory-row">
+                        <a href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud: 21+ only</a>
+                        <div class="directory-actions">
+                            <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </li>
+                <li class="directory-item">
                     <div class="directory-row">
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
                         <div class="directory-actions">
