@@ -1543,49 +1543,43 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:22px 20px}
   .nt-glance-img{height:160px}
 }
-</style>
-
-<!-- AVISO 21+ - EXACTO A TU FOTO 1:04 - MISMO DISEÑO, TEXTO EN INGLES -->
-<div id="gate21" style="position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:9999999;padding:24px;text-align:center">
-  <div style="width:100%;max-width:320px;text-align:center">
-    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px">
-      <svg style="width:32px;height:38px;flex-shrink:0" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
-        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
-        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
-        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
-      </svg>
-      <span style="font-family:'Inter',sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase">NEW TIME</span>
+<!-- ANUNCIO 21+ SOLO PARA PHYSICAL SAME-SEX GENDER FRAUD - MISMO DISEÑO QUE TU FOTO -->
+<div id="gate21">
+  <div>
+    <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:20px">
+      <svg width="38" height="44" viewBox="0 0 42 48" fill="none"><path d="M21 2 L40 9 L40 28 C40 37 27 45 21 47 C15 45 2 37 2 28 L2 9 L21 2Z" stroke="#ff0000" stroke-opacity="0.4" stroke-width="0.8" fill="none"/><circle cx="15" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="21" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="27" cy="18" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="15" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="21" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/><circle cx="27" cy="30" r="1" fill="#ff0000" fill-opacity="0.5"/></svg>
+      <span style="font-weight:300;font-size:32px;letter-spacing:0.35em;color:#fff">NEW TIME</span>
     </div>
-    <div style="margin-top:6px">
-      <p style="color:rgba(255,255,255,0.65);font-family:'Inter',sans-serif;font-size:10px;line-height:1.5;font-weight:300;margin:0 0 16px;padding:0 8px">
-        New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>
-        No sexual fraud deserves equal respect or legal protection.<br><br>
-        With New Time — 21+ only.
-      </p>
-      <div style="display:flex;gap:8px;justify-content:center">
-        <button id="btnNo" style="padding:8px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);cursor:pointer">NO ACCEPT</button>
-        <button id="btnYes" style="padding:8px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px;cursor:pointer">ACCEPT</button>
-      </div>
+    <p style="color:#888;font-size:13px;line-height:1.6;max-width:520px;margin:0 auto 24px;text-align:center">
+      New Time exposes the direct truth that is covered up with discrimination, hate, intolerance, homophobia, etc.<br><br>
+      No sexual fraud deserves equal respect nor legal protections.<br><br>
+      With New Time - 21+ minimum required.
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center">
+      <button id="btnNo" style="background:transparent;border:1px solid #333;color:#888;padding:12px 28px;border-radius:10px;font-size:11px;letter-spacing:0.2em;cursor:pointer">NO ACCEPT</button>
+      <button id="btnYes" style="background:#fff;border:1px solid #fff;color:#000;font-weight:700;padding:12px 28px;border-radius:10px;font-size:11px;letter-spacing:0.2em;cursor:pointer">ACCEPT</button>
     </div>
   </div>
 </div>
 
+<style>
+#gate21{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:1000000;padding:24px;text-align:center}
+</style>
+
 <script>
-// ESTE ES EL QUE TE FALTA - EXACTO PARA TU LINK SIN CAMBIAR COLOR
-var gate=document.getElementById('gate21');
-var link=document.getElementById('link21');
-if(link){
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    gate.style.display='flex';
-  });
-}
-document.getElementById('btnNo').onclick = function(){ gate.style.display='none'; };
-document.getElementById('btnYes').onclick = function(){ 
-  gate.style.display='none';
-  window.location.href = 'physical-sex-fraud.pdf'; 
-};
+document.addEventListener('DOMContentLoaded', function(){
+  var gate=document.getElementById('gate21');
+  var link=document.getElementById('link21');
+  if(!gate) return;
+  if(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      gate.style.display='flex';
+    });
+  }
+  document.getElementById('btnNo').onclick=function(){gate.style.display='none';};
+  document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
+});
 </script>
 </style>
         <section class="directory" id="about">
