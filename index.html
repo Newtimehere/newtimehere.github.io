@@ -2015,28 +2015,21 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   function goToDirectory(){
     g.style.display = 'none';
     g.style.pointerEvents = 'none';
-    // Reemplaza el historial para que no pueda volver al aviso
     history.replaceState(null, '', '#directory');
     var dir = document.querySelector('.directory, #directory, [id*="director"], main');
     if(dir) dir.scrollIntoView({behavior:'smooth'});
     else window.scrollTo({top:0, behavior:'smooth'});
   }
-
-  // NO ACCEPT -> al directory
   document.getElementById('btnNo').onclick = function(e){
     e.preventDefault();
     goToDirectory();
   };
-
-  // ACCEPT -> al PDF, pero ANTES borra el aviso del historial
   document.getElementById('btnYes').onclick = function(e){
     e.preventDefault();
     g.style.display = 'none';
-    history.replaceState(null, '', '#directory'); // <--- clave
+    history.replaceState(null, '', '#directory'); 
     window.location.href = 'physical-sex-fraud.pdf';
   };
-
-  // Link que abre el aviso -> SIEMPRE lo muestra al entrar
   var link21 = document.getElementById('link21');
   if(link21){
     link21.addEventListener('click', function(e){
@@ -2046,16 +2039,31 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
       history.pushState({gate21:true}, '', '#gate21');
     });
   }
-
-  // La flecha de abajo a la derecha (salir) -> NUNCA muestra aviso, siempre directory
   window.addEventListener('popstate', function(){
     goToDirectory();
   });
 
   window.addEventListener('pageshow', function(e){
-    // cuando regresa del PDF con atrás
     if(e.persisted) goToDirectory();
   });
 })();
 </script>
+ <!-- FOOTER NEW TIME - SOLO PARTE ABAJO - COPYRIGHT 2027 -->
+<footer style="background:#0a0a0a;padding:48px 24px 56px 24px;text-align:center">
+  <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px">
+    <!-- Escudo NT -->
+    <svg width="44" height="50" viewBox="0 0 50 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 2L3 14V28C3 41 13 52 25 56C37 52 47 41 47 28V14L25 2Z" stroke="#fff" stroke-width="1.2" fill="none"/>
+      <path d="M25 2V18M3 14L25 18L47 14M25 18V36M3 28C3 28 15 32 25 36C35 32 47 28 47 28" stroke="#fff" stroke-width="1" fill="none"/>
+      <rect x="12" y="20" width="6" height="10" fill="#fff" opacity="0.9"/>
+      <rect x="32" y="20" width="6" height="10" fill="#fff" opacity="0.9"/>
+      <rect x="22" y="22" width="6" height="6" fill="#fff" opacity="0.9"/>
+      <text x="25" y="47" text-anchor="middle" fill="#fff" font-family="serif" font-size="9" letter-spacing="1" font-weight="700">NT</text>
+    </svg>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:5px;color:#fff;font-weight:300">NEW TIME</span>
+  </div>
+  <div style="font-family:'Inter',sans-serif;font-size:13px;line-height:1.7;color:#7a7a7a">
+    Copyright © 2027 New Time<br> Truth Hidden 
+  </div>
+</footer> 
 </body>
