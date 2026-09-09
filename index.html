@@ -2008,62 +2008,73 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-var g = document.getElementById('gate21');
-
-function goToDirectory(){
+(function(){
+  var g = document.getElementById('gate21');
   if(!g) return;
-  g.style.display = 'none';
-  var dir = document.querySelector('.directory, #directory, [id*="director"]');
-  if(dir) dir.scrollIntoView({behavior:'smooth'});
-  // deja el historial limpio en #directory
-  history.replaceState(null, '', location.pathname + location.search + '#directory');
-}
 
-// Si ya aceptó antes, que no vuelva a salir el aviso en esta sesión
-if(sessionStorage.getItem('gate21_accepted') === '1'){
-  if(g) g.style.display = 'none';
-}
-
-function closeAndGoDir(e){
-  if(e) e.preventDefault();
-  goToDirectory();
-}
-
-document.getElementById('btnNo').onclick = closeAndGoDir;
-
-document.getElementById('btnYes').onclick = function(e){
-  e.preventDefault();
-  // 1. marca que ya aceptó
-  sessionStorage.setItem('gate21_accepted', '1');
-  // 2. borra el estado del gate del historial ANTES de irse al PDF
-  // así cuando le de atrás, no vuelve al gate, vuelve al directory
-  history.replaceState(null, '', location.pathname + location.search + '#directory');
-  // 3. ahora sí al PDF
-  window.location.href = 'physical-sex-fraud.pdf';
-};
-
-// La flecha de abajo a la derecha (popstate) -> siempre al directory, nunca reabrir aviso
-window.addEventListener('popstate', function(){
-  // si ya aceptó, nunca reabrir
-  if(sessionStorage.getItem('gate21_accepted') === '1'){
-    goToDirectory();
-    return;
+  function hideGate(){
+    g.style.display = 'none';
+    g.style.pointerEvents = 'none';
   }
-  goToDirectory();
-});
+  
+  function goToDirectory(){
+    hideGate();
+    // Limpia el historial para que la flecha de abajo a la derecha NUNCA vuelva al aviso
+    history.replaceState(null, '', '#directory');
+    var dir = document.querySelector('.directory, #directory, [id*="director"], main, #content');
+    if(dir) dir.scrollIntoView({behavior:'smooth'});
+    else window.scrollTo({top: 0, behavior: 'smooth'});
+  }
 
-var link21 = document.getElementById('link21');
-if(link21){
-  link21.addEventListener('click', function(e){
+  // Si ya le dio ACCEPT una vez, que no vuelva a ver el aviso al salir del PDF
+  if(sessionStorage.getItem('gate21_accepted') === '1'){
+    hideGate();
+  }
+
+  // Botones
+  var btnNo = document.getElementById('btnNo');
+  var btnYes = document.getElementById('btnYes');
+
+  if(btnNo) btnNo.onclick = function(e){
     e.preventDefault();
-    // si ya aceptó, no muestres el gate otra vez, mándalo directo al PDF
-    if(sessionStorage.getItem('gate21_accepted') === '1'){
-      window.location.href = 'physical-sex-fraud.pdf';
-      return;
-    }
-    g.style.display = 'flex';
-    history.pushState({gate21:true}, '', '#gate21');
+    goToDirectory();
+  };
+
+  if(btnYes) btnYes.onclick = function(e){
+    e.preventDefault();
+    sessionStorage.setItem('gate21_accepted', '1');
+    hideGate();
+    // IMPORTANTE: borramos el gate del historial ANTES de ir al pdf
+    history.replaceState(null, '', '#directory');
+    window.location.href = 'physical-sex-fraud.pdf';
+  };
+
+  // Esto es lo que dispara la flecha de abajo a la derecha en tu celular
+  window.addEventListener('popstate', function(){
+    goToDirectory();
   });
-}
+  
+  // Para cuando vuelve del PDF con el botón atrás
+  window.addEventListener('pageshow', function(ev){
+    if(sessionStorage.getItem('gate21_accepted') === '1' || ev.persisted){
+      goToDirectory();
+    }
+  });
+
+  // Link que abre el aviso
+  var link21 = document.getElementById('link21');
+  if(link21){
+    link21.addEventListener('click', function(e){
+      e.preventDefault();
+      if(sessionStorage.getItem('gate21_accepted') === '1'){
+        window.location.href = 'physical-sex-fraud.pdf';
+        return;
+      }
+      g.style.display = 'flex';
+      g.style.pointerEvents = 'auto';
+      history.pushState({gate21:true}, '', '#gate21');
+    });
+  }
+})();
 </script>
 </body>
