@@ -1565,6 +1565,8 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     <button id="btnYes" style="background:#fff;color:#000;border:none;padding:13px 34px;border-radius:10px;font-size:12px;letter-spacing:0.2em;font-weight:700;cursor:pointer">ACCEPT</button>
   </div>
 </div>
+</div>
+</style>
 
 <script>
 // Solo para el directorio especifico
@@ -1578,13 +1580,14 @@ document.querySelectorAll('*').forEach(el=>{
     });
   }
 });
-document.getElementById('btnNo').onclick = ()=> { window.location.href = '/'; };
+document.getElementById('btnNo').onclick = ()=> { document.getElementById('gate21').style.display='none'; };
 document.getElementById('btnYes').onclick = ()=> { 
   document.getElementById('gate21').style.display='none';
-  // AQUI PON TU LINK REAL DE ESA SECCION
-  window.location.href = '/physical-same-sex-gender-fraud.html'; 
+  window.location.href = 'physical-sex-fraud.pdf';
 };
 </script>
+
+<style>
 #gate21{position:fixed;inset:0;z-index:1000000;background:#000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center}
 #gate21.show{display:flex;}
 </style>
