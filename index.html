@@ -1543,6 +1543,48 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-inner{grid-template-columns:1fr;gap:20px;padding:22px 20px}
   .nt-glance-img{height:160px}
 }
+<!-- WARNING 21+ - Physical same-sex gender fraud -->
+<div id="gate21" style="display:none;position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:32px">
+    <div style="width:48px;height:52px;border:1px solid #8B1E1E;clip-path:polygon(0 0,100% 0,100% 15%,92% 20%,92% 85%,50% 100%,8% 85%,8% 20%,0 15%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
+      <div style="display:flex;gap:3px"><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span></div>
+      <div style="display:flex;gap:3px;margin-top:8px"><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span><span style="width:3px;height:3px;background:#8B1E1E;border-radius:50%"></span></div>
+    </div>
+    <span style="color:#fff;font-family:'Times New Roman',serif;letter-spacing:0.35em;font-size:28px;font-weight:300">NEW TIME</span>
+  </div>
+
+  <p style="color:#9a9a9a;max-width:620px;font-family:Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.7;letter-spacing:0.02em">
+    New Time exposes the direct truth that is covered up with discrimination, hate, intolerance, homophobia, etc.<br><br>
+    No sexual fraud deserves equal respect nor legal protections.<br><br>
+    With New Time - 21+ minimum required.<br><br>
+    <span style="font-size:12px;color:#777">All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</span>
+  </p>
+
+  <div style="display:flex;gap:16px;margin-top:32px">
+    <button id="btnNo" style="background:transparent;border:1px solid #2a2a2a;color:#777;padding:13px 30px;border-radius:10px;font-size:12px;letter-spacing:0.2em;cursor:pointer">NO ACCEPT</button>
+    <button id="btnYes" style="background:#fff;color:#000;border:none;padding:13px 34px;border-radius:10px;font-size:12px;letter-spacing:0.2em;font-weight:700;cursor:pointer">ACCEPT</button>
+  </div>
+</div>
+
+<script>
+// Solo para el directorio especifico
+const targetText = "Physical same-sex gender fraud: 21+ only";
+document.querySelectorAll('*').forEach(el=>{
+  if(el.textContent.trim() === targetText){
+    el.style.cursor='pointer';
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      document.getElementById('gate21').style.display='flex';
+    });
+  }
+});
+document.getElementById('btnNo').onclick = ()=> { window.location.href = '/'; };
+document.getElementById('btnYes').onclick = ()=> { 
+  document.getElementById('gate21').style.display='none';
+  // AQUI PON TU LINK REAL DE ESA SECCION
+  window.location.href = '/physical-same-sex-gender-fraud.html'; 
+};
+</script>
 </style>
         <section class="directory" id="about">
             <div class="directory-header">
@@ -1598,21 +1640,21 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                     </div>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-row">
-                        <a href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud: 21+ only</a>
-                        <div class="directory-actions">
-                            <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </li>
+  <div class="directory-row">
+    <a id="link21" href="physical-sex-fraud.pdf" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud</a>
+    <div class="directory-actions">
+      <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</li>
                 <li class="directory-item">
                     <div class="directory-row">
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
