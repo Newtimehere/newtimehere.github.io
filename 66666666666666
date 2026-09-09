@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEW TIMES - Full transparency. The full story.</title>
+<meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v=8" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8" />
+<link rel="shortcut icon" href="/favicon.ico?v=8" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=8" />
+<link rel="manifest" href="/site.webmanifest?v=8" />
+<meta property="og:site_name" content="NEW TIME">
+<meta property="og:title" content="NEW TIME">
+<meta property="og:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta property="og:image" content="https://newtimehere.com/Photo-share.webp">
+<meta property="og:url" content="https://newtimehere.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEW TIME">
+<meta name="twitter:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta name="twitter:image" content="https://newtimehere.com/Photo-share.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"NEW TIME","url":"https://newtimehere.com","logo":"https://newtimehere.com/android-chrome-512x512.png"}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{--bg-black:#0a0a0a;--text-white:#ffffff;--border-gray:#2a2a2a;--header-height:70px;--header-height-mobile:65px;--link-red:#7A1F1F}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--bg-black);background-image:url('nnew-time^7.jpg');background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;color:#fff;line-height:1.6}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,0.88);z-index:-1}
+.header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.header-inner{width:100%;height:var(--header-height);display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 18px}
+.logo-wrapper{display:flex;align-items:center;gap:12px;cursor:pointer;height:100%}
+.logo-icon{height:45px;width:auto;flex-shrink:0;display:block}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:4px;color:#2c2c2c;text-transform:uppercase;line-height:1}
+.menu-btn{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;align-self:center;margin-right:4px}
+.menu-line{width:22px;height:2px;background:#000;transition:all .3s ease}
+.main{padding-top:var(--header-height);min-height:100vh;position:relative;z-index:1}
+.hero{max-width:900px;margin:0 auto;padding:24px 24px 32px;text-align:center}
+.hero-main-logo{max-width:500px;width:100%;height:auto;display:block;margin:0 auto}
+.hero-text{font-size:15px;line-height:1.6;color:#fff;max-width:680px;margin:0 auto 24px;font-weight:400}
+.hero-signature{font-size:15px;letter-spacing:0;text-transform:uppercase;color:#fff;margin-top:24px}
+.directory{max-width:900px;margin:0 auto;padding:16px 24px 60px}
+.directory-header{padding:16px 0 24px;border-bottom:1px solid var(--border-gray)}
+.directory-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;letter-spacing:1px;color:#fff;text-transform:uppercase}
+.directory-list{list-style:none}
+.directory-item{border-bottom:1px solid var(--border-gray)}
+.directory-row{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+.directory-link{font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:var(--link-red);text-decoration:none}
+.directory-link:visited{color:var(--link-red)}
+.directory-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.audio-btn{width:20px;height:20px;border:1.5px solid var(--link-red);border-radius:4px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.audio-btn svg{width:12px;height:12px;stroke:var(--link-red)}
+.directory-arrow{width:18px;height:18px;stroke:var(--link-red)}
+#nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
+#nt-overlay.hide{opacity:0;pointer-events:none}
+#nt-box{width:100%;max-width:320px;text-align:center}
+.nt-logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.nt-shield{width:32px;height:38px;flex-shrink:0}
+.nt-logo-text{font-family:'Inter',sans-serif;font-weight:100;font-size:26px;letter-spacing:2px;color:#fff;text-transform:uppercase;line-height:1}
+.nt-legal{margin-top:6px}
+.nt-legal p{color:rgba(255,255,255,0.65);font-family:'Inter',sans-serif;font-size:10px;line-height:1.5;font-weight:300;letter-spacing:0.2px;margin:0 0 16px;padding:0 8px}
+.nt-btns{display:flex;gap:8px;justify-content:center;margin-top:4px}
+.nt-btns button{padding:8px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+#nt-no{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6)}
+#nt-yes{background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px}
+#gate21{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:1000000;padding:24px;text-align:center}
+#gate21.show{display:flex !important}
+</style>
+</head>
+<body>
+
+<!-- AVISO PRINCIPAL - EXACTO A TU FOTO 1:04 -->
+<div id="nt-overlay">
+  <div id="nt-box">
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
+      <div class="nt-btns">
+        <button id="nt-no">No Accept</button>
+        <button id="nt-yes">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AVISO 21+ SOLO PARA PHYSICAL - MISMO DISEÑO EXACTO, TEXTO NUEVO INGLES -->
+<div id="gate21">
+  <div id="nt-box">
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>No sexual fraud deserves equal respect or legal protection.<br><br>With New Time — 21+ only.</p>
+      <div class="nt-btns">
+        <button id="btnNo">No Accept</button>
+        <button id="btnYes">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="newTimeAudio" preload="auto"><source src="welcome-new-time-mastered.mp3" type="audio/mpeg"></audio>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-wrapper" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIMES Logo" />
+      <span class="logo-text">NEW TIME</span>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span class="menu-line"></span><span class="menu-line"></span></button>
+  </div>
+</header>
+
+<main class="main">
+<section class="hero" id="home">
+  <div class="hero-logo"><img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" /></div>
+  <p class="hero-text">Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. With New Times, you get the full story and direct answers to your questions.</p>
+  <div class="hero-signature">NEW TIMES</div>
+</section>
+
+<section class="directory" id="about">
+  <div class="directory-header"><h2 class="directory-title">Directory:</h2></div>
+  <ul class="directory-list">
+    <li class="directory-item">
+      <div class="directory-row">
+        <a id="link21" href="physical-sex-fraud.pdf" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud</a>
+        <div class="directory-actions">
+          <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <svg class="directory-arrow" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+</main>
+
+<script>
+(function(){
+  const ov=document.getElementById('nt-overlay');
+  const yes=document.getElementById('nt-yes');
+  const no=document.getElementById('nt-no');
+  const audio=document.getElementById('newTimeAudio');
+  if(yes){
+    yes.onclick=()=>{
+      if(audio){audio.volume=0.7;audio.currentTime=0;audio.play().catch(()=>{});}
+      localStorage.setItem('newtime_legal_ok','1');
+      ov.classList.add('hide');
+      setTimeout(()=>ov.remove(),400);
+    };
+  }
+  if(no){no.onclick=()=>{window.location.href='https://www.google.com';};}
+})();
+
+(function(){
+  var gate=document.getElementById('gate21');
+  var link=document.getElementById('link21');
+  var btnNo=document.getElementById('btnNo');
+  var btnYes=document.getElementById('btnYes');
+  if(!gate||!link) return;
+  link.addEventListener('click',function(e){
+    e.preventDefault();
+    gate.classList.add('show');
+  });
+  if(btnNo) btnNo.onclick=function(){gate.classList.remove('show');};
+  if(btnYes) btnYes.onclick=function(){window.location.href='physical-sex-fraud.pdf';};
+})();
+</script>
+</body>
+</html>
