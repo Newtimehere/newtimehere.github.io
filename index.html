@@ -1609,9 +1609,9 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                              </button>
                               <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                        <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                    </svg>
                </div>
-            </div>
+           </div>
               </li>
                 <li class="directory-item">
                     <div class="directory-row">
@@ -1976,10 +1976,26 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
          });
      </script>
 <script>
-var gate=document.getElementById('gate21');
-var link=document.getElementById('link21');
-if(link){link.addEventListener('click',function(e){e.preventDefault();gate.classList.add('show');});}
-document.getElementById('btnNo').onclick=function(){gate.classList.remove('show');};
+<div id="gate21" style="position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:9999999;padding:24px;box-sizing:border-box">
+  <div id="nt-box">
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none"><path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7"/><path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/></svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>New Time exposes the direct truth that is covered up as discrimination, hate, intolerance, homophobia, etc.<br><br>No sexual fraud deserves equal respect or legal protection.<br><br>With New Time — 21+ only.</p>
+      <div class="nt-btns">
+        <button id="btnNo">No Accept</button>
+        <button id="btnYes">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var g=document.getElementById('gate21');
+var l=document.getElementById('link21');
+if(l){l.addEventListener('click',function(e){e.preventDefault();g.style.display='flex';});}
+document.getElementById('btnNo').onclick=function(){g.style.display='none';};
 document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
 </script>
 </body>
