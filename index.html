@@ -2012,69 +2012,50 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   var g = document.getElementById('gate21');
   if(!g) return;
 
-  function hideGate(){
+  function goToDirectory(){
     g.style.display = 'none';
     g.style.pointerEvents = 'none';
-  }
-  
-  function goToDirectory(){
-    hideGate();
-    // Limpia el historial para que la flecha de abajo a la derecha NUNCA vuelva al aviso
+    // Reemplaza el historial para que no pueda volver al aviso
     history.replaceState(null, '', '#directory');
-    var dir = document.querySelector('.directory, #directory, [id*="director"], main, #content');
+    var dir = document.querySelector('.directory, #directory, [id*="director"], main');
     if(dir) dir.scrollIntoView({behavior:'smooth'});
-    else window.scrollTo({top: 0, behavior: 'smooth'});
+    else window.scrollTo({top:0, behavior:'smooth'});
   }
 
-  // Si ya le dio ACCEPT una vez, que no vuelva a ver el aviso al salir del PDF
-  if(sessionStorage.getItem('gate21_accepted') === '1'){
-    hideGate();
-  }
-
-  // Botones
-  var btnNo = document.getElementById('btnNo');
-  var btnYes = document.getElementById('btnYes');
-
-  if(btnNo) btnNo.onclick = function(e){
+  // NO ACCEPT -> al directory
+  document.getElementById('btnNo').onclick = function(e){
     e.preventDefault();
     goToDirectory();
   };
 
-  if(btnYes) btnYes.onclick = function(e){
+  // ACCEPT -> al PDF, pero ANTES borra el aviso del historial
+  document.getElementById('btnYes').onclick = function(e){
     e.preventDefault();
-    sessionStorage.setItem('gate21_accepted', '1');
-    hideGate();
-    // IMPORTANTE: borramos el gate del historial ANTES de ir al pdf
-    history.replaceState(null, '', '#directory');
+    g.style.display = 'none';
+    history.replaceState(null, '', '#directory'); // <--- clave
     window.location.href = 'physical-sex-fraud.pdf';
   };
 
-  // Esto es lo que dispara la flecha de abajo a la derecha en tu celular
-  window.addEventListener('popstate', function(){
-    goToDirectory();
-  });
-  
-  // Para cuando vuelve del PDF con el botón atrás
-  window.addEventListener('pageshow', function(ev){
-    if(sessionStorage.getItem('gate21_accepted') === '1' || ev.persisted){
-      goToDirectory();
-    }
-  });
-
-  // Link que abre el aviso
+  // Link que abre el aviso -> SIEMPRE lo muestra al entrar
   var link21 = document.getElementById('link21');
   if(link21){
     link21.addEventListener('click', function(e){
       e.preventDefault();
-      if(sessionStorage.getItem('gate21_accepted') === '1'){
-        window.location.href = 'physical-sex-fraud.pdf';
-        return;
-      }
       g.style.display = 'flex';
       g.style.pointerEvents = 'auto';
       history.pushState({gate21:true}, '', '#gate21');
     });
   }
+
+  // La flecha de abajo a la derecha (salir) -> NUNCA muestra aviso, siempre directory
+  window.addEventListener('popstate', function(){
+    goToDirectory();
+  });
+
+  window.addEventListener('pageshow', function(e){
+    // cuando regresa del PDF con atrás
+    if(e.persisted) goToDirectory();
+  });
 })();
 </script>
 </body>
