@@ -2028,7 +2028,7 @@ function closeGate21(){
   // lo tira al directory como los otros
   var dir=document.querySelector('.directory, #directory, [id*="director"]');
   if(dir) dir.scrollIntoView({behavior:'smooth'});
-  if(history.state && history.state.gate21) history.back();
+  if(history.state && history.state.gate21)
 }
 document.getElementById('btnNo').onclick=closeGate21;
 document.getElementById('btnYes').onclick=function(){
