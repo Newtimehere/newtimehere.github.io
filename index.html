@@ -1575,23 +1575,57 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     </div>
   </div>
 </div>
+<!-- AVISO SOLO PARA 21+ - MISMO DISEÑO -->
+<div id="nt-21-overlay" style="display:none; position:fixed; inset:0; background:#000; z-index:1000000; align-items:center; justify-content:center; padding:24px;">
+  <div style="width:100%; max-width:320px; text-align:center;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:10px;">
+      <svg width="32" height="38" viewBox="0 0 80 95" fill="none"><path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/></svg>
+      <span style="font-family:'Inter',sans-serif; font-weight:100; font-size:26px; letter-spacing:2px; color:#fff;">NEW TIME</span>
+    </div>
+    <p style="color:rgba(255,255,255,0.65); font-family:'Inter',sans-serif; font-size:10px; line-height:1.6; margin:0 0 16px; padding:0 8px;">
+      <strong style="color:#fff; display:block; margin-bottom:10px; font-size:12px; letter-spacing:2px;">WARNING - 21+ ONLY</strong>
+      New Time evidences the direct truth that is covered up with claims of discrimination, hate, intolerance, homophobia, etc.<br><br>
+      No sexual fraud deserves equal respect nor legal protections.<br><br>
+      With New Time, you must be 21+ to continue.
+    </p>
+    <div style="display:flex; gap:8px; justify-content:center;">
+      <button id="nt-21-no" style="padding:8px 18px; border-radius:6px; font-size:9px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6);">No Accept</button>
+      <button id="nt-21-yes" style="padding:8px 18px; border-radius:6px; font-size:9px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; background:#fff; border:1px solid #fff; color:#000; font-weight:600; min-width:78px;">Accept</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  let currentPdf = null;
-  function show21(e, url){
-    e.preventDefault();
-    e.stopPropagation();
-    currentPdf = url;
-    document.getElementById('nt-21-overlay').style.display = 'flex';
-    return false;
-  }
-  document.getElementById('nt-21-yes-btn').onclick = function(){
-    document.getElementById('nt-21-overlay').style.display = 'none';
-    if(currentPdf) window.open(currentPdf, '_blank');
+(function(){
+  const overlay21 = document.getElementById('nt-21-overlay');
+  const yes21 = document.getElementById('nt-21-yes');
+  const no21 = document.getElementById('nt-21-no');
+  let pdfUrl = null;
+
+  // Busca SOLO ese link
+  document.querySelectorAll('a[href*="physical-sex-fraud.pdf"]').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      pdfUrl = this.href;
+      overlay21.style.display = 'flex';
+    });
+  });
+
+  yes21.onclick = () => {
+    overlay21.style.display = 'none';
+    if(pdfUrl){
+      window.open(pdfUrl, '_blank');
+      pdfUrl = null;
+    }
   };
+  no21.onclick = () => {
+    window.location.href = 'https://www.google.com';
+  };
+})();
 </script>
 
-        <section class="directory" id="about">
+
+      <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
             </div>
