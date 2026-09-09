@@ -2008,29 +2008,48 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-var g=document.getElementById('gate21');
-function closeGate21(){
-  g.style.display='none';
-  // lo tira al directory como los otros
-  var dir=document.querySelector('.directory, #directory, [id*="director"]');
-  if(dir) dir.scrollIntoView({behavior:'smooth'});
-  if(history.state && history.state.gate21) history.back();
-}
-document.getElementById('btnNo').onclick=closeGate21;
-document.getElementById('btnYes').onclick=function(){
-  window.location.href='physical-sex-fraud.pdf';
-};
-window.addEventListener('popstate', function(){
-  g.style.display='none';
-});
-// esto hace que la flechita lo cierre
-var link21=document.getElementById('link21');
-if(link21){
-  link21.addEventListener('click', function(e){
-    e.preventDefault();
+(function(){
+  // limpia duplicados que causan el rebote
+  document.querySelectorAll('#gate21').forEach((el,i)=>{ if(i>0) el.remove(); });
+  if(!history.state) history.replaceState({page:'dir'},'');
+
+  var g=document.getElementById('gate21');
+  if(!g) return;
+  var link=document.getElementById('link21');
+  var btnNo=document.getElementById('btnNo');
+  var btnYes=document.getElementById('btnYes');
+
+  function hideToDirectory(){
+    g.style.display='none';
+    var dir=document.querySelector('.directory, #directory, [id*="director"]');
+    if(dir) dir.scrollIntoView({behavior:'smooth'});
+  }
+
+  function showGate(e){
+    if(e) e.preventDefault();
+    if(g.style.display==='flex') return; // evita doble push
     g.style.display='flex';
-    history.pushState({gate21:true}, '');
+    history.pushState({gate21:1},'');
+  }
+
+  if(link) link.onclick=showGate;
+
+  if(btnNo) btnNo.onclick=function(){
+    hideToDirectory();
+    if(history.state && history.state.gate21){
+      history.back(); // cierra sin volver a mostrar aviso
+    }
+  };
+
+  if(btnYes) btnYes.onclick=function(){
+    location.href='physical-sex-fraud.pdf';
+  };
+
+  // ESTO es lo que arregla la flechita de abajo derecha
+  window.addEventListener('popstate', function(){
+    hideToDirectory(); // solo cierra y va al directory, no abre aviso
   });
-}
+})();
 </script>
 </body>
+</html>
