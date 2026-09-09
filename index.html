@@ -2006,16 +2006,9 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-(function(){
-  var gate = document.getElementById('gate21');
-  var link = document.getElementById('link21');
-  if(!gate || !link){console.log('falta gate o link'); return;}
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    gate.style.display = 'flex';
-  });
-  document.getElementById('btnNo').onclick = function(){ gate.style.display='none'; };
-  document.getElementById('btnYes').onclick = function(){ window.location.href='physical-sex-fraud.pdf'; };
-})();
+<script>
+document.getElementById('btnNo').onclick=function(){document.getElementById('gate21').style.display='none';};
+document.getElementById('btnYes').onclick=function(){window.location.href='physical-sex-fraud.pdf';};
 </script>
+</body>
 </body>
