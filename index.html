@@ -2008,32 +2008,62 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-(function(){
-  var g=document.getElementById('gate21');
+var g = document.getElementById('gate21');
+
+function goToDirectory(){
   if(!g) return;
-  // borra duplicados viejos que tenías
-  document.querySelectorAll('#gate21').forEach((el,i)=>{ if(i>0) el.remove(); });
+  g.style.display = 'none';
+  var dir = document.querySelector('.directory, #directory, [id*="director"]');
+  if(dir) dir.scrollIntoView({behavior:'smooth'});
+  // deja el historial limpio en #directory
+  history.replaceState(null, '', location.pathname + location.search + '#directory');
+}
 
-  function irAlDirectory(){
-    g.style.display='none';
-    var dir=document.querySelector('.directory, #directory, [id*="director"], main, .container');
-    if(dir) dir.scrollIntoView({behavior:'smooth'});
+// Si ya aceptó antes, que no vuelva a salir el aviso en esta sesión
+if(sessionStorage.getItem('gate21_accepted') === '1'){
+  if(g) g.style.display = 'none';
+}
+
+function closeAndGoDir(e){
+  if(e) e.preventDefault();
+  goToDirectory();
+}
+
+document.getElementById('btnNo').onclick = closeAndGoDir;
+
+document.getElementById('btnYes').onclick = function(e){
+  e.preventDefault();
+  // 1. marca que ya aceptó
+  sessionStorage.setItem('gate21_accepted', '1');
+  // 2. borra el estado del gate del historial ANTES de irse al PDF
+  // así cuando le de atrás, no vuelve al gate, vuelve al directory
+  history.replaceState(null, '', location.pathname + location.search + '#directory');
+  // 3. ahora sí al PDF
+  window.location.href = 'physical-sex-fraud.pdf';
+};
+
+// La flecha de abajo a la derecha (popstate) -> siempre al directory, nunca reabrir aviso
+window.addEventListener('popstate', function(){
+  // si ya aceptó, nunca reabrir
+  if(sessionStorage.getItem('gate21_accepted') === '1'){
+    goToDirectory();
+    return;
   }
+  goToDirectory();
+});
 
-  var link=document.getElementById('link21');
-  var btnNo=document.getElementById('btnNo');
-  var btnYes=document.getElementById('btnYes');
-
-  if(link){
-    link.onclick=function(e){
-      e.preventDefault();
-      g.style.display='flex';
-    };
-  }
-
-  if(btnNo) btnNo.onclick=irAlDirectory;
-  if(btnYes) btnYes.onclick=function(){ location.href='physical-sex-fraud.pdf'; };
-})();
+var link21 = document.getElementById('link21');
+if(link21){
+  link21.addEventListener('click', function(e){
+    e.preventDefault();
+    // si ya aceptó, no muestres el gate otra vez, mándalo directo al PDF
+    if(sessionStorage.getItem('gate21_accepted') === '1'){
+      window.location.href = 'physical-sex-fraud.pdf';
+      return;
+    }
+    g.style.display = 'flex';
+    history.pushState({gate21:true}, '', '#gate21');
+  });
+}
 </script>
 </body>
-</html>
