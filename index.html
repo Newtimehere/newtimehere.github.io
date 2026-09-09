@@ -1544,6 +1544,48 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   .nt-glance-img{height:160px}
 }
 </style>
+
+<div id="gate21">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:32px">
+    <span style="color:#fff;letter-spacing:0.35em;font-size:28px">NEW TIME</span>
+  </div>
+  <p style="color:#9a9a9a;max-width:620px;font-size:13.5px;line-height:1.7;text-align:center">
+    New Time exposes the direct truth that is covered up with discrimination, hate, intolerance, homophobia, etc.<br><br>
+    No sexual fraud deserves equal respect nor legal protections.<br><br>
+    With New Time - 21+ minimum required.<br><br>
+    <span style="font-size:12px;color:#777">All content is exclusive property of New Time. All rights reserved under U.S. laws.</span>
+  </p>
+  <div style="display:flex;gap:16px;margin-top:32px;justify-content:center">
+    <button id="btnNo" style="background:transparent;border:1px solid #2a2a2a;color:#777;padding:13px 30px;border-radius:10px;cursor:pointer">NO ACCEPT</button>
+    <button id="btnYes" style="background:#fff;color:#000;padding:13px 34px;border-radius:10px;font-weight:700;cursor:pointer">ACCEPT</button>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var gate = document.getElementById('gate21');
+  var link = document.getElementById('link21') || document.querySelector('a[href*="physical-sex-fraud"]');
+  if(!gate) return;
+  if(link){
+    link.style.cursor='pointer';
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      gate.style.display='flex';
+    });
+  }
+  var bNo = document.getElementById('btnNo');
+  var bYes = document.getElementById('btnYes');
+  if(bNo) bNo.onclick = function(){ gate.style.display='none'; };
+  if(bYes) bYes.onclick = function(){ 
+    gate.style.display='none';
+    window.location.href='physical-sex-fraud.pdf';
+  };
+});
+</script>
+
+<style>
+#gate21{position:fixed;inset:0;z-index:1000000;background:#000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center}
+</style>
+
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
@@ -1598,22 +1640,17 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                     </div>
                 </li>
                 <li class="directory-item">
-                    <div class="directory-row">
-                        <a href="physical-sex-fraud.pdf" target="_blank" rel="noopener noreferrer" class="directory-link">Physical same-sex gender fraud</a>
-                        <div class="directory-actions">
-                            <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </li>
-                <li class="directory-item">
+  <div class="directory-row">
+    <a id="link21" href="physical-sex-fraud.pdf" target="_blank">Physical same-sex gender fraud</a>
+    <div class="directory-actions">
+      <button class="audio-btn" data-audio="">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2V15H6L11 19V5Z"></path><path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53"></path></svg>
+      </button>
+      <svg class="directory-arrow" viewBox="0 0 24 24"><path d="M9 6L15 12L9 18" stroke-width="1.5"></path></svg>
+    </div>
+  </div>
+</li>
+<li class="directory-item">
                     <div class="directory-row">
                         <a href="same-sex-sexual-and-summarized%5E666.PDF" target="_blank" rel="noopener noreferrer" class="directory-link">Same-sex direct and summarized</a>
                         <div class="directory-actions">
