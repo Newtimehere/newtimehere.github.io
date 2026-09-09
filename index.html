@@ -2008,7 +2008,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   </div>
 </div>
 <script>
-// limpia duplicados que te hacen el rebote
+// limpia duplicados
 document.querySelectorAll('#gate21').forEach((el,i)=>{ if(i>0) el.remove(); });
 history.replaceState({page:1},'');
 
@@ -2018,29 +2018,33 @@ var link21=document.getElementById('link21');
 function closeGate21(){
   if(!g) return;
   g.style.display='none';
-  // lo tira al directory como los otros
   var dir=document.querySelector('.directory, #directory, [id*="director"]');
   if(dir) dir.scrollIntoView({behavior:'smooth'});
-  <script>
-  var dir=document.querySelector('.directory, #directory, [id*="director"]');
-  if(dir) dir.scrollIntoView({behavior:'smooth'});
-  if(history.state && history.state.gate21)
 }
-document.getElementById('btnNo').onclick=closeGate21;
+
+document.getElementById('btnNo').onclick=function(){
+  closeGate21();
+  if(history.state && history.state.gate21){
+    history.back();
+  }
+};
+
 document.getElementById('btnYes').onclick=function(){
   window.location.href='physical-sex-fraud.pdf';
 };
+
 window.addEventListener('popstate', function(){
-  g.style.display='none';
+  if(g) g.style.display='none';
 });
-// esto hace que la flechita lo cierre
-var link21=document.getElementById('link21');
+
 if(link21){
-  link21.addEventListener('click', function(e){
+  link21.onclick=function(e){
     e.preventDefault();
+    if(g.style.display==='flex') return;
     g.style.display='flex';
-    history.pushState({gate21:true}, '');
-  });
+    history.pushState({gate21:true},'');
+  };
 }
 </script>
 </body>
+</html>
