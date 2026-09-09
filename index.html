@@ -2025,27 +2025,33 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 </div>
 <script>
 var g=document.getElementById('gate21');
+var link21=document.getElementById('link21');
+function openGate21(e){
+  if(e) e.preventDefault();
+  g.style.display='flex';
+  if(!history.state || !history.state.gate21){
+    history.pushState({gate21:true},'');
+  }
+}
 function closeGate21(){
   g.style.display='none';
-  var dir=document.querySelector('.directory, #directory, [id*="director"]');
+  var dir=document.querySelector('.directory');
   if(dir) dir.scrollIntoView({behavior:'smooth'});
-  if(history.state && history.state.gate21) history.back();
 }
-document.getElementById('btnNo').onclick=closeGate21;
+if(link21) link21.onclick=openGate21;
+document.getElementById('btnNo').onclick=function(){
+  if(history.state && history.state.gate21){
+    history.back(); // la flechita y el boton hacen lo mismo ahora
+  } else {
+    closeGate21();
+  }
+};
 document.getElementById('btnYes').onclick=function(){
   window.location.href='physical-sex-fraud.pdf';
 };
 window.addEventListener('popstate', function(){
-  g.style.display='none';
+  closeGate21();
 });
-var link21=document.getElementById('link21');
-if(link21){
-  link21.addEventListener('click', function(e){
-    e.preventDefault();
-    g.style.display='flex';
-    history.pushState({gate21:true}, '');
-  });
-}
 </script>
 </body>
 
