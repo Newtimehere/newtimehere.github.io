@@ -1238,7 +1238,27 @@ opacity: 1;
         .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
             font-size: 14px;
         }
-    }
+}
+
+/* === PANEL NEGRO PURO - ANTES DEL VIDEO === */
+.memorial-black{
+  background:#000000;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  padding:88px 24px;
+  width:100%;
+}
+.memorial-black-inner{ max-width:1180px; width:100%; margin:0 auto; }
+.memorial-black-header{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.memorial-black-header h2{ font-family: Georgia, serif; font-size:42px; font-weight:400; margin:0; color:#fff; }
+.memorial-black-header p{ font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; color:#EAEAEA; margin:0; }
+.memorial-black hr{ border:none; border-top:1.5px solid #fff; margin:40px 0; }
+.memorial-black-grid{ display:grid; grid-template-columns:1fr; gap:32px; }
+@media(min-width:700px){ .memorial-black-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1100px){ .memorial-black-grid{ grid-template-columns:1fr 1fr 1fr 1fr; } }
+.memorial-black-grid div{ font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#EAEAEA; }
+.memorial-black-grid strong{ color:#fff; font-weight:700; }
 </style>
 </head>
 <body>
@@ -1786,6 +1806,30 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 <div class="nt-hero"><img src="services-service.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">SERVICE</h2><p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth.</p><a class="nt-explore" href="service.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE SERVICE</span></a></div></div>
 
 </div></div>
+
+<section class="memorial-black">
+  <div class="memorial-black-inner">
+    <div class="memorial-black-header">
+      <h2>Aquellos que perdimos</h2>
+      <p>Once miembros de la comunidad de Harvard murieron<br>en los ataques.</p>
+    </div>
+    <hr>
+    <div class="memorial-black-grid">
+      <div><strong>David Alger,</strong> miembro de la promoción de 1966 de la Universidad de Harvard y director de Fred Alger Management, Inc., falleció en el World Trade Center.</div>
+      <div><strong>Paul Ambrose,</strong> médico y graduado en 2000 de la Escuela de Salud Pública, viajaba a bordo del vuelo 77 de American Airlines, que se estrelló contra el Pentágono.</div>
+      <div><strong>Mark Bavis,</strong> exentrenador asistente de hockey de Harvard, viajaba a bordo del vuelo 175 de United Airlines, que se estrelló contra la torre sur.</div>
+      <div><strong>Anthony Demas,</strong> estudiante de la Escuela de Negocios de Harvard y director general de Aon Corp., falleció en el World Trade Center.</div>
+      <div><strong>Steven Lawrence Glick,</strong> graduado de la Escuela de Negocios en 1989 y director gerente de Credit Suisse First Boston, falleció en el World Trade Center.</div>
+      <div><strong>Edward R. Hennessy Jr.,</strong> miembro de la promoción de 1988 de Harvard y consultor de Emergence Consulting, viajaba a bordo del vuelo 11 de American Airlines, que se estrelló contra la torre norte.</div>
+      <div><strong>Waleed Joseph Iskandar,</strong> graduado de la Escuela de Negocios de Harvard en 1993 y consultor de estrategia empresarial en el Monitor Group de Cambridge, falleció en el vuelo 11.</div>
+      <div><strong>Andrew Keith Kates,</strong> graduado de la Escuela de Negocios de Harvard en 1991 y director administrativo de Cantor Fitzgerald, falleció en el World Trade Center.</div>
+      <div><strong>Michael B. Packer,</strong> miembro de la promoción de 1976 de la Universidad de Harvard y director gerente de Merrill Lynch, falleció en el World Trade Center.</div>
+      <div><strong>Meta Waller,</strong> graduado en 1982 de la Escuela de Gobierno Kennedy y gerente de programas especiales para el asistente administrativo del secretario del Ejército, falleció cuando el vuelo 77 se estrelló contra el Pentágono.</div>
+      <div><strong>Steven Weinstein,</strong> graduado en 1973 de la Escuela de Posgrado de Artes y Ciencias, falleció en el World Trade Center.</div>
+      <div><strong>Donald A. Peterson,</strong> participante del Programa de Gestión para Propietarios/Presidentes y presidente durante muchos años de la Continental Electric Company, falleció cuando el vuelo 77 se estrelló contra el Pentágono.</div>
+    </div>
+  </div>
+</section>
 
 <div class="video-wrapper" style="margin-top:17px !important;">
                 <video controls playsinline preload="metadata" poster="new.webp">
