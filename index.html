@@ -1244,24 +1244,30 @@ opacity: 1;
   color:#fff;
   display:flex;
   justify-content:center;
-  padding:88px 24px;
+  padding:20px 24px 60px 24px; /* ANTES 88px - ahora 20px arriba */
   width:100%;
-  margin: 64px 0;
-  text-align: left; /* <- FUERZA IZQUIERDA */
+  margin: 0 0 64px 0; /* ANTES 64px 0 - ahora 0 arriba */
+  text-align: left;
 }
 .memorial-black-inner{ max-width:1180px; width:100%; margin:0 auto; }
 .memorial-black-header{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; text-align:left; }
-.memorial-black-header h2{ font-family: Georgia, serif; font-size:42px; font-weight:400; margin:0; color:#fff; text-align:left; }
+.memorial-black-header h2{ 
+  font-family: 'Cormorant Garamond', Georgia, serif; 
+  font-size:38px; 
+  font-weight:200; /* fina como ALL NEW TIME */
+  letter-spacing:0.25em; 
+  text-transform:uppercase; 
+  margin:0; 
+  color:#fff; 
+  text-align:left; 
+}
 .memorial-black-header p{ font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; color:#EAEAEA; margin:0; text-align:left; }
-.memorial-black hr{ border:none; border-top:1.5px solid #fff; margin:40px 0; }
+.memorial-black hr{ border:none; border-top:1px solid #333; margin:20px 0 30px 0; } /* menos espacio */
 .memorial-black-grid{ display:grid; grid-template-columns:1fr; gap:32px; text-align:left; }
 @media(min-width:700px){ .memorial-black-grid{ grid-template-columns:1fr 1fr; } }
 @media(min-width:1100px){ .memorial-black-grid{ grid-template-columns:1fr 1fr 1fr 1fr; } }
 .memorial-black-grid div{ font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#EAEAEA; text-align:left; }
 .memorial-black-grid strong{ color:#fff; font-weight:700; }
-
-</style>
-</head>
 <body>
     <header class="header">
         <div class="header-inner">
