@@ -1240,7 +1240,6 @@ opacity: 1;
         }
 }
 
-/* === PANEL NEGRO PURO - ANTES DEL VIDEO === */
 .memorial-black{
   background:#000000;
   color:#fff;
@@ -1248,17 +1247,18 @@ opacity: 1;
   justify-content:center;
   padding:88px 24px;
   width:100%;
+  margin: 64px 0 64px 0; /* <- ESTO LO SEPARA */
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
 }
-.memorial-black-inner{ max-width:1180px; width:100%; margin:0 auto; }
-.memorial-black-header{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-.memorial-black-header h2{ font-family: Georgia, serif; font-size:42px; font-weight:400; margin:0; color:#fff; }
-.memorial-black-header p{ font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; color:#EAEAEA; margin:0; }
-.memorial-black hr{ border:none; border-top:1.5px solid #fff; margin:40px 0; }
-.memorial-black-grid{ display:grid; grid-template-columns:1fr; gap:32px; }
-@media(min-width:700px){ .memorial-black-grid{ grid-template-columns:1fr 1fr; } }
-@media(min-width:1100px){ .memorial-black-grid{ grid-template-columns:1fr 1fr 1fr 1fr; } }
-.memorial-black-grid div{ font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#EAEAEA; }
-.memorial-black-grid strong{ color:#fff; font-weight:700; }
+.memorial-black-header{
+  margin-bottom: 20px; /* separa título del texto */
+}
+.memorial-black-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px; /* antes tenías 32px, ahora 48px más aire */
+}
 </style>
 </head>
 <body>
