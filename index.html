@@ -1238,9 +1238,29 @@ opacity: 1;
         .young-modal-content, .bio-modal-content, .team-modal-content, .contacts-modal-content {
             font-size: 14px;
         }
-    }
+}
+.memorial-black{
+  background:#000000;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  padding:32px 32px 88px 32px;
+  width:100%;
+  margin: 0;
+  text-align: left;
+}
+.memorial-black-inner{ max-width:1180px; width:100%; margin:0 auto; }
+.memorial-black-header{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; text-align:left; }
+.memorial-black-header h2{ font-family: Georgia, serif; font-size:42px; font-weight:400; margin:0; color:#fff; text-align:left; }
+.memorial-black-header p{ font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; color:#EAEAEA; margin:0; text-align:left; }
+.memorial-black hr{ border:none; border-top:1.5px solid #fff; margin:40px 0; }
+.memorial-black-grid{ display:grid; grid-template-columns:1fr; gap:32px; text-align:left; }
+@media(min-width:700px){ .memorial-black-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1100px){ .memorial-black-grid{ grid-template-columns:1fr 1fr 1fr 1fr; } }
+.memorial-black-grid div{ font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#EAEAEA; text-align:left; }
+.memorial-black-grid strong{ color:#fff; font-weight:700; }
+
 </style>
-</head>
 <body>
     <header class="header">
         <div class="header-inner">
@@ -1554,7 +1574,6 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   box-sizing:border-box
 }
 </style>
-</style>
         <section class="directory" id="about">
             <div class="directory-header">
                 <h2 class="directory-title">Directory:</h2>
@@ -1785,36 +1804,32 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 
 <div class="nt-hero"><img src="services-service.jpg"><div class="nt-overlay"></div><div class="nt-content"><h2 class="nt-title">SERVICE</h2><p class="nt-paragraph">New Time is much more than a for-profit university. We are the only worldwide identity that educates personal growth.</p><a class="nt-explore" href="service.html"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE SERVICE</span></a></div></div>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@200;400&family=Inter:wght@300;400;500&display=swap');
-.nt-wrap{ background:transparent !important; padding:0; margin:0; width:100%; display:flex; justify-content:center; }
-.nt-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:100%; margin:0; width:100%; background:transparent !important; }
-@media(max-width:768px){ .nt-grid{grid-template-columns:1fr; gap:14px;} }
-.nt-hero{ position:relative; width:100%; height:520px; overflow:hidden; background:#000; margin:0; text-align:left !important; border:0 !important; border-radius:0 !important; outline:none !important; box-shadow:none !important; }
-@media(max-width:768px){.nt-hero{height:620px;}}
-.nt-hero img{ position:absolute;inset:0;width:100%;height:100%; object-fit:cover; display:block; border:0 !important; border-radius:0 !important; }
-.nt-overlay{ position:absolute;inset:0; background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 80%); border:0 !important; border-radius:0 !important; }
-.nt-content{ position:absolute !important; bottom:0 !important; left:0 !important; right:0 !important; padding:0 22px 26px 22px !important; text-align:left !important; display:flex !important; flex-direction:column !important; align-items:flex-start !important; }
-
-/* ESTE ES EL CAMBIO COMO LA FOTO HIDDEN BOARD */
-.nt-title, .nt-logo-text, .memorial-black-header h2{
-  font-family:'Cinzel', serif !important;
-  font-weight:200 !important;
-  letter-spacing:11px !important;
-  color:#fff !important;
-  text-transform:uppercase !important;
-}
-.nt-title{ font-size:clamp(28px,3vw,38px); line-height:0.95; margin:0; text-align:left !important; }
-.nt-logo-text{ font-size:24px; line-height:1; }
-.memorial-black-header h2{ font-size:42px; line-height:1; }
-
-.nt-paragraph{ margin-top:12px; color:rgba(255,255,255,0.78); font-weight:300; font-size:13px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; font-family:'Inter',sans-serif; text-align:left !important; max-width:300px !important; }
-.nt-explore{ margin-top:18px; display:inline-flex !important; align-items:center !important; gap:10px; text-decoration:none; text-align:left !important; }
-.nt-circle{ width:36px;height:36px;border-radius:50%; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(8px); display:flex;align-items:center;justify-content:center; color:#fff; font-size:14px; }
-.nt-explore-text{ color:#fff; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; font-family:'Inter',sans-serif; }
-</style>
-  
 </div></div>
+
+<section class="memorial-black">
+  <div class="memorial-black-inner">
+    <div class="memorial-black-header">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 200; letter-spacing: 0.25em; text-transform: uppercase; color: #f5f5f0;">
+      New Times
+</h2>
+     </p>
+    </div>
+    <hr>
+    <div class="memorial-black-grid">
+      <div><strong>Jack Young,</strong> New Time Lesson: The appearance of safety in large corporations is often fraudulent. True growth requires independent thinking. New Time teaches you to choose the effect of independence over the appearance of security.</div>
+      <div><strong>Adele Campbell,</strong> New Time Lesson: Medicine can look legal and profitable while ignoring prevention. Its effect is fraudulent if people remain sick. New Time reveals where the deep truth hides: in prevention and personal responsibility.</div>
+      <div><strong>Mark Hall,</strong> New Time Lesson: Sports can be fraudulent by effect when they sell the appearance of winning but destroy the individual. New Time teaches growth through discipline, not through the appearance of victory.</div>
+      <div><strong>Hunter White,</strong> New Time Lesson: Business can be lawful but fraudulent by effect when profit conceals exploitation. New Time is essential because it teaches you to see the mindset behind the business, not just the logo.</div>
+      <div><strong>Carter Moore,</strong> New Time Lesson: Finance often sells the appearance of wealth while creating debt and victims. New Time teaches personal growth by identifying what is truly valuable versus what only looks valuable.</div>
+      <div><strong>Mark Smith.,</strong> New Time Lesson: Consulting becomes fraudulent when it tells clients what they want to hear to keep the contract. The effect is fraudulent. New Time teaches the courage to tell the deep truth.</div>
+      <div><strong>Brianne Land,</strong> New Time Lesson: Strategy is fraudulent when it is only appearance and PowerPoint. New Time proves that strategy must produce real personal growth, not just legal documents.</div>
+      <div><strong>Kate Keith,</strong> New Time Lesson: Wall Street can be legal, but its effect can be fraudulent when it rewards appearance over substance. New Time helps people avoid becoming victims of that mindset.</div>
+      <div><strong>Morgan Taylor,</strong> New Time Lesson: The system teaches people ta trust the appearance of a big name. New Time teaches you to evaluate by effect: does this decision make you more free or more dependent.</div>
+      <div><strong> Cole Parker,</strong>  New Time Lesson: Education is fraudulent by effect when it sells a diploma (appearance) but delivers no personal growth. New Time was founded in the U.S. to be the rea university without profit - the street is the real university.</div>
+      <div><strong> Taylor Smith,</strong> New Time Lesson: True entrepreneurship is not the appearance of a startup. It is long-term responsibility. Its opposite - the fraudulent mindset - seeks quick appearance, not lasting effect.</div>
+    </div>
+  </div>
+</section>
 
 <div class="video-wrapper" style="margin-top:17px !important;">
                 <video controls playsinline preload="metadata" poster="new.webp">
