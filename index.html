@@ -1934,26 +1934,39 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  align-items: flex-end; /* todo a la derecha */
+}
+.nt-right-text{
+  max-width: 520px;
+  text-align: right; /* esquineado a la derecha */
+  background: rgba(0,0,0,0.6);
+  padding: 22px 26px;
+  border-radius: 10px;
 }
 .nt-right-text h2{
   font-family:'Cormorant Garamond', serif;
   font-size:42px;
   line-height:1.1;
-  color:#111;
+  color:#ffffff !important; /* blanco */
   margin:0 0 16px 0;
+  text-align: right;
 }
 .nt-right-text p{
   font-size:16px;
   line-height:1.6;
-  color:#444;
+  color:#ffffff !important; /* blanco */
+  text-align: right;
+  opacity: 1 !important;
 }
 .nt-video{
   margin-top:32px;
   width:100%;
+  max-width: 520px; /* mismo ancho que el texto para que quede alineado derecha */
   aspect-ratio:16/9;
   background:#000;
   overflow:hidden;
   border-radius:8px;
+  align-self: flex-end;
 }
 .nt-video video, .nt-video iframe{
   width:100%;
@@ -1964,28 +1977,33 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 @media(max-width:768px){
   .nt-split{ flex-direction:column; }
   .nt-left{ height:400px; }
+  .nt-right{ align-items: stretch; }
+  .nt-right-text, .nt-video{ max-width: 100%; }
 }
 </style>
 
 <div class="nt-split">
   <div class="nt-left">
-    <!-- FOTO A LA IZQUIERDA -->
     <img src="photo-newtime.jpg" alt="foto izquierda">
   </div>
   <div class="nt-right">
     <div class="nt-right-text">
-      <h2> Morgan Team.</h2>
+      <h2>Morgan Team.</h2>
       <p>At just 21 years old, Morgan brings extensive knowledge in personal growth. A graduate of X University at 21, she is a personal growth advocate, model, and actress with New Time. Through New Time, Morgan learned that same-sex couples represent sexual fraud. She learned not to hate nor to accept it, but simply to not maintain those friendships for mental comfort.</p>
     </div>
     <div class="nt-video">
-      <!-- VIDEO A LA DERECHA ABAJO -->
       <video src="tu-video.mp4" controls playsinline></video>
-      <!-- Si es YouTube usa:
-      <iframe src="https://www.youtube.com/embed/TU_ID" allowfullscreen></iframe>
-      -->
     </div>
   </div>
 </div>      
+
+<div class="video-wrapper" style="margin-top:17px !important;">
+  <video controls playsinline preload="metadata" poster="new.webp">
+    <source src="New Time Here..mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+  <p class="video-caption" style="text-align:center; width:100%; display:block; margin: 16px auto 0 auto; color:#fff;">New Times Official</p>
+</div>
 
 <div class="video-wrapper" style="margin-top:17px !important;">
                 <video controls playsinline preload="metadata" poster="new.webp">
