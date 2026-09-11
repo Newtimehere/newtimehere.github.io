@@ -1767,37 +1767,29 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
         <div class="footer-text"><p>New Time Direct Truth:</p>
   With us, you learned true inner growth. Universities are not built to teach you the hidden truth about how your mind grows they are built to serve the economic system. But you already know that truth within yourself.</p></div>
   <!-- INICIO 6 CARDS - ENGLISH - 5 FOTOS - TEAM CON FOTO NUEVA - SIN TINTEO -->
+<!-- 6 CUADRADOS V6 - RAPIDO - ANTI-TINTEO -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
-.nt-wrap{ background:transparent !important; padding:0; margin:0; width:100%; display:flex; justify-content:center; }
-.nt-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:100%; width:100%; }
-@media(max-width:768px){ .nt-grid{grid-template-columns:1fr; gap:14px;} }
-.nt-hero{ position:relative; width:100%; height:520px; overflow:hidden; background:transparent !important; border:none !important; }
-@media(max-width:768px){.nt-hero{height:620px;}}
-.nt-hero img{ position:absolute;inset:0;width:100%;height:100%; object-fit:cover; filter:none !important; -webkit-filter:none !important; opacity:1 !important; }
-.nt-content{ position:absolute !important; bottom:0 !important; left:0 !important; right:0 !important; padding:22px 20px !important; background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 40%, transparent 75%) !important; z-index:2; }
-.nt-title{ font-family:'Cormorant Garamond',serif; text-transform:uppercase; letter-spacing:0.18em; font-weight:300; color:#fff; font-size:26px; line-height:0.95; }
-.nt-paragraph{ margin-top:12px; color:rgba(255,255,255,0.78); font-weight:300; font-size:13px; line-height:1.4; font-family:'Inter',sans-serif; }
-.nt-explore{ margin-top:18px; display:inline-flex !important; align-items:center; gap:10px; text-decoration:none; }
-.nt-circle{ width:36px;height:36px;border-radius:50%; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#fff; }
-.nt-explore-text{ color:#fff; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; }
+.nt6{ display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; }
+@media(max-width:768px){ .nt6{ grid-template-columns:1fr; gap:14px; } }
+.nt6-card{ position:relative; height:520px; overflow:hidden; background:#111; border-radius:0; }
+@media(max-width:768px){ .nt6-card{ height:600px; } }
+.nt6-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.nt6-info{ position:absolute; left:0; right:0; bottom:0; padding:24px 18px 18px; z-index:1; }
+.nt6-info::before{ content:""; position:absolute; inset:0; top:-60%; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%); z-index:-1; }
+.nt6-title{ font-family:'Cormorant Garamond',serif; font-size:26px; color:#fff; text-transform:uppercase; letter-spacing:.18em; line-height:.95; }
+.nt6-p{ font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(255,255,255,.7); margin-top:10px; line-height:1.4; max-width:90%; }
+.nt6-btn{ margin-top:14px; display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:#fff; font-size:10px; letter-spacing:.2em; }
+.nt6-circle{ width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.25); display:grid; place-items:center; background:rgba(255,255,255,.12); }
 </style>
 
-<div class="nt-wrap"><div class="nt-grid">
-
-<div class="nt-hero"><img src="magazine-here.jpg"><div class="nt-content"><div class="nt-title">NEW TIME MAGAZINE</div><div class="nt-paragraph">We are New Timers. Your time is the time, the moment, the future.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE NEW TIME</span></a></div></div>
-
-<div class="nt-hero"><img src="for-young.jpg"><div class="nt-content"><div class="nt-title">FOR THE YOUNG</div><div class="nt-paragraph">Discover how easy it is to learn the youthful truth, relatable like New Times.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE FOR THE YOUNG</span></a></div></div>
-
-<div class="nt-hero"><img src="team-new-time.jpg"><div class="nt-content"><div class="nt-title">TEAM</div><div class="nt-paragraph">A fully professional team of world-class premium investigations.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE TEAM</span></a></div></div>
-
-<div class="nt-hero"><img src="time-time.jpg"><div class="nt-content"><div class="nt-title">FRIENDS</div><div class="nt-paragraph">At New Time we are not only high-class, high-level. We are day by day, hand in hand with you.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE TRUTH FRIENDS</span></a></div></div>
-
-<div class="nt-hero"><img src="all-new-time.jpg"><div class="nt-content"><div class="nt-title">ALL NEW TIME</div><div class="nt-paragraph">We are who you truly wait for every second to identify yourself.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE ALL</span></a></div></div>
-
-<div class="nt-hero"><img src="services-service.jpg"><div class="nt-content"><div class="nt-title">SERVICE</div><div class="nt-paragraph">New Time is much more than a for-profit university.</div><a class="nt-explore" href="#"><div class="nt-circle">→</div><span class="nt-explore-text">EXPLORE SERVICE</span></a></div></div>
-
-</div></div>
+<div class="nt6">
+  <div class="nt6-card"><img src="magazine-here.jpg?v=6fast" loading="lazy" decoding="async" fetchpriority="low"><div class="nt6-info"><div class="nt6-title">NEW TIME MAGAZINE</div><div class="nt6-p">We are New Timers. Your time is the time, the moment, the future.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE NEW TIME</a></div></div>
+  <div class="nt6-card"><img src="for-young.jpg?v=6fast" loading="lazy" decoding="async"><div class="nt6-info"><div class="nt6-title">FOR THE YOUNG</div><div class="nt6-p">Discover how easy it is to learn the youthful truth, relatable like New Times.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE FOR THE YOUNG</a></div></div>
+  <div class="nt6-card"><img src="team-new-time.jpg?v=6fast" loading="lazy" decoding="async"><div class="nt6-info"><div class="nt6-title">TEAM</div><div class="nt6-p">A fully professional team of world-class premium investigations.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE TEAM</a></div></div>
+  <div class="nt6-card"><img src="time-time.jpg?v=6fast" loading="lazy" decoding="async"><div class="nt6-info"><div class="nt6-title">FRIENDS</div><div class="nt6-p">At New Time we are not only high-class, high-level. We are day by day, hand in hand.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE FRIENDS</a></div></div>
+  <div class="nt6-card"><img src="all-new-time.jpg?v=6fast" loading="lazy" decoding="async"><div class="nt6-info"><div class="nt6-title">ALL NEW TIME</div><div class="nt6-p">We are who you truly wait for every second to identify yourself.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE ALL</a></div></div>
+  <div class="nt6-card"><img src="services-service.jpg?v=6fast" loading="lazy" decoding="async"><div class="nt6-info"><div class="nt6-title">SERVICE</div><div class="nt6-p">New Time is much more than a for-profit university.</div><a class="nt6-btn" href="#"><span class="nt6-circle">→</span> EXPLORE SERVICE</a></div></div>
+</div>
 
 <section class="memorial-black">
   <div class="memorial-black-inner">
