@@ -1774,8 +1774,8 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 @media(max-width:768px){ .nt-grid{grid-template-columns:1fr; gap:14px;} }
 .nt-hero{ position:relative; width:100%; height:520px; overflow:hidden; background:#000; margin:0; text-align:left !important; border:0 !important; border-radius:0 !important; outline:none !important; box-shadow:none !important; }
 @media(max-width:768px){.nt-hero{height:620px;}}
-.nt-overlay{ display:none !important; }
-.nt-hero{ background:transparent !important; }
+.nt-hero img{ position:absolute;inset:0;width:100%;height:100%; object-fit:cover; display:block; border:0 !important; border-radius:0 !important; }
+.nt-overlay{ position:absolute;inset:0; background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 80%); border:0 !important; border-radius:0 !important; }
 .nt-content{ position:absolute !important; bottom:0 !important; left:0 !important; right:0 !important; padding:0 22px 26px 22px !important; text-align:left !important; display:flex !important; flex-direction:column !important; align-items:flex-start !important; }
 .nt-title{ font-family:'Cormorant Garamond',serif; text-transform:uppercase; letter-spacing:0.15em; font-size:clamp(28px,3vw,38px); line-height:0.95; margin:0; color:#fff; font-weight:300; text-align:left !important; align-self:flex-start !important; width:100% !important; }
 .nt-paragraph{ margin-top:12px; color:rgba(255,255,255,0.78); font-weight:300; font-size:13px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; font-family:'Inter',sans-serif; text-align:left !important; align-self:flex-start !important; max-width:300px !important; }
