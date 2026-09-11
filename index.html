@@ -1934,11 +1934,11 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  align-items: flex-end; /* todo a la derecha */
+  align-items: flex-start; /* esquineado a la IZQUIERDA */
 }
 .nt-right-text{
   max-width: 520px;
-  text-align: right; /* esquineado a la derecha */
+  text-align: left; /* texto a la izquierda */
   background: rgba(0,0,0,0.6);
   padding: 22px 26px;
   border-radius: 10px;
@@ -1947,26 +1947,26 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
   font-family:'Cormorant Garamond', serif;
   font-size:42px;
   line-height:1.1;
-  color:#ffffff !important; /* blanco */
+  color:#ffffff !important;
   margin:0 0 16px 0;
-  text-align: right;
+  text-align: left;
 }
 .nt-right-text p{
   font-size:16px;
   line-height:1.6;
-  color:#ffffff !important; /* blanco */
-  text-align: right;
+  color:#ffffff !important;
+  text-align: left;
   opacity: 1 !important;
 }
 .nt-video{
   margin-top:32px;
   width:100%;
-  max-width: 520px; /* mismo ancho que el texto para que quede alineado derecha */
+  max-width: 520px;
   aspect-ratio:16/9;
   background:#000;
   overflow:hidden;
   border-radius:8px;
-  align-self: flex-end;
+  align-self: flex-start; /* video también a la izquierda */
 }
 .nt-video video, .nt-video iframe{
   width:100%;
@@ -1977,8 +1977,6 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 @media(max-width:768px){
   .nt-split{ flex-direction:column; }
   .nt-left{ height:400px; }
-  .nt-right{ align-items: stretch; }
-  .nt-right-text, .nt-video{ max-width: 100%; }
 }
 </style>
 
@@ -1995,7 +1993,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
       <video src="tu-video.mp4" controls playsinline></video>
     </div>
   </div>
-</div>      
+</div>     
 
 <div class="video-wrapper" style="margin-top:17px !important;">
   <video controls playsinline preload="metadata" poster="new.webp">
