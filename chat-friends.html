@@ -7,11 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direction:column;height:100vh}
-#nt-top{background:#fff;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9}
+#nt-top{background:#fff;color:#000;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9}
 #nt-top .nt-brand{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:3px;text-transform:uppercase}
 #nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;margin:12px;border:1px solid #e5e5e5;border-radius:18px}
 .nt-dir-item{display:block;padding:10px 0;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;text-align:left;border:none;background:none}
-.nt-sub{color:#222!important;font-size:15px!important;padding-left:12px!important;border-left:2px solid #e5e5e5!important}
+.nt-sub{color:#222!important;font-size:15px!important;padding-left:14px!important;border-left:2px solid #e5e5e5!important}
+.nt-back{color:#000!important;font-size:12px!important;margin-top:10px;text-transform:uppercase}
 </style>
 </head>
 <body>
@@ -25,44 +26,56 @@ body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direct
 const msgs=document.getElementById('nt-msgs');
 const DATA={
 "Origins of cancer":{
-"Why fat causes cancer":"La grasa entra a tu sangre. No te mata al momento pero va matando organos poco a poco. Por eso termina en cancer.",
-"Why tasty but addictive":"Sabe rico a proposito, es trampa. Crea adiccion lenta aceptada por todos.",
-"Obesity, diabetes":"Viene obesidad, diabetes y falla de organos. No es comida para humanos.",
-"Immune system":"A unos les da cancer y a otros no al momento. Es sistema inmune.",
-"Why old age":"Sale mas de viejo. Llevas anos comiendo grasa y organo ya no aguanta.",
-"Symptoms":"Mareo, nausea, vomito, dolor cabeza. Cuerpo intoxicado. Con organico con agua se va.",
-"Organic food":"Organico con agua no mata, no tiene grasa. Evita donde huele a grasa frita."
+"Why fat causes cancer":"Universities are for profit, not for your intimate personal growth. Food with fat has good taste - appearance - but hidden effect is cancer and diseases. That is why you suddenly feel bad because fraudulent fatty food is trying to kill you.",
+"Why tasty but addictive":"Taste is to convince you and hidden effect is cancer. Legality is to move money, not to take care of your life, that is why legality is fraudulent.",
+"Obesity, medical plan":"You're overpaying for medical plan because hidden truth is you only use it when fraudulent products make you sick. Hidden direct effect is: Take flavor in exchange for your death.",
+"Immune system & old age":"Some eat fatty foods never develop cancer, others do - difference lies in immune system. Cancer tends to develop in old age following long history of fatty foods.",
+"Symptoms & organic":"Dizziness, nausea, vomiting, headache occur because body intoxicated. Disappear after switching to organic food with water. Resisting smell of fatty food eliminates appetite."
 },
-"Origins of disability":{"Causes":"Genetica, complicaciones al nacer, accidentes.","Prevention":"Cuidando embarazo y alimentacion.","Support":"Necesita respeto, no lastima."},
-"Origins of gender identity":{"What is it":"Como persona se siente por dentro.","Respect":"Verdad con respeto construye."},
-"Origins of infidelity":{"Why hurts":"Dano cae en victima, mata confianza.","Prevention":"Decir NO desde inicio si no te gusta."},
-"Origins of suicides":{"Why":"Por amor, falta dinero, pasado malo.","Help":"Habla, busca ayuda. Tu vida vale."},
-"Origins of relationships":{"Trust":"Confianza cuando dice verdad sin interes.","Value":"Dile: ese vestido te queda super. No mientas."},
-"Origins of violence":{"Media":"Peliculas violentas legales para mover dinero, no cuidar salud.","Money":"Sistema economico obliga por necesidad."},
-"Money and effect":{"Control":"Te controlan porque tienes que comer, vestir.","Free":"Gratis es libertad, pierden control."},
-"Human love":{"Real vs fake":"Si busca dinero y sexo, no es amor, es fraude.","Mutual":"Lo dificil es que amor sea mutuo."},
-"Intelligence life":{"Best age":"Tener hijos joven es error. Minimo 30-39, cerebro maduro.","Present":"Futuro no existe, presente crea pasado."},
-"The street mindset":{"Happiness":"Pensamientos fraudulentos que te dan felicidad a cambio de fraude.","Effect":"Ves apariencia vs efecto. Precio mismo es fraude."}
+"Origins of infidelity":{
+"Why hurts & diseases":"Damages caused by transmission of diseases such as herpes, HIV through infidelity. But non-contagious damages, mental and psychological damage, do not fall on person who commits infidelity. Fall on victim who was deceived.",
+"Effect on victim":"Hidden effect that infidelity leads victim to not trust anyone, to kill feelings, to revenge in silence, to prevent happiness and even prevent trusting new relationships.",
+"Prevention":"Better to tell truth from beginning, if you don't like someone physically say NO thus eliminating future deceptions because not all men and women are same."
+},
+"Origins of suicides":{
+"Why mostly":"Suicides mostly because of love infidelity, impediment of not having money for fair life, but mostly because of past of all bad.",
+"Childhood trauma":"If someone raped or mistreated in childhood, memory does not affect at that age, starts affecting in future when mind matures when person gets tired of changing thoughts to evade memory.",
+"How happens":"When can't take it anymore unfortunately they commit suicide in different ways."
+},
+"Origins of being woman and men":{
+"Trust & truth":"Man trusts woman when woman tells truth, what torments her inside - Look it's not that I love you for your money or to live off you, but you are my guide who I depend on.",
+"How to love woman":"If you really love that woman always say you are beautiful, notice things she wears to feel beautiful - Wow that makeup and eyeshadow and dress looks super on you. Tell truth don't lie because she knows what looks good or bad.",
+"How to love forever":"Tell her I love you if you really love her with human love tell her no matter there are other more beautiful women you are my love forever, don't look at other women."
+},
+"Origins of assassins":{
+"Media influence":"Violent movies, music are fraudulent arts as I told you with cancer one they are lawful to move money not to protect mental health of victims of animations.",
+"Hidden effect":"As it is legal, but hidden effect is illegal to excite your feelings to use your physical body and kill other physical lives making you feel you are looking like actor you watched.",
+"Economic system":"Fraudulent economic system that forces people out of necessity, and movies about killers and fraudulent art music, are origins of killers."
+},
+"The money and the effect":{
+"How controls mind":"Human politicians meet and say with this economic system people would do this and this let's do this and so people are under our control and we enslave them because people have to eat, dress, etcetera whether they want or not we have access to your mind.",
+"Free vs price":"So they have enslaved your human mind that is why money is access to mind forcing you to do what they say putting money in laws leaving nothing free because free is freedom and they lose control.",
+"Government costume":"Governments are fraud with Halloween costume of tie and figure of authority, because effect it causes to you is not one they sell you of appearances that money is life, happy, all and important."
+},
+"Human love":{
+"Real vs fraud":"If she's after money and he's after sex and perfect body, that's not love. That's fraud. Real love intimate, just two people, no money, no material motive.",
+"If not love":"If you know you're in it for benefits and still call it love, you're lying twice: To yourself and to victim. If you don't feel it deep, don't force it. Don't do it out of curiosity or pity.",
+"Mutual love":"Hardest thing is for love to be mutual, because usually one side real and other isn't, or woman suffering and settles because he's nice, or man settles out of pity. They stay together until real love shows up."
+}
 };
-function add(h,w){const d=document.createElement('div');d.style.cssText=w==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%':'background:#fff;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%';d.innerHTML=h;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
-function main(){return `Select:<br><br>${Object.keys(DATA).map(t=>`<div class="nt-dir-item" data-main="${t}">${t}</div>`).join('')}`;}
-function sub(t){return `<b>${t}</b><br><br>${Object.keys(DATA[t]).map(k=>`<div class="nt-dir-item nt-sub" data-sub="${t}||${k}">${k}</div>`).join('')}<br><div class="nt-dir-item" data-back="1">← Back</div>`;}
+function add(h,w){const d=document.createElement('div');d.style.cssText=w==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px';d.innerHTML=h;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function main(){return `Here in New Time chat Truth Friends select:<br><br>${Object.keys(DATA).map(t=>`<div class="nt-dir-item" data-main="${t}">${t}</div>`).join('')}`;}
+function sub(t){return `<b>${t}</b><br>Select question:<br><br>${Object.keys(DATA[t]).map(k=>`<div class="nt-dir-item nt-sub" data-sub="${t}||${k}">${k}</div>`).join('')}<br><div class="nt-dir-item nt-back" data-back="1">← Back</div>`;}
 add(main(),'bot');
 msgs.addEventListener('click',e=>{
-const m=e.target.closest('[data-main]');if(m){const t=m.dataset.main;add(t,'user');setTimeout(()=>add(sub(t),'bot'),250);return}
-const s=e.target.closest('[data-sub]');if(s){const [t,q]=s.dataset.sub.split('||');add(q,'user');setTimeout(()=>add(`<b>${q}</b><br><br>${DATA[t][q]}<br><br>${sub(t)}`,'bot'),300);return}
-if(e.target.closest('[data-back]')){add('Back','user');setTimeout(()=>add(main(),'bot'),250)}
+const m=e.target.closest('[data-main]');if(m){const t=m.dataset.main;add(t,'user');setTimeout(()=>add(sub(t),'bot'),200);return}
+const s=e.target.closest('[data-sub]');if(s){const [t,q]=s.dataset.sub.split('||');add(q,'user');setTimeout(()=>add(`<b>${q}</b><br><br>${DATA[t][q]}<br><br><i>Always good to read complete professional in Directory, here I answer to YOU as friend. newtimeusa.com</i><br><br>${sub(t)}`,'bot'),200);return}
+if(e.target.closest('[data-back]')){add('Back','user');setTimeout(()=>add(main(),'bot'),200)}
 });
 const inp=document.getElementById('nt-input'),btn=document.getElementById('nt-send');
-function ask(){const v=inp.value.trim();if(!v)return;add(v,'user');inp.value='';const l=v.toLowerCase();let ft=null,fq=null;
-if(l.includes('fat')||l.includes('oil')||l.includes('grasa')){ft='Origins of cancer';fq='Why fat causes cancer'}
-else if(l.includes('taste')||l.includes('sabor')){ft='Origins of cancer';fq='Why tasty but addictive'}
-else if(l.includes('obes')||l.includes('diabet')){ft='Origins of cancer';fq='Obesity, diabetes'}
-else if(l.includes('immun')){ft='Origins of cancer';fq='Immune system'}
-else if(l.includes('old')||l.includes('age')||l.includes('viejo')){ft='Origins of cancer';fq='Why old age'}
-else if(l.includes('dizz')||l.includes('nausea')||l.includes('mareo')||l.includes('symptom')){ft='Origins of cancer';fq='Symptoms'}
-else if(l.includes('organic')||l.includes('water')||l.includes('agua')){ft='Origins of cancer';fq='Organic food'}
-setTimeout(()=>{if(ft)add(`<b>${fq}</b><br><br>${DATA[ft][fq]}<br><br>${sub(ft)}`,'bot');else add(main(),'bot')},400)
+function ask(){const v=inp.value.trim();if(!v)return;add(v,'user');inp.value='';const l=v.toLowerCase();let ft=null;
+if(l.includes('cancer'))ft="Origins of cancer";else if(l.includes('infidel'))ft="Origins of infidelity";else if(l.includes('suicid'))ft="Origins of suicides";else if(l.includes('woman')||l.includes('men'))ft="Origins of being woman and men";else if(l.includes('assassin'))ft="Origins of assassins";else if(l.includes('money'))ft="The money and the effect";else if(l.includes('love'))ft="Human love";
+setTimeout(()=>{if(ft)add(sub(ft),'bot');else add(main(),'bot')},200)
 }
 btn.onclick=ask;inp.onkeydown=e=>{if(e.key==='Enter')ask()}
 </script>
