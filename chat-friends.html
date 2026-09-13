@@ -3,57 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIME Chat Truth Friends</title>
+<title>NEW TIME</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direction:column;height:100vh}
 #nt-top{background:#fff;color:#000;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9;}
-#nt-top .nt-brand{font-family:'Cormorant Garamond', serif;font-weight:400;font-size:20px;letter-spacing:3px;text-transform:uppercase;color:#000;}
+#nt-top.nt-brand{font-family:'Cormorant Garamond', serif;font-weight:400;font-size:20px;letter-spacing:3px;text-transform:uppercase;color:#000;}
 #nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;margin:12px;border:1px solid #e5e5e5;border-radius:18px;}
-.nt-dir-item{display:block;padding:10px 0;margin:0;background:none;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond', serif;font-size:17px;font-weight:500;letter-spacing:0.8px;text-align:left;border:none;}
-.nt-dir-item:hover{color:#3D0000}
+.nt-dir-item{display:block;padding:8px 0;background:none;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond', serif;font-size:16px;font-weight:500;text-align:left;border:none;}
+#nt-input{flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;}
+#nt-send{background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;}
 </style>
 </head>
 <body>
-<div id="nt-top">
-  <div class="nt-brand">NEW TIME</div>
-  <a href="index.html" style="text-decoration:none;color:#000;font-size:28px;font-weight:200;line-height:1">✕</a>
-</div>
+<div id="nt-top"><div class="nt-brand">NEW TIME</div><a href="index.html" style="text-decoration:none;color:#000;font-size:28px">✕</a></div>
 <div id="nt-msgs"></div>
 <div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
-  <input id="nt-input" placeholder="Ask about cancer origins..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
-  <button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;">→</button>
+<input id="nt-input" placeholder="Ask: fat, obesity, symptoms, age, immune...">
+<button id="nt-send">→</button>
 </div>
+
 <script>
 const msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send');
 function add(html, who){
-  const d=document.createElement('div');
-  d.style.cssText = who==='user' ? 'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;font-size:15px;' : 'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.08);';
-  if(who==='bot') d.innerHTML=html; else d.textContent=html;
-  msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
+ const d=document.createElement('div');
+ d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;';
+ if(who==='bot') d.innerHTML=html; else d.textContent=html;
+ msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
 }
-const cancerText = `Fat is a major cause of cancer. Some diseases have been linked to diets high in oils and fried meats, while many organic foods prepared with water contain no harmful substances. Dietary fats can be detrimental to human health.<br><br>Fatty food may taste appealing, but the appeal creates a slow addiction. The fat enters the bloodstream and affects organs over time. Because death is not instant, consumers are convinced it has no fatal effect. Meanwhile, the body is pushed toward chronic illness.<br><br>Anything containing excessive fat is harmful. It can contribute to obesity, diabetes, and organ failure. Cancer tends to develop in old age, often following long history of consuming fatty foods. Symptoms like dizziness, nausea, vomiting, headache can appear and usually disappear after switching to organic food.<br><br><i>This is author's personal perspective. Cancer has many risk factors. Consult a healthcare professional.</i>`;
-const answers = {"Origins of cancer": cancerText}
-function makeDir(){ return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">${n}</div>`).join(''); }
-function greeting(){ return `Here in New Time chat Truth Friends to respond you must select with your finger the one that interests you.<br><br>${makeDir()}`; }
-function showAnswer(t){ return `<b>${t}</b><br><br>${answers[t]}<br><br><i>Always good to read it complete in the Directory, here I answer to YOU directly as a friend.</i>`; }
+
+const DB = [
+ {k:["fat","grasa","oil","aceite"], t:"Why fat is linked to cancer", a:"Fat is a major cause of cancer. Dietary fats can be detrimental to human health. The human body is delicate and organs cannot tolerate excess fat at any time. Fat enters the bloodstream and affects organs over time."},
+ {k:["taste","sabor","addiction","adiccion"], t:"Why fatty food tastes good", a:"Fatty food may taste appealing, but the appeal creates a slow, socially acceptable addiction. It is not immediately deadly because it is mixed with organic ingredients. Because death is not instant, consumers are convinced it has no fatal effect."},
+ {k:["obesity","diabetes","obesidad"], t:"Obesity and diabetes", a:"Anything containing excessive fat and oil is harmful. It can contribute to obesity, diabetes, and organ failure. People who eat fatty foods never develop cancer immediately, difference lies in immune system."},
+ {k:["immune","inmune","smoke","fumar"], t:"Immune system and smoking", a:"Those who smoke, eat fatty foods, and use drugs are extremely vulnerable to cancer. Those who smoke, eat fatty foods, and use drugs are extremely vulnerable. Cancer tends to develop in old age after long history of fatty foods."},
+ {k:["age","old","vejez","edad"], t:"Why it appears in old age", a:"Cancer tends to develop in old age, often following long history of consuming fatty foods. As organs age, effects of fatty foods are more likely to contribute."},
+ {k:["symptom","dizz","nausea","vomit","headache","sintoma"], t:"Symptoms after fatty food", a:"Symptoms that appear in people who consumed food with oil include dizziness, nausea, vomiting, headache. These symptoms usually disappear soon after switching to organic food. Cravings can remain for 1 to 6 years."},
+ {k:["organic","organico","water","agua"], t:"Organic food with water", a:"Many organic foods prepared with water contain no harmful substances. Switching to organic food helps symptoms disappear. Resisting places where smell of fatty food is present is way to eliminate appetite."},
+ {k:["cancer","cancer"], t:"Origins of cancer - full", a:""}
+];
+DB[7].a = DB.map(x=>x.a).slice(0,7).join('<br><br>') + '<br><br><i>Personal perspective. For medical advice, consult professional.</i>';
+
+function makeDir(){return DB.map((x,i)=>`<button class="nt-dir-item" data-i="${i}">${x.t}</button>`).join('');}
+function greeting(){return `Here in New Time chat Truth Friends - Origins of cancer<br><br>Select with your finger:<br><br>${makeDir()}`;}
+function findAnswer(q){
+ const l=q.toLowerCase();
+ for(let item of DB){ for(let kw of item.k){ if(l.includes(kw)) return item; } }
+ return null;
+}
+
 add(greeting(),'bot');
+
 msgs.addEventListener('click', e=>{
-  const it=e.target.closest('.nt-dir-item');
-  if(!it) return;
-  const t=it.getAttribute('data-title');
-  add(t,'user');
-  setTimeout(()=> add(showAnswer(t),'bot'), 200);
+ const it=e.target.closest('.nt-dir-item');
+ if(!it) return;
+ const idx=parseInt(it.getAttribute('data-i'));
+ add(DB[idx].t,'user');
+ setTimeout(()=>add(`<b>${DB[idx].t}</b><br><br>${DB[idx].a}`,'bot'),200);
 });
+
 function ask(){
-  if(!inp.value.trim()) return;
-  const q=inp.value.trim(); add(q,'user'); inp.value='';
-  const l=q.toLowerCase();
-  let f = (l.includes('cancer')||l.includes('fat')||l.includes('food')||l.includes('grasa')||l.includes('oil')) ? "Origins of cancer" : null;
-  setTimeout(()=>{ if(f) add(showAnswer(f),'bot'); else add(greeting(),'bot'); }, 200);
+ if(!inp.value.trim()) return;
+ const q=inp.value.trim(); add(q,'user'); inp.value='';
+ const found=findAnswer(q);
+ setTimeout(()=>{
+   if(found) add(`<b>${found.t}</b><br><br>${found.a}<br><br><i>Answering YOU directly as a friend.</i>`,'bot');
+   else add(greeting(),'bot');
+ },200);
 }
 send.onclick=ask;
-inp.onkeydown=e=>{ if(e.key==='Enter') ask(); };
+inp.onkeydown=e=>{if(e.key==='Enter')ask();};
 </script>
 </body>
 </html>
