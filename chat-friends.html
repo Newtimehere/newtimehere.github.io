@@ -10,7 +10,7 @@ body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direct
 #nt-top{background:#fff;color:#000;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9}
 #nt-top .nt-brand{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:3px;text-transform:uppercase}
 #nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;margin:12px;border:1px solid #e5e5e5;border-radius:18px}
-.nt-dir-item{display:block;padding:10px 0;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;text-align:left;border:none;background:none}
+.nt-dir-item{display:block;padding:10px 0;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;text-align:left;border:none;background:none;width:100%}
 .nt-sub{color:#222!important;font-size:15px!important;padding-left:14px!important;border-left:2px solid #e5e5e5!important}
 .nt-back{color:#000!important;font-size:12px!important;margin-top:10px;text-transform:uppercase}
 </style>
@@ -23,12 +23,13 @@ body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direct
 <button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%">→</button>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', ()=>{
 const msgs=document.getElementById('nt-msgs');
 const DATA={
 "Origins of disabled people":{
 "Is the man's semen to blame?":"Totally responsible, but a victim at the same time, because man doesn't realize that semen that comes from a sexual dream is the safe way for a baby to be born, because the origin of physical life is a dream — that's why humans dream and live the dream the same way as with the body.",
 "What does the man say?":"Since human beings don't know the origin of life — which is a dream that you return to when you die — when a man has these dreams he thinks they're lies because when he wakes up he sees it physically. The physical evidence is semen, as such it's a warning to man that this semen is the safety.",
-"How to avoid having children that?":"Good question and it's the hardest part — it's a whole process. If you're sexually active with waking semen, it's not that easy to get this semen from a dream. Don't have sex, hold back the urges for about a month, more or less, the sexual dreams will appear, you collect it and you inseminate your wife when she's ovulating, and you get safe births.."
+"How to avoid having children that?":"Good question and it's the hardest part — it's a whole process. If you're sexually active with waking semen, it's not that easy to get this semen from a dream. Don't have sex, hold back the urges for about a month, more or less, the sexual dreams will appear, you collect it and you inseminate your wife when she's ovulating, and you get safe births."
 }, 
 "Origins of cancer":{
 "Why fat causes cancer":"Universities are for profit, not for your intimate personal growth. Food with fat has good taste - appearance - but hidden effect is cancer and diseases. That is why you suddenly feel bad because fraudulent fatty food is trying to kill you.",
@@ -63,14 +64,15 @@ const DATA={
 "Government costume":"Governments are fraud with Halloween costume of tie and figure of authority, because effect it causes to you is not one they sell you of appearances that money is life, happy, all and important."
 },
 "LGBTTQ+ Gender Fraud":{
-"Is homophobia right or wrong?":" Totally right, because it's the rejection of a fraudulent feeling that seeks to scam sex, romantic relationships, and marriages with lines like: They're other orientations and have pity, it's a human being who suffers and feels — but who has pity for you, when they want to scam your heterosexuality with propaganda?.",
+"Is homophobia right or wrong?":"Totally right, because it's the rejection of a fraudulent feeling that seeks to scam sex, romantic relationships, and marriages with lines like: They're other orientations and have pity, it's a human being who suffers and feels — but who has pity for you, when they want to scam your heterosexuality with propaganda?",
 "Where is the fraud?":"Good question, and it's everyone's question. Look, the fraud is the body, let me explain: The feeling is one thing and the body is the opposite. That's what these forms are for — so the hidden effect is to scam others physically with the body. That's why those bodies are not the real ones, because women's and men's bodies are not like that.",
-"Fraudulent clothing?":"Hardest thing is for love to be mutual, because usually one side real and other isn't, or woman suffering and settles because he's nice, or man settles out of pity. They stay together until real love shows up."
+"Fraudulent clothing?":"They dress that way because they can't change the body — they scam themselves to keep believing in the feeling. That's why a woman dresses as a man and a man dresses as a woman, to mentally convince the person. But the hidden objective is to scam the visual heterosexuality of heterosexual women and men. So that visual keeps looping in your brain to eliminate your heterosexual feeling."
 },
 "Human love":{
 "Real vs fraud":"If she's after money and he's after sex and perfect body, that's not love. That's fraud. Real love intimate, just two people, no money, no material motive.",
 "If not love":"If you know you're in it for benefits and still call it love, you're lying twice: To yourself and to victim. If you don't feel it deep, don't force it. Don't do it out of curiosity or pity.",
 "Mutual love":"Hardest thing is for love to be mutual, because usually one side real and other isn't, or woman suffering and settles because he's nice, or man settles out of pity. They stay together until real love shows up."
+}
 };
 function add(h,w){const d=document.createElement('div');d.style.cssText=w==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px';d.innerHTML=h;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
 function main(){return `Here in New Time chat Truth Friends select:<br><br>${Object.keys(DATA).map(t=>`<div class="nt-dir-item" data-main="${t}">${t}</div>`).join('')}`;}
@@ -87,6 +89,7 @@ if(l.includes('cancer'))ft="Origins of cancer";else if(l.includes('infidel'))ft=
 setTimeout(()=>{if(ft)add(sub(ft),'bot');else add(main(),'bot')},200)
 }
 btn.onclick=ask;inp.onkeydown=e=>{if(e.key==='Enter')ask()}
+});
 </script>
 </body>
 </html>
