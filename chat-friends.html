@@ -10,37 +10,20 @@ body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direct
 #nt-top{background:#fff;color:#000;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9;}
 #nt-top .nt-brand{font-family:'Cormorant Garamond', serif;font-weight:400;font-size:20px;letter-spacing:3px;text-transform:uppercase;color:#000;}
 #nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;margin:12px;border:1px solid #e5e5e5;border-radius:18px;}
-.nt-dir-item{
-  display:block;
-  padding:10px 0;
-  margin:0;
-  background:none;
-  color:#6B0000;
-  cursor:pointer;
-  font-family:'Cormorant Garamond', serif;
-  font-size:17px;
-  font-weight:500;
-  letter-spacing:0.8px;
-  text-align:left;
-  border:none;
-}
+.nt-dir-item{display:block;padding:10px 0;margin:0;background:none;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond', serif;font-size:17px;font-weight:500;letter-spacing:0.8px;text-align:left;border:none;}
 .nt-dir-item:hover{color:#3D0000}
 </style>
 </head>
 <body>
-
 <div id="nt-top">
   <div class="nt-brand">NEW TIME</div>
   <a href="index.html" style="text-decoration:none;color:#000;font-size:28px;font-weight:200;line-height:1">✕</a>
 </div>
-
 <div id="nt-msgs"></div>
-
 <div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
-  <input id="nt-input" placeholder="Ask..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
+  <input id="nt-input" placeholder="Ask about cancer origins..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
   <button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;">→</button>
 </div>
-
 <script>
 const msgs=document.getElementById('nt-msgs'), inp=document.getElementById('nt-input'), send=document.getElementById('nt-send');
 function add(html, who){
@@ -49,25 +32,12 @@ function add(html, who){
   if(who==='bot') d.innerHTML=html; else d.textContent=html;
   msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
 }
-const answers = {
-  "Origins of disabled people": `Everything has its origin, nothing can exist if an origin does not exist. People physically disabled, missing a leg, an arm, and mentally with retardation of same-sex and retarded mindset to kill etc. Its origin is your semen as a man when you ejaculate inside the vagina having awake sex. With your semen as a man that comes from a dream known as wet dreams it is not a lie it is a warning telling you, here you have the security of the birth of your son or daughter, by awake semen you risk a yes or a no.`,
-  "Origins of cancer": `Universities are for profit, not for your intimate personal growth of truths beyond appearances. Food with fat has a good taste, that is the appearance, but the taste is to convince you and the hidden effect is cancer and diseases, that is why you suddenly feel bad from time to time because the fraudulent fatty food is trying to kill you. Its legality is to move money, not to take care of your life, that is why its legality is fraudulent. "You're overpaying for a medical plan because the hidden truth is you only end up using it when those previous fraudulent products make you sick, and you don't even realize they're actually attempts to kill you with their effects. "The hidden direct effect is: Take the flavor in exchange for your death."`,
-  "Same-sex gender fraud mindset": `The fraudulent laws protecting a logical fraud, supposed equality, if you tell the truth it is discrimination, hate etcetera, as your friend the hidden truth is this: Look at me as your honest friend and with the truth, Since sex is with humans, there's no way to scam them with material things. Since sex is human, the feeling of fraudulent LGBTQ+ human existence is to scam sex with the same body, because the fraud is the body of men and women with fraudulent bodies. The retarded mindset is only in sex not in other things. The reality is that there are 3 conditions, to prevent births because from the same body no one is born, sexual fraud, anal sex man with man and sex with plastic penises woman with woman, feeling different from the disabled body impediment.`,
-  "Origins of infidelity": `The damages caused by the transmission of diseases such as herpes, HIV, through infidelity, etc. Sexually transmitted diseases affect both partners, but the non-contagious damages of infidelity, the mental and psychological damage, do not fall on the person who commits the infidelity. They fall on the victim who was deceived. As a hidden effect that infidelity leads the victim to not trust anyone, to kill their feelings, to revenge in silence, to prevent their happiness and can even lead that victim to experience the sexual fraud of the same sex and even prevent them from trusting new relationships with another who maybe that other one does not lie, he is the one who pays for the acts of others in revenge. That is why it is better to tell the truth from the beginning, if you don't like someone physically say NO thus eliminating future deceptions because not all men and women are the same.`,
-  "Origins of suicides": `Suicides are mostly because of love infidelity, impediment of not having money for a fair life, but mostly it is because of the past of all the bad. I explain example: If someone raped someone or mistreated in childhood, that memory does not affect at that age, it starts affecting in the future of a present later when the mind matures when the person gets tired of changing thoughts to evade that memory and can't take it anymore unfortunately they commit suicide in different ways.`,
-  "Origins of being woman and men": `The man trusts the woman when the woman tells the truth, what torments her inside as for example: Look it's not that I love you for your money or to live off you, but you are the man my guide who I depend on, and I know that thoughts of infidelity or that my love is not real human attack you in all the forms that exist of being unfaithful and lies I am not like that they are fraudulent thoughts to separate us. The part of the man if you really love that woman always say you are beautiful, notice the things she wears to feel beautiful, as for example: Wow that makeup and that eyeshadow and that dress looks super on you and tell her the truth about those arrangements don't lie because she knows what looks good or bad on her and if you lie the truth does not reach the feelings. Tell her I love you if you really love her with human love tell her no matter that there are other more beautiful women you are my love forever, don't look at other women so that she knows that your words are real.`,
-  "Origins of assassins": `Violent movies, music are fraudulent arts as I told you with the cancer one they are lawful to move money not to protect the mental health of the victims of animations of these fraudulent arts. As it is legal, but its hidden effect is illegal to excite your feelings to use your physical body and kill other physical lives making you feel that you are looking like the actor of the movie you watched and giving you ideas of being able to do it better in real life in the movie he did it like that if I do it in other ways like that they won't catch me. "A fraudulent economic system that forces people out of necessity, and movies about killers and fraudulent art music, are the origins of killers."`,
-  "The money and the effect": `Human politicians meet and say with this economic system people would do this this and this let's do this and this and so people are under our control and we enslave them to the system because people have to eat, dress, etcetera whether they want or not we have access to your mind. And so they have enslaved your human mind that is why money is an access to the mind forcing you to do what they say in their favor putting money in laws leaving nothing free because free is freedom and they lose control the natural free. Governments are a fraud with Halloween costume of tie, and figure of authority, because the effect it causes to you is not the one they sell you of appearances that money is life, happy, all and important.`,
-  "Human love": `If she's after money and he's after sex and a perfect body, that's not love. That's fraud. Real love is intimate, just two people, no money, no material motive. If you know you're in it for the benefits and you still call it love, you're lying twice: To yourself and to your victim. If you don't feel it deep, don't force it. Don't do it out of curiosity or pity. Saying NO now saves you from guilt later. The hardest thing in the world is for love to be mutual, because usually one side is real and the other isn't, or the woman is suffering and settles because he's nice to her, or when it's the man, he settles out of pity. And that's the worst part, because they stay together until real love shows up in someone else.`,
-  "Intelligence life": `Having kids at a young age is a mistake because you don't get to enjoy your youth, and youth only comes once in your entire life with total freedom. The right time to have kids is at minimum between 30 and 39, because the brain is fully mature at 30. By that age you have lived every stage with freedom, from 0 to 30 you graduated from university, etc. The future doesn't exist; the present is what constantly creates the past. It doesn't create the future. The present is lived as the future. The whole idea of "futures" is fraudulent.`,
-  "The street": `Neither governments nor universities understand the fraudulent mindset. These are fraudulent thoughts that keep you motivated and make you feel happy, but you're living fraudulently, a mindset that:<br><br><b>1.</b> Gives you happiness in exchange for falling into same-sex sexual fraud with your friend or for promotions.<br><br><b>2.</b> killing in exchange for ego gratification.<br><br><b>3.</b> Politicians with money in exchange for the majority being poor and dying.<br><br>You know they're fraudulent by their effect, because the fraud is in the effect. As an effect, in the case of same-sex sexual fraud, the body is the fraud. As an effect, killing is preventing life. The earth itself produces the tools to make products free to share; the price itself is the fraud. You see appearances versus effect.`
-} 
+const cancerText = `Fat is a major cause of cancer. Some diseases have been linked to diets high in oils and fried meats, while many organic foods prepared with water contain no harmful substances. Dietary fats can be detrimental to human health.<br><br>Fatty food may taste appealing, but the appeal creates a slow addiction. The fat enters the bloodstream and affects organs over time. Because death is not instant, consumers are convinced it has no fatal effect. Meanwhile, the body is pushed toward chronic illness.<br><br>Anything containing excessive fat is harmful. It can contribute to obesity, diabetes, and organ failure. Cancer tends to develop in old age, often following long history of consuming fatty foods. Symptoms like dizziness, nausea, vomiting, headache can appear and usually disappear after switching to organic food.<br><br><i>This is author's personal perspective. Cancer has many risk factors. Consult a healthcare professional.</i>`;
+const answers = {"Origins of cancer": cancerText}
 function makeDir(){ return Object.keys(answers).map(n=>`<div class="nt-dir-item" data-title="${n}">${n}</div>`).join(''); }
-function greeting(){ return `Here in New Time chat Truth Friends to respond you must select with your finger the one that interests you. To continue, you must upload or type the name below, for example, Money, cancer, etc:<br><br>${makeDir()}`; }
-function showAnswer(title){ return `<b>${title}</b><br><br>${answers[title]}<br><br><i>Always good to read it complete professional in the Directory, here I answer to YOU directly as a friend.</i>`; }
-
+function greeting(){ return `Here in New Time chat Truth Friends to respond you must select with your finger the one that interests you.<br><br>${makeDir()}`; }
+function showAnswer(t){ return `<b>${t}</b><br><br>${answers[t]}<br><br><i>Always good to read it complete in the Directory, here I answer to YOU directly as a friend.</i>`; }
 add(greeting(),'bot');
-
 msgs.addEventListener('click', e=>{
   const it=e.target.closest('.nt-dir-item');
   if(!it) return;
@@ -75,22 +45,11 @@ msgs.addEventListener('click', e=>{
   add(t,'user');
   setTimeout(()=> add(showAnswer(t),'bot'), 200);
 });
-
 function ask(){
   if(!inp.value.trim()) return;
   const q=inp.value.trim(); add(q,'user'); inp.value='';
-  const l=q.toLowerCase(); let f=null;
-  if(l.includes('cancer')) f="Origins of cancer";
-  else if(l.includes('disab')) f="Origins of disabled people";
-  else if(l.includes('infidel')) f="Origins of infidelity";
-  else if(l.includes('suicid')) f="Origins of suicides";
-  else if(l.includes('woman')) f="Origins of being woman and men";
-  else if(l.includes('assassin')) f="Origins of assassins";
-  else if(l.includes('money')) f="The money and the effect";
-  else if(l.includes('same')||l.includes('gender')) f="Same-sex gender fraud mindset";
-  else if(l.includes('intelligence')||l.includes('intelligent')) f="Intelligence life";
-  else if(l.includes('street')) f="The street";
-  else if(l.includes('love')) f="Human love";
+  const l=q.toLowerCase();
+  let f = (l.includes('cancer')||l.includes('fat')||l.includes('food')||l.includes('grasa')||l.includes('oil')) ? "Origins of cancer" : null;
   setTimeout(()=>{ if(f) add(showAnswer(f),'bot'); else add(greeting(),'bot'); }, 200);
 }
 send.onclick=ask;
