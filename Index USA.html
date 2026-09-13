@@ -1,39 +1,32 @@
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIMES - Full transparency. The full story.</title>
-<meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
-<link rel="canonical" href="https://newtimeusa.com/">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:wght@300;400;500&amp;display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/favicon-96x96.png?v=8" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8">
-<link rel="shortcut icon" href="/favicon.ico?v=8">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=8">
-<link rel="manifest" href="/site.webmanifest?v=8">
-<meta property="og:site_name" content="NEW TIME">
-<meta property="og:title" content="NEW TIME">
-<meta property="og:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image" content="https://newtimeusa.com/Photo-share.webp">
-<meta property="og:url" content="https://newtimeusa.com">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NEW TIME">
-<meta name="twitter:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
-<meta name="twitter:image" content="https://newtimeusa.com/Photo-share.webp">
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Organization",
-"name": "NEW TIME",
-"url": "https://newtimeusa.com",
-"logo": "https://newtimeusa.com/android-chrome-512x512.png"
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<div id="nt-overlay">
+  <div id="nt-box">
+    <div class="nt-logo-row">
+      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+      </svg>
+      <span class="nt-logo-text">NEW TIME</span>
+    </div>
+    <div class="nt-legal">
+      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
+      <div class="nt-btns">
+        <button id="nt-no">No Accept</button>
+        <button id="nt-yes">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="newTimeAudio" preload="auto">
+  <source src="welcome-new-time-mastered.mp3" type="audio/mpeg">
+</audio>
+
 <style>
   #nt-overlay{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999999;padding:24px;opacity:1;transition:opacity .4s}
   #nt-overlay.hide{opacity:0;pointer-events:none}
@@ -50,6 +43,61 @@
   #nt-yes{background:#fff;border:1px solid #fff;color:#000;font-weight:600;min-width:78px}
   #nt-yes:hover{background:#f0f0f0}
 </style>
+<script>
+  (function(){
+    const ov=document.getElementById('nt-overlay');
+    const yes=document.getElementById('nt-yes');
+    const no=document.getElementById('nt-no');
+    const audio=document.getElementById('newTimeAudio');
+    if(localStorage.getItem('newtime_legal_ok')==='1'){ov.remove();return;}
+    yes.onclick=()=>{
+      if(audio){ audio.volume=0.7; audio.currentTime=0; audio.play().catch(()=>{}); }
+      localStorage.setItem('newtime_legal_ok','1');
+      ov.classList.add('hide');
+      setTimeout(()=>ov.remove(),400);
+    };
+    no.onclick=()=>{window.location.href='https://www.google.com';};
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEW TIMES - Full transparency. The full story.</title>
+<meta name="description" content="New Times: We look past the surface to uncover what's really happening beneath. Directory of research on society, health, and human behavior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v=8" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8" />
+<link rel="shortcut icon" href="/favicon.ico?v=8" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=8" />
+<link rel="manifest" href="/site.webmanifest?v=8" />
+<meta property="og:site_name" content="NEW TIME">
+<meta property="og:title" content="NEW TIME">
+<meta property="og:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://newtimehere.com/Photo-share.webp">
+<meta property="og:url" content="https://newtimehere.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEW TIME">
+<meta name="twitter:description" content="At New Times, we believe in full transparency. We look past the surface to uncover what's really happening beneath.">
+<meta name="twitter:image" content="https://newtimehere.com/Photo-share.webp">
+
+<!-- LOGO PARA GOOGLE SEARCH -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "NEW TIME",
+"url": "https://newtimehere.com",
+"logo": "https://newtimehere.com/android-chrome-512x512.png"
+}
+</script>
+
+  
 <style>
     * {
         margin: 0;
@@ -1213,53 +1261,11 @@ opacity: 1;
 .memorial-black-grid strong{ color:#fff; font-weight:700; }
 
 </style>
-</head>
 <body>
-<div id="nt-overlay">
-  <div id="nt-box">
-    <div class="nt-logo-row">
-      <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"></path>
-        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"></path>
-        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"></path>
-        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle>
-        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle>
-      </svg>
-      <span class="nt-logo-text">NEW TIME</span>
-    </div>
-    <div class="nt-legal">
-      <p>All content on New Time is the exclusive property of New Time or its content providers and is strictly protected. All rights reserved under the laws of the United States.</p>
-      <div class="nt-btns">
-        <button id="nt-no">No Accept</button>
-        <button id="nt-yes">Accept</button>
-      </div>
-    </div>
-
-<audio id="newTimeAudio" preload="auto">
-  <source src="welcome-new-time-mastered.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  (function(){
-    const ov=document.getElementById('nt-overlay');
-    const yes=document.getElementById('nt-yes');
-    const no=document.getElementById('nt-no');
-    const audio=document.getElementById('newTimeAudio');
-    if(localStorage.getItem('newtime_legal_ok')==='1'){ov.remove();return;}
-    yes.onclick=()=>{
-      if(audio){ audio.volume=0.7; audio.currentTime=0; audio.play().catch(()=>{}); }
-      localStorage.setItem('newtime_legal_ok','1');
-      ov.classList.add('hide');
-      setTimeout(()=>ov.remove(),400);
-    };
-    no.onclick=()=>{window.location.href='https://www.google.com';};
-  })();
-</script>
-
-<header class="header">
+    <header class="header">
         <div class="header-inner">
             <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIMES Logo">
+                <img class="logo-icon" src="666-removebg-preview.png" alt="NEW TIMES Logo" />
                 <span class="logo-text">NEW TIME</span>
             </div>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
@@ -1272,7 +1278,7 @@ opacity: 1;
 
     <div class="menu-overlay" id="menuOverlay"></div>
         <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="menuCloseBtn">×</button>
+        <button class="mobile-menu-close" id="menuCloseBtn">&times;</button>
         <div class="mobile-menu-inner">
             <ul class="mobile-nav-list">
                             <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
@@ -1290,32 +1296,32 @@ opacity: 1;
        <!-- MODAL For The Young -->
     <div class="young-modal-overlay" id="youngModal">
         <div class="young-modal">
-            <button class="young-modal-close" id="youngModalClose">×</button>
+            <button class="young-modal-close" id="youngModalClose">&times;</button>
             <h2 class="young-modal-title">New Times For Young</h2>
             <div class="young-modal-content">
                 <h3>The Fraudulent Clock ⏰</h3>
                 <p>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = FRAUD.</p>
                 <p>Hidden truth: The day starts at sunrise. Your phone saying 1:00am doesn’t flip the sun on.</p>
 
-                <h3>Lawful Robbery 🏛</h3>
+                <h3>Lawful Robbery 🏛️</h3>
                 <p>Suit. Tie. Three alarms screaming. And THAT’S freedom? 🤣                 = FRAUD.</p>
                 <p>Hidden truth: Peace and money at 66. Still young in my head, old in the body. Young people laughing at fraud.😆🤣. Necessity drives the system, people die in slavery, and politicians applaud it. 👏💀
 
-                </p><h3>Cost of Living Scam 💸</h3>
+                <h3>Cost of Living Scam 💸</h3>
                 <p>They got you thinking life comes with a price tag 😆🤭. You “need” the bare minimum, you live scared of going broke = FRAUD.</p>
-                <p>Hidden Truth: Sex is free👧👨. Having kids is free. The earth gives us everything for free. We’re supposed to make stuff and share it. The “cost of living” is a scam 🏛
+                <p>Hidden Truth: Sex is free👧👨. Having kids is free. The earth gives us everything for free. We’re supposed to make stuff and share it. The “cost of living” is a scam 🏛️
 
-                </p><h3>Food Fraud 🍔</h3>
+                <h3>Food Fraud 🍔</h3>
                 <p>Dude holding Hot Cheetos: “100% Natural  FDA Approved 🤣” Now you feel safe eating poison. You pray over it and that prayer goes straight to Hell because that “food” = CANCER.</p>
                 <p>Hidden Truth: Real food is organic, no grease, doesn’t kill you slow. Real prayer = “Thank God I’m alive, even though this tastes like chemo” 🙏</p>
 
-                <h3>Fraudulent Laws ⚖</h3>
+                <h3>Fraudulent Laws ⚖️</h3>
 <p>🤣 “Equal justice” 😆 for everybody. Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.</p>
-<p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔♀fraudulent bodies🧔♀. That' sex fraud.</p>
+<p>Hidden truth: Murderers shouldn't be eligible for bail, period. If you take a life, you get life in prison. Ban the "intense flavor" that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That' sex fraud.</p>
 
 <h3>Church Scam ⛪</h3>
 <p>“Gentlemen, want to get right with God? 1. Worship this statue 😄 2. Show up Sunday 3. Drop cash in the plate. Boom, soul saved!” On fraudulent Sunday, money moved = FRAUD.</p>
-<p>Hidden truth: Saturday is God’s day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂📖😠</p>
+<p>Hidden truth: Saturday is God’s day. Sunday is for sex. People praying on a fraudulent Sunday while the priest is in the back cutting out Genesis 2:2-3 about the true day, Saturday ✂️📖😠</p>
                 <h3>College Degree Scam 🎓</h3>
                 <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
                 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
@@ -1327,13 +1333,13 @@ opacity: 1;
 </style>
 
 <button id="nt-friends-btn">
-<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"></path><circle cx="8.2" cy="9" r="1.4" fill="#B00000"></circle><circle cx="12" cy="9" r="1.4" fill="#B00000"></circle><circle cx="15.8" cy="9" r="1.4" fill="#B00000"></circle></svg>
+<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg>
 </button>
 
 <div id="nt-chat-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999998;align-items:flex-end;justify-content:center;">
 <div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;">
 <div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;"><b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
-<div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;"><div style="background: rgb(255, 255, 255); color: rgb(17, 17, 17); padding: 14px 16px; border-radius: 18px; border: 1px solid rgb(229, 229, 229); align-self: flex-start; max-width: 92%; line-height: 1.6; font-size: 15px; box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 3px;">Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Say hi and I'll follow your vibe 😉</div></div>
+<div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;"></div>
 <div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
 <input id="nt-input" placeholder="Say hi..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
 <button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;">→</button>
@@ -1363,7 +1369,7 @@ function reply(q){
    return "Third hi? 😂 okay you win, I'm fully here for you now. What you wanna talk about?";
  }
  if(low.includes('false')||low.includes('bot')||low.includes('real')) return "I'm not false bro, I'm here for real 😂 attending you 100%";
- if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤";
+ if(low.includes('amor')||low.includes('love')) return "<b>Human love.</b><br><br>True love is when they return your charger. That's REAL love 😂❤️";
  if(low.includes('bored')||low.includes('sad')||low.includes('tired')||low.includes('alone')) return `You said "${safe}"? I got you. That's why I'm here — to make you feel attended and relaxed, no judgment. Tell me more`;
  return pick('g',[
    `You said "${safe}" — haha I feel that 😂 tell me more, I'm here attending you`,
@@ -1379,8 +1385,8 @@ function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'
 send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 });
 </script>
-
-
+</body>
+</html>
             </div>
         </div>
     </div>
@@ -1388,7 +1394,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     <!-- MODAL BIOGRAPHY -->
     <div class="bio-modal-overlay" id="bioModal">
         <div class="bio-modal">
-            <button class="bio-modal-close" id="bioModalClose">×</button>
+            <button class="bio-modal-close" id="bioModalClose">&times;</button>
             <h2 class="bio-modal-title">New Time</h2>
             <div class="bio-modal-content">
                 <p>New Time is a U.S.-based digital media and research organization that examines contemporary social, economic, and cultural systems. Established this year, it focuses on documenting the hidden effects of practices, institutions, and narratives that present themselves as legitimate while delivering outcomes the organization describes as fraudulent.</p>
@@ -1414,7 +1420,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                 <p>New Time’s stated position is: “A system cannot be understood by its stated purpose alone; it must be judged by its results.” The organization promotes evidence-based analysis, independent inquiry, and personal accountability as essential for evaluating the legitimacy of social and economic structures.</p>
 
                 <div class="bio-modal-image">
-                    <img src="new-time666.jpg" alt="NEW TIME Logo">
+                    <img src="new-time666.jpg" alt="NEW TIME Logo" />
                 </div>
             </div>
         </div>
@@ -1423,7 +1429,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     <!-- MODAL TEAM -->
     <div class="team-modal-overlay" id="teamModal">
         <div class="team-modal">
-            <button class="team-modal-close" id="teamModalClose">×</button>
+            <button class="team-modal-close" id="teamModalClose">&times;</button>
             <h2 class="team-modal-title">NEW TIME TEAM</h2>
             <div class="team-modal-content">
                 <h3>Sebastian: Founder</h3>
@@ -1454,7 +1460,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     <!-- MODAL CONTACTS - ACTUALIZADO -->
     <div class="contacts-modal-overlay" id="contactsModal">
     <div class="contacts-modal">
-        <button class="contacts-modal-close" id="contactsModalClose">×</button>
+        <button class="contacts-modal-close" id="contactsModalClose">&times;</button>
         <h2 class="contacts-modal-title">CONTACT</h2>
         <div class="contacts-modal-content">
             <p>Welcome to New Time. We expose the truth behind appearances, "revealing" what things really do versus what they claim to be, and what statements actually mean versus what they say.</p>
@@ -1474,7 +1480,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
     <main class="main">
         <section class="hero" id="home">
             <div class="hero-logo">
-                <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo">
+                <img class="hero-main-logo" src="new.webp" alt="NEW TIMES Main Logo" />
             </div>
             <p class="hero-text">
                 Founded in February of this year in the United States. Online. At New Times, we believe in full transparency. With New Times, you get the full story and direct answers to your questions.
@@ -1579,12 +1585,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-of-disabled-people.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1595,12 +1601,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-cancer.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1611,12 +1617,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-sexual-fraud.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                          </div>
                        </div>
@@ -1627,12 +1633,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
         <div class="directory-actions">
             <button class="audio-btn" data-audio="sound-physical-evidence.mp3" aria-label="Play audio">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                         <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                         <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                           </svg>
                              </button>
                               <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                       <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                </div>
             </div>
@@ -1643,12 +1649,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-questions-answers.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1659,12 +1665,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-infidelity.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1675,12 +1681,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-money-and-effect.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1691,12 +1697,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-origins-of-suicides.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1707,12 +1713,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-origins-woman-and-men.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1723,12 +1729,12 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-origins-of-assassins.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
@@ -1739,19 +1745,19 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
                         <div class="directory-actions">
                             <button class="audio-btn" data-audio="sound-human-love.mp3" aria-label="Play audio">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <svg class="directory-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     </div>
                 </li>
             </ul>
         </section>
-            
+            </section>
 <style>
   #services{ margin-top:negative-6px !important; padding-top:0 !important; }
   .footer-text{ margin-top:0 !important; padding-top:10px !important; }
@@ -1759,7 +1765,7 @@ send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 </style>
     <div class="footer-section" id="services">
         <div class="footer-text"><p>New Time Direct Truth:</p>
-  With us, you learned true inner growth. Universities are not built to teach you the hidden truth about how your mind grows they are built to serve the economic system. But you already know that truth within yourself.<p></p></div>
+  With us, you learned true inner growth. Universities are not built to teach you the hidden truth about how your mind grows they are built to serve the economic system. But you already know that truth within yourself.</p></div>
     <!-- INICIO 6 CARDS - ENGLISH - 5 FOTOS - TEAM CON FOTO NUEVA -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap');
@@ -1898,7 +1904,7 @@ With New Time, Jack now has the extensive knowledge that to create his future fa
     
    </div>
     <div class="nt-video">
-      <video src="new-time-here.mp4" controls="" playsinline=""></video>
+      <video src="new-time-here.mp4" controls playsinline></video>
     </div>
   </div>
 </div>     
@@ -1985,7 +1991,7 @@ With New Time, Jack now has the extensive knowledge that to create his future fa
       <p>At just 21 years old, Morgan brings extensive knowledge in personal growth. A graduate of X University at 21, she is a personal growth advocate, model, and actress with New Time. Through New Time, Morgan learned that same-sex couples represent sexual fraud. She learned not to hate nor to accept it, but simply to not maintain those friendships for mental comfort.</p>
     </div>
     <div class="nt-video">
-      <video src="new-time.mp4" controls="" playsinline=""></video>
+      <video src="new-time.mp4" controls playsinline></video>
     </div>
   </div>
 </div>  
@@ -2047,7 +2053,7 @@ With New Time, Jack now has the extensive knowledge that to create his future fa
 </section>
       
 <div class="video-wrapper" style="margin-top:23px !important;">
-                <video controls="" playsinline="" preload="metadata" poster="new.webp">
+                <video controls playsinline preload="metadata" poster="new.webp">
                     <source src="New Time Here..mp4" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
@@ -2249,11 +2255,11 @@ With New Time, Jack now has the extensive knowledge that to create his future fa
   <div id="nt-box">
     <div class="nt-logo-row">
       <svg class="nt-shield" viewBox="0 0 80 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"></path>
-        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"></path>
-        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"></path>
-        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"></circle>
-        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"></circle>
+        <path d="M2 8 H78 M2 11 H78 M38 3 L38 9 M42 3 L42 9 M38 3 L40 5 L42 3 M38 9 L40 7 L42 9" stroke="#ff2a2a" stroke-width="0.7" stroke-linecap="round"/>
+        <path d="M5 13 V70 L40 88 L75 70 V13" stroke="#ff2a2a" stroke-width="0.8" fill="none"/>
+        <path d="M7 15 V68 L40 85 L73 68 V15" stroke="rgba(255,42,42,0.3)" stroke-width="0.5" fill="none"/>
+        <circle cx="32" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="30" r="1.2" fill="#ff2a2a" opacity="0.7"/>
+        <circle cx="32" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="40" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/><circle cx="48" cy="62" r="1.2" fill="#ff2a2a" opacity="0.7"/>
       </svg>
       <span class="nt-logo-text">NEW TIME</span>
     </div>
@@ -2307,8 +2313,4 @@ With New Time, Jack now has the extensive knowledge that to create his future fa
   });
 })();
 </script>
-
-
-
-
-</div></div></body></html>
+</body>
