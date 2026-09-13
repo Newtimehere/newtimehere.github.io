@@ -3,89 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEW TIME - Truth Friends</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<title>NEW TIME Chat Truth Friends</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#111b21;font-family:system-ui,sans-serif;height:100vh;display:flex;flex-direction:column}
-header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #ddd}
-header b{font-family:'Cormorant Garamond',serif;letter-spacing:0.3em;font-size:22px}
-#chips{background:#f0f2f5;padding:8px;display:flex;gap:8px;overflow-x:auto}
-#chips button{white-space:nowrap;background:#fff;border:1px solid #d1d7db;border-radius:20px;padding:7px 14px;font-size:13px;color:#54656f;cursor:pointer}
-#chat{flex:1;background:#E5DDD5;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px}
-.bubble{max-width:78%;padding:8px 12px;border-radius:8px;font-size:14.5px;line-height:1.35;position:relative;box-shadow:0 1px 0.5px rgba(0,0,0,.13)}
-.bot{background:#fff;align-self:flex-start;border-top-left-radius:0}
-.user{background:#DCF8C6;align-self:flex-end;border-top-right-radius:0}
-.time{font-size:11px;color:#667781;text-align:right;margin-top:4px}
-#typing{font-size:13px;color:#667781;padding:4px 12px;display:none}
-#bar{background:#f0f2f5;padding:8px;display:flex;gap:8px;align-items:center}
-#bar input{flex:1;border:none;border-radius:24px;padding:12px 16px;outline:none;font-size:15px}
-#bar button{background:#00a884;color:#fff;border:none;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer}
+body{margin:0;background:#f7f7f7;font-family:sans-serif;display:flex;flex-direction:column;height:100vh}
+#nt-top{background:#fff;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e9e9e9}
+#nt-top .nt-brand{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:3px;text-transform:uppercase}
+#nt-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff;margin:12px;border:1px solid #e5e5e5;border-radius:18px}
+.nt-dir-item{display:block;padding:10px 0;color:#6B0000;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;text-align:left;border:none;background:none}
+.nt-sub{color:#222!important;font-size:15px!important;padding-left:12px!important;border-left:2px solid #e5e5e5!important}
 </style>
 </head>
 <body>
-<header><b>NEW TIME</b><a href="https://newtimeusa.com" style="font-size:11px;color:#666;text-decoration:none;border:1px solid #ddd;padding:4px 10px;border-radius:20px">newtimeusa.com</a></header>
-<div id="chips">
-<button data-q="fat">Fat / Oil</button>
-<button data-q="taste">Taste / Addiction</button>
-<button data-q="obesity">Obesity</button>
-<button data-q="immune">Immune</button>
-<button data-q="age">Old age</button>
-<button data-q="symptoms">Symptoms</button>
-<button data-q="organic">Organic</button>
+<div id="nt-top"><div class="nt-brand">NEW TIME</div><a href="https://newtimeusa.com" style="text-decoration:none;color:#000;font-size:28px">✕</a></div>
+<div id="nt-msgs"></div>
+<div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff">
+<input id="nt-input" placeholder="Ask..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none">
+<button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%">→</button>
 </div>
-<div id="chat"></div>
-<div id="typing">Truth Friend is typing...</div>
-<div id="bar"><input id="inp" placeholder="Type a message"><button id="send">➤</button></div>
 <script>
-const chat=document.getElementById('chat'), inp=document.getElementById('inp'), send=document.getElementById('send'), typing=document.getElementById('typing');
-const DB={
-fat:"Mira te digo como amigo: la grasa entra a tu sangre. No te mata al momento por eso crees que es comida normal, pero va matando tus órganos poco a poco. Por eso termina en cáncer.",
-taste:"Sabe rico a propósito, esa es la trampa. Te crea adicción lenta, aceptada por todos. No es alimento, es sabor que te engancha.",
-obesity:"Por eso viene obesidad, diabetes y falla de órganos. No es comida para humanos de verdad. Es grasa que el cuerpo no tolera.",
-immune:"Por eso a unos les da cáncer y a otros no al momento. Es el sistema inmune. Si es fuerte lo retrasa, pero si fumas y comes grasa, igual te pega.",
-age:"Por eso sale más de viejo. Llevas años comiendo grasa y de viejo el órgano ya no aguanta. Por eso es agresivo de viejo.",
-symptoms:"Por eso te da mareo, náusea, vómito, dolor de cabeza. Es tu cuerpo intoxicado. Cuando cambias a orgánico con agua se va y ya no vas tanto al doctor.",
-organic:"Lo orgánico con agua no mata, no tiene grasa. Por eso no causa esa mortalidad. Te mantiene y hasta te ves más joven. Evita donde huele a grasa frita.",
-government:"Según mi artículo, gobierno y doctores saben que es mortal a largo plazo pero lo dejan legal para mover dinero.",
-full:"Fat is major cause of cancer. Fatty food tastes good but creates slow addiction. Enters bloodstream, kills organs slowly. Causes obesity, diabetes, organ failure. Depends on immune system. Appears more in old age. Symptoms dizziness nausea vomiting headache disappear with organic food with water."
+const msgs=document.getElementById('nt-msgs');
+const DATA={
+"Origins of cancer":{
+"Why fat causes cancer":"La grasa entra a tu sangre. No te mata al momento pero va matando organos poco a poco. Por eso termina en cancer.",
+"Why tasty but addictive":"Sabe rico a proposito, es trampa. Crea adiccion lenta aceptada por todos.",
+"Obesity, diabetes":"Viene obesidad, diabetes y falla de organos. No es comida para humanos.",
+"Immune system":"A unos les da cancer y a otros no al momento. Es sistema inmune.",
+"Why old age":"Sale mas de viejo. Llevas anos comiendo grasa y organo ya no aguanta.",
+"Symptoms":"Mareo, nausea, vomito, dolor cabeza. Cuerpo intoxicado. Con organico con agua se va.",
+"Organic food":"Organico con agua no mata, no tiene grasa. Evita donde huele a grasa frita."
+},
+"Origins of disability":{"Causes":"Genetica, complicaciones al nacer, accidentes.","Prevention":"Cuidando embarazo y alimentacion.","Support":"Necesita respeto, no lastima."},
+"Origins of gender identity":{"What is it":"Como persona se siente por dentro.","Respect":"Verdad con respeto construye."},
+"Origins of infidelity":{"Why hurts":"Dano cae en victima, mata confianza.","Prevention":"Decir NO desde inicio si no te gusta."},
+"Origins of suicides":{"Why":"Por amor, falta dinero, pasado malo.","Help":"Habla, busca ayuda. Tu vida vale."},
+"Origins of relationships":{"Trust":"Confianza cuando dice verdad sin interes.","Value":"Dile: ese vestido te queda super. No mientas."},
+"Origins of violence":{"Media":"Peliculas violentas legales para mover dinero, no cuidar salud.","Money":"Sistema economico obliga por necesidad."},
+"Money and effect":{"Control":"Te controlan porque tienes que comer, vestir.","Free":"Gratis es libertad, pierden control."},
+"Human love":{"Real vs fake":"Si busca dinero y sexo, no es amor, es fraude.","Mutual":"Lo dificil es que amor sea mutuo."},
+"Intelligence life":{"Best age":"Tener hijos joven es error. Minimo 30-39, cerebro maduro.","Present":"Futuro no existe, presente crea pasado."},
+"The street mindset":{"Happiness":"Pensamientos fraudulentos que te dan felicidad a cambio de fraude.","Effect":"Ves apariencia vs efecto. Precio mismo es fraude."}
 };
-function time(){return new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}
-function add(text, who){
-const div=document.createElement('div'); div.className='bubble '+who;
-div.innerHTML=text+`<div class="time">${time()}</div>`;
-chat.appendChild(div); chat.scrollTop=chat.scrollHeight;
-}
-function findAns(q){
-q=q.toLowerCase();
-if(q.includes('fat')||q.includes('grasa')||q.includes('oil')||q.includes('aceite')) return DB.fat;
-if(q.includes('taste')||q.includes('sabor')||q.includes('addict')||q.includes('adicc')) return DB.taste;
-if(q.includes('obes')||q.includes('diabet')) return DB.obesity;
-if(q.includes('immun')||q.includes('inmun')||q.includes('smoke')||q.includes('fumar')) return DB.immune;
-if(q.includes('age')||q.includes('old')||q.includes('vejez')||q.includes('edad')||q.includes('viejo')) return DB.age;
-if(q.includes('symptom')||q.includes('dizz')||q.includes('mareo')||q.includes('nausea')||q.includes('vomit')||q.includes('headache')) return DB.symptoms;
-if(q.includes('organic')||q.includes('organico')||q.includes('water')||q.includes('agua')) return DB.organic;
-if(q.includes('govern')||q.includes('doctor')||q.includes('legal')||q.includes('money')) return DB.government;
-return null;
-}
-function botReply(q){
-const ans=findAns(q);
-typing.style.display='block'; chat.scrollTop=chat.scrollHeight;
-setTimeout(()=>{
-typing.style.display='none';
-if(ans) add(ans,'bot');
-else add("Aquí en New Time Truth Friends: pregúntame sobre el origen del cáncer.<br><br>Escribe: <b>fat, taste, obesity, immune, age, symptoms, organic</b>",'bot');
-},800);
-}
-add("Hola, soy Truth Friend de New Time. Te hablo como en WhatsApp sobre el origen del cáncer según mi PDF. ¿Qué quieres saber?<br><br>Toca arriba: fat, obesity, symptoms... o escribe tu pregunta.",'bot');
-document.getElementById('chips').addEventListener('click', e=>{
-if(e.target.tagName!=='BUTTON') return;
-const q=e.target.dataset.q; add(e.target.textContent,'user'); botReply(q);
+function add(h,w){const d=document.createElement('div');d.style.cssText=w==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%':'background:#fff;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%';d.innerHTML=h;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function main(){return `Select:<br><br>${Object.keys(DATA).map(t=>`<div class="nt-dir-item" data-main="${t}">${t}</div>`).join('')}`;}
+function sub(t){return `<b>${t}</b><br><br>${Object.keys(DATA[t]).map(k=>`<div class="nt-dir-item nt-sub" data-sub="${t}||${k}">${k}</div>`).join('')}<br><div class="nt-dir-item" data-back="1">← Back</div>`;}
+add(main(),'bot');
+msgs.addEventListener('click',e=>{
+const m=e.target.closest('[data-main]');if(m){const t=m.dataset.main;add(t,'user');setTimeout(()=>add(sub(t),'bot'),250);return}
+const s=e.target.closest('[data-sub]');if(s){const [t,q]=s.dataset.sub.split('||');add(q,'user');setTimeout(()=>add(`<b>${q}</b><br><br>${DATA[t][q]}<br><br>${sub(t)}`,'bot'),300);return}
+if(e.target.closest('[data-back]')){add('Back','user');setTimeout(()=>add(main(),'bot'),250)}
 });
-function ask(){
-const q=inp.value.trim(); if(!q) return; add(q,'user'); inp.value=''; botReply(q);
+const inp=document.getElementById('nt-input'),btn=document.getElementById('nt-send');
+function ask(){const v=inp.value.trim();if(!v)return;add(v,'user');inp.value='';const l=v.toLowerCase();let ft=null,fq=null;
+if(l.includes('fat')||l.includes('oil')||l.includes('grasa')){ft='Origins of cancer';fq='Why fat causes cancer'}
+else if(l.includes('taste')||l.includes('sabor')){ft='Origins of cancer';fq='Why tasty but addictive'}
+else if(l.includes('obes')||l.includes('diabet')){ft='Origins of cancer';fq='Obesity, diabetes'}
+else if(l.includes('immun')){ft='Origins of cancer';fq='Immune system'}
+else if(l.includes('old')||l.includes('age')||l.includes('viejo')){ft='Origins of cancer';fq='Why old age'}
+else if(l.includes('dizz')||l.includes('nausea')||l.includes('mareo')||l.includes('symptom')){ft='Origins of cancer';fq='Symptoms'}
+else if(l.includes('organic')||l.includes('water')||l.includes('agua')){ft='Origins of cancer';fq='Organic food'}
+setTimeout(()=>{if(ft)add(`<b>${fq}</b><br><br>${DATA[ft][fq]}<br><br>${sub(ft)}`,'bot');else add(main(),'bot')},400)
 }
-send.onclick=ask; inp.onkeydown=e=>{if(e.key==='Enter') ask();}
+btn.onclick=ask;inp.onkeydown=e=>{if(e.key==='Enter')ask()}
 </script>
 </body>
 </html>
