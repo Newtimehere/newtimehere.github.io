@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +22,13 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;min-height:100vh}
 .content p{margin-bottom:16px}
 @media(min-width:400px){.title{font-size:24px;letter-spacing:2px}.box{padding:40px 28px}}
 @media(min-width:600px){.title{font-size:28px;letter-spacing:2.5px}.box{padding:40px 32px}}
+.topic-btn{
+display:block;width:100%;padding:18px 8px;margin:0;
+background:transparent;border:none;border-bottom:1px solid #f0e6e6;
+font-family:'Cormorant Garamond', serif;font-size:22px;font-weight:400;
+color:#5a0a0a;text-align:left;cursor:pointer;letter-spacing:0.3px;
+}
+.topic-btn:last-child{border-bottom:none}
 </style>
 </head>
 <body>
@@ -58,14 +64,25 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;min-height:100vh}
 <p>Starry-eyed kids. Cap + gown + 1,000 books + $100K debt = “success” guaranteed, right? 🤣</p>
 <p>“Clap for the new grad! Mom’s sobbing, Dad’s filming, diploma up: ‘That’s my boy! We did it! Family win!’” Cue tears, confetti, Instagram: #proud</p>
 <p>Hidden truth: Y’all are clapping at a funeral. You’re celebrating the system drafting your son into slavery. Congrats, you just got a new corporate slave. Broke, in uniform, faking a smile🫤🧐.</p>
-<button id="nt-friends-btn"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg></button>
+
+<style>
+#nt-friends-btn{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:rgba(12,12,12,0.96);border:1.5px solid rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+#nt-friends-btn svg{width:28px;height:28px;}
+</style>
+
+<button id="nt-friends-btn">
+<svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.8C4.5 4.4 5.7 3.2 7.1 3.2H16.9C18.3 3.2 19.5 4.4 19.5 5.8V12.2C19.5 13.6 18.3 14.8 16.9 14.8H9.2L4.5 19.5V5.8Z" stroke="#7A0000" stroke-width="1.7" fill="rgba(120,0,0,0.18)"/><circle cx="8.2" cy="9" r="1.4" fill="#B00000"/><circle cx="12" cy="9" r="1.4" fill="#B00000"/><circle cx="15.8" cy="9" r="1.4" fill="#B00000"/></svg>
+</button>
+
 <div id="nt-chat-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999998;align-items:flex-end;justify-content:center;">
-<div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;overflow:hidden;">
-<div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;"><b>NUEVO TIEMPO - Para los jóvenes</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
+<div style="background:#fff;width:100%;max-width:500px;height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;font-family:sans-serif;">
+<div style="background:#000;color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;"><b>NEW TIME - For The Young</b><span id="nt-close" style="cursor:pointer;font-size:24px;">✕</span></div>
 <div id="nt-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f7f5f5;"></div>
 <div style="padding:12px;border-top:1px solid #ddd;display:flex;gap:8px;background:#fff;">
-<input id="nt-input" placeholder="Salúdame..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
+<input id="nt-input" placeholder="Say hi..." style="flex:1;padding:14px 18px;border:1px solid #ddd;border-radius:30px;outline:none;font-size:16px;color:#000;">
 <button id="nt-send" style="background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;">→</button>
+</div>
+</div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -79,55 +96,38 @@ function add(text,who){
  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
 }
 const answers = {
-mascota: "🐶 <b>¿Qué piensa la mascota? 🧠</b><br><br>Tú actuando como idiota persiguiendo dinero 💸 y viviendo asustado de que te boten y que tu jeva te deje porque eso no es amor humano, es pa' que pagues la renta 💔😒 La mascota, en su cerebrito pequeño, más inteligente que la inteligencia humana 🤓, busca comida porque con comida se vive, no con dinero 🍖💡",
-igualdad: "✈️ <b>¿La igualdad es para todos? 🤔</b><br><br>Cuando viajas, las azafatas te miran mal porque eres segunda clase, quizás última clase 😤, y hasta te dan agua del baño en un vaso 💧😆 New Time dice: Oye, es solo una clase porque es el mismo avión, la división es un invento para robarte más dinero 💰, porque la verdad es primera clase es la real clase 🔥👑",
-infidelidad: "🧸 <b>Infidelidad y derechos 💔</b><br><br>Le fuiste infiel a tu esposa y ella te mantenía a cambio de ser fiel 🤝 Se fue a trabajar a Alaska ❄️ Puso una cámara arriba de la nevera disfrazada de osito 🧸📸 El diablo de pensamientos te dijo: Trae otra mujer, las mentiras lo arreglan 😈 Ahora estás cagando en baldes con bolsas de supermercado en las calles 🪣 y mintiendo que estás en campamento de supervivencia ⛺️, la verdad es que el osito te grabó 👀💀",
-renta: "🏠 <b>¿Por qué pagas renta? 🤯</b><br><br>Trabajas 30 días para pagar 1 día de renta 💸😩 El casero no hace nada, tú haces todo, y le das gracias por dejarte vivir en su caja 📦🙏 Los pájaros no pagan renta, los perros no pagan renta 🐦🐶, solo los humanos son tan bobos para pagar por existir en tierra que no crearon 🌍🤣",
-gym: "🏋️ <b>La estafa del gym 😂</b><br><br>Pagas 60 dólares al mes para correr en el mismo sitio y levantar mierda pesada y volverla a bajar 💪😆 Podrías correr afuera gratis y cargar tus compras gratis 🛒🏃‍♂️ Pero no, necesitas pagar para sufrir adentro de cuatro paredes mientras alguien grita ¡una más! 🗣️🔥",
-wifi: "📶 <b>WiFi gratis = Tú eres el producto 👁️</b><br><br>Entras a un restaurante y lo primero que preguntas es ¿Cuál es el WiFi? 📱 No pides el menú 🍔 Vas a intercambiar tu ubicación, tus datos y tu alma por 2 horas de internet gratis 👻💀 El WiFi no es gratis, tú eres el producto 🧠💸",
-bathroom: "🚽 <b>¿Por qué vas al baño? 😆</b><br><br>Le dices a tus amigos 'Yo, dame 1 minuto, voy a lavarme las manos' 🤚 - En la cabeza de tus amigos te vas a cagar y lo confirman cuando tardas más de un minuto ⏰ Tus amigos llamándote y tú gritando '¡Ya voy!' 😂 Y ahí adentro estás pujando durísimo tratando de que salga rápido 💩💨",
-bano: "🚽 <b>¿Por qué vas al baño? 😆</b><br><br>Le dices a tus amigos 'Yo, dame 1 minuto, voy a lavarme las manos' 🤚 - En la cabeza de tus amigos te vas a cagar y lo confirman cuando tardas más de un minuto ⏰ Tus amigos llamándote y tú gritando '¡Ya voy!' 😂 Y ahí adentro estás pujando durísimo tratando de que salga rápido 💩💨"
+bathroom: "<b>Why go to the bathroom? 🤔</b><br><br>You tell your friends 'Yo, give me 1 minute, I'm going to wash my hands, In your friends head you're going to take a 💩shit💨 and they confirm it when you take more than a minute. Your friends calling you and you're screaming 'I'm coming!' And in there you're pushing hard as hell trying to make it come out fast💨💩💨💩💨🤭.",
+pet: "<b>What does the pet think 🐕‍🦺?</b><br><br>You acting like an idiot🤗 chasing money and living scared that they'll fire you and your girl will leave you because that's 🖕not human love,🫢 it's just to make you pay for her. The pet, in its small brain, way smarter than human intelligence, looks for food because 🤗with food you live,😇 not with money.",
+equality: "<b>Is equality for everyone👀?</b><br><br>When you travel, flight attendants look at you bad😾 because you're second class, maybe last class, and they even give 🤣you bathroom tap water in a cup🫢. New Time says: Hey, it's only one class because it's the same airplane, division is an invention to steal more money, because the truth is first class is the truth class😎.",
+infidelity: "<b>Infidelity and rights😲?</b><br><br>You cheated on your wife and she was supporting you in exchange for being faithful. She left for work to Alaska. She put a camera on top of the fridge disguised as a teddy bear😇. Devil for thoughts told you👹: Bring another woman, lies will fix it. Now you're 🤭shitting in buckets with supermarket💩 bags on the streets and lying to your friends that you're in a survival camp, the truth is the 🐨teddy🤗 bear caught you.",
+rent: "<The Fraudulent Clock ⏰ 🧐?</b><br><br>People hit you with “good morning” at 1am while leaving the club 😆 but bro… it’s still pitch black outside = FRAUD.",
+gym: "<b>Food Fraud 🍔?</b><br><br>You pay 60 dollars a month to run in the same place and lift heavy shit and put it down again. You could run outside for free and carry your groceries for free. But no, you need to pay to suffer inside four walls while someone screams one more rep!",
+wifi: "<b>Fraudulent Laws ⚖️</b><br><br>Murderers post bail and walk free the same day. Corporations get FDA-approved licenses to sell cancer in a bag of chips. LGBTTQ+ fraud protected by law = FRAUD.If you take a life, you get life in prison. Ban the intense flavor that only causes cancer in fatty foods. End protections for LGBTQ+ men and women with 🧔‍♀️fraudulent bodies🧔‍♀️. That' sex fraud."
 };
 function addTopics(){
  const wrap=document.createElement('div');
  wrap.style.cssText='background:#fff;border-radius:18px;border:1px solid #e9e0e0;padding:18px 18px;align-self:stretch;display:flex;flex-direction:column;gap:0;box-shadow:0 2px 10px rgba(0,0,0,0.05);width:100%;box-sizing:border-box;';
  wrap.innerHTML=`
-   <div style="font-family:sans-serif;color:#000;font-size:16px;font-weight:600;margin-bottom:18px;">Aquí en New Time chat Jóvenes selecciona:</div>
-   <button class="topic-btn" onclick="window.showTopic('bano')">¿Por qué vas al baño?</button>
-   <button class="topic-btn" onclick="window.showTopic('mascota')">¿Qué piensa la mascota?</button>
-   <button class="topic-btn" onclick="window.showTopic('igualdad')">¿La igualdad es para todos?</button>
-   <button class="topic-btn" onclick="window.showTopic('infidelidad')">Infidelidad y derechos</button>
-   <button class="topic-btn" onclick="window.showTopic('renta')">¿Por qué pagas renta?</button>
-   <button class="topic-btn" onclick="window.showTopic('gym')">La estafa del gym</button>
-   <button class="topic-btn" onclick="window.showTopic('wifi')">WiFi gratis = Tú eres el producto</button>
+   <div style="font-family:sans-serif;color:#000;font-size:16px;font-weight:600;margin-bottom:18px;">Here in New Time chat Young Friends select:</div>
+   <button class="topic-btn" onclick="window.showTopic('bathroom')">Why go to the bathroom?</button>
+   <button class="topic-btn" onclick="window.showTopic('pet')">What does the pet think?</button>
+   <button class="topic-btn" onclick="window.showTopic('equality')">Is equality for everyone?</button>
+   <button class="topic-btn" onclick="window.showTopic('infidelity')">Infidelity and rights</button>
+   <button class="topic-btn" onclick="window.showTopic('rent')">Why do you pay rent?</button>
+   <button class="topic-btn" onclick="window.showTopic('gym')">The Gym Scam</button>
+   <button class="topic-btn" onclick="window.showTopic('wifi')">Free WiFi = You are the product</button>
  `;
  msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
 }
-window.showTopic=function(key){ add(key,'user'); setTimeout(()=>{ add(answers[key]||answers['mascota'],'bot'); },200); };
+window.showTopic=function(key){ add(key,'user'); setTimeout(()=>{ add(answers[key],'bot'); },200); };
 function initChat(){
- add(`Hey soy Chat Amigos de NUEVO TIEMPO JOVEN 🔥<br><br>Estoy aquí para que te sientas <b>atendido y relajado</b>, no como un bot trancado.<br><br>Toca un tema abajo o salúdame 😉`,'bot');
+ add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Tap one topic below or say hi 😉`,'bot');
  setTimeout(addTopics,300);
 }
-const vacileStarts = ["Jajaja {q} — eso es FRAUD puro 😆, ","Bro {q}? Mira ","Me dices {q} y yo te digo: ","Nooo {q} 😂 ","Oye {q}... "];
-const vacileMids = ["la gente paga 60$ para correr en el mismo sitio 🏃","te dicen segunda clase y te dan agua del baño 💧","el perro es más inteligente 🐶","tú trabajando 30 días para 1 día de caja 📦","te pusieron cámara de osito 🧸","el WiFi no es gratis 📶","te hacen rezar domingo que es fraude ⛪","los pájaros no pagan renta 🐦"];
-const vacileEnds = [" 😆"," 🤣🔥"," — FRAUD!"," — New Time style."," 😎"];
-function getRandomHumanReply(q){
-  const s = vacileStarts[Math.floor(Math.random()*vacileStarts.length)].replace("{q}", q);
-  const m = vacileMids[Math.floor(Math.random()*vacileMids.length)];
-  const e = vacileEnds[Math.floor(Math.random()*vacileEnds.length)];
-  return s + m + e;
-}
-function sendMsg(){
-  if(!inp.value.trim()) return;
-  const q=inp.value.trim().toLowerCase();
-  add(q,'user');inp.value='';
-  setTimeout(()=>{
-    if(answers[q]){ add(answers[q],'bot'); }
-    else { add(getRandomHumanReply(q),'bot'); }
-  },350);
-}
+function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';setTimeout(()=>{add(q+' — haha I feel that 😂 tell me more, I am here attending you','bot');},300);}
 send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 initChat();
 });
 </script>
-</div></div></body></html>
+</body>
+</html>
