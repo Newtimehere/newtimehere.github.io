@@ -66,15 +66,15 @@ function add(text,who){
  d.style.cssText=who==='user'?'background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:80%;font-size:15px;font-family:sans-serif;':'background:#fff;color:#111;padding:14px 16px;border-radius:18px;border:1px solid #e5e5e5;align-self:flex-start;max-width:92%;line-height:1.6;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.08);font-family:sans-serif;';
  if(who==='bot') d.innerHTML=text; else d.textContent=text;
  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
-}
+
 const answers = {
-bathroom: "<b>Why go to the bathroom?</b><br><br>You tell your friends 'Yo, give me 1 minute, I'm going to wash my hands' - In your friends head you're going to take a shit and they confirm it when you take more than a minute.",
-pet: "<b>What does the pet think?</b><br><br>You acting like an idiot chasing money and living scared that they'll fire you and your girl will leave you because that's not human love, it's just to make you pay for her.",
-equality: "<b>Is equality for everyone?</b><br><br>When you travel, flight attendants look at you bad because you're second class, maybe last class, and they even give you bathroom tap water in a cup.",
-infidelity: "<b>Infidelity and rights</b><br><br>You cheated on your wife and she was supporting you in exchange for being faithful. She left for work to Alaska. She put a camera on top of the fridge disguised as a teddy bear.",
-rent: "<b>Why do you pay rent?</b><br><br>You work 30 days to pay 1 day of rent. The landlord does nothing, you do everything, and you thank him for letting you live in his box.",
-gym: "<b>The Gym Scam</b><br><br>You pay 60 dollars a month to run in the same place and lift heavy shit and put it down again.",
-wifi: "<b>Free WiFi = You are the product</b><br><br>You walk into a restaurant and first thing you ask is What's the WiFi? You don't ask for the menu."
+bathroom: "🚽 <b>Why go to the bathroom? 😆</b><br><br>You tell your friends 'Yo, give me 1 minute, I'm going to wash my hands' 🤚 - In your friends head you're going to take a shit and they confirm it when you take more than a minute ⏰...",
+pet: "🐶 <b>What does the pet think? 🧠</b><br><br>...",
+equality: "✈️ <b>Is equality for everyone? 🤔</b><br><br>...",
+infidelity: "🧸 <b>Infidelity and rights 💔</b><br><br>...",
+rent: "🏠 <b>Why do you pay rent? 🤯</b><br><br>...",
+gym: "🏋️ <b>The Gym Scam 😂</b><br><br>...",
+wifi: "📶 <b>Free WiFi = You are the product 👁️</b><br><br>..."
 };
 function addTopics(){
  const wrap=document.createElement('div');
