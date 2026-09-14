@@ -7,126 +7,111 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;font-family:'Inter', sans-serif; display:flex; flex-direction:column; min-height:100vh; padding-bottom:90px;}
-#top{
-  background:#000;color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;
-  font-family:'Cormorant Garamond', serif;letter-spacing:2px;font-size:18px;font-weight:600;
-}
+body{background:#fff;font-family:'Inter', sans-serif; display:flex; flex-direction:column; min-height:100vh; padding-bottom:100px;}
+#top{background:#000;color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;font-family:'Cormorant Garamond', serif;letter-spacing:2px;font-size:18px;font-weight:600;}
 #top a{color:#fff;text-decoration:none;font-size:26px;font-weight:300}
-#black-card{
-  background:#000;width:92%;max-width:500px;height:240px;margin:18px auto;border-radius:24px;
-  display:flex;justify-content:center;align-items:center;
-}
-#black-card span{color:#fff;font-family:'Cormorant Garamond', serif;font-size:16px;letter-spacing:8px;opacity:1;border:none;padding:0;}
+#black-card{background:#000;width:92%;max-width:500px;height:240px;margin:18px auto;border-radius:24px;display:flex;justify-content:center;align-items:center;}
+#black-card span{color:#fff;font-family:'Cormorant Garamond', serif;font-size:16px;letter-spacing:8px;}
 #content{padding:0 22px;flex:1;max-width:600px;margin:0 auto;width:100%}
 #content h1{font-size:22px;line-height:1.3;font-weight:700;color:#000;margin-bottom:20px;}
-.topic-btn{
-  width:100%;padding:18px 20px;margin-bottom:14px;border-radius:14px;background:#fff;
-  border:2px solid #000;font-size:16px;font-weight:500;text-align:left;cursor:pointer;transition:0.2s;
-}
-.topic-btn:nth-child(n+2){border:1.5px solid #ccc;}
-.topic-btn:active{transform:scale(0.98);background:#000;color:#fff}
-#answer-box{
-  display:none;margin-top:20px;padding:18px;border:1.5px solid #000;border-radius:14px;background:#f9f9f9;line-height:1.6;font-size:15px;
-}
+.topic-btn{width:100%;padding:18px 20px;margin-bottom:14px;border-radius:14px;background:#fff;border:1.5px solid #000;font-size:16px;font-weight:500;text-align:left;cursor:pointer;display:block;}
+.topic-btn:active{background:#000;color:#fff}
+#answer-box{display:none;margin-top:20px;padding:18px;border:1.5px solid #000;border-radius:14px;background:#f9f9f9;line-height:1.6;font-size:15px;word-wrap:break-word;}
 #chat-log{display:flex;flex-direction:column;gap:12px;margin-top:18px;}
 .msg-user{align-self:flex-end;background:#000;color:#fff;padding:12px 16px;border-radius:18px 18px 4px 18px;max-width:80%;font-size:14px}
 .msg-bot{align-self:flex-start;background:#fff;border:1.5px solid #000;padding:12px 16px;border-radius:18px 18px 18px 4px;max-width:90%;line-height:1.6;font-size:14px}
-#input-bar{
-  position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:10px 14px;display:flex;gap:8px;align-items:center;z-index:999;
-}
+#input-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:10px 14px;display:flex;gap:8px;align-items:center;}
 #chat-input{flex:1;padding:14px 18px;border-radius:30px;border:1.5px solid #000;outline:none;font-size:15px}
 #send-btn{background:#000;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px}
 </style>
 </head>
 <body>
-<div id="top"><span>NEW TIME</span><a href="for-young.html">✕</a></div>
+<div id="top"><span>NEW TIME</span><a href="https://newtimehere.github.io/">✕</a></div>
 <div id="black-card"><span>NEW TIME</span></div>
 <div id="content">
-  <h1>Welcome to Chat Friends YOUNG 🔥 Tap one topic or write anything below - I got 1,000 more roasts.</h1>
-  <div class="topic-btn" data-t="bathroom">Why go to the bathroom? 🚽</div>
-  <div class="topic-btn" data-t="pet">What does the pet think? 🐶</div>
-  <div class="topic-btn" data-t="equality">Is equality for everyone? ✈️</div>
-  <div class="topic-btn" data-t="infidelity">Infidelity and rights 👻</div>
-  <div class="topic-btn" data-t="rent">Why do you pay rent? 🏠</div>
-  <div class="topic-btn" data-t="gym">The Gym Scam 💪</div>
-  <div class="topic-btn" data-t="wifi">Free WiFi = You are the product 📶</div>
-  <div id="answer-box"></div>
-  <div id="chat-log"></div>
+<h1>Welcome to Chat Friends YOUNG - Tap one topic or write anything below - I got 1,000 more roasts.</h1>
+<button class="topic-btn" onclick="showTopic('bathroom')">Why go to the bathroom? 🚽</button>
+<button class="topic-btn" onclick="showTopic('pet')">What does the pet think? 🐶</button>
+<button class="topic-btn" onclick="showTopic('equality')">Is equality for everyone? ✈️</button>
+<button class="topic-btn" onclick="showTopic('infidelity')">Infidelity and rights 👻</button>
+<button class="topic-btn" onclick="showTopic('rent')">Why do you pay rent? 🏠</button>
+<button class="topic-btn" onclick="showTopic('gym')">The Gym Scam 💪</button>
+<button class="topic-btn" onclick="showTopic('wifi')">Free WiFi = You are the product 📶</button>
+<div id="answer-box" onclick="speakNow()"></div>
+<div id="chat-log"></div>
 </div>
 <div id="input-bar">
-  <input id="chat-input" placeholder="Write something and I'll roast you..." />
-  <button id="send-btn">→</button>
+<input id="chat-input" placeholder="Write something and I'll roast you..." />
+<button id="send-btn" onclick="sendFree()">→</button>
 </div>
 <script>
-const answers = {
-  bathroom: `WHY GO TO THE BATHROOM? You tell your friends "Yo, give me 1 minute, I'm going to wash my hands" - In your friends' head you're going to take a shit and they confirm it when you take more than a minute. Your friends calling you and you're screaming "I'm coming!" And in there you're pushing hard as hell trying to make it come out fast.`,
-  pet: `WHAT DOES THE PET THINK? You acting like an idiot chasing money and living scared that they'll fire you and your girl will leave you because that's not human love, it's just to make you pay for her. The pet, in its small brain, way smarter than human intelligence, looks for food because with food you live, not with money.`,
-  equality: `IS EQUALITY FOR EVERYONE? When you travel, flight attendants look at you bad because you're second class, maybe last class, and they even give you bathroom tap water in a cup. New Time says: Hey, it's only one class because it's the same airplane, division is an invention to steal more money, because the truth is first class is the real class.`,
-  infidelity: `INFIDELITY AND RIGHTS: You cheated on your wife and she was supporting you in exchange for being faithful. She left for work to Alaska. She put a camera on top of the fridge disguised as a teddy bear. Devil for thoughts told you: Bring another woman, lies will fix it. Now you're shitting in buckets with supermarket bags on the streets and lying to your friends that you're in a survival camp, the truth is the teddy bear caught you.`,
-  rent: `WHY DO YOU PAY RENT? You work 30 days to pay 1 day of rent. The landlord does nothing, you do everything, and you thank him for letting you live in his box. Birds don't pay rent, dogs don't pay rent, only humans are dumb enough to pay to exist on earth they didn't create.`,
-  gym: `THE GYM SCAM: You pay $60 a month to run in the same place and lift heavy shit and put it down again. You could run outside for free and carry your groceries for free. But no, you need to pay to suffer inside four walls while someone screams "one more rep!"`,
-  wifi: `FREE WIFI = YOU ARE THE PRODUCT: You walk into a restaurant and first thing you ask is "What's the WiFi?" You don't ask for the menu. You will trade your location, your data, and your soul for free internet for 2 hours. The WiFi is not free, you are the product.`
+var currentText = "";
+var answers = {
+bathroom: "WHY GO TO THE BATHROOM? You tell your friends 'Yo, give me 1 minute, I'm going to wash my hands' - In your friends head you're going to take a shit and they confirm it when you take more than a minute. Your friends calling you and you're screaming 'I'm coming!' And in there you're pushing hard as hell trying to make it come out fast.",
+pet: "WHAT DOES THE PET THINK? You acting like an idiot chasing money and living scared that they'll fire you and your girl will leave you because that's not human love, it's just to make you pay for her. The pet, in its small brain, way smarter than human intelligence, looks for food because with food you live, not with money.",
+equality: "IS EQUALITY FOR EVERYONE? When you travel, flight attendants look at you bad because you're second class, maybe last class, and they even give you bathroom tap water in a cup. New Time says: Hey, it's only one class because it's the same airplane, division is an invention to steal more money, because the truth is first class is the real class.",
+infidelity: "INFIDELITY AND RIGHTS: You cheated on your wife and she was supporting you in exchange for being faithful. She left for work to Alaska. She put a camera on top of the fridge disguised as a teddy bear. Devil for thoughts told you: Bring another woman, lies will fix it. Now you're shitting in buckets with supermarket bags on the streets and lying to your friends that you're in a survival camp, the truth is the teddy bear caught you.",
+rent: "WHY DO YOU PAY RENT? You work 30 days to pay 1 day of rent. The landlord does nothing, you do everything, and you thank him for letting you live in his box. Birds don't pay rent, dogs don't pay rent, only humans are dumb enough to pay to exist on earth they didn't create.",
+gym: "THE GYM SCAM: You pay 60 dollars a month to run in the same place and lift heavy shit and put it down again. You could run outside for free and carry your groceries for free. But no, you need to pay to suffer inside four walls while someone screams one more rep!",
+wifi: "FREE WIFI = YOU ARE THE PRODUCT: You walk into a restaurant and first thing you ask is What's the WiFi? You don't ask for the menu. You will trade your location, your data, and your soul for free internet for 2 hours. The WiFi is not free, you are the product."
 };
-const pool1000 = [
-  "Bro, you said '{word}' 😂 that's exactly the fraud I'm talking about.",
-  "Haha '{word}' - You think that's normal? Nah, that's the system programming you.",
-  "You typing '{word}' at 2am? That proves you're awake, the clock is the fraud.",
-  "If '{word}' was free, would you still want it? Think about it.",
-  "'{word}' sounds funny but the hidden effect is you lose time, money and peace.",
-  "You chase '{word}' like a dog chasing a car. Even if you catch it, what you gonna do?",
-  "Real talk: '{word}' is legal but fraudulent by effect. If it kills you slow, it's fraud.",
-  "Pets don't worry about '{word}', why do you? Who's smarter now? 🐶",
-  "You pay for '{word}' with your life, not with money.",
-  "If you tell the truth about '{word}', half your friends will leave. That's how you know it's truth."
+var pool = [
+"Bro, you said {w} - that's exactly the fraud I'm talking about.",
+"You think {w} is normal? Nah, that's the system programming you.",
+"You typing {w} at 2am? The clock is the fraud, not you.",
+"If {w} was free, would you still want it?",
+"{w} sounds funny but the hidden effect is you lose time and money.",
+"You chase {w} like a dog chasing a car.",
+"Real talk: {w} is legal but fraudulent by effect.",
+"Pets don't worry about {w}, why do you? Who is smarter now?",
+"You pay for {w} with your life, not with money.",
+"If you tell the truth about {w}, half your friends will leave."
 ];
-function genVacilon(userText){
-  const word = userText.split(' ')[0] || 'that';
-  const base = pool1000[Math.floor(Math.random()*pool1000.length)].replaceAll('{word}', word);
-  return base;
+function showTopic(key){
+var txt = answers[key];
+currentText = txt;
+var box = document.getElementById('answer-box');
+box.style.display='block';
+box.innerHTML = '<b>'+key.toUpperCase()+'</b><br><br>'+txt+'<br><br>Tap to hear voice';
+addLog(txt, 'bot');
+speakNow();
+box.scrollIntoView({behavior:'smooth'});
 }
-const box = document.getElementById('answer-box');
-const log = document.getElementById('chat-log');
-const input = document.getElementById('chat-input');
+function speakNow(){
+if('speechSynthesis' in window){
+speechSynthesis.cancel();
+var u = new SpeechSynthesisUtterance(currentText);
+u.rate=0.95;
+speechSynthesis.speak(u);
+}
+}
 function addLog(text, who){
-  const d = document.createElement('div');
-  d.className = who==='user'? 'msg-user' : 'msg-bot';
-  d.textContent = text;
-  log.appendChild(d);
-  window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});
+var log = document.getElementById('chat-log');
+var d = document.createElement('div');
+d.className = who==='user'? 'msg-user' : 'msg-bot';
+d.textContent = text;
+log.appendChild(d);
+window.scrollTo(0, document.body.scrollHeight);
 }
-function speak(t){
-  if('speechSynthesis' in window){
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(t);
-    u.rate=0.95;
-    speechSynthesis.speak(u);
-  }
+function genVacilon(userText){
+var word = userText.split(' ')[0] || 'that';
+var base = pool[Math.floor(Math.random()*pool.length)];
+return base.replace('{w}', word);
 }
-document.querySelectorAll('.topic-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const t = btn.getAttribute('data-t');
-    const txt = answers[t];
-    box.style.display='block';
-    box.innerHTML = '<b>'+btn.textContent+'</b><br><br>'+txt+'<br><br><i>🔊 Tap to hear my voice</i>';
-    box.onclick = () => speak(txt);
-    addLog(txt, 'bot');
-    speak(txt);
-  });
-});
 function sendFree(){
-  const q = input.value.trim();
-  if(!q) return;
-  addLog(q, 'user');
-  input.value='';
-  setTimeout(()=>{
-    const vacilon = genVacilon(q);
-    addLog(vacilon, 'bot');
-    speak(vacilon);
-  }, 400);
+var input = document.getElementById('chat-input');
+var q = input.value.trim();
+if(!q) return;
+addLog(q, 'user');
+input.value='';
+var vacilon = genVacilon(q);
+currentText = vacilon;
+setTimeout(function(){
+addLog(vacilon, 'bot');
+speakNow();
+}, 300);
 }
-document.getElementById('send-btn').onclick = sendFree;
-input.addEventListener('keydown', e=>{ if(e.key==='Enter') sendFree() });
+document.getElementById('chat-input').addEventListener('keydown', function(e){ if(e.key==='Enter') sendFree(); });
 </script>
 </body>
 </html>
