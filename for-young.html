@@ -115,7 +115,33 @@ function initChat(){
  add(`Hey I'm Chat Friends from NEW TIME YOUNG 🔥<br><br>I'm here to make you feel <b>attended and relaxed</b>, not like a stuck bot.<br><br>Tap one topic below or say hi 😉`,'bot');
  setTimeout(addTopics,300);
 }
-function sendMsg(){if(!inp.value.trim()) return;const q=inp.value.trim();add(q,'user');inp.value='';setTimeout(()=>{add(q+' — haha I feel that 😂 tell me more, I am here attending you','bot');},300);}
+const vacileStarts = ["Jajaja {q} — eso es FRAUD puro 😆, ","Bro {q}? Mira ","Me dices {q} y yo te digo: ","Nooo {q} 😂 ","Oye {q}... ","JAJA {q} = FRAUD 🤣 ","Tú tranquilo con lo de {q}, ","{q}? Mira ","Diablo {q} 😆 ","Real: {q} — ","Vacilando contigo: {q} ","Bro, si es {q} entonces ","Te entiendo con {q} — ","Haha {q} — ","Ojo con {q}, "];
+const vacileMids = ["la gente paga 60$ para correr en el mismo sitio y no llegar a ningún lado 🏃","te dicen segunda clase y te dan agua del baño en vaso 💧","el perro es más inteligente que tú porque solo busca comida, no dinero 🐶","tú trabajando 30 días para pagar 1 día de caja donde vives 📦","te pusieron cámara de osito arriba de la nevera y caíste 🧸","todo es un invento del avión para cobrarte más por el mismo vuelo ✈️","estás en la calle cagando en balde con bolsa de supermercado y diciendo que es camping ⛺️","el WiFi no es gratis, tú eres el producto 📶","te hacen rezar domingo que es fraude, sábado es el día real ⛪","te gradúan, te aplauden, pero te acaban de meter a esclavitud corporativa 🎓","comida 100% natural que es veneno con sabor a quimio 🍔","te dicen te amo pero es para que pagues la renta 💸","dices que vas al baño 1 minuto y empujando como si fueras a parir 🚽","te da miedo que te boten del trabajo y que tu jeva te deje, eso no es amor humano 💔","la tierra da todo gratis y tú pagando por existir 🌍","estás pagando para sufrir adentro mientras afuera puedes correr gratis 🏃‍♂️","te venden igualdad pero si eres pobre te miran mal en el avión 👀","el sistema necesita que vivas asustado de quedarte sin dinero 😰","estás intercambiando tu alma por 2 horas de internet 👻","te ríes pero es verdad, todo es fraude menos el sol ☀️","en New Time sabemos que el día empieza al amanecer, no a las 12am 🌅","te hacen creer que necesitas lo mínimo para vivir con miedo 😨","si quitas la vida, cadena perpetua, no fianza de un día ⚖️","tu oración del Hot Cheetos se va directo al infierno porque es cáncer en bolsa 🔥","los pájaros no pagan renta y tú sí, ¿quién es el bobo? 🐦","el gym es pagar para levantar algo pesado y volverlo a bajar, absurdo 💪","estás vivo y ya eso es free, lo demás es invento ✨","te venden humo con traje y corbata y tú dices que es libertad 👔","estás en modo supervivencia y ellos aplaudiendo 👏","si no hay comida no hay vida, el dinero no se come 🍖","te quieren con miedo, nosotros te queremos relajado y atendido 😎","te dicen good morning a la 1am con la calle oscura, eso es fraude 🌙","el casero no hace nada y tú le das las gracias por dejarte vivir en su caja 🏠"];
+const vacileEnds = [" 😆"," 🤣🔥"," 👻💀"," — FRAUD!"," ¿entiendes?"," — New Time style."," 😎","... y todavía pagas."," — relax bro, aquí te atendemos."," — dime más, estoy pa ti."," — ¿o no?"," — eso es lo que pasa."," 🔥"," — vacilando contigo pero con verdad."];
+function getRandomHumanReply(q){
+  const s = vacileStarts[Math.floor(Math.random()*vacileStarts.length)].replace("{q}", q);
+  const m = vacileMids[Math.floor(Math.random()*vacileMids.length)];
+  const e = vacileEnds[Math.floor(Math.random()*vacileEnds.length)];
+  return s + m + e;
+}
+function sendMsg(){
+  if(!inp.value.trim()) return;
+  const raw = inp.value.trim();
+  const q = raw.toLowerCase();
+  add(raw,'user');
+  inp.value='';
+  setTimeout(()=>{
+    if(q.includes('bathroom') || q.includes('baño') || q.includes('bano')){ add(answers['bathroom'],'bot'); return; }
+    if(q.includes('pet') || q.includes('mascota') || q.includes('perro')){ add(answers['pet'],'bot'); return; }
+    if(q.includes('equality') || q.includes('igualdad')){ add(answers['equality'],'bot'); return; }
+    if(q.includes('infidelity') || q.includes('infidelidad')){ add(answers['infidelity'],'bot'); return; }
+    if(q.includes('clock') || q.includes('reloj') || q.includes('fraudulent clock')){ add(answers['Clock'],'bot'); return; }
+    if(q.includes('food') || q.includes('comida') || q.includes('cheetos')){ add(answers['Food'],'bot'); return; }
+    if(q.includes('law') || q.includes('ley') || q.includes('laws')){ add(answers['Laws'],'bot'); return; }
+    const reply = getRandomHumanReply(raw);
+    add(reply,'bot');
+  },350);
+}
 send.onclick=sendMsg; inp.onkeydown=e=>{if(e.key==='Enter') sendMsg();};
 initChat();
 });
