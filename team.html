@@ -30,7 +30,7 @@
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; color: #333; text-decoration: none; }
     .service-modal { position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); overflow-y: auto; display: flex; justify-content: center; align-items: flex-start; padding: 0 20px 40px; }
-    .service-modal-content { background-color: #ffffff; color: #2c2c2c; max-width: 700px; width: 100%; padding: 28px 50px 60px; position: relative; margin-top: 45px; animation: slideUp 0.4s ease; }
+    .service-modal-content { background-color: #ffffff; color: #2c2c2c; max-width: 700px; width: 100%; padding: 28px 50px 60px; position: relative; margin-top: 45px; }
     .service-close { position: absolute; top: 28px; right: 30px; font-size: 28px; cursor: pointer; color: #2c2c2c; background: none; border: none; }
     .service-modal-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; letter-spacing: 4px; margin-bottom: 18px; margin-top: 10px; text-transform: uppercase; }
     .service-modal-content p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
@@ -42,8 +42,7 @@
     .sophia-scroll { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 8px 0 22px 0; padding-bottom: 4px; }
     .sophia-scroll::-webkit-scrollbar { display: none; }
     .sophia-scroll img { flex: 0 0 82%; width: 82%; height: 320px; object-fit: cover; border-radius: 8px; scroll-snap-align: center; display: block; }
-    .sophia-hint { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #888; margin: -12px 0 20px 0; }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .sophia-hint { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--modal-red); font-weight: 600; margin: -12px 0 20px 0; }
     @media (max-width: 768px) { .service-modal-content { padding: 25px 30px 50px; margin-top: 40px; } .service-modal-content h1 { font-size: 26px; } .sophia-scroll img { flex: 0 0 86%; width: 86%; height: 280px; } }
 </style>
 </head>
