@@ -10,8 +10,8 @@
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --header-height: 70px; --header-height-mobile: 65px; --modal-red: #8B0000; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #2c2c2c; line-height: 1.6; overflow: hidden; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #2c2c2c; line-height: 1.6; overflow: hidden; overflow-x: hidden; }
     .header { position: fixed; top: 0; left: 0; right: 0; background-color: #ffffff; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
     .header-inner { width: 100%; height: var(--header-height); display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 18px; }
     .logo-wrapper { display: flex; align-items: center; gap: 12px; cursor: pointer; height: 100%; }
@@ -29,8 +29,8 @@
     .mobile-nav-item { border-bottom: 1px solid #e5e5e5; }
     .mobile-nav-item:first-child { border-top: 1px solid #e5e5e5; }
     .mobile-nav-link { display: block; padding: 20px 24px; font-size: 18px; color: #333; text-decoration: none; }
-    .service-modal { position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); overflow-y: auto; display: flex; justify-content: center; align-items: flex-start; padding: 0 20px 40px; }
-    .service-modal-content { background-color: #ffffff; color: #2c2c2c; max-width: 700px; width: 100%; padding: 28px 50px 60px; position: relative; margin-top: 45px; }
+    .service-modal { position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); overflow-y: auto; overflow-x: hidden; display: flex; justify-content: center; align-items: flex-start; padding: 0 20px 40px; touch-action: pan-y; overscroll-behavior: contain; }
+    .service-modal-content { background-color: #ffffff; color: #2c2c2c; max-width: 700px; width: 100%; padding: 28px 50px 60px; position: relative; margin-top: 45px; margin-left: auto; margin-right: auto; overflow-x: hidden; touch-action: pan-y; }
     .service-close { position: absolute; top: 28px; right: 30px; font-size: 28px; cursor: pointer; color: #2c2c2c; background: none; border: none; }
     .service-modal-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; letter-spacing: 4px; margin-bottom: 18px; margin-top: 10px; text-transform: uppercase; }
     .service-modal-content p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
@@ -39,11 +39,11 @@
     .sophia-list { list-style: none; margin: 0 0 20px 0; padding: 0; }
     .sophia-list li { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; padding-left: 18px; position: relative; margin-bottom: 4px; }
     .sophia-list li::before { content: "—"; position: absolute; left: 0; color: var(--modal-red); }
-    .sophia-scroll { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 8px 0 22px 0; padding-bottom: 4px; }
+    .sophia-scroll { display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 8px 0 22px 0; padding-bottom: 4px; touch-action: pan-x; overscroll-behavior-x: contain; }
     .sophia-scroll::-webkit-scrollbar { display: none; }
     .sophia-scroll img { flex: 0 0 82%; width: 82%; height: 320px; object-fit: cover; border-radius: 8px; scroll-snap-align: center; display: block; }
     .sophia-hint { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--modal-red); font-weight: 600; margin: -12px 0 20px 0; }
-    @media (max-width: 768px) { .service-modal-content { padding: 25px 30px 50px; margin-top: 40px; } .service-modal-content h1 { font-size: 26px; } .sophia-scroll img { flex: 0 0 86%; width: 86%; height: 280px; } }
+    @media (max-width: 768px) { .service-modal { padding: 0 12px 40px; } .service-modal-content { padding: 25px 30px 50px; margin-top: 40px; } .service-modal-content h1 { font-size: 26px; } .sophia-scroll img { flex: 0 0 86%; width: 86%; height: 280px; } }
 </style>
 </head>
 <body>
@@ -86,7 +86,7 @@
             </ul>
             <div class="sophia-scroll">
                 <img src="sophia-master.jpg" alt="Sophia - Sexologist">
-                <img src="harvard-university.jpg" alt="【entity-Harvard University¦canonical_name=Harvard University】">
+                <img src="harvard-university.jpg" alt=" 【entity-Harvard University¦canonical_name=Harvard University】">
                 <img src="harvard-harvard.jpg" alt="Harvard">
             </div>
             <p class="sophia-hint">Swipe to see the 3 photos &rarr;</p>
@@ -99,7 +99,7 @@
             <p>We don't use profile pictures. This isn't a marketing tactic. It's for safety. New Time protects our people from attacks. They're not common, but the risk is real. People think a same-sex image is normal. In reality, it's sex fraud. Money looks normal. Its hidden effect is deadly slavery and the root of poverty. Two people have been killed for exposing the truth.</p>
             <h2>John F. Kennedy</h2>
             <p>Assassinated for personal political motives. He confronted organized crime and spoke out on the erosion of freedom, land consolidation, the mental health crisis, rigged job markets, and the class-system narrative that blames "money" for poverty created by those who control it.</p>
-            <h2>【entity-Charlie Kirk¦canonical_name=Charlie Kirk】</h2>
+            <h2> 【entity-Charlie Kirk¦canonical_name=Charlie Kirk】</h2>
             <p>He was murdered after facing strong public backlash for stating that LGBTQ+ ideology constitutes sexual fraud.</p>
             <p>His position was that this belief indicates a sexual disability, and that discrimination, hatred, homophobia, and intolerance will persist because people with intellectual and sexual disabilities are not recognized as such.</p>
             <p>He argued that some seek to normalize sexual disability by portraying governments and politicians as victims.</p>
